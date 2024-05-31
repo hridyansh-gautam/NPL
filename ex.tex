@@ -1,0 +1,21 @@
+\DocumentMetadata{
+    pdfversion=1.7,
+    pdfstandard=A-3b,
+}
+\documentclass{article}
+
+\usepackage{embedfile}
+\embedfilesetup{     
+      filesystem=URL,
+      mimetype=application/octet-stream,
+      afrelationship={/Data},
+      stringmethod=escape
+}
+
+\begin{document}
+
+You can check that this PDF document complies with the PDF/A-3 standard by using the veraPDF tool. A text file, \texttt{attachme.txt}, is embedded in the PDF document. 
+
+\embedfile{attachme.txt}
+
+\end{document}

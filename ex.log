@@ -1,0 +1,146 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.30)  30 MAY 2024 11:35
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./ex.tex
+(ex.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-05-08>
+(D:\Program Files\Miktex\tex/latex/latex-lab\documentmetadata-support.ltx
+(D:\Program Files\Miktex\tex/latex/pdfmanagement-testphase\pdfmanagement-testph
+ase.sty
+Package: pdfmanagement-testphase 2024-05-23 v0.96i LaTeX PDF management testpha
+se bundle
+ (D:\Program Files\Miktex\tex/latex/tagpdf\tagpdf-base.sty
+Package: tagpdf-base 2024-04-12 v0.99b part of tagpdf - provide base, no-op ver
+sions of the user commands 
+\c@g__tag_MCID_abs_int=\count189
+\c@g__tag_struct_abs_int=\count190
+)
+(D:\Program Files\Miktex\tex/latex/pdfmanagement-testphase\pdfmanagement-testph
+ase.ltx
+File: pdfmanagement-testphase.ltx 2024-05-23 v0.96i PDF management code (testph
+ase)
+\g__pdfmanagement_EmbeddedFiles_int=\count191
+\l__pdfmeta_xmp_indent_int=\count192
+))) (D:\Program Files\Miktex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count193
+\l__pdf_internal_box=\box51
+)
+(D:\Program Files\Miktex\tex/latex/pdfmanagement-testphase\l3backend-testphase-
+pdftex.def
+File: l3backend-testphase-pdftex.def 2024-05-23 LaTeX PDF management testphase 
+bundle backend support:PDFoutput(pdfTeX)
+\l__pdf_backend_tmpa_box=\box52
+\l__pdf_backend_tmpb_box=\box53
+\g__pdf_backend_resourceid_int=\count194
+\g__pdf_backend_name_int=\count195
+\g__pdf_backend_page_int=\count196
+)
+(D:\Program Files\Miktex\tex/latex/pdfmanagement-testphase\pdfmanagement-firsta
+id.sty
+Package: pdfmanagement-firstaid 2024-05-23 v0.96i LaTeX PDF management testphas
+e bundle / firstaid-patches
+
+Package pdfmanagement Info: loading pdfmanagement firstaid code for pgf
+
+) (D:\Program Files\Miktex\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(D:\Program Files\Miktex\tex/latex/base\size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count197
+\c@section=\count198
+\c@subsection=\count199
+\c@subsubsection=\count266
+\c@paragraph=\count267
+\c@subparagraph=\count268
+\c@figure=\count269
+\c@table=\count270
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(D:\Program Files\Miktex\tex/latex/embedfile\embedfile.sty
+Package: embedfile 2023-01-12 v2.12 Embed files into PDF (HO)
+
+(D:\Program Files\Miktex\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(D:\Program Files\Miktex\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(D:\Program Files\Miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(D:\Program Files\Miktex\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(D:\Program Files\Miktex\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(D:\Program Files\Miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(D:\Program Files\Miktex\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)) (ex.aux)
+\openout1 = `ex.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+<<sRGB.icc>>
+
+! Package embedfile Error: File `attachme.txt' not found.
+
+See the embedfile package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 \embedfile{attachme.txt}
+                             
+? R
+OK, entering \nonstopmode...
+[1
+
+{C:/Users/HRIDYANSH GAUTAM/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (
+ex.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-05-08>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 2111 strings out of 474313
+ 54690 string characters out of 5749086
+ 1926907 words of memory out of 5000000
+ 24597 multiletter control sequences out of 15000+600000
+ 558237 words of font info for 37 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 71i,5n,65p,331b,249s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/Program Files/Miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Program
+ Files/Miktex/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on ex.pdf (1 page, 44991 bytes).
+PDF statistics:
+ 24 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+
