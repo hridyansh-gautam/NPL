@@ -1,0 +1,99 @@
+\DocumentMetadata{
+    pdfversion=1.7,
+    pdfstandard=A-3b,
+}
+\documentclass[11pt,a4paper]{LMIReport}
+
+\Metrologist{Luke Skywalker}
+\ChiefMetrologist{Princess Leia Organa}
+\ReportNumber{12345} 
+\ReportTitle{A report on the calibration of an type-N male open}
+\date{17 May 2035}
+
+\begin{document}	
+\section{Description}
+The components are from a USC vector network analyser calibration kit model 8599. 
+
+\section{Identification}
+The component serial number is 2221X.
+
+\section{Client}
+United Spacecraft Corporation, 51 Mare Tranquillitatis, The Moon.
+
+\section{Date of Calibration}
+The measurements were performed on February 7\textsuperscript{th}, 2035.
+
+\section{Conditions}
+Ambient temperature was maintained within \SI{\pm 1}{\celsius} of \SI{-123}{\celsius}.
+
+\section{Method}
+Measurements of the voltage reflection coefficient were made according to procedure LMIT.E.063.005. 
+
+\clearpage    % Anticipate the page break
+\section{Results}
+ 
+\subsection{Open (male), SN 54673}
+
+\begin{center} 
+ 	\small	% smaller font size for the table entries
+ 
+  	% Increases the vertical spacing between rows slightly  
+  	\setlength{\extrarowheight}{3pt}
+  
+		% the 'S' array column type will align numbers on the decimal 
+        % Note 'S[group-minimum-digits=3]' or '\sisetup{group-minimum-digits=3 }'
+        % would be used to force a space separator every 3 digits (this
+        % does not happen by default until there more than 4 digits)
+  		\begin{tabular}{SSSSS}
+    		\multicolumn{1}{c}{ frequency } & 
+    		\multicolumn{2}{c}{ magnitude } &
+    		\multicolumn{2}{c}{ phase } 
+    		\\
+		% 2nd line 
+    		\multicolumn{1}{c}{ (/\si{\mega\hertz}) } &  
+    		\multicolumn{2}{c}{  } &
+    		\multicolumn{2}{c}{ (/\si{\degree}) } 
+    		\\
+  		% 3rd line 
+     		& $\rho$ & ${U(\rho)}$ & $\phi$ & ${U(\phi)}$ 
+     		\\ \hline % Underline the headings
+
+  		%%-----------------------------------------------
+		45 &   0.9998 &   0.0023$^\dagger$ &    -1.46 &     0.13     \\
+		50 &   0.9998 &   0.0023$^\dagger$ &    -1.62 &     0.13     \\
+		100 &   0.9999 &   0.0023$^\dagger$ &    -3.27 &     0.13    \\
+		300 &   0.9998 &   0.0025 &    -9.80 &     0.14    \\
+		500 &   0.9997 &   0.0026 &   -16.34 &     0.15    \\
+		1000 &   1.0000 &   0.0032 &   -32.72 &     0.18   \\
+		2000 &   0.9994 &   0.0054 &   -65.67 &     0.31  \\
+		3000 &    1.000 &    0.011 &   -98.66 &     0.62   \\
+		4000 &    0.999 &    0.013 &  -131.74 &     0.78   \\
+		5000 &    0.999 &    0.016 &  -164.77 &     0.90   \\
+		6000 &    0.998 &    0.017 &  +162.15 &     0.99   \\
+		7000 &    0.997 &    0.018 &   +129.0 &      1.1   \\
+		8000 &    0.997 &    0.018 &    +95.9 &      1.1   \\
+		9000 &    0.996 &    0.018 &    +62.7 &      1.1  \\
+		%%-----------------------------------------------
+		
+        \end{tabular}
+        
+	\LMICaption{table}{tab1}{%
+Magnitude and phase data, using a linear scale for magnitude and units of degrees for phase. 
+Expanded uncertainties decorated by a $\dagger$ fall outside the scope of accreditation (see Uncertainty section).
+}
+	
+\end{center}
+
+\section{Uncertainty}
+A coverage factor $k=1.96$ was used to calculate the expanded uncertainties $U(\cdot)$ at a level of confidence of approximately \SI{95}{\percent}. 
+The number of degrees of freedom associated with each measurement result was large enough to justify this coverage factor.  
+
+Some of the expanded uncertainty values reported fall outside LMI's current scope of accreditation. 
+These values are decorated by a $\dagger$ in Table~\ref{tab1}. 
+The least expanded uncertainty for a measured magnitude close to unity in the LMI scope of accreditation is currently 0.0024. 
+
+\paragraph{Note:} \referenceGUM	% Standard reference to the GUM
+
+\embedfile[mimetype=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet]{ex_data.xlsx}
+
+\end{document}

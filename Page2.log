@@ -1,0 +1,755 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.30)  1 JUN 2024 16:46
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Page2.tex"
+(C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Page2.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-05-08>
+(D:\Program Files\Miktex\tex/latex/latex-lab\documentmetadata-support.ltx
+(D:\Program Files\Miktex\tex/latex/pdfmanagement-testphase\pdfmanagement-testph
+ase.sty
+Package: pdfmanagement-testphase 2024-05-23 v0.96i LaTeX PDF management testpha
+se bundle
+ (D:\Program Files\Miktex\tex/latex/tagpdf\tagpdf-base.sty
+Package: tagpdf-base 2024-04-12 v0.99b part of tagpdf - provide base, no-op ver
+sions of the user commands 
+\c@g__tag_MCID_abs_int=\count189
+\c@g__tag_struct_abs_int=\count190
+)
+(D:\Program Files\Miktex\tex/latex/pdfmanagement-testphase\pdfmanagement-testph
+ase.ltx
+File: pdfmanagement-testphase.ltx 2024-05-23 v0.96i PDF management code (testph
+ase)
+\g__pdfmanagement_EmbeddedFiles_int=\count191
+\l__pdfmeta_xmp_indent_int=\count192
+))) (D:\Program Files\Miktex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count193
+\l__pdf_internal_box=\box51
+)
+(D:\Program Files\Miktex\tex/latex/pdfmanagement-testphase\l3backend-testphase-
+pdftex.def
+File: l3backend-testphase-pdftex.def 2024-05-23 LaTeX PDF management testphase 
+bundle backend support:PDFoutput(pdfTeX)
+\l__pdf_backend_tmpa_box=\box52
+\l__pdf_backend_tmpb_box=\box53
+\g__pdf_backend_resourceid_int=\count194
+\g__pdf_backend_name_int=\count195
+\g__pdf_backend_page_int=\count196
+)
+(D:\Program Files\Miktex\tex/latex/pdfmanagement-testphase\pdfmanagement-firsta
+id.sty
+Package: pdfmanagement-firstaid 2024-05-23 v0.96i LaTeX PDF management testphas
+e bundle / firstaid-patches
+
+Package pdfmanagement Info: loading pdfmanagement firstaid code for pgf
+
+) (D:\Program Files\Miktex\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(D:\Program Files\Miktex\tex/latex/base\size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count197
+\c@section=\count198
+\c@subsection=\count199
+\c@subsubsection=\count266
+\c@paragraph=\count267
+\c@subparagraph=\count268
+\c@figure=\count269
+\c@table=\count270
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(D:\Program Files\Miktex\tex/latex/tools\longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip50
+\LTright=\skip51
+\LTpre=\skip52
+\LTpost=\skip53
+\LTchunksize=\count271
+\LTcapwidth=\dimen141
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count272
+\LT@rows=\count273
+\c@LT@tables=\count274
+\c@LT@chunks=\count275
+\LT@p@ftn=\toks17
+)
+(D:\Program Files\Miktex\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen142
+\lightrulewidth=\dimen143
+\cmidrulewidth=\dimen144
+\belowrulesep=\dimen145
+\belowbottomsep=\dimen146
+\aboverulesep=\dimen147
+\abovetopsep=\dimen148
+\cmidrulesep=\dimen149
+\cmidrulekern=\dimen150
+\defaultaddspace=\dimen151
+\@cmidla=\count276
+\@cmidlb=\count277
+\@aboverulesep=\dimen152
+\@belowrulesep=\dimen153
+\@thisruleclass=\count278
+\@lastruleclass=\count279
+\@thisrulewidth=\dimen154
+)
+(D:\Program Files\Miktex\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen155
+\WF@size=\dimen156
+\c@WF@wrappedlines=\count280
+\WF@box=\box59
+\WF@everypar=\toks18
+Package: wrapfig 2003/01/31  v 3.6
+)
+(D:\Program Files\Miktex\tex/latex/lipsum\lipsum.sty
+(D:\Program Files\Miktex\tex/latex/l3packages/l3keys2e\l3keys2e.sty
+(D:\Program Files\Miktex\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-05-08 L3 programming layer (loader) 
+)
+Package: l3keys2e 2024-05-08 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count281
+\l__lipsum_a_int=\count282
+\l__lipsum_b_int=\count283
+
+(D:\Program Files\Miktex\tex/latex/lipsum\lipsum.ltd.tex))
+(D:\Program Files\Miktex\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+
+(D:\Program Files\Miktex\tex/latex/base\latin1.def
+File: latin1.def 2021/02/14 v1.3d Input encoding file
+))
+(D:\Program Files\Miktex\tex/latex/lato\lato.sty
+Package: lato 2019/06/20 Style file for Lato.
+
+(D:\Program Files\Miktex\tex/latex/fontaxes\fontaxes.sty
+Package: fontaxes 2020/07/21 v1.0e Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \swshape on input line 35.
+LaTeX Info: Redefining \scshape on input line 37.
+LaTeX Info: Redefining \sscshape on input line 39.
+LaTeX Info: Redefining \ulcshape on input line 41.
+LaTeX Info: Redefining \textsw on input line 47.
+LaTeX Info: Redefining \textssc on input line 48.
+LaTeX Info: Redefining \textulc on input line 49.
+)
+(D:\Program Files\Miktex\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(D:\Program Files\Miktex\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+(D:\Program Files\Miktex\tex/generic/iftex\ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+(D:\Program Files\Miktex\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(D:\Program Files\Miktex\tex/generic/xkeyval\xkeyval.tex
+(D:\Program Files\Miktex\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
+
+(D:\Program Files\Miktex\tex/generic/xkeyval\keyval.tex))
+\XKV@depth=\count284
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)))
+(D:\Program Files\Miktex\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\Program Files\Miktex\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\Program Files\Miktex\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(D:\Program Files\Miktex\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(D:\Program Files\Miktex\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+)
+(D:\Program Files\Miktex\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+
+(D:\Program Files\Miktex\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen159
+\ar@mcellbox=\box60
+\extrarowheight=\dimen160
+\NC@list=\toks23
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box61
+)
+\TX@col@width=\dimen161
+\TX@old@table=\dimen162
+\TX@old@col=\dimen163
+\TX@target=\dimen164
+\TX@delta=\dimen165
+\TX@cols=\count285
+\TX@ftn=\toks24
+)
+(D:\Program Files\Miktex\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(D:\Program Files\Miktex\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count286
+\Gm@cntv=\count287
+\c@Gm@tempcnt=\count288
+\Gm@bindingoffset=\dimen166
+\Gm@wd@mp=\dimen167
+\Gm@odd@mp=\dimen168
+\Gm@even@mp=\dimen169
+\Gm@layoutwidth=\dimen170
+\Gm@layoutheight=\dimen171
+\Gm@layouthoffset=\dimen172
+\Gm@layoutvoffset=\dimen173
+\Gm@dimlist=\toks25
+
+(D:\Program Files\Miktex\tex/latex/geometry\geometry.cfg))
+(D:\Program Files\Miktex\tex/latex/embedfile\embedfile.sty
+Package: embedfile 2023-01-12 v2.12 Embed files into PDF (HO)
+
+(D:\Program Files\Miktex\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(D:\Program Files\Miktex\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(D:\Program Files\Miktex\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(D:\Program Files\Miktex\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(D:\Program Files\Miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(D:\Program Files\Miktex\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+))
+LaTeX Font Info:    Trying to load font information for OT1+lato-TLF on input l
+ine 33.
+
+(D:\Program Files\Miktex\tex/latex/lato\ot1lato-tlf.fd
+File: OT1lato-TLF.fd 2019/06/24 Font definitions for OT1/lato-TLF.
+)
+LaTeX Font Info:    Font shape `OT1/lato-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 33.
+
+No file Page2.aux.
+\openout1 = `Page2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+\c@mv@tabular=\count289
+\c@mv@boldtabular=\count290
+(D:\Program Files\Miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count291
+\scratchdimen=\dimen174
+\scratchbox=\box62
+\nofMPsegments=\count292
+\nofMParguments=\count293
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count294
+\MPscratchDim=\dimen175
+\MPnumerator=\count295
+\makeMPintoPDFobject=\count296
+\everyMPtoPDFconversion=\toks27
+) (D:\Program Files\Miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(D:\Program Files\Miktex\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=502.27461pt
+* \textheight=628.74655pt
+* \oddsidemargin=-23.48723pt
+* \evensidemargin=-23.48723pt
+* \topmargin=-50.00761pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<<sRGB.icc>>
+LaTeX Font Info:    Font shape `OT1/lato-TLF/m/n' will be
+(Font)              scaled to size 14.4pt on input line 36.
+LaTeX Font Info:    Font shape `OT1/lato-TLF/b/n' will be
+(Font)              scaled to size 14.4pt on input line 36.
+LaTeX Font Info:    Font shape `OT1/lato-TLF/m/n' will be
+(Font)              scaled to size 7.0pt on input line 37.
+ (C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo\table1.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 1.
+
+! Misplaced \noalign.
+\toprule ->\noalign 
+                    {\ifnum 0=`}\fi \@aboverulesep =\abovetopsep \global \@b...
+l.2 \toprule
+            
+? h
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+? 
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.3  & Unnamed: 1 &
+                    Unnamed: 2 & Unnamed: 3 & Unnamed: 4 & Unnamed: 5 & Unna...
+
+? h
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+? yes
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? r
+OK, entering \nonstopmode...
+
+Overfull \hbox (3.0052pt too wide) in paragraph at lines 3--3
+[]|\OT1/lato-TLF/m/n/7 Unnamed:
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.3  & Unnamed: 1 & Unnamed: 2 & Unnamed: 3 &
+                                              Unnamed: 4 & Unnamed: 5 & Unna...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (3.0052pt too wide) in paragraph at lines 3--3
+[]|\OT1/lato-TLF/m/n/7 Unnamed:
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.3 ... 2 & Unnamed: 3 & Unnamed: 4 & Unnamed: 5 &
+                                                   Unnamed: 6 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (3.0052pt too wide) in paragraph at lines 3--4
+[]|\OT1/lato-TLF/m/n/7 Unnamed:
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.4 Heading &  &
+                  &  &  &  &  \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.4 Heading &  &  &  &
+                        &  &  \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.4 Heading &  &  &  &  &  &
+                              \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.6 Sr. No. & Energy applied (J) to UUC &
+                                          Calculated Energy (J) level & Meas...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (3.7927pt too wide) in paragraph at lines 6--6
+[]|\OT1/lato-TLF/m/n/7 Calculated
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\OT1/lato-TLF/m/n/7 En-ergy
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.6 ... level & Measured Energy (J) level of UUC &
+                                                   Energy correction (J) (Ec...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+[]|\OT1/lato-TLF/m/n/7 Energy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\OT1/lato-TLF/m/n/7 cor-rec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\OT1/lato-TLF/m/n/7 tion (J)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\OT1/lato-TLF/m/n/7 (Ecal-cu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\OT1/lato-TLF/m/n/7 lated -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+\OT1/lato-TLF/m/n/7 Emea-
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.6 ...calculated - Emeasured) & Uncertainty (J) &
+                                                   Coverage Factor (k) \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.7 1 & 10 &
+             9.500000 & 9.600000 & (-) 0.1 & ï¿½ 0.1 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (1.61923pt too wide) in paragraph at lines 7--7
+[]|\OT1/lato-TLF/m/n/7 9.500000| 
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.7 1 & 10 & 9.500000 & 9.600000 &
+                                   (-) 0.1 & ï¿½ 0.1 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Missing character: There is no ï in font Lato-Regular-OT1-TLF!
+Missing character: There is no ¿ in font Lato-Regular-OT1-TLF!
+Missing character: There is no ½ in font Lato-Regular-OT1-TLF!
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.7 ...& 9.500000 & 9.600000 & (-) 0.1 & ï¿½ 0.1 &
+                                                   2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.8 2 & 20 &
+             19.300000 & 19.400000 & (-) 0.1 & ï¿½ 0.1 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (5.67923pt too wide) in paragraph at lines 8--8
+[]|\OT1/lato-TLF/m/n/7 19.300000| 
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.8 2 & 20 & 19.300000 & 19.400000 &
+                                     (-) 0.1 & ï¿½ 0.1 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Missing character: There is no ï in font Lato-Regular-OT1-TLF!
+Missing character: There is no ¿ in font Lato-Regular-OT1-TLF!
+Missing character: There is no ½ in font Lato-Regular-OT1-TLF!
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.8 ...19.300000 & 19.400000 & (-) 0.1 & ï¿½ 0.1 &
+                                                   2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.9 3 & 50 &
+             48.200000 & 48.400000 & (-) 0.2 & ï¿½ 0.2 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (5.67923pt too wide) in paragraph at lines 9--9
+[]|\OT1/lato-TLF/m/n/7 48.200000| 
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.9 3 & 50 & 48.200000 & 48.400000 &
+                                     (-) 0.2 & ï¿½ 0.2 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Missing character: There is no ï in font Lato-Regular-OT1-TLF!
+Missing character: There is no ¿ in font Lato-Regular-OT1-TLF!
+Missing character: There is no ½ in font Lato-Regular-OT1-TLF!
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.9 ...48.200000 & 48.400000 & (-) 0.2 & ï¿½ 0.2 &
+                                                   2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.10 4 & 100 &
+               97.100000 & 97.400000 & (-) 0.3 & ï¿½ 0.3 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (5.67923pt too wide) in paragraph at lines 10--10
+[]|\OT1/lato-TLF/m/n/7 97.100000| 
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.10 4 & 100 & 97.100000 & 97.400000 &
+                                       (-) 0.3 & ï¿½ 0.3 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Missing character: There is no ï in font Lato-Regular-OT1-TLF!
+Missing character: There is no ¿ in font Lato-Regular-OT1-TLF!
+Missing character: There is no ½ in font Lato-Regular-OT1-TLF!
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.10 ...7.100000 & 97.400000 & (-) 0.3 & ï¿½ 0.3 &
+                                                   2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.11 5 & 150 &
+               146.100000 & 146.400000 & (-) 0.3 & ï¿½ 0.5 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (9.73923pt too wide) in paragraph at lines 11--11
+[]|\OT1/lato-TLF/m/n/7 146.100000| 
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.11 5 & 150 & 146.100000 & 146.400000 &
+                                         (-) 0.3 & ï¿½ 0.5 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Missing character: There is no ï in font Lato-Regular-OT1-TLF!
+Missing character: There is no ¿ in font Lato-Regular-OT1-TLF!
+Missing character: There is no ½ in font Lato-Regular-OT1-TLF!
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.11 ....100000 & 146.400000 & (-) 0.3 & ï¿½ 0.5 &
+                                                   2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.12 6 & 270 &
+               259.500000 & 260.300000 & (-) 0.8 & ï¿½ 0.9 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (9.73923pt too wide) in paragraph at lines 12--12
+[]|\OT1/lato-TLF/m/n/7 259.500000| 
+ []
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.12 6 & 270 & 259.500000 & 260.300000 &
+                                         (-) 0.8 & ï¿½ 0.9 & 2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+Missing character: There is no ï in font Lato-Regular-OT1-TLF!
+Missing character: There is no ¿ in font Lato-Regular-OT1-TLF!
+Missing character: There is no ½ in font Lato-Regular-OT1-TLF!
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.12 ....500000 & 260.300000 & (-) 0.8 & ï¿½ 0.9 &
+                                                   2 \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+) (C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo\table2.tex
+Missing character: There is no ± in font Lato-Regular-OT1-TLF!
+Missing character: There is no ± in font Lato-Regular-OT1-TLF!
+)
+Overfull \hbox (4.32411pt too wide) in paragraph at lines 1--49
+ [][] 
+ []
+
+(C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo\table3.tex
+Missing character: There is no ± in font Lato-Regular-OT1-TLF!
+) (C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo\table4.tex
+Missing character: There is no ± in font Lato-Regular-OT1-TLF!
+) [1
+
+{C:/Users/HRIDYANSH GAUTAM/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:
+/Program Files/Miktex/fonts/enc/dvips/lato/a_y72t7m.enc}] (Page2.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-05-08>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 4830 strings out of 474313
+ 102585 string characters out of 5749086
+ 1949907 words of memory out of 5000000
+ 27194 multiletter control sequences out of 15000+600000
+ 574355 words of font info for 43 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 71i,8n,72p,377b,257s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/Program Files/Miktex/fonts/type1/typoland/lato/Lato-Bold.pfb><D:/Program 
+Files/Miktex/fonts/type1/typoland/lato/Lato-Regular.pfb>
+Output written on Page2.pdf (1 page, 59815 bytes).
+PDF statistics:
+ 25 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+
