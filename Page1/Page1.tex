@@ -1,0 +1,105 @@
+\DocumentMetadata{
+    pdfversion=1.7,
+    pdfstandard=A-3b,
+}
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper]{geometry}
+\usepackage{array}  % for specifying column alignment
+\usepackage{makecell}  % for formatting cells
+\date{17 May 2035}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{wrapfig,lipsum}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{lastpage} % Load the lastpage package
+\usepackage{fancyhdr}%header & footer
+\pagestyle{fancy}
+% Adjust margins
+\geometry{
+    top=1.6cm,
+    bottom=22cm,
+    left=0cm,
+    right=0cm
+}
+\addtolength{\textheight}{1.0in}
+\UseRawInputEncoding
+  \setlength\heavyrulewidth{0.20ex}
+  \setlength\cmidrulewidth{0.10ex}
+  \setlength\lightrulewidth{0.10ex}
+
+\usepackage{embedfile}
+\embedfilesetup{     
+      filesystem=URL,
+      mimetype=application/octet-stream,
+      afrelationship={/Data},
+      stringmethod=escape
+}
+
+\newcommand{\cellbreak}[2][c]{
+\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\pdfgentounicode=1 % So that pdf is machine readable
+
+\fancyhf{} 
+
+\fancyhead[C]{
+
+\begin{tabular}{>{\centering} p{2 cm} >{\centering} p{8 cm} >{\centering} p{2 cm} |>{\centering\arraybackslash} p{6 cm}}
+\includegraphics[height=1.5cm]{Logo_NPL_india.png }&Address&\includegraphics[height=1.5cm]{Logo_NPL_india.png } & \cellbreak{Anshankan praman patr\\Calliberation certificate : }\\ \cline{4-4}
+&Address&&\cellbreak{pramaan patr sankhya\\Certificate number : }\\ \cline{4-4}
+&Address&&\cellbreak{DOI\\DOI number : }
+
+\end{tabular}
+
+\begin{tabular}{>{\centering}p{5cm}|>{\centering}p{5cm}|>{\centering}p{4cm}|>{\centering\arraybackslash}p{4cm}}
+\hline
+Date & Recommended date & Page & No of pages\\[2 ex]
+\today&2&\thepage&\pageref{LastPage}\\
+\hline
+\end{tabular}
+
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand\footrule{\hrule width 1.2\textwidth}
+
+
+\fancyfoot[C]{
+\begin{minipage}{\textwidth}
+\centering
+\begin{tabular}{ p{6 cm} p{6 cm}  p{6 cm}}
+Ashnkankarta & Janchkarta & Prbhari vegyanik \\
+\textbf{Caliberated by :} & \textbf{Checked by :} & \textbf{Scientist-in-charge :}\multirow{-1}{*}{} \\
+\multicolumn{1}{c}{Cell 4} & \multicolumn{1}{c}{Cell 5} & \multicolumn{1}{c}{Cell 6} \\[1.5 ex]
+%\input{} & \input{} & \input{} [2 ex]\\
+\\
+& Jarikrtaa &\\
+& \textbf{Issued by :} &\\
+ & \multicolumn{1}{c}{Cell 7} & \\
+%& \input{} &
+\\
+&\multicolumn{1}{r}{Signature :}&
+\end{tabular}
+\end{minipage}
+}
+\setlength{\headheight}{140pt} % Set the height of the header
+\setlength{\footskip}{350pt} % Set the distance between the bottom of the text and the footer
+\begin{document}
+here begins the doc this is page 1\\
+%\parbox[b][5 cm]{Hi}
+\newpage
+
+This is new page with different text
+
+\end{document}
