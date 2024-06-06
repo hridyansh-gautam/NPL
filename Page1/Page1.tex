@@ -4,10 +4,16 @@
 }
 \documentclass[a4paper]{article}
 
-%% Language and font encodings
+%% Language and font encoding
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
+
+% Load the uarial package to use Arial font
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{uarial}
+% Set Arial as the default font
+\renewcommand{\familydefault}{\sfdefault}
 
 %% Sets page size and margins
 \usepackage[a4paper]{geometry}
@@ -18,18 +24,19 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{multicol}
+\usepackage{makecell}
 \usepackage{wrapfig,lipsum}
 \usepackage{tcolorbox}
 \usepackage{graphicx}
 \usepackage{tabularx}
-\usepackage{lastpage} % Load the lastpage package
+\usepackage{lastpage} % For number of pages
 \usepackage{fancyhdr}%header & footer
 \pagestyle{fancy}
 % Adjust margins
 \geometry{
-    top=1.6cm,
-    bottom=22cm,
-    left=0cm,
+    top=1.9cm,
+    bottom=24cm,
+    left=0.2cm,
     right=0cm
 }
 \addtolength{\textheight}{1.0in}
@@ -53,53 +60,21 @@
 
 \fancyhf{} 
 
-\fancyhead[C]{
-
-\begin{tabular}{>{\centering} p{2 cm} >{\centering} p{8 cm} >{\centering} p{2 cm} |>{\centering\arraybackslash} p{6 cm}}
-\includegraphics[height=1.5cm]{Logo_NPL_india.png }&Address&\includegraphics[height=1.5cm]{Logo_NPL_india.png } & \cellbreak{Anshankan praman patr\\Calliberation certificate : }\\ \cline{4-4}
-&Address&&\cellbreak{pramaan patr sankhya\\Certificate number : }\\ \cline{4-4}
-&Address&&\cellbreak{DOI\\DOI number : }
-
-\end{tabular}
-
-\begin{tabular}{>{\centering}p{5cm}|>{\centering}p{5cm}|>{\centering}p{4cm}|>{\centering\arraybackslash}p{4cm}}
-\hline
-Date & Recommended date & Page & No of pages\\[2 ex]
-\today&2&\thepage&\pageref{LastPage}\\
-\hline
-\end{tabular}
-
-}
-
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand\footrule{\hrule width 1.2\textwidth}
+\renewcommand\footrule{\hrule width 0.98\textwidth}
 
+\input{header.tex}
 
-\fancyfoot[C]{
-\begin{minipage}{\textwidth}
-\centering
-\begin{tabular}{ p{6 cm} p{6 cm}  p{6 cm}}
-Ashnkankarta & Janchkarta & Prbhari vegyanik \\
-\textbf{Caliberated by :} & \textbf{Checked by :} & \textbf{Scientist-in-charge :}\multirow{-1}{*}{} \\
-\multicolumn{1}{c}{Cell 4} & \multicolumn{1}{c}{Cell 5} & \multicolumn{1}{c}{Cell 6} \\[1.5 ex]
-%\input{} & \input{} & \input{} [2 ex]\\
-\\
-& Jarikrtaa &\\
-& \textbf{Issued by :} &\\
- & \multicolumn{1}{c}{Cell 7} & \\
-%& \input{} &
-\\
-&\multicolumn{1}{r}{Signature :}&
-\end{tabular}
-\end{minipage}
-}
-\setlength{\headheight}{140pt} % Set the height of the header
+\input{footer.tex}
+
+\setlength{\headheight}{190pt} % Set the height of the header
 \setlength{\footskip}{350pt} % Set the distance between the bottom of the text and the footer
 \begin{document}
-here begins the doc this is page 1\\
-%\parbox[b][5 cm]{Hi}
+\makecell[pl]{here begins the doc this is page 1\\Hello\\ANd 3}\\
+\input{inputs/calibratedFor.tex}
 \newpage
 
-This is new page with different text
+This is new page with different text\\
+hi
 
 \end{document}

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.30)  5 JUN 2024 12:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.30)  6 JUN 2024 11:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Page1.tex"
-(C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Page1.tex
+**"C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Page1/Page1.tex"
+(C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Page1/Page1.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-05-08>
 (D:\Program Files\Miktex\tex/latex/latex-lab\documentmetadata-support.ltx
@@ -548,13 +548,19 @@ Now handling font encoding U ...
 (D:\Program Files\Miktex\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-(D:\Program Files\Miktex\tex/latex/geometry\geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
+(D:\Program Files\Miktex\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(D:\Program Files\Miktex\tex/latex/arial\uarial.sty
+Package: uarial 2006/03/21 1.0 (WaS)
 
 (D:\Program Files\Miktex\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
-)
+))
+(D:\Program Files\Miktex\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
 (D:\Program Files\Miktex\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
@@ -1058,23 +1064,34 @@ Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 (D:\Program Files\Miktex\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 ))
+(C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Page1\header.tex)
+(C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Page1\footer.tex)
+LaTeX Font Info:    Trying to load font information for T1+ua1 on input line 71
+.
+
+(D:\Program Files\Miktex\tex/latex/arial\t1ua1.fd
+File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
+)
+LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
+(Font)              scaled to size 9.49997pt on input line 71.
+
 No file Page1.aux.
 \openout1 = `Page1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1083,16 +1100,16 @@ LaTeX Font Info:    ... okay on input line 97.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(0.0pt, 597.50787pt, 0.0pt)
-* v-part:(T,H,B)=(45.52458pt, 173.56165pt, 625.96062pt)
+* h-part:(L,W,R)=(17.07182pt, 580.43605pt, 0.0pt)
+* v-part:(T,H,B)=(45.52458pt, 116.65613pt, 682.86613pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=597.50787pt
-* \textheight=245.83163pt
-* \oddsidemargin=-72.26999pt
-* \evensidemargin=-72.26999pt
+* \textwidth=580.43605pt
+* \textheight=188.92612pt
+* \oddsidemargin=-55.19817pt
+* \evensidemargin=-55.19817pt
 * \topmargin=-63.7454pt
-* \headheight=140.0pt
+* \headheight=200.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
 * \footskip=350.0pt
@@ -1130,121 +1147,149 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (D:\Program Files\Miktex\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))<<sRGB.icc>>
-Underfull \hbox (badness 10000) in paragraph at lines 98--100
+Underfull \hbox (badness 10000) in paragraph at lines 72--74
 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 100.
+(Font)              <7> on input line 74.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 100.
-<Logo_NPL_india.png, id=7, 1204.5pt x 1204.5pt>
-File: Logo_NPL_india.png Graphic file (type png)
-<use Logo_NPL_india.png>
-Package pdftex.def Info: Logo_NPL_india.png  used on input line 100.
-(pdftex.def)             Requested size: 42.67642pt x 42.67912pt.
-File: Logo_NPL_india.png Graphic file (type png)
-<use Logo_NPL_india.png>
-Package pdftex.def Info: Logo_NPL_india.png  used on input line 100.
-(pdftex.def)             Requested size: 42.67642pt x 42.67912pt.
+(Font)              <5> on input line 74.
+<CSIR_logo.png, id=7, 397.485pt x 397.485pt>
+File: CSIR_logo.png Graphic file (type png)
+<use CSIR_logo.png>
+Package pdftex.def Info: CSIR_logo.png  used on input line 74.
+(pdftex.def)             Requested size: 71.13177pt x 71.13188pt.
 
-Overfull \hbox (142.29588pt too wide) has occurred while \output is active
- [][] 
+Overfull \hbox (14.22627pt too wide) has occurred while \output is active
+ []|[]| 
  []
 
+LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
+(Font)              scaled to size 15.19995pt on input line 74.
+LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
+(Font)              scaled to size 5.69998pt on input line 74.
+<Logo_NPL_india.png, id=9, 1204.5pt x 1204.5pt>
+File: Logo_NPL_india.png Graphic file (type png)
+<use Logo_NPL_india.png>
+Package pdftex.def Info: Logo_NPL_india.png  used on input line 74.
+(pdftex.def)             Requested size: 65.42982pt x 65.44142pt.
+(D:\Program Files\Miktex\tex/latex/tools\.tex File ignored)
+LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
+(Font)              scaled to size 6.64998pt on input line 74.
 
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 100.
-
-
-Overfull \hbox (143.0959pt too wide) has occurred while \output is active
- [][] 
+(D:\Program Files\Miktex\tex/latex/tools\.tex File ignored)
+Overfull \hbox (9.0414pt too wide) has occurred while \output is active
+ []|[]| 
  []
 
-
-Package fancyhdr Warning: \headheight is too small (140.0pt): 
-(fancyhdr)                Make it at least 161.58812pt, for example:
-(fancyhdr)                \setlength{\headheight}{161.58812pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-21.58812pt}.
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.100 \newpage
-              
+(D:\Program Files\Miktex\tex/latex/tools\.tex File ignored)
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.74 \newpage
+             
 ? h
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
 ? 
 
-Overfull \hbox (179.2542pt too wide) has occurred while \output is active
+Overfull \hbox (158.01942pt too wide) has occurred while \output is active
+ [] 
+ []
+
+LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
+(Font)              scaled to size 9.49997pt on input line 74.
+
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 74.
+
+
+Overfull \hbox (143.09589pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (200.0pt): 
+(fancyhdr)                Make it at least 235.07596pt, for example:
+(fancyhdr)                \setlength{\headheight}{235.07596pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-35.07596pt}.
+
+
+Overfull \hbox (162.18237pt too wide) has occurred while \output is active
  []$[]$ 
  []
 
 
-Overfull \hbox (298.75394pt too wide) has occurred while \output is active
+Overfull \hbox (150.57117pt too wide) has occurred while \output is active
 []
  []
 
-[1{C:/Users/HRIDYANSH GAUTAM/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
+[1{C:/Users/HRIDYANSH GAUTAM/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{
+D:/Program Files/Miktex/fonts/enc/dvips/base/8r.enc}
 
- <C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Logo_NPL_india.png>]
-File: Logo_NPL_india.png Graphic file (type png)
-<use Logo_NPL_india.png>
-Package pdftex.def Info: Logo_NPL_india.png  used on input line 104.
-(pdftex.def)             Requested size: 42.67642pt x 42.67912pt.
-File: Logo_NPL_india.png Graphic file (type png)
-<use Logo_NPL_india.png>
-Package pdftex.def Info: Logo_NPL_india.png  used on input line 104.
-(pdftex.def)             Requested size: 42.67642pt x 42.67912pt.
+ <C:/Users/HRIDYANSH GAUTAM/Desktop/NPL repo/Page1/CSIR_logo.png> <C:/Users/HRI
+DYANSH GAUTAM/Desktop/NPL repo/Page1/Logo_NPL_india.png>]
+File: CSIR_logo.png Graphic file (type png)
+<use CSIR_logo.png>
+Package pdftex.def Info: CSIR_logo.png  used on input line 78.
+(pdftex.def)             Requested size: 71.13177pt x 71.13188pt.
 
-Overfull \hbox (142.29588pt too wide) has occurred while \output is active
- [][] 
+Overfull \hbox (14.22627pt too wide) has occurred while \output is active
+ []|[]| 
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 104.
-
-
-Overfull \hbox (143.0959pt too wide) has occurred while \output is active
- [][] 
+File: Logo_NPL_india.png Graphic file (type png)
+<use Logo_NPL_india.png>
+Package pdftex.def Info: Logo_NPL_india.png  used on input line 78.
+(pdftex.def)             Requested size: 65.42982pt x 65.44142pt.
+(D:\Program Files\Miktex\tex/latex/tools\.tex File ignored)
+(D:\Program Files\Miktex\tex/latex/tools\.tex File ignored)
+Overfull \hbox (9.0414pt too wide) has occurred while \output is active
+ []|[]| 
  []
 
-
-Package fancyhdr Warning: \headheight is too small (140.0pt): 
-(fancyhdr)                Make it at least 161.58812pt, for example:
-(fancyhdr)                \setlength{\headheight}{161.58812pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-21.58812pt}.
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.104 \end{document}
-                    
+(D:\Program Files\Miktex\tex/latex/tools\.tex File ignored)
+! Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.78 \end{document}
+                   
 ? h
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
 ? 
 
-Overfull \hbox (179.2542pt too wide) has occurred while \output is active
+Overfull \hbox (158.01942pt too wide) has occurred while \output is active
+ [] 
+ []
+
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 78.
+
+
+Overfull \hbox (143.09589pt too wide) has occurred while \output is active
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (200.0pt): 
+(fancyhdr)                Make it at least 235.07596pt, for example:
+(fancyhdr)                \setlength{\headheight}{235.07596pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-35.07596pt}.
+
+
+Overfull \hbox (162.18237pt too wide) has occurred while \output is active
  []$[]$ 
  []
 
 
-Overfull \hbox (298.75394pt too wide) has occurred while \output is active
+Overfull \hbox (150.57117pt too wide) has occurred while \output is active
 []
  []
 
@@ -1263,23 +1308,22 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
-Package lastpage Warning: Rerun to get the references right on input line 104.
+Package lastpage Warning: Rerun to get the references right on input line 78.
 
  ) 
 Here is how much of TeX's memory you used:
- 16519 strings out of 474313
- 346225 string characters out of 5749086
- 1937907 words of memory out of 5000000
- 38669 multiletter control sequences out of 15000+600000
- 559608 words of font info for 38 fonts, out of 8000000 for 9000
+ 16615 strings out of 474313
+ 348508 string characters out of 5749086
+ 1940907 words of memory out of 5000000
+ 38733 multiletter control sequences out of 15000+600000
+ 585480 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,24n,107p,484b,418s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\HRIDYANSH GAUTAM\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
-dpi600\ecbx1000.pk> <C:\Users\HRIDYANSH GAUTAM\AppData\Local\MiKTeX\fonts/pk/lj
-four/jknappen/ec/dpi600\ecrm1000.pk>
-Output written on Page1.pdf (2 pages, 191714 bytes).
+ 101i,31n,107p,503b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/Program Files/Miktex/fonts/type1/urw/arial/ua1b8a.pfb><D:/Program Files/M
+iktex/fonts/type1/urw/arial/ua1r8a.pfb>
+Output written on Page1.pdf (2 pages, 297231 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
+ 33 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
