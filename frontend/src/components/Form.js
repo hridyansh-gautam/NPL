@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 axios.defaults.withCredentials = true;
 
-
-const Form = () => {
+const Form = ({ setFormFilled }) => {
   const [formData, setFormData] = useState({
     certificateNo: '',
     date: '',
@@ -57,8 +56,8 @@ const Form = () => {
           inCharge: '',
           issuedBy: ''
         });
-        // window.location.replace('http://localhost:3000/upload');
-        navigate('http://localhost:3000/upload');
+        setFormFilled(true);
+        navigate('/upload');
       } else {
         console.error('Failed to submit form data:', response.statusText);
       }
@@ -70,7 +69,7 @@ const Form = () => {
   return (
     <div className="form-container">
       <h2>Calibration Certificate Form</h2>
-      <form >
+      <form onSubmit={handleSubmit}>
         <label htmlFor="certificateNo">Certificate No.</label>
         <input type="text" id="certificateNo" name="certificateNo" value={formData.certificateNo} onChange={handleChange} required />
         
@@ -110,7 +109,7 @@ const Form = () => {
         <label htmlFor="issuedBy">Issued By</label>
         <input type="text" id="issuedBy" name="issuedBy" value={formData.issuedBy} onChange={handleChange} required />
 
-        <button onClick={handleSubmit} className="next-button">Next</button>
+        <button type="submit" className="next-button">Next</button>
       </form>
     </div>
   );
