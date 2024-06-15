@@ -1,9 +1,11 @@
 %%%% PAGE 1 %%%%%%%
-\begin{tabular}{p{4.8cm} p{0.1ex} p{3cm}}
-1. Calibrated for		&:&	 \makecell[tl]{ \input{inputs/calibratedFor.tex}} \\
-2. Description and Identification of Item under Calibration  &:&	\makecell[tl]{\input{inputs/description.tex}} \\
-3. Environmental Conditions 	& :&	 \makecell[tl]{\input{inputs/environmentalConditions.tex}}\\
-4. Standard(s) used (with) Associated uncertainty	&:& 	\makecell[tl]{\input{inputs/standardsUsed.tex}} \\
-5. Traceability of standard(s) used	&:&	\makecell[tl]{ \input{inputs/tracability.tex}} \\
-6. Principle /Methodology of calibration and Calibration Procedure number 	& :&	\makecell[tl]{\input{inputs/calibrationProcedure.tex}} \\
+\hspace{0.95cm}
+\begin{tabular}{|p{1cm}| p{6.74cm} | p{0.5cm}| p{8cm}|}
+
+\stepcounter{rownum}\arabic{rownum}. 	&	\makecell[l]{Calibrated for}		&:&	 \makecell[tl]{ \input{inputs/calibratedFor.tex}} \\
+\stepcounter{rownum}\arabic{rownum}. 	&	\makecell[l]{Description and Identification \\of Item under Calibration}  &:&	\makecell[tl]{\input{inputs/description.tex}} \\
+\stepcounter{rownum}\arabic{rownum}.	&	\makecell[l]{Environmental Conditions} 	& :&	 \makecell[tl]{\input{inputs/environmentalConditions.tex}}\\
+\stepcounter{rownum}\arabic{rownum}.	&	\makecell[l]{Standard(s) used (with)\\ Associated uncertainty}	&:& 	\makecell[tl]{\input{inputs/standardsUsed.tex}} \\
+\stepcounter{rownum}\arabic{rownum}.	&	\makecell[l]{Traceability of standard(s) used}	&:&	\makecell[lt]{ \input{inputs/tracability.tex}} \\
+\stepcounter{rownum}\arabic{rownum}.	&	\makecell[l]{Principle /Methodology of\\ calibration and Calibration Procedure number} 	& :&	\makecell[tl]{\input{inputs/calibrationProcedure.tex}} \\
 \end{tabular}
