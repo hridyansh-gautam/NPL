@@ -6,6 +6,12 @@ body {
   background-color: #ffffff;  
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -36,17 +42,25 @@ body {
   background-color: #0056b3; 
 }
 
-.app-title {
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #007bff;
+  padding: 10px;
+  margin-top: auto; 
+}
+
+.footer-link {
+  color: #ffffff;
+  padding: 14px 20px;
+  text-decoration: none;
   text-align: center;
-  margin: 20px 0;
+  border: 1px solid #ffffff;
+  margin: 0 5px;
 }
 
-.app-logo {
-  height: 250px;
-  width: 250px;
-}
-
-.login-message {
+.login-message,
+.form-message {
   display: flex;
   justify-content: center;
   align-items: center;

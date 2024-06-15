@@ -2,15 +2,19 @@ from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
 from datetime import timedelta
+import os
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
+# CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:clearpointdivine@localhost/npl'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'your_secret_key_here' 
+app.config['SECRET_KEY'] = 'your_secret_key_here'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
+app.config['UPLOAD_FOLDER'] = 'uploads'
 
 db = SQLAlchemy(app)
 
@@ -75,10 +79,50 @@ def form():
         return jsonify({'message': 'Unauthorized'}), 401
 
     data = request.get_json()
+    date = data['body']['date'].split('-')
+    data['body']['date'] = date[2] + '.' + date[1] + '.' + date[0]
+    recommendedDate = data['body']['recommendedDate'].split('-')
+    data['body']['recommendedDate'] = recommendedDate[2] + '.' + recommendedDate[1] + '.' + recommendedDate[0]
+    
     print(data)
     if data:
         return jsonify({'message': 'Form filled successfully'}), 200
     return jsonify({'message': 'Invalid data'}), 400
 
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'username' not in session:
+        return jsonify({'message': 'Unauthorized'}), 401
+
+    if 'file' not in request.files:
+        return jsonify({'message': 'No file part'}), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'message': 'No selected file'}), 400
+
+    if file:
+        filename = secure_filename(file.filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(file_path)
+
+        user = User.query.filter_by(username=session['username']).first()
+        new_file = UploadedFiles(
+            user_id=user.user_id,
+            file_name=filename,
+            file_path=file_path,
+            upload_date=db.func.current_timestamp(),
+            conversion_status=False
+        )
+
+        db.session.add(new_file)
+        db.session.commit()
+
+        return jsonify({'message': 'File uploaded successfully'}), 200
+
+    return jsonify({'message': 'File upload failed'}), 400
+
 if __name__ == '__main__':
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.makedirs(app.config['UPLOAD_FOLDER'])
     app.run(debug=True)
