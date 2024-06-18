@@ -55,15 +55,15 @@ def get_certificate(certificate_no: str):
     try:
         select_stmt = certificate_table.select().where(certificate_table.c.certificateno == certificate_no)
         result = session.execute(select_stmt).fetchone()
-        result_list = []
-        for row in result:
-            result_list.append(row)
-        results.append(result_list)
+        # result_list = []
+        # for row in result:
+        #     result_list.append(row)
+        results.append(result)
     finally:
         session.close()
 
 
-def create_pdf():
+def create_pdf(data):
     # LaTeX document
     latex_code = f"""
     \\DocumentMetadata{{
@@ -170,7 +170,7 @@ def create_pdf():
     \\begin{{tabular}}{{>{{\\centering\\arraybackslash \\vrule width 0.8mm}} p{{6.2 cm}}}}
     \\makecell{{\\texthindi{{अंशांकन प्रमाण पत्र}}\\\\\\textbf{{CALLIBRATION CERTIFICATE:}}\\\\\\input{{}}}}\\\\[1.5ex]
     \\fullhline
-    \\makecell{{\\rule{{0pt}}{{1em}}\\texthindi{{प्रमाण पत्र संख्या}}/Certificate number:\\\\\\rule{{0pt}}{{1.5em}}\\input{{inputs/certificateNo.tex}}}} \\\\ [1.5ex]
+    \\makecell{{\\rule{{0pt}}{{1em}}\\texthindi{{प्रमाण पत्र संख्या}}/Certificate number:\\\\\\rule{{0pt}}{{1.5em}}{data.certificateno}}} \\\\ [1.5ex]
     \\fullhline
     \\makecell{{\\texthindi{{डी ओ आई संख्या}}/DOI number :\\\\ \\input{{}} }}\\\\[1.5ex]
 
@@ -264,7 +264,6 @@ def data_preprocess(data):
         val = val.replace('%', '\\%').replace('#', '\\#').replace('^', '\\^')
         val = val.replace('\u2103', '\\textdegree C').replace('\u03a9', '\\textohm').replace('\u00b1', '\\textpm')
         val = val.replace('\n', ' \\\\\n')
-        # val = val + '\\\\'
         data[key] = val
     return data
 
@@ -313,4 +312,4 @@ data_to_store = data_preprocess(data)
 # get data
 call_thread(target=get_certificate, args="N23070405/D3.03/C-037")
 
-# create_pdf()
+create_pdf(results[0])
