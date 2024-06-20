@@ -155,8 +155,8 @@ def orgregister():
             return jsonify({'message': 'Passwords do not match'}), 400
 
         print(data_dict)
-        # response = registration.add_new_org(data_dict)
-        # print(response)
+        response = registration.add_new_org(data_dict)
+        print(response)
         return jsonify({'message': 'Registration successful', 'username': data_dict['org_name']}), 200
 
 @app.route('/empregister', methods=['GET', 'POST'])
@@ -209,6 +209,10 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
 
 @app.route('/add_new_service')
 def add_new_service():
