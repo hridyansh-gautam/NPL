@@ -1,0 +1,153 @@
+body {
+  height: 100vh;
+}
+
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: whitesmoke;
+}
+
+.logo {
+  width: 10rem; /* Adjust the width as needed */
+}
+
+.page-title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: rgb(11, 78, 179);
+  margin: 0;
+}
+
+.company-name {
+  font-style: italic;
+  font-size: 3rem;
+  color: blue;
+}
+
+nav {
+  background-color: skyblue;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a{
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: none;
+  color: blue;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px blue;
+}
+
+.color {
+  color: blue;
+}
+
+.dropdown {
+  display: inline-block; 
+  position: relative; 
+}
+
+.dropdown-toggle { /* Styles for the dropdown button */
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: transparent;
+  color: blue;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown-menu { /* Styles for the dropdown menu itself */
+  float: none; /* Avoids potential layout issues */
+  overflow: auto; /* Enables scrolling if there are many dropdown items */
+  min-width: 100%; 
+  position: absolute; /* Positions the menu relative to the dropdown button */
+  background-color: whitesmoke; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+  border-radius: 0.5rem; 
+}
+
+.dropdown-menu a { /* Styles for the dropdown menu items (anchor tags) */
+  padding: 0.75rem 1.25rem; /* Adjusts padding for alignment with main nav */
+  display: block;
+  text-decoration: none;
+  color: #212529; /* Darker text color for better contrast */
+  white-space: nowrap; /* Prevents long text from wrapping */
+  border-bottom: 0; /* Removes default bottom border */
+}
+
+.dropdown-menu a:hover { /* Hover effect for dropdown menu items */
+  background-color: #e9ecef; /* Matches hover background color from nav */
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px blue; /* Matches hover effect from nav */
+}
+
+.btn-secondary{
+  border-color: transparent;
+}
+.btn-secondary:hover{
+  background-color: transparent;
+  color: blue;
+}
+
+.caps {
+  text-transform: lowercase;
+}
+
+.caps::first-letter {
+  text-transform: uppercase;
+}
+
+main {
+  text-align: center;
+}
+
+.campus-img{
+  width: 100%; 
+  height: 425px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: whitesmoke;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer a {
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: none;
+  color: red;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px red;
+}

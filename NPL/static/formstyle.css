@@ -1,0 +1,124 @@
+header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: whitesmoke;
+}
+
+.logo {
+  width: 10rem; 
+}
+
+.page-title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: rgb(11, 78, 179);
+  margin: 0;
+}
+
+.company-name {
+  font-style: italic;
+  font-size: 3rem;
+  color: blue;
+}
+
+nav {
+  background-color: skyblue;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: none;
+  color: blue;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px blue;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.privacy {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+a:hover {
+  color: skyblue; /*#4caf50*/
+}
+
+button[type="submit"] {
+  background-color: skyblue; /*#4caf50*/
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+  background-color: blue; /*#3e8e41*/
+}
+
+.required .form-label::after {
+  content: " *";
+  color: red;
+}

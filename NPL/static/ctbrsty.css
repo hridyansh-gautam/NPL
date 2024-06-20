@@ -1,0 +1,128 @@
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: whitesmoke;
+  }
+  
+  .logo {
+    width: 10rem; /* Adjust the width as needed */
+  }
+  
+  .page-title {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .page-subtitle {
+    text-align: center;
+    color: rgb(11, 78, 179);
+    margin: 0;
+  }
+  
+  .company-name {
+    font-style: italic;
+    font-size: 3rem;
+    color: blue;
+  }
+  
+  nav {
+    background-color: skyblue;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav a {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: none;
+    color: blue;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  nav a:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px blue;
+  }
+  
+  h1{
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  .step {
+    display: none;
+  }
+  .step.active {
+    display: block;
+  }
+  
+  .progress {
+    position: relative;
+    height: 25px;
+  }
+  .progress-bar {
+    height: 100%;
+  }
+  .step-label {
+    position: absolute;
+    width: 25%;
+    text-align: center;
+    top: 0;
+    color: black;
+  }
+  
+  /* footer {
+      background-color: whitesmoke;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+    } */
+  .footer {
+    background-color: whitesmoke;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  footer a {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: none;
+    color: red;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  footer a:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px red;
+  }
+  
+  .wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1;
+    /* This will make sure content takes remaining space */
+    padding: 20px; /* Adjust padding as needed */
+  }
+  
+  .hidden {
+    display: none;
+  }

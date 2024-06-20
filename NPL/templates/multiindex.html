@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="multiindex.html" defer></script>
+    <title>DCC Registraion Form</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/logo1.png') }}"
+        alt="National Physical Laboratory Logo"
+        class="logo"
+      />
+      <div>
+        <h1 class="page-title">CSIR - National Physical Laboratory</h1>
+        <h3 class="page-subtitle">सी एस आई आर - राष्ट्रीय भौतिक प्रयोगशाला</h3>
+      </div>
+      <img
+        class="company-name"
+        src="{{ url_for('static', filename='images/logo2.png') }}"
+        alt="CSIR - NPL"
+      />
+    </header>
+    <form action="#" class="form">
+      <div class="progressbar">
+        <div class="progress" id="progress"></div>
+        <div
+          class="progress-step progress-step-active"
+          data-title="Customer Details"
+        ></div>
+        <div class="progress-step" data-title="Administative Data"></div>
+        <div class="progress-step" data-title="DateAnd Location"></div>
+        <div
+          class="progress-step"
+          data-title="Manufacturer And Item Information"
+        ></div>
+        <div
+          class="progress-step"
+          data-title="Calibration Laboratory Information"
+        ></div>
+        <div
+          class="progress-step"
+          data-title="Calibration Laboratory Equipment Information"
+        ></div>
+        <div class="progress-step" data-title="Measurement Results"></div>
+        <div class="progress-step" data-title="Calibration Authorities"></div>
+        <div
+          class="progress-step"
+          data-title="Measurement Result Calculation"
+        ></div>
+      </div>
+
+      <!-- 1 -->
+      <div class="form-step form-step-active">
+        <h2>Customer Information</h2>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="Customer name">Customer Name</label>
+            <input type="text" name="Customer name" id="Customer name" />
+          </div>
+          <div class="input-group">
+            <label for="email">Email-ID</label>
+            <input type="text" name="email" id="email" />
+          </div>
+        </div>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="phone">Phone</label>
+            <input type="number" name="phone" id="phone" />
+          </div>
+          <div class="input-group">
+            <label for="fax">Fax</label>
+            <input type="number" name="fax" id="fax" />
+          </div>
+        </div>
+        <h2>Location Information</h2>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" />
+          </div>
+          <div class="input-group">
+            <label for="state">State</label>
+            <input type="text" name="state" id="state" />
+          </div>
+          <div class="input-group">
+            <label for="post code">Post Code</label>
+            <input type="number" name="post code" id="post code" />
+          </div>
+        </div>
+        <div class="">
+          <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="form-step">
+        <h2>Software Information</h2>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="software name">Software Name</label>
+            <input type="text" name="software name" id="software name" />
+          </div>
+          <div class="input-group">
+            <label for="software versiom">Software Version</label>
+            <input type="text" name="software versiom" id="software versiom" />
+          </div>
+        </div>
+
+        <h2>Core Data</h2>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="Country Code">Country Code</label>
+            <input type="text" name="Country Code" id="Country Code" />
+          </div>
+          <div class="input-group">
+            <label for="Used Language Code">Used Language Code</label>
+            <input
+              type="text"
+              name="Used Language Code"
+              id="Used Language Code"
+            />
+          </div>
+        </div>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="Mandatory Language Code">Mandatory Language Code</label>
+            <input
+              type="text"
+              name="Mandatory Language Code"
+              id="Mandatory Language Code"
+            />
+          </div>
+          <div class="input-group">
+            <label for="Unique Identification">Unique Identification</label>
+            <input
+              type="number"
+              name="Unique Identification"
+              id="Unique Identification"
+            />
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="Order ID">Order-ID</label>
+          <input type="number" name="Order ID" id="Order ID" />
+        </div>
+
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="form-step">
+        <h2>Date And Location</h2>
+        <div class="input-group">
+          <label for="pbd">Performance Begin Date</label>
+          <input type="date" name="pbd" id="pbd" />
+        </div>
+        <div class="input-group">
+          <label for="ped">Performance End Date</label>
+          <input type="date" name="ped" id="ped" />
+        </div>
+        <div class="input-group">
+          <label for="Performance Location">Performance Location</label>
+          <input
+            type="text"
+            name="Performance Location"
+            id="Performance Location"
+          />
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="form-step">
+        <h2>Manufacturer And Item Information</h2>
+        <div class="input-group">
+          <label for="Item Name">Item Name</label>
+          <input type="text" name="Item Name" id="Item Name" />
+        </div>
+        <div class="input-group">
+          <label for="Manufacturer">Manufacturer</label>
+          <input type="text" name="Manufacturer" id="Manufacturer" />
+        </div>
+        <div class="input-group">
+          <label for="Model Number">Model Number</label>
+          <input type="number" name="Model Number" id="Model Number" />
+        </div>
+        <div class="input-group">
+          <label for="Serial Number">Serial Number</label>
+          <input type="number" name="Serial Number" id="Serial Number" />
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="form-step">
+        <h2>Contact Details</h2>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="Laboratory Name">Laboratory Name</label>
+            <input type="text" name="Laboratory Name" id="Laboratory Name" />
+          </div>
+          <div class="input-group">
+            <label for="email">Email-ID</label>
+            <input type="email" name="email" id="email" />
+          </div>
+        </div>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="phone">Phone</label>
+            <input type="number" name="phone" id="phone" />
+          </div>
+          <div class="input-group">
+            <label for="fax">Fax</label>
+            <input type="number" name="fax" id="fax" />
+          </div>
+        </div>
+        <h2>Location Information</h2>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" />
+          </div>
+          <div class="input-group">
+            <label for="state">State</label>
+            <input type="text" name="state" id="state" />
+          </div>
+          <div class="input-group">
+            <label for="post code">Post Code</label>
+            <input type="number" name="post code" id="post code" />
+          </div>
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="form-step">
+        <h2>Calibration Laboratory Equipment Information</h2>
+        <div class="input-group">
+          <label for="Measurement Equipment Name"
+            >Measurement Equipment Name</label
+          >
+          <input
+            type="text"
+            name="Measurement Equipment Name"
+            id="Measurement Equipment Name"
+          />
+        </div>
+        <div class="input-group">
+          <label for="Measurement Equipment Number"
+            >Measurement Equipment Number</label
+          >
+          <input
+            type="number"
+            name="Measurement Equipment Number"
+            id="Measurement Equipment Number"
+          />
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="form-step">
+        <h2>Measurement Details</h2>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="Method Used">Method Used</label>
+            <input type="text" name="Method Used" id="Method Used" />
+          </div>
+          <div class="input-group">
+            <label for="Measuring Equipment Used"
+              >Measuring Equipment Used</label
+            >
+            <input
+              type="text"
+              name="Measuring Equipment Used"
+              id="Measuring Equipment Used"
+            />
+          </div>
+        </div>
+        <h2>Influence Conditions</h2>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="Temperature Min.">Temperature Min.</label>
+            <input
+              type="number"
+              name="Temperature Min."
+              id="Temperature Min."
+            />
+          </div>
+          <div class="input-group">
+            <label for="Temperature Max.">Temperature Max.</label>
+            <input
+              type="number"
+              name="Temperature Max."
+              id="Temperature Max."
+            />
+          </div>
+          <div class="input-group">
+            <label for="Humidity Min.">Humidity Min.</label>
+            <input type="number" name="Humidity Min." id="Humidity Min." />
+          </div>
+          <div class="input-group">
+            <label for="Humidity Max.">Humidity Max.</label>
+            <input type="number" name="Humidity Max." id="Humidity Max." />
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="Description">Description</label>
+          <input type="text" name="Description" id="Description" />
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="form-step">
+        <h2>Calibration Authorities</h2>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="Name"> Name</label>
+            <input type="text" name=" Name" id=" Name" />
+          </div>
+          <div class="input-group">
+            <label for="email">Email-ID</label>
+            <input type="email" name="email" id="email" />
+          </div>
+        </div>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="Description">Description (Position)</label>
+            <input type="text" name="Description" id="Description" />
+          </div>
+          <div class="input-group">
+            <label for="Main Signer">Main Signer</label>
+            <input type="text" name="Main Signer" id="Main Signer" />
+          </div>
+        </div>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="Calibrated By">Calibrated By</label>
+            <input type="text" name="Calibrated By" id="Calibrated By" />
+          </div>
+          <div class="input-group">
+            <label for="Checked By">Checked By</label>
+            <input type="text" name="Checked By" id="Checked By" />
+          </div>
+        </div>
+        <div class="side-by-side">
+          <div class="input-group">
+            <label for="In Charge">In Charge</label>
+            <input type="text" name="In Charge" id="In Charge" />
+          </div>
+          <div class="input-group">
+            <label for="Product Status"> Product Status</label>
+            <input type="text" name=" Product Status" id=" Product Status" />
+          </div>
+        </div>
+
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="form-step">
+        <div class="upload-container">
+          <h2>Upload Excel File</h2>
+          <form id="uploadForm" class="upload-form">
+            <input type="file" id="fileInput" class="file-input" required />
+            <button type="submit" class="upload-button">Upload</button>
+          </form>
+          <p id="message" class="upload-message"></p>
+        </div>
+      </div>
+    </form>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="{{ url_for('static', filename='multiindex.js') }}"></script>
+
+    <script>
+      document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const fileInput = document.getElementById('fileInput');
+        const message = document.getElementById('message');
+  
+        if (!fileInput.files.length) {
+          message.textContent = 'Please select a file to upload';
+          return;
+        }
+  
+        const file = fileInput.files[0];
+        const formData = new FormData();
+        formData.append('file', file);
+  
+        try {
+          const response = await fetch('http://localhost:5000/upload', {
+            method: 'POST',
+            body: formData
+          });
+  
+          if (response.ok) {
+            message.textContent = 'File uploaded successfully';
+            setTimeout(() => {
+              window.location.href = 'http://localhost:3000/download';
+            }, 2000);
+          } else {
+            message.textContent = 'Failed to upload file';
+          }
+        } catch (error) {
+          message.textContent = 'Error uploading file: ' + error.message;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NPL India</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+    <style>
+      .dropdown-menu .dropdown-menu {
+          margin-left: 100%;
+          margin-top: -1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/logo1.png') }}"
+        alt="National Physical Laboratory Logo"
+        class="logo"
+      />
+      <div>
+        <h1 class="page-title">CSIR - National Physical Laboratory</h1>
+        <h3 class="page-subtitle">सी एस आई आर - राष्ट्रीय भौतिक प्रयोगशाला</h3>
+      </div>
+      <img
+        class="company-name"
+        src="{{ url_for('static', filename='images/logo2.png') }}"
+        alt="CSIR - NPL"
+      />
+    </header>
+    <nav>
+      <a href="login">Login</a>
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Register
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <a
+              class="dropdown-item"
+              href="indregister"
+              >Individual</a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="orgregister"
+              >Organisation</a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="empregister"
+              >Employee</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="campus-img" src="{{ url_for('static', filename='images/npl1.png') }}" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img class="campus-img" src="{{ url_for('static', filename='images/npl2.png') }}" alt="Image 2">
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <a class="color" href="about">About</a>
+      <a class="color" href="contact">Contact Us</a>
+    </footer>
+    <script>
+      function titleCase(str) {
+        return str
+          .toLowerCase()
+          .split(" ")
+          .map(function (word) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+          })
+          .join(" ");
+      }
+      var caps = document.getElementsByClassName("caps");
+      Array.from(caps).forEach((str) => {
+        str.innerHTML = titleCase(str.innerHTML);
+      });
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
