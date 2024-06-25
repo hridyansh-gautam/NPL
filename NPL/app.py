@@ -7,6 +7,7 @@ from datetime import timedelta
 import os
 import registration
 import pandas as pd
+import checksum
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -18,56 +19,9 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 
 db = SQLAlchemy(app)
 
-# class User(db.Model):
-#     user_id = db.Column(db.Integer, primary_key=True)
-#     username = db.Column(db.String(50), unique=True, nullable=False)
-#     password_hash = db.Column(db.String(255), nullable=False)
-
-# class UploadedFiles(db.Model):
-#     file_id = db.Column(db.Integer, primary_key=True)
-#     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'), nullable=False)
-#     file_name = db.Column(db.String(255), nullable=False)
-#     file_path = db.Column(db.String(255), nullable=False)
-#     upload_date = db.Column(db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
-#     conversion_status = db.Column(db.Boolean, default=False)
-
-class EmpReg(db.Model):
-    emp_reg_id = db.Column(db.Integer, primary_key=True)
-    f_name = db.Column(db.String(100), nullable=False)
-    l_name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(255), unique=True, nullable=False)
-    country_code = db.Column(db.Integer, nullable=False)
-    mobile_no = db.Column(db.String(20), nullable=False)
-    designation = db.Column(db.String(50), nullable=False)
-    emp_id = db.Column(db.Integer, nullable=False)
-    password = db.Column(db.String(255), nullable=False)
-
 @app.route('/')
 def home():
     return render_template('index.html')
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'GET':
-        return render_template('register.html')
-    elif request.method == 'POST':
-        data = request.get_json()
-    username = data.get('username')
-    password = data.get('password')
-
-    if not username or not password:
-        return jsonify({'message': 'Username and password are required'}), 400
-
-    if User.query.filter_by(username=username).first():
-        return jsonify({'message': 'Username already exists'}), 400
-
-    hashed_password = generate_password_hash(password)
-    new_user = User(username=username, password_hash=hashed_password)
-
-    db.session.add(new_user)
-    db.session.commit()
-
-    return jsonify({'message': 'User registered successfully'}), 201
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -75,18 +29,20 @@ def login():
         return render_template('login.html')
     elif request.method == 'POST':
         data = request.get_json()
-        username = data.get('username')
+        # username = data.get('username')
+        email = data.get('username')
         password = data.get('password')
         captchaToken = data.get('captchaToken')
 
-        if not username or not password or not captchaToken:
-            return jsonify({'message': 'Username, password, and CAPTCHA are required'}), 400
+        if not email or not password or not captchaToken:
+            return jsonify({'message': 'Email, password, and CAPTCHA are required'}), 400
 
-        current_user = User.query.filter_by(username=username).first()
-        if current_user and check_password_hash(current_user.password_hash, password):
-            session['username'] = current_user.username
+        # current_user = User.query.filter_by(username=username).first()
+        # if current_user and check_password_hash(current_user.password_hash, password):
+        if registration.check_org_credentials(email, password):
+            session['username'] = email
             session.permanent = True
-            return jsonify({'message': 'Login successful', 'username': current_user.username}), 200
+            return jsonify({'message': 'Login successful', 'username': email}), 200
 
         return jsonify({'message': 'Invalid username or password'}), 401
 
@@ -125,10 +81,10 @@ def indregister():
         }
         if data_dict['password'] != data.get('confirm_password'):
             return jsonify({'message': 'Passwords do not match'}), 400
-        
+        print(data_dict)
         response = registration.add_new_ind(data_dict)
         print(response)
-        return jsonify({'message': 'Registration successful', 'username': data_dict['org_name']}), 200
+        return jsonify({'message': 'Registration successful', 'username': data_dict['f_name'] + ' ' + data_dict['l_name']}), 200
 
 @app.route('/orgregister', methods=['GET', 'POST'])
 def orgregister():
@@ -154,7 +110,6 @@ def orgregister():
         if data_dict['password'] != data.get('confirmPassword'):
             return jsonify({'message': 'Passwords do not match'}), 400
 
-        print(data_dict)
         response = registration.add_new_org(data_dict)
         print(response)
         return jsonify({'message': 'Registration successful', 'username': data_dict['org_name']}), 200

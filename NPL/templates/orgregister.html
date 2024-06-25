@@ -235,39 +235,8 @@
     });
 
     window.onload = loadCountries;
-
-    // document.getElementById("registrationForm").addEventListener("submit", function (event) {
-    //   event.preventDefault();
-
-    //   const newPassword = document.getElementById("newPassword").value;
-    //   const confirmPassword = document.getElementById("confirmPassword").value;
-
-    //   if (newPassword !== confirmPassword) {
-    //     alert("Passwords do not match!");
-    //     return;
-    //   }
-
-    //   const formData = new FormData(this);
-    //   fetch('orgregister', {
-    //     method: 'POST',
-    //     body: formData,
-    //     contentType: 'application/json; charset=UTF-8'
-    //   })
-    //   .then(response => {
-    //     if (!response.ok) {
-    //       throw new Error('Network response was not ok');
-    //     }
-    //     return response.json();
-    //   })
-    //   .then(data => {
-    //     console.log('Success:', data);
-    //   })
-    //   .catch(error => {
-    //     console.error('Error:', error);
-    //   });
-    // });
-
-      document.getElementById("registrationForm").addEventListener("submit", function (event) {
+    
+    document.getElementById("registrationForm").addEventListener("submit", function (event) {
       event.preventDefault();
 
       const newPassword = document.getElementById("newPassword").value;

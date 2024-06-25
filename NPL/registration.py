@@ -1,6 +1,7 @@
-from sqlalchemy import create_engine, Column, Text, String, MetaData, Table, Integer
+from sqlalchemy import create_engine, Column, Text, String, MetaData, Table, Integer, select
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from typing import List, Dict
 
 # Connect to database
 db_name = "npl"
@@ -20,7 +21,7 @@ org_reg_table = Table(
     Column('org_name', String(255)),  
     Column('gst_no', String(20)),  
     Column('phone', String(20)),  
-    Column('landline', String(20)),  
+    Column('landline', String(20)), 
     Column('email', String(255), unique=True),  
     Column('alt_email', String(255), unique=True),  
     Column('addr_1', Text),
@@ -56,6 +57,19 @@ def get_org(org_reg_id: str):
     finally:
         session.close()
 
+def check_org_credentials(email: str, password: str) -> bool:
+    session = SessionLocal()
+    try:
+        # Query to check if the given email and password exist in the table
+        query = session.query(org_reg_table).filter(
+            org_reg_table.c.email == email,
+            org_reg_table.c.password == password
+        )
+        # Execute the query and check if any row matches
+        result = session.execute(query).fetchone()
+        return result is not None
+    finally:
+        session.close()
 
 metadata2 = MetaData()
 ind_reg_table = Table(
@@ -63,7 +77,7 @@ ind_reg_table = Table(
     Column('ind_reg_id', Integer, primary_key=True, autoincrement=True),
     Column('f_name', String(100)),  
     Column('l_name', String(100)),  
-    Column('phone', String(20)),  
+    Column('mobile_no', String(20)),  
     Column('email', String(255), unique=True),  
     Column('alt_email', String(255), unique=True),  
     Column('addr_1', Text),
@@ -81,12 +95,12 @@ def add_new_ind(data: dict):
         insert_stmt = ind_reg_table.insert().values(**data)
         session.execute(insert_stmt)
         session.commit()
+        return 'Individual Registration success'
     except Exception as e:
         session.rollback()
         raise e
     finally:
         session.close()
-        return 'Individual Registration success'
 
 def get_ind(ind_reg_id: str):
     session = SessionLocal()
@@ -121,12 +135,13 @@ def add_new_emp(data: dict):
         insert_stmt = emp_reg_table.insert().values(**data)
         session.execute(insert_stmt)
         session.commit()
+        return 'Employee Registration success'
     except Exception as e:
         session.rollback()
         raise e
     finally:
         session.close()
-        return 'Individual Registration success'
+        
 
 def get_emp(emp_reg_id: str):
     session = SessionLocal()
