@@ -29,7 +29,6 @@ def login():
         return render_template('login.html')
     elif request.method == 'POST':
         data = request.get_json()
-        # username = data.get('username')
         email = data.get('username')
         password = data.get('password')
         captchaToken = data.get('captchaToken')
@@ -37,8 +36,6 @@ def login():
         if not email or not password or not captchaToken:
             return jsonify({'message': 'Email, password, and CAPTCHA are required'}), 400
 
-        # current_user = User.query.filter_by(username=username).first()
-        # if current_user and check_password_hash(current_user.password_hash, password):
         if registration.check_org_credentials(email, password):
             session['username'] = email
             session.permanent = True
@@ -68,7 +65,7 @@ def indregister():
         data_dict = {
             'f_name': data.get('firstName'),
             'l_name': data.get('lastName'),
-            'phone': data.get('phone'),
+            'mobile_no': data.get('phone'),
             'email': data.get('email'),
             'alt_email': data.get('altEmail'),
             'addr_1': data.get('addressLine1'),
@@ -79,9 +76,8 @@ def indregister():
             'pincode': data.get('pincode'),
             'password': data.get('newPassword')
         }
-        if data_dict['password'] != data.get('confirm_password'):
+        if data_dict['password'] != data.get('confirmPassword'):
             return jsonify({'message': 'Passwords do not match'}), 400
-        print(data_dict)
         response = registration.add_new_ind(data_dict)
         print(response)
         return jsonify({'message': 'Registration successful', 'username': data_dict['f_name'] + ' ' + data_dict['l_name']}), 200
@@ -130,12 +126,12 @@ def empregister():
             'addr_1': data.get('addressLine1'),
             'password': data.get('newPassword'),
         }
-        if data_dict['password'] != data.get('confirm_password'):
+        if data_dict['password'] != data.get('confirmPassword'):
             return jsonify({'message': 'Passwords do not match'}), 400
         
         response = registration.add_new_emp(data_dict)
         print(response)
-        return jsonify({'message': 'Registration successful', 'username': data_dict['org_name']}), 200
+        return jsonify({'message': 'Registration successful', 'username': data_dict['f_name'] + ' ' + data_dict['l_name']}), 200
 
 @app.route('/admwelcome')
 def admwelcome():

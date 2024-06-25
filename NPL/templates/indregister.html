@@ -23,7 +23,7 @@
   </nav>
 
   <div class="container mt-5">
-    <form id="registrationForm">
+    <form id="registrationForm" action="/indregister" method="POST">
       <div class="row mb-3">
         <div class="col required">
           <label for="firstName" class="form-label">First Name</label>
@@ -202,7 +202,7 @@
       }
 
       const formData = new FormData(this);
-      fetch('submit-url', {
+      fetch('indregister', {
         method: 'POST',
         body: formData
       })
@@ -214,6 +214,7 @@
       })
       .then(data => {
         console.log('Success:', data);
+        window.location.href = 'login';
       })
       .catch(error => {
         console.error('Error:', error);
