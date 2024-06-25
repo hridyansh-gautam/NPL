@@ -4,6 +4,8 @@ import threading
 from sqlalchemy import create_engine, Column, Text, String, MetaData, Table
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+import pandas as pd
+from generate_pdf import Template
 
 # Connect to database
 db_name = "dcc"
@@ -35,7 +37,8 @@ certificate_table = Table(
     Column('resulttable', Text),
     Column('resultdesc', Text),
     Column('calibrationdate', String(255)),
-    Column('remarks', Text)
+    Column('remarks', Text),
+    Column('dio_no', String(50))
 )
 
 def insert_certificate(data: dict):
@@ -55,209 +58,56 @@ def get_certificate(certificate_no: str):
     try:
         select_stmt = certificate_table.select().where(certificate_table.c.certificateno == certificate_no)
         result = session.execute(select_stmt).fetchone()
-        # result_list = []
-        # for row in result:
-        #     result_list.append(row)
         results.append(result)
     finally:
         session.close()
 
-
-def create_pdf(data):
-    # LaTeX document
-    latex_code = f"""
-    \\DocumentMetadata{{
-        pdfversion=1.7,
-        pdfstandard=A-3b,
-    }}
-    \\documentclass[a4paper]{{article}}
-
-    %% Language and font encoding
-    \\usepackage[english]{{babel}}
-    \\usepackage{{textcomp}}
-    \\usepackage[T1]{{fontenc}}
-    \\usepackage{{fontspec}}
-    \\usepackage{{polyglossia}}
-    \\setmainlanguage{{english}} % Continue using english for rest of the document
-    \\setotherlanguages{{hindi}} % Now can use \\texthindi
-    \\newfontfamily\\hindifont{{Noto Sans Devanagari}}[Script=Devanagari]
-    \\setmainfont{{Arial}}
-
-    % Load the uarial package to use Arial font
-    \\usepackage[scaled]{{uarial}}
-    % Set Arial as the default font
-
-
-    %% Sets page size and margins
-    \\usepackage[a4paper]{{geometry}}
-    \\usepackage{{siunitx}}
-    \\usepackage{{array}}  % for specifying column alignment
-    \\usepackage{{makecell}}  % for formatting cells
-    \\usepackage{{longtable}}
-    \\usepackage{{booktabs}}
-    \\usepackage{{xcolor}}
-    \\usepackage{{multirow}}
-    \\usepackage{{multicol}}
-    \\usepackage{{makecell}}
-    \\newcounter{{rownum}} % Create a new counter
-    \\usepackage{{wrapfig}}
-    \\usepackage{{tcolorbox}}
-    \\usepackage{{amsmath}}
-    \\usepackage{{graphicx}}
-    \\usepackage{{tabularx}}
-    \\usepackage{{lastpage}} % For number of pages
-    \\usepackage{{fancyhdr}}%header & footer
-    \\usepackage{{lscape}}
-    \\usepackage{{setspace}} % For setting line spacing
-
-
-    \\pagestyle{{fancy}}
-    % Adjust margins
-    \\geometry{{
-        top=0.9cm,
-        bottom=10.7cm,
-        left=0.7cm,
-        right=0.7cm
-    }}
-
-    \\usepackage{{embedfile}}
-    \\embedfilesetup{{     
-        filesystem=URL,
-        mimetype=application/octet-stream,
-        afrelationship={{/Data}},
-        stringmethod=escape
-    }}
-    \\usepackage{{background}}
-    %\\pdfgentounicode=1 % So that pdf is machine readable
-
-    \\fancyhf{{}} 
-
-    \\renewcommand{{\\headrulewidth}}{{0pt}}
-    \\renewcommand\\footrule{{\\hrule width 19.65cm height 0.5mm}}
-
-    \\newcommand{{\\fullhline}}{{\\noalign{{\\hrule height 0.8mm}}}}
-
-    % Set column separation
-    \\setlength{{\\tabcolsep}}{{0pt}}
-
-
-    % Define watermark
-    \\backgroundsetup{{
-    scale=1.02,  % Scale the watermark
-    opacity=0.1,  % Opacity of the watermark (1 = opaque, 0 = fully transparent)
-    angle=0,  % Angle of the watermark
-    position=current page.center,  % Position of the watermark
-    vshift=-0.6cm,  % Vertical shift of the watermark
-    hshift=-0.2mm,  % Horizontal shift of the watermark
-    contents={{%
-        \\includegraphics[width=10cm,height=10cm]{{Logo_NPL_india.png}}  % Path to your watermark image
-    }}
-    }}
-
-
-    %%% HEADER %%%
-
-    \\fancyhead[L]{{
-    \\begin{{minipage}}{{13.4cm}}
-    \\begin{{spacing}}{{0.6}}
-    \\begin{{tabular}}{{>{{\\centering}}m{{2.2cm}} >{{\\centering}}m{{9 cm}} >{{\\centering\\arraybackslash}} m{{2.1 cm}}}}
-
-    \\raisebox{{-0.2cm}}{{\\includegraphics[width=3cm, height=3cm]{{CSIR_logo.png}}}}		&	\\makecell[bc]{{\\fontsize{{11}}{{12}}\\selectfont \\textbf{{\\texthindi{{सी एस आई आर- राष्ट्रीय भौतिक प्रयोगशाला}}}}\\\\\\fontsize{{11}}{{12}}\\selectfont \\textbf{{CSIR-NATIONAL PHYSICAL LABORATORY}}\\\\\\fontsize{{8}}{{12}}\\selectfont \\texthindi{{(वैज्ञानिक और औद्योगिक अनुसंधान परिषद)}}\\\\\\fontsize{{9}}{{12}}\\selectfont (Council of Scientific and Industrial Research)\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{(राष्ट्रीय मापिकी विज्ञान संस्थान (एनएमआई), सदस्य बीआईपीएम एवं हस्ताक्षरकर्ता सीआईपीएम --एमआरए)}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{(National Metrology Institute (NMI), Member BIPM and Signatory CIPM - MRA)}}\\\\\\fontsize{{7}}{{12}}\\selectfont \\textbf{{\\texthindi{{डॉ के एस कृष्णन मार्ग, नई दिल्ली-110012, भारत}}}}\\\\\\fontsize{{7}}{{12}}\\selectfont \\textbf{{Dr. K. S. Krishnan Marg, New Delhi-110012, INDIA}}\\\\\\fontsize{{7}}{{12}}\\selectfont \\texthindi{{दूरभाष}}\\textbf{{/Phone : 91-11-4560 8441, 8589, 8610, 9447,}}\\texthindi{{फैक्स}}\\textbf{{/Fax : 91-11-4560 8448}}\\\\\\fontsize{{7}}{{12}}\\selectfont \\texthindi{{ई-मेल}}\\textbf{{/E-mail: cfct@nplindia.org,}} \\texthindi{{वेबसाईट}}\\textbf{{/Website: www.nplindia.org}}}}	&	\\raisebox{{0.4cm}}{{\\includegraphics[width=2.35cm, height=2.35cm]{{Logo_NPL_india.png}}}}\\\\
-    \\end{{tabular}}
-    \\end{{spacing}}
-    \\end{{minipage}}%
-    \\begin{{minipage}}{{6.2cm}}
-    \\begin{{tabular}}{{>{{\\centering\\arraybackslash \\vrule width 0.8mm}} p{{6.2 cm}}}}
-    \\makecell{{\\texthindi{{अंशांकन प्रमाण पत्र}}\\\\\\textbf{{CALLIBRATION CERTIFICATE:}}\\\\\\input{{}}}}\\\\[1.5ex]
-    \\fullhline
-    \\makecell{{\\rule{{0pt}}{{1em}}\\texthindi{{प्रमाण पत्र संख्या}}/Certificate number:\\\\\\rule{{0pt}}{{1.5em}}{data.certificateno}}} \\\\ [1.5ex]
-    \\fullhline
-    \\makecell{{\\texthindi{{डी ओ आई संख्या}}/DOI number :\\\\ \\input{{}} }}\\\\[1.5ex]
-
-    \\end{{tabular}}
-    \\end{{minipage}}
-    \\begin{{tabular}}{{>{{\\centering}}p{{3.8cm}}!{{\\vrule width 0.8mm}}>{{\\centering}}p{{8.3cm}}!{{\\vrule width 0.8mm}}>{{\\centering}}p{{2.5cm}}!{{\\vrule width 0.8mm}}>{{\\centering\\arraybackslash}}p{{4.9cm}}}}
-    \\fullhline
-    \\texthindi{{दिनंक}}/\\textbf{{Date}} & \\makecell{{\\texthindi{{अगले अंशांकन हेतु अनुशंसित तिथि}}\\\\\\textbf{{Recommended date for the next calibration}}}} & \\texthindi{{पृष्ठ}}/\\textbf{{Page}} & \\texthindi{{पृष्ठों की संख्या}}/\\textbf{{No of pages}}\\\\
-    \\input{{inputs/date.tex}}&\\input{{inputs/recommendedDate.tex}}&\\thepage&\\pageref{{LastPage}}\\\\[1.8ex]
-    \\fullhline
-    \\end{{tabular}}
-    }}
-
-
-    %%% FOOTER %%%
-    \\fancyfoot[C]{{
-    \\begin{{minipage}}{{\\textwidth}}
-    \\centering
-    \\begin{{tabular}}{{ p{{7 cm}}  p{{7 cm}}  p{{7 cm}}}}
-    \\texthindi{{आशंकितकर्ता}} & \\texthindi{{जाँचकर्ता}} & \\texthindi{{प्रभारी वैज्ञानिक}} \\\\
-    \\textbf{{Caliberated by :}} & \\textbf{{Checked by :}} & \\textbf{{Scientist-in-charge :}}\\multirow{{-1}}{{*}}{{}} \\\\
-    \\multicolumn{{1}}{{c}}{{\\input{{inputs/calibratedBy.tex}}}} & \\multicolumn{{1}}{{c}}{{\\input{{inputs/checkedBy.tex}}}} & \\multicolumn{{1}}{{c}}{{\\input{{inputs/inCharge.tex}}}} \\\\[1.5 ex]
-    \\\\
-    & \\texthindi{{जारिकर्ता}}	 &\\\\
-    & \\textbf{{Issued by :}} &\\\\
-    & \\multicolumn{{1}}{{c}}{{\\input{{}}}} & \\\\
-    \\end{{tabular}}
-    \\end{{minipage}}
-    }}
-
-    \\setlength{{\\headheight}}{{6.9cm}}
-    \\setlength{{\\footskip}}{{1.95cm}}
-    \\begin{{document}}
-    \\headsep = 0.5cm
-
+def extract_tables_from_excel(excel_file):
+    xls = pd.ExcelFile(excel_file)
     
-    %%%% PAGE 1 %%%%%%%
-    \\hspace{{0.95cm}}
-    \\normalsize
-    \\begin{{tabular}}{{|p{{1cm}}| p{{6.74cm}} | p{{0.5cm}}| p{{8cm}}|}}
-
-    \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	\\makecell[l]{{Calibrated for}}		&:&	 \\makecell[tl]{{ \\input{{inputs/calibratedFor.tex}}}} \\\\
-    \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	\\makecell[l]{{Description and Identification \\\\of Item under Calibration}}  &:&	\\makecell[tl]{{\\input{{inputs/description.tex}}}} \\\\
-    \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[l]{{Environmental Conditions}} 	& :&	 \\makecell[tl]{{\\input{{inputs/environmentalConditions.tex}}}}\\\\
-    \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[l]{{Standard(s) used (with)\\\\ Associated uncertainty}}	&:& 	\\makecell[tl]{{\\input{{inputs/standardsUsed.tex}}}} \\\\
-    \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[l]{{Traceability of standard(s) used}}	&:&	\\makecell[lt]{{ \\input{{inputs/tracability.tex}}}} \\\\
-    \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[l]{{Principle /Methodology of\\\\ calibration and Calibration Procedure number}} 	& :&	\\makecell[tl]{{\\input{{inputs/calibrationProcedure.tex}}}} \\\\
-    \\end{{tabular}}
-
-    \\newpage
-
-    %%%%%% Page 2 %%%%%
-
-
-    \\stepcounter{{rownum}}\\arabic{{rownum}}. Result(s):	\\\\
-    \\input{{inputs/tables.tex}} \\\\
-    \\begin{{tabular}}{{|p{{1cm}}| p{{6.74cm}} | p{{8cm}}|}}
-    \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	\\makecell[l]{{Date(s) for calibration:}} 	&		 \\makecell[tl]{{ 11/9/2001}} \\\\
-    \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[l]{{Remark(s):}} 	&	\\makecell[tl]{{Remarks :-)}} \\\\
-
-    \\end{{tabular}}
-
-    \\embedfile{{user_doc.xlsx}}
-    \\end{{document}}
-    """
-
-    # Save the LaTeX code to a file
-    certificate_id = "001"
-    tex_file = f"{certificate_id}.tex"
-    with open(tex_file, "w", encoding='utf-8') as file:
-        file.write(latex_code)
-
-    # convert tex to pdf
-    try:
-        result = subprocess.run(["lualatex", tex_file], capture_output=True, text=True, check=True)
-        result = subprocess.run(["lualatex", tex_file], capture_output=True, text=True, check=True)
-        print(result.stdout)
-        print("PDF created successfully.")
-    except subprocess.CalledProcessError as e:
-        print("An error occurred while compiling the LaTeX document:")
-        print(e.stderr)
-
-    # remove extra files generated by LaTeX
-    for ext in [".aux", ".log", ".out", ".toc", ".tex", ".blg", ".bbl"]:
-        if os.path.exists(tex_file.replace(".tex", ext)):
-            os.remove(tex_file.replace(".tex", ext))
-
+    tables = []
+    
+    for sheet_name in xls.sheet_names:
+        df = pd.read_excel(xls, sheet_name=sheet_name, header=None)
+        table = []
+        header = None
+        
+        for i, row in df.iterrows():
+            if row.isnull().all():
+                if table:
+                    if header is not None:
+                        table_df = pd.DataFrame(table, columns=header)
+                        tables.append(table_df.dropna(axis=1, how='all'))
+                    table = []
+                    header = None 
+            else:
+                if header is None:
+                    header = row.tolist() 
+                else:
+                    table.append(row.tolist())
+        
+        if table:
+            if header is None:
+                header = table.pop(0).tolist() 
+            table_df = pd.DataFrame(table, columns=header)
+            tables.append(table_df.dropna(axis=1, how='all'))
+    
+    pg2_tables = ''
+    for i, table in enumerate(tables):
+        col_count = len(table.columns)
+        col_format = ''.join(['|X' for _ in range(1,col_count)])
+        tex = table.to_latex(
+            multicolumn=True, 
+            header=True, 
+            index=False, 
+            column_format='|>{\centering}p{1cm}' + col_format + '|',  
+            caption=f"This is Table {i + 1}"
+        )
+        tex = tex.replace('tabular', 'tabularx').replace('\\toprule', '\\hline').replace('\\midrule', '').replace('\\bottomrule', '')
+        tex = tex.replace('\\\n', '\\ \\hline\n').replace('\\begin{tabularx}', '\\begin{tabularx}{\\textwidth}')
+        pg2_tables += tex
+        print(f"Table {i + 1} created.")
+    return pg2_tables
 
 def data_preprocess(data):
     for key, val in data.items():
@@ -266,14 +116,6 @@ def data_preprocess(data):
         val = val.replace('\n', ' \\\\\n')
         data[key] = val
     return data
-
-# \SI{<value>}{<unit>}
-# def formatting(data):
-#     data['envconditions'] = data['envconditions']
-#     data['stdsused'] = data['stdsused']
-#     data['resultdesc'] = data['resultdesc']
-#     data['remarks'] = data['remarks']
-#     return data
 
 # data
 data = {
@@ -311,5 +153,8 @@ data_to_store = data_preprocess(data)
 
 # get data
 call_thread(target=get_certificate, args="N23070405/D3.03/C-037")
-
-create_pdf(results[0])
+# stds_used = results[0].stdsused.replace('\n \\\\', '\n')
+tabs = extract_tables_from_excel('user_doc.xlsx')
+print(tabs)
+template = Template()
+template.create_pdf(results[0], tabs)
