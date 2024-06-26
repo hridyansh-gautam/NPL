@@ -46,7 +46,31 @@
       />
     </header>
     <nav>
-      <a href="login">Login</a>
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Login
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <a
+              class="dropdown-item"
+              href="emplogin"
+              >Employee</a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="custlogin"
+              >Customer</a>
+          </li>
+        </ul>
+      </div>
       <div class="dropdown">
         <button
           class="btn btn-secondary dropdown-toggle"

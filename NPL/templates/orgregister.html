@@ -75,10 +75,6 @@
           <label for="orgName" class="form-label">Organization Name</label>
           <input type="text" class="form-control" id="orgName" name="orgName" placeholder="Organization Name" required>
         </div>
-        <div class="col required">
-          <label for="gst" class="form-label">GST Number (If Country = India)</label>
-          <input type="text" class="form-control" id="gst" name="gst" placeholder="GST Number" required>
-        </div>
       </div>
 
       <div class="row mb-3">
@@ -112,9 +108,8 @@
 
       <div class="row mb-3">
         <div class="col required">
-          <label for="city" class="form-label">City</label>
-          <select class="form-select" id="city" name="city" required>
-            <option selected disabled>Select City</option>
+          <label for="country" class="form-label">Country</label>
+          <select class="form-select" id="country" name="country" required>
           </select>
         </div>
         <div class="col required">
@@ -124,14 +119,19 @@
           </select>
         </div>
         <div class="col required">
-          <label for="country" class="form-label">Country</label>
-          <select class="form-select" id="country" name="country" required>
+          <label for="city" class="form-label">City</label>
+          <select class="form-select" id="city" name="city" required>
+            <option selected disabled>Select City</option>
           </select>
         </div>
         <div class="col required">
           <label for="pincode" class="form-label">Pincode</label>
           <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Pincode" required>
         </div>
+        <div class="col required">
+          <label for="gst" class="form-label">GST Number (If Country = India)</label>
+          <input type="text" class="form-control" id="gst" name="gst" placeholder="GST Number" disabled>
+        </div>        
       </div>
 
       <div class="row mb-3 required">
@@ -169,6 +169,7 @@
     const countryDropdown = document.getElementById('country');
     const stateDropdown = document.getElementById('state');
     const cityDropdown = document.getElementById('city');
+    const gstInput = document.getElementById('gst');
 
     function populateDropdown(dropdown, items, defaultText) {
       dropdown.innerHTML = `<option value="">${defaultText}</option>`;
@@ -214,7 +215,7 @@
       .catch(error => console.error('Error loading cities:', error));
     }
 
-    countryDropdown.addEventListener('change', () => {
+    function handleCountryChange() {
       const countryCode = countryDropdown.value;
       if (countryCode) {
         loadStates(countryCode);
@@ -222,7 +223,17 @@
         stateDropdown.innerHTML = '<option value="">Select State</option>';
         cityDropdown.innerHTML = '<option value="">Select City</option>';
       }
-    });
+
+      if (countryCode === 'IN') { 
+        gstInput.disabled = false;
+        gstInput.required = true;
+      } else {
+        gstInput.disabled = true;
+        gstInput.required = false;
+      }
+    }
+
+    countryDropdown.addEventListener('change', handleCountryChange);
 
     stateDropdown.addEventListener('change', () => {
       const countryCode = countryDropdown.value;
@@ -235,7 +246,7 @@
     });
 
     window.onload = loadCountries;
-    
+
     document.getElementById("registrationForm").addEventListener("submit", function (event) {
       event.preventDefault();
 
@@ -261,13 +272,12 @@
       })
       .then(data => {
         console.log('Success:', data);
-        window.location.href = 'login'; 
+        window.location.href = 'custlogin'; 
       })
       .catch(error => {
         console.error('Error:', error);
       });
     });
-
-  </script>
+</script>
 </body>
 </html>

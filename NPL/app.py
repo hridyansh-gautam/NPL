@@ -23,10 +23,10 @@ db = SQLAlchemy(app)
 def home():
     return render_template('index.html')
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+@app.route('/custlogin', methods=['GET', 'POST'])
+def custlogin():
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('custlogin.html')
     elif request.method == 'POST':
         data = request.get_json()
         email = data.get('username')
@@ -43,10 +43,36 @@ def login():
 
         return jsonify({'message': 'Invalid username or password'}), 401
 
-@app.route('/logout', methods=['POST'])
+@app.route('/emplogin', methods=['GET', 'POST'])
+def emplogin():
+    if request.method == 'GET':
+        return render_template('emplogin.html')
+    elif request.method == 'POST':
+        data = request.get_json()
+        email = data.get('username')
+        password = data.get('password')
+        captchaToken = data.get('captchaToken')
+
+        if not email or not password or not captchaToken:
+            return jsonify({'message': 'Email, password, and CAPTCHA are required'}), 400
+
+        user_info = registration.check_emp_credentials(email, password)
+        if user_info:
+            session['username'] = email
+            session.permanent = True
+            return jsonify({
+                'message': 'Login successful',
+                'username': email,
+                'designation': user_info['designation']
+            }), 200
+
+        return jsonify({'message': 'Invalid username or password'}), 401
+
+@app.route('/logout', methods=['GET'])
 def logout():
     session.pop('username', None)
-    return jsonify({'message': 'Logged out successfully'}), 200
+    
+    return redirect( url_for('home') )
 
 @app.route('/download')
 def download():
@@ -151,7 +177,7 @@ def ctbr():
 
 @app.route('/dcc')
 def dcc():
-    return render_template('multiindex.html')
+    return render_template('dcc.html')
 
 @app.route('/about')
 def about():
