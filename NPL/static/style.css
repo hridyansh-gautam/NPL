@@ -29,7 +29,7 @@ header {
 }
 
 .logo {
-  width: 10rem; /* Adjust the width as needed */
+  width: 10rem;
 }
 
 .page-title {
@@ -38,7 +38,7 @@ header {
   margin: 0;
 }
 
-.page-subtitle{
+.page-subtitle {
   text-align: center;
   color: rgb(11, 78, 179);
   margin: 0;
@@ -47,12 +47,36 @@ header {
 .company-name {
   font-style: italic;
   font-size: 3rem;
-  color: blue;}
+  color: blue;
+}
+
+nav {
+  background-color: skyblue;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: none;
+  color: blue;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px blue;
+}
 
 /* Global Stylings */
 label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 5px;
 }
 
 input {
@@ -133,11 +157,11 @@ input {
 
 /* Form */
 .form {
-  /* width: 150vh;
-  margin: 10rem auto; */
-  border: 1px solid #ccc;
-  border-radius: 0.35rem;
+  width: 99%;
+  height: 100vh;
+  margin: 0;
   padding: 1.5rem;
+  
   /* background-color: lightblue; */
 }
 
@@ -189,58 +213,17 @@ input {
 }
 
 .side-by-side {
-    display: flex;
-    gap: 20px;
-  
-}
-
-.upload-container {
-  max-width: 400px;
-  margin: 150px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.upload-container h2 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.upload-form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 20px;
 }
 
-.file-input {
+.add-remove-btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.software-entry {
+  border-bottom: 1px solid #ccc;
   margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.upload-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.upload-button:hover {
-  background-color: #0056b3;
-}
-
-.upload-message {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #007bff;
+  padding-bottom: 20px;
 }

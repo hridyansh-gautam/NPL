@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="dcc.html" defer></script>
+    <title>DCC Registraion Form</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/logo1.png') }}"
+        alt="National Physical Laboratory Logo"
+        class="logo"
+      />
+      <div>
+        <h1 class="page-title">CSIR - National Physical Laboratory</h1>
+        <h3 class="page-subtitle">सी एस आई आर - राष्ट्रीय भौतिक प्रयोगशाला</h3>
+      </div>
+      <img
+        class="company-name"
+        src="{{ url_for('static', filename='images/logo2.png') }}"
+        alt="CSIR - NPL"
+      />
+    </header>
+    <!-- Navigation -->
+    <nav class="p-2">
+      <a href="/Users/adityatyagi/Downloads/NPL Form/index.html">Home</a>
+    </nav>
+
+    <!-- Container -->
+    <div class="container">
+      <form action="#" class="form">
+        <h1 class="text-center">Digital Calibration Certificate</h1>
+
+        <!-- Progress Bar -->
+        <div class="progressbar">
+          <div class="progress" id="progress"></div>
+          <div
+            class="progress-step progress-step-active"
+            data-title="Customer Details"
+          ></div>
+          <div class="progress-step" data-title="Administrative Data"></div>
+          <div class="progress-step" data-title="Date And Location"></div>
+          <div
+            class="progress-step"
+            data-title="Manufacturer And Item Information"
+          ></div>
+          <div
+            class="progress-step"
+            data-title="Calibration Laboratory Information"
+          ></div>
+          <div
+            class="progress-step"
+            data-title="Calibration Laboratory Equipment Information"
+          ></div>
+          <div class="progress-step" data-title="Measurement Results"></div>
+          <div class="progress-step" data-title="Calibration Authorities"></div>
+          <div
+            class="progress-step"
+            data-title="Measurement Result Calculation"
+          ></div>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="form-step form-step-active">
+          <h2>Customer Information</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="Customer name" class="form-label"
+                >Customer Name<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="Customer name"
+                id="Customer name"
+                placeholder="Customer Name"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label"
+                >Email-ID<span class="text-danger">*</span></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                id="email"
+                placeholder="Email-ID"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label for="country-code" class="form-label"
+                >Country Code<span class="text-danger">*</span></label
+              >
+              <select
+                class="form-select"
+                id="country-code"
+                name="country-code"
+                required
+              >
+                <!-- Add country options here -->
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="phone" class="form-label"
+                >Phone<span class="text-danger">*</span></label
+              >
+              <input
+                type="number"
+                class="form-control"
+                name="phone"
+                id="phone"
+                placeholder="Phone"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="fax" class="form-label">Fax</label>
+              <input
+                type="number"
+                class="form-control"
+                name="fax"
+                id="fax"
+                placeholder="Fax"
+              />
+            </div>
+          </div>
+          <h2>Location Information</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="country" class="form-label"
+                >Country<span class="text-danger">*</span></label
+              >
+              <select class="form-select" id="country" name="country" required>
+                <!-- Add country options here -->
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="state" class="form-label"
+                >State<span class="text-danger">*</span></label
+              >
+              <select class="form-select" id="state" name="state" required>
+                <!-- Add state options here -->
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="post code" class="form-label"
+                >Post Code<span class="text-danger">*</span></label
+              >
+              <input
+                type="number"
+                class="form-control"
+                name="post code"
+                id="post code"
+                placeholder="Post Code"
+                required
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-end">
+            <a href="#" class="btn btn-primary btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="form-step">
+          <div id="software-container">
+            <div class="software-entry">
+              <h2>Software Information</h2>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="software-name-0" class="form-label"
+                    >Software Name<span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="software-name"
+                    id="software-name-0"
+                    placeholder="Software Name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="software-version-0" class="form-label"
+                    >Software Version<span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="software-version"
+                    id="software-version-0"
+                    placeholder="Software Version"
+                    required
+                  />
+                </div>
+              </div>
+              <h2>Core Data</h2>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="country-code-0" class="form-label"
+                    >Country Code<span class="text-danger">*</span></label
+                  >
+                  <select
+                    class="form-select"
+                    id="country-code-0"
+                    name="country-code"
+                    required
+                  >
+                    <!-- Add country options here -->
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="used-language-code-0" class="form-label"
+                    >Used Language Code<span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="used-language-code"
+                    id="used-language-code-0"
+                    placeholder="Used Language Code"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="mandatory-language-code-0" class="form-label"
+                    >Mandatory Language Code<span class="text-danger"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="mandatory-language-code"
+                    id="mandatory-language-code-0"
+                    placeholder="Mandatory Language Code"
+                    required
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="unique-identification-0" class="form-label"
+                    >Unique Identification<span class="text-danger"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="unique-identification"
+                    id="unique-identification-0"
+                    placeholder="Unique Identification"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="order-id-0" class="form-label"
+                  >Order-ID<span class="text-danger">*</span></label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  name="order-id"
+                  id="order-id-0"
+                  placeholder="Order-ID"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <button
+              id="add-software"
+              class="btn btn-outline-primary"
+              type="button"
+            >
+              Add Software
+            </button>
+            <button
+              id="remove-software"
+              class="btn btn-outline-danger"
+              type="button"
+            >
+              Remove Software
+            </button>
+          </div>
+          <div class="d-flex justify-content-between mt-3">
+            <a href="#" class="btn btn-secondary btn-prev">Previous</a>
+            <a href="#" class="btn btn-primary btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="form-step">
+          <h2>Date and Location Information</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="start-date" class="form-label"
+                >Start Date<span class="text-danger">*</span></label
+              >
+              <input
+                type="date"
+                class="form-control"
+                name="start-date"
+                id="start-date"
+                placeholder="Start Date"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="end-date" class="form-label"
+                >End Date<span class="text-danger">*</span></label
+              >
+              <input
+                type="date"
+                class="form-control"
+                name="end-date"
+                id="end-date"
+                placeholder="End Date"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="location" class="form-label"
+                >Location<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="location"
+                id="location"
+                placeholder="Location"
+                required
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-secondary btn-prev">Previous</a>
+            <a href="#" class="btn btn-primary btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="form-step">
+          <h2>Manufacturer and Item Information</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="item-name" class="form-label"
+                >Item Name<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="item-name"
+                id="item-name"
+                placeholder="Item Name"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="Manufacturer" class="form-label"
+                >Manufacturer<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="Manufacturer"
+                id="Manufacturer"
+                placeholder="Manufacturer"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="model-number" class="form-label"
+                >Model Number<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="model-number"
+                id="model-number"
+                placeholder="Model Number"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="serial-number" class="form-label"
+                >Serial Number<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="serial-number"
+                id="serial-number"
+                placeholder="Serial Number"
+                required
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-secondary btn-prev">Previous</a>
+            <a href="#" class="btn btn-primary btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="form-step">
+          <h2>Contact Details</h2>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="laboratory-name" class="form-label"
+                >Laboratory Name<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="laboratory-name"
+                id="laboratory-name"
+                placeholder="Laboratory Name"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="laboratory-email" class="form-label"
+                >Laboratory Email<span class="text-danger">*</span></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                name="laboratory-email"
+                id="laboratory-email"
+                placeholder="Laboratory Email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="laboratory-contact" class="form-label"
+                >Laboratory Contact<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="laboratory-contact"
+                id="laboratory-contact"
+                placeholder="Laboratory Contact"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="laboratory-fax" class="form-label"
+                >Laboratory Fax<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="laboratory-fax"
+                id="laboratory-fax"
+                placeholder="Laboratory fax"
+                required
+              />
+            </div>
+          </div>
+          <h2>Location Details</h2>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label for="street" class="form-label"
+                >Street<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="street"
+                id="street"
+                placeholder="Street"
+                required
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="country" class="form-label"
+                >Country<span class="text-danger">*</span></label
+              >
+              <select class="form-select" id="country" name="country" required>
+                <!-- Add country options here -->
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state" class="form-label"
+                >State<span class="text-danger">*</span></label
+              >
+              <select class="form-select" id="state" name="state" required>
+                <!-- Add state options here -->
+              </select>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="post code" class="form-label"
+                >Post Code<span class="text-danger">*</span></label
+              >
+              <input
+                type="number"
+                class="form-control"
+                name="post code"
+                id="post code"
+                placeholder="Post Code"
+                required
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-secondary btn-prev">Previous</a>
+            <a href="#" class="btn btn-primary btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="form-step">
+          <h2>Calibration Laboratory Equipment Information</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="equipment-name" class="form-label"
+                >Equipment Name<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="equipment-name"
+                id="equipment-name"
+                placeholder="Equipment Name"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="equipment-number" class="form-label"
+                >Equipment Number<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="equipment-number"
+                id="equipment-number"
+                placeholder="Equipment Number"
+                required
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-secondary btn-prev">Previous</a>
+            <a href="#" class="btn btn-primary btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="form-step">
+          <h2>Method Information</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="Method-Used" class="Method-Used"
+                >Method Used<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="Method-Used"
+                id="Method-Used"
+                placeholder="Method Used"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="measuring-equipment-name" class="form-label"
+                >Measuring Equipment Name<span class="text-danger"
+                  >*</span
+                ></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="measuring-equipment-name"
+                id="measuring-equipment-name"
+                placeholder="Measuring Equipment Name"
+                required
+              />
+            </div>
+          </div>
+
+          <h2>Influence Condition</h2>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label for="description" class="form-label"
+                >Description<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="description"
+                id="description"
+                placeholder="Description"
+                required
+              />
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="Temperature-Min " class="form-label"
+                >Temperature-Min. <span class="text-danger">*</span></label
+              >
+              <input
+                type="number"
+                class="form-control"
+                name="Temperature-Min "
+                id="Temperature-Min "
+                placeholder="Temperature-Min. "
+                required
+              />
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="Temperature-Max" class="form-label"
+                >Temperature Max.<span class="text-danger">*</span></label
+              >
+              <input
+                type="number"
+                class="form-control"
+                name="Temperature-Max"
+                id="Temperature-Max"
+                placeholder="Temperature Max."
+                required
+              />
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="Humidity-Min" class="form-label"
+                >Humidity Min.<span class="text-danger">*</span></label
+              >
+              <input
+                type="number"
+                class="form-control"
+                name="Humidity-Min"
+                id="Humidity-Min"
+                placeholder="Humidity Min."
+                required
+              />
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="Humidity-Max" class="form-label"
+                >Humidity Max.<span class="text-danger">*</span></label
+              >
+              <input
+                type="number"
+                class="form-control"
+                name="Humidity-Max"
+                id="Humidity-Max"
+                placeholder="Humidity Max."
+                required
+              />
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-secondary btn-prev">Previous</a>
+            <a href="#" class="btn btn-primary btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- Step 8 -->
+        <div class="form-step">
+          <h2>Head</h2>
+          <div class="row">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email ID</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email ID"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="description" class="form-label"
+                >Description (Position)</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="description"
+                placeholder="Description (Position)"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="signer" class="form-label">Signer</label>
+              <select class="form-select" id="signer" required>
+                <option value="" selected disabled>Select Signer</option>
+                <option value="signer1">Signer 1</option>
+                <option value="signer2">Signer 2</option>
+                <option value="signer3">Signer 3</option>
+                <option value="signer4">Signer 4</option>
+                <option value="signer5">Signer 5</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="calibrated-by" class="form-label"
+                >Calibrated By</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="calibrated-by"
+                placeholder="Calibrated By"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="checked-by" class="form-label">Checked By</label>
+              <input
+                type="text"
+                class="form-control"
+                id="checked-by"
+                placeholder="Checked By"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="in-charge" class="form-label">In Charge</label>
+              <input
+                type="text"
+                class="form-control"
+                id="in-charge"
+                placeholder="In Charge"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="product-status" class="form-label"
+                >Product Status</label
+              >
+              <select class="form-select" id="product-status" required>
+                <option value="" selected disabled>
+                  Select Product Status
+                </option>
+                <option value="status1">Status 1</option>
+                <option value="status2">Status 2</option>
+                <option value="status3">Status 3</option>
+                <option value="status4">Status 4</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-secondary btn-prev">Previous</a>
+            <a href="#" class="btn btn-primary btn-next">Next</a>
+          </div>
+        </div>
+
+        <!-- Step 9 -->
+        <div class="form-step">
+          <h2>Measurement Result Calculation</h2>
+          <div class="mb-3">
+            <label for="excel" class="form-label">Upload Excel</label>
+            <input
+              type="file"
+              class="form-control"
+              id="excel"
+              accept=".xls"
+              required
+            />
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-secondary btn-prev">Previous</a>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="{{ url_for('static', filename='dcc.js') }}"></script>
+
+    <script>
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+          const fileInput = document.getElementById("fileInput");
+          const message = document.getElementById("message");
+
+          if (!fileInput.files.length) {
+            message.textContent = "Please select a file to upload";
+            return;
+          }
+
+          const file = fileInput.files[0];
+          const formData = new FormData();
+          formData.append("file", file);
+
+          try {
+            const response = await fetch("http://localhost:5000/upload", {
+              method: "POST",
+              body: formData,
+            });
+
+            if (response.ok) {
+              message.textContent = "File uploaded successfully";
+              setTimeout(() => {
+                window.location.href = "http://localhost:3000/download";
+              }, 2000);
+            } else {
+              message.textContent = "Failed to upload file";
+            }
+          } catch (error) {
+            message.textContent = "Error uploading file: " + error.message;
+          }
+        });
+    </script>
+  </body>
+</html>
