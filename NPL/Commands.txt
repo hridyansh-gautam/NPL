@@ -1,0 +1,89 @@
+database = DCC
+
+CREATE TABLE certificate (
+  cert_id SERIAL,
+  cert_no VARCHAR(255) PRIMARY KEY,
+  device_name VARCHAR(255),
+  end_date VARCHAR(12),
+  next_date VARCHAR(12),
+  calibrated_for TEXT,
+  description TEXT,
+  env_conditions TEXT,
+  stds_used TEXT,
+  tracability TEXT,
+  procedure TEXT,
+  calibrated_by VARCHAR(255),
+  checked_by VARCHAR(255),
+  incharge VARCHAR(255),
+  issued_by VARCHAR(255),
+  result_table TEXT,
+  result_desc TEXT,
+  calibration_date VARCHAR(255),
+  doi_no VARCHAR(100),
+  remarks TEXT,
+  checksum VARCHAR(255)
+);
+
+
+CREATE TABLE ind_reg (
+  ind_reg_id SERIAL PRIMARY KEY,
+  f_name VARCHAR(100),
+  l_name VARCHAR(100),
+  email VARCHAR(255) UNIQUE,
+  alt_email VARCHAR(255) UNIQUE,
+  mobile_no VARCHAR(20),
+  addr_1 TEXT,
+  addr_2 TEXT,
+  country VARCHAR(100),
+  state VARCHAR(100),
+  city VARCHAR(100),
+  pincode VARCHAR(15),
+  password VARCHAR(255)
+);
+
+CREATE TABLE org_reg (
+  org_reg_id SERIAL PRIMARY KEY,
+  org_type VARCHAR(40),
+  org_name VARCHAR(255),
+  gst_no VARCHAR(20),
+  email VARCHAR(255) UNIQUE,
+  alt_email VARCHAR(255) UNIQUE,
+  phone VARCHAR(20),
+  landline VARCHAR(20),
+  addr_1 TEXT,
+  country VARCHAR(100),
+  state VARCHAR(100),
+  city VARCHAR(100),
+  pincode VARCHAR(15),
+  password VARCHAR(255)
+);
+
+
+CREATE TABLE emp_reg (
+emp_reg_id SERIAL PRIMARY KEY,
+  f_name VARCHAR(100),
+  l_name VARCHAR(100),
+  emp_id VARCHAR(255),
+  email VARCHAR(255) UNIQUE,
+  mobile_no VARCHAR(20),
+  designation VARCHAR(50),
+  addr_1 TEXT,
+  password VARCHAR(255)
+);
+
+CREATE TABLE cust_reg (
+  cust_reg_id SERIAL PRIMARY KEY,
+  cust_type VARCHAR(40),
+  cust_name VARCHAR(100),
+  cust_email VARCHAR(255) UNIQUE,
+  alt_email VARCHAR(255) UNIQUE,
+  mobile_no VARCHAR(20),
+  landline_no VARCHAR(20),
+  cust_addr_1 TEXT,
+  cust_addr_2 TEXT,
+  country VARCHAR(100),
+  state VARCHAR(100),
+  city VARCHAR(100),
+  pincode VARCHAR(15),
+  password VARCHAR(255)
+);
