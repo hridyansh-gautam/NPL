@@ -87,3 +87,60 @@ CREATE TABLE cust_reg (
   pincode VARCHAR(15),
   password VARCHAR(255)
 );
+
+CREATE TABLE calibration_testing (
+    id SERIAL,
+    service_types VARCHAR(255),
+    service_name VARCHAR(255),
+    service_code VARCHAR(50) PRIMARY KEY
+);
+
+...
+
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Mass Standards', 'cd1_01');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Length, Dimension and Nanometrology', 'cd1_02');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Temperature & Humidity Metrology', 'cd1_03');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Optical Radiation Metrology', 'cd1_04');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Force and Hardness Standards', 'cd1_05');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Pressure, Vaccum and Ultrasonic Metrology', 'cd1_06a');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Acoustics & Vibration Stds', 'cd1_07');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Fluid Flow Metrology (Gas Flow)', 'cd1_08b');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Fluid Flow Metrology (Water Flow)', 'cd1_08c');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'DC Voltage ,DC Current, DC resistance & DC Charge', 'cd2_01a');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'LF, HF Impedance & DC Metrology (Capacitance, Inductance, AC Resistance, AC Voltage Ratio, Dissipation Factor, LCR (Meter / Bridge))', 'cd2_01b');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'LF, HF Impedance & DC Metrology (DC High Voltage (>1 kV), DC High Voltage Divider Ratio, DC High Current & DC Low Resistance)', 'cd2_01c');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'High Voltage & Current Metrology Section', 'cd2_02');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'AC Power & Energy Metrology', 'cd2_03');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Quantum Hall Resistance Standards', 'cd2_05');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Gas Metrology', 'cd3_02');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Defibrillator Analyser & Defibrillator Machine Standard', 'cd3_03');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Time & Frequency Standard', 'cd6_01');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'LF & HF Voltage, Current and Microwave Metrology (AC Voltage, AC Current, Frequency, AC-DC Voltage Transfer Difference, AC-DC Current Transfer Difference and AC-DC Voltage & Force)', 'cd6_02a');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'LF & HF Voltage, Current and Microwave Metrology (Frequency, RF Voltage,Microwave Power, Effective Efficiency, Calibration Factor, Voltage Amplitude, AC Voltage & Frequency and Voltage Amplitude & Frequency)', 'cd6_02b');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'LF & HF Voltage, Current and Microwave Metrology', 'cd6_02c');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'LF & HF Voltage, Current and Microwave Metrology (DC Voltage)', 'cd6_02d');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Electromagnetic Metrology Section (Microwave Metrology)', 'cd6_03a');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Electromagnetic Metrology Section (Magnetic Metrology)', 'cd6_03b');
+
+...
+
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Temperature & Humidity Metrology', 'td1_03');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Pressure Vaccum & Ultrasonics Metrology', 'td1_06b');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Acoustics & Vibration Stds', 'td1_07');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Fluid Flow Metrology', 'td1_08a');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'LF, HF Impedance & DC Metrology', 'td2_01');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Gas Metrology', 'td3_02');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Thin Film Devices Group', 'td3_04');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'InorganicPhotovoltaic Devices', 'td4_01');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Advanced Carbon product Metrology', 'td4_03');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Outreach and RMP Group', 'td5_02');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Chemical & Food Group', 'td5_03');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Microwave Metrology Section', 'td6_03a');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Magnetic Metrology Section', 'td6_03b');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Time & Frequency Metrology', 'td6_01');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Testing Charges', 'Gas Metrology', 'td3_02b');
+
+...
+
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('BND', 'In-House Group', 'bd5_01');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('BND', 'Management Group', 'bd5_04');

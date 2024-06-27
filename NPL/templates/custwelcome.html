@@ -31,43 +31,18 @@
     </header>
     <nav>
       <div class="dropdown">
-        <button
-          class="btn text-primary bg-transparent border-0 dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton1"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
+        <button class="btn text-primary bg-transparent border-0 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           List Of Services
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li>
-            <a
-              class="dropdown-item"
-              href="#"
-              >Service 1</a
-            >
-          </li>
-          <li>
-            <a
-              class="dropdown-item"
-              href="#"
-              >Service 2</a
-            >
-          </li>
-          <li>
-            <a
-              class="dropdown-item"
-              href="#"
-              >Service 3</a
-            >
-          </li>
+          {% for service_type in service_types %}
+          <li><a class="dropdown-item" href="#">{{ service_type }}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <a href="ctbr">CTBR Form</a>
       <a href="#">Track Requests</a>
     </nav>
-
     <main>
       <h1>Welcome! You are logged in.</h1>
     </main>
