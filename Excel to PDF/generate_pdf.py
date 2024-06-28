@@ -9,7 +9,7 @@ def generate_checksum(filename):
     # Create a SHA-256 hash object
     hasher = hashlib.sha256()
     # Read the file content in chunks and update the hash
-    for chunk in iter(lambda: file.read(4096), b''):
+    for chunk in iter(lambda: file.read(), b''):
       hasher.update(chunk)
     # Return the checksum in hexadecimal format
     return hasher.hexdigest()
@@ -53,8 +53,43 @@ def create_pdf(data, embed_file, certificate_id):
     \usepackage{fancyhdr}%header & footer
     \usepackage{setspace} % For setting line spacing
     \usepackage{float} % Aligns the tables to the top for better space utilization
+    \usepackage{ifthen} % For conditional embedding of data
     """
 
+    page_formatting = f"""
+    % Adjust margins
+    \\geometry{{
+        top=0.9cm,
+        bottom=10.7cm,
+        left=0.7cm,
+        right=0.7cm
+    }}
+
+    \\pagestyle{{fancy}} %Defining the page style 
+    \\fancyhf{{}}  %Clear the header and footer
+    \\newcounter{{rownum}} % Create a new counter to count the number of headings given
+    \\renewcommand{{\\headrulewidth}}{{0pt}}	%No line below the header
+    \\renewcommand\\footrule{{\\hrule width 19.65cm height 0.5mm}} %To have a line above footer with the specified dimensions
+    \\newcommand{{\\fullhline}}{{\\noalign{{\\hrule height 0.8mm}}}} %To have a thick horizontal line for selective columns
+    \\newcommand{{\\embedCondition}}{{yes}} % Change to "no" if you don't want to embed the file
+    
+    % Set column separation
+    \\setlength{{\\tabcolsep}}{{0pt}} %To remove the inter-column space
+
+
+    % Define watermark
+    \\backgroundsetup{{
+    scale=1.02,  % Scale the watermark
+    opacity=0.05,  % Opacity of the watermark (1 = opaque, 0 = fully transparent)
+    angle=0,  % Angle of the watermark
+    position=current page.center,  % Position of the watermark
+    vshift=-0.6cm,  % Vertical shift of the watermark
+    hshift=-0.2mm,  % Horizontal shift of the watermark
+    contents={{%
+        \\includegraphics[width=10cm,height=10cm]{{./static/Logo_NPL_india.png}}  % Path to your watermark image
+    }}
+    }}
+    """
 
     header = f"""
     \\fancyhead[L]{{
@@ -182,42 +217,6 @@ def create_pdf(data, embed_file, certificate_id):
     }
     """
 
-    page_formatting = f"""
-    % Adjust margins
-    \\geometry{{
-        top=0.9cm,
-        bottom=10.7cm,
-        left=0.7cm,
-        right=0.7cm
-    }}
-
-    \\pagestyle{{fancy}} %Defining the page style 
-    \\fancyhf{{}}  %Clear the header and footer
-    \\newcounter{{rownum}} % Create a new counter to count the number of headings given
-    \\renewcommand{{\\headrulewidth}}{{0pt}}	%No line below the header
-    \\renewcommand\\footrule{{\\hrule width 19.65cm height 0.5mm}} %To have a line above footer with the specified dimensions
-
-    \\newcommand{{\\fullhline}}{{\\noalign{{\\hrule height 0.8mm}}}} %To have a thick horizontal line for selective columns
-
-    % Set column separation
-    \\setlength{{\\tabcolsep}}{{0pt}} %To remove the inter-column space
-
-
-    % Define watermark
-    \\backgroundsetup{{
-    scale=1.02,  % Scale the watermark
-    opacity=0.05,  % Opacity of the watermark (1 = opaque, 0 = fully transparent)
-    angle=0,  % Angle of the watermark
-    position=current page.center,  % Position of the watermark
-    vshift=-0.6cm,  % Vertical shift of the watermark
-    hshift=-0.2mm,  % Horizontal shift of the watermark
-    contents={{%
-        \\includegraphics[width=10cm,height=10cm]{{./static/Logo_NPL_india.png}}  % Path to your watermark image
-    }}
-    }}
-    """
-
-
 
     latex_template = f"""
     \\DocumentMetadata{{
@@ -264,8 +263,11 @@ def create_pdf(data, embed_file, certificate_id):
 
     %%%%%%% LAST PAGE %%%%%%%%%%%
     {last_page}
-
-    \\embedfile{{{embed_file}}}
+    \\ifthenelse{{\\equal{{\\embedCondition}}{{yes}}}}{{
+            \\embedfile{{{embed_file}}}
+    }}   {{
+        % Do nothing if the condition is not met
+    }}
     \\end{{document}}
     """
 
