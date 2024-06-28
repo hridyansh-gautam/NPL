@@ -179,6 +179,14 @@ def custwelcome():
 def ctbr():
     return render_template('ctbr.html')
 
+@app.route('/verify/<checksum>')
+def verify(checksum):
+    response = registration.get_checksum(checksum=checksum)
+    if response and response.status == 'active':
+        return jsonify({'message': 'Checksum verification successful', 'checksum': checksum, 'certificate no.': response.certificate_no}), 200
+    else:
+        return jsonify({'message': 'Checksum verification failed'}), 400
+
 @app.route('/dcc')
 def dcc():
     return render_template('dcc.html')

@@ -1,0 +1,267 @@
+1,Length,Line Standard,"Reference Standard Meter Bar / Line
+Scale",Meter Bar,1m,48000,1200,For each additional point above 10 points,,10
+2,Length,Line Standard,Graticule Scale upto 300 mm,Glass Scale,300 mm,9844,700,For each additional point above 10 points,Laser_UMM,10
+3,Length,Line Standard,"Graticule Scale
+>300mm -1000 mm",Glass Scale,>300 upto600 mm,29175,1200,For each additional point above 10 points,Q_vision_CM M,10
+4,Length,Line Standard,Glass Grid,10X comparator,,10500,4750,For each additional grid with same setting,"Mean of
+upto10 grid spacing of each axis",1
+5,Length,Line Standard,Measuring Tape (Steel /woven/glass Fibre .),,50 m,5342,600,For each additional meter,IS: 1270-1991,One point per  meter
+6,Length,End Standard,single Gauge Block,Slip Gauge,By Comparison Method,15500,,for first gauge block and each gauge   in case the gauges are odd size,"IS: 2984-
+2003, ISO:3650- 1998","for first gauge block or each gauge bloack of odd size provided NPL-India accepts  to calibrate ,Deviation from central length #"
+7,Length,End Standard,Gauge Block Set,Slip Gauge,By Comparison Method,15500 for first gauge block,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 1998","for first gauge block of set with traditional denomination considered by NPL- india, , Deviation from central length #"
+8,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  ( Designated M112),By Comparison Method,54350,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 1998","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+9,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / Designated  M125,By Comparison Method,58900,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2000","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+10,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / Designated  M122,By Comparison Method,57850,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2001","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+11,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  ( Designated M121),By Comparison Method,57500,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+12,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / Designated M111,By Comparison Method,54000,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+13,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M105,By Comparison Method,51900,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+14,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M103,By Comparison Method,51200,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+15,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M87,By Comparison Method,45600,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+16,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M83,By Comparison Method,44200,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+17,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M79,By Comparison Method,42800,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+18,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M78,By Comparison Method,42450,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+19,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M76,By Comparison Method,41750,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+20,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M50,By Comparison Method,32650,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+21,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M47,By Comparison Method,31600,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+22,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M46,By Comparison Method,31250,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+23,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M41,By Comparison Method,29500,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+24,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M38,By Comparison Method,28450,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+25,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M33,By Comparison Method,26700,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+26,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M32,By Comparison Method,26350,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+27,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M27,By Comparison Method,24600,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+28,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M18,By Comparison Method,21450,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+29,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M10/Mic check set,By Comparison Method,18650,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+30,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M9,By Comparison Method,18300,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+31,Length,End Standard,single Gauge Block,Slip Gauge,By Interferometric Method,22860,22860,for first gauge block and subsequent gauge block above 102mm,"IS: 2984-
+2003, ISO:3650- 1998",Deviation from central length #
+32,Length,End Standard,Gauge Blocks as Set,slip gauges submiited as a set,By Interferometric Method,22860,1700,for first gauge block and subsequent gauge block up to 102mm,"IS: 2984-
+2003, ISO:3650- 1997","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+33,Length,End Standard,Gauge Block Set,Slip Gauge Set By Interferometric Method/M112,By Interferometric Method,211560,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 1997","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+34,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M125,By Interferometric Method,233660,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 1998","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+35,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M122,By Interferometric Method,228560,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 1999","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+36,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M121,By Interferometric Method,226860,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2000","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+37,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M111,By Interferometric Method,209860,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2001","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+38,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M105,By Interferometric Method,199660,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2002","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+39,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M103,By Interferometric Method,196260,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2003","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+40,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M87,By Interferometric Method,169060,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2004","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+41,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M83,By Interferometric Method,162260,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2005","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+42,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M79,By Interferometric Method,155460,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2006","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+43,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M78,By Interferometric Method,153760,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2007","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+44,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M76,By Interferometric Method,150360,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2008","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+45,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M50,By Interferometric Method,106160,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2009","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+46,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M47,By Interferometric Method,101060,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2010","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+47,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M46,By Interferometric Method,99360,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2011","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+48,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M41,By Interferometric Method,90860,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2012","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+49,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M38,By Interferometric Method,85760,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2013","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+50,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M33,By Interferometric Method,77260,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2014","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+51,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M27,By Interferometric Method,67060,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2016","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+52,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M18,By Interferometric Method,51760,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2017","for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #"
+53,Length,End Standard,Gauge Block Set for Mechncial comparator calibration,"Special Gauge Set viz.
+M10/M11/M12/
+M18 (Excluding bridge type Gauge)",By Interferometric Method,55000 for first ten guages,3500,for first ten guages and for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2018 ,
+Euramet-Cg- 2,2011","Deviation from central length by inteferometry and ( Fo, Fu by comparison or Length variation 1mm, 1.005mm, 1.01mm size of  gauge blocks)"
+54,Length,End Standard,Length Bar,Long Slip Gauge,By Comparison Method  ( Horizontal),8200,above 100mm upto 300 mm,per gauge Single Point  (length),"IS: 7014-1973
+(Reaffirmed 2005)",per gauge (central length dev)
+55,Length,End Standard,Length Bar,Long Slip Gauge,"By Comparison Method  (
+Horizontal)",8500,"above300m m upto 500
+mm",per gauge Single Point (length),"IS: 7014-1973
+(Reaffirmed 2005)",per gauge (central length dev)
+56,Length,End Standard,Length Bar,Long Slip Gauge,"By Comparison Method  (
+Horizontal)",11500,"above 500 to
+1000 mm",per gauge Single Point (length),"IS: 7014-1973
+(Reaffirmed 2005)",per gauge (central length dev)
+57,Length,Thickness Standard,Feeler Gauge,Leaf Gauge / Slip,"By Comparison Method  (
+Horizontal)",6000,3000 each leaf,for first leaff and subsequent leaf,"IS: 3179-1990
+(Reaffirmed 2005)",Thickness
+58,Length,Diameter Standard,Plain Ring / Plug Gauge/sphere 3 Pi wire set,,By Comparison Method  ( Horizontal),8500,,(Upto 100 mm),"IS: 3484-1993
+/ IS: 3485-
+1993
+(Reaffirmed 1998)",Diameter and Variation in Diameter
+59,Length,Dia Standard,Plain Ring / Plug Gauge/sphere,,By Comparison Method  ( Horizontal),11000,,>100 to 300 mm,"IS: 3484-1993
+/ IS: 3485-
+1993
+(Reaffirmed 1998)",Diameter and Variation in Diameter
+60,Length,Dia Standard,Taper Plug/ Ring Gauge,,By Comparison Method  ( Horizontal),11500,Upto 250 mm,,,Taper
+61,Length,Instrument,"Dial Gauge, Plunger Type",,By Comparison Method  ( Horizontal),8000,"0 to 50 mm
+(for 10 points)",Rs 700/- for each additional point,,IS: 2092-1993
+62,Length,Instrument,"Dial Gauge, Lever Type",,By Comparison Method  ( Horizontal),8000,0 to 10 mm,Rs 700/- for each additional point,,IS: 11498-1995
+63,Length,Instrument,Engineering Parallel,,,3880,Upto 1000 mm,,,IS: 4241-1995
+64,Length,Instrument,"Gauge Block
+Calibrator *",Comparator,"By Comparison
+Method",18715,,,,Single Scale only
+65,Length,Instrument,"Gauge Block
+Calibrator",Comparator,"By Comparison
+Method",37500,,,,Three Scales
+66,Length,Instrument,"Mechanical
+Comparator",,"By Comparison
+Method",24500,,,,
+67,Length,Instrument,Floating Carriage Diameter Measuring Machine,FCDMM,By Comparison Method,30000,,,,
+68,Error of Indiacate Displacement,Instrument,Length Measuring Machine  / Dial Gauge Tester / Dial Gauge Calibrator,"LMM /
+Horinzontal Metroscope / I Checker
+/Universal Measuring Machine /Digital Height Gauge",,20500,,,wavelenght compensated,Upto 25 mm  (per Axis )
+69,Length,Instrument,Length Measuring Machine / Dial Gauge Tester,LMM or Horinzontal Metroscope  or Universal Measuring Machine/Digital Height Gauge,,20500,2500,for subsequent 100 mm up to 1000 mm,wavelength compensated,for first 100mm (above 25 mm upto 100mm) of Single Axis in one orientation  /each axis
+70,Length,Instrument,Length Measuring Machine (Single Axis),LMM or Horinzontal Metroscope or Universal Measuring Machine /Digital Height Gauge,,46000,8800,For each additional meter,,up to 1000 mm (Single Axis/each axis)
+71,Length,Instrument,Caliper Checker/ Check Master,step gauge,,28000,3000,"Rs 28000  for first 300 mm,then Rs 3000 for subsequent 100 mm up to 1000 mm",,"Rs 28000 for first 300mm ,then Rs 3000 for subsequent 100mm upto 1000mm"
+72,Length,Instrument,3D-Coordnate Measuring Machine,CMM/Articulated CMM,,48000,8800,subsequent 220 mm per axis  above 1 m upto 1220 mm *,single axis,up to 1m  (additional charges for subsequent 220mm upto 1220mm  )
+73,Length,Instrument,3D-Coordnate Measuring Machine,CMM/Articulated CMM,,150000,8800,"Rs 150000 for three
+axes, upto 1000 mm then Rs 8800 for subsequent 220mm  per axis upto 1220 mm maximum range*",three axis,"Rs 150000 for three
+axes, upto 1000 mm then Rs 8800 for subsequent 220mm per axis upto 1220 mm maximum range"
+74,Length,Instrument,CNC Machine,"Boring Machine
+/automatic moving machine up to 30m single axis",,50000,8800,subsequent 1m per axis  above 1m,,up to 1m x1m x 1m (additional charges for subsequent 1m per axis )
+75,Length,Instrument,CNC Machine,"Boring Machine
+/automatic moving machine up to 30m three axis",,139000,8800,For each additional meter,,"Three axes, upto 1000 mm per axis"
+76,Length,Instrument,Dial Gauge Tester / Extensometer,(Except  I Checker / Motorized dial tester),,24500,5000,per additional orientation/axis,(Except  I Checker / Motorized dial tester),
+77,Length,Instrument,Electronic Probe/LVDT Probe,,,24500,5000,per additional scale,,
+78,Length,Accessory,Test Sieve,Sieve,IS: 460- 1985,16000,,,,
+79,Angle,Angle Standard,Angle Gauge block,,IS: 6231-1994,9500,2000,for subsequent angle measurment on each angle block or on same block,,
+80,Angle,Angle Standard,Angle square block,,IS: 6231-1994,15500,,,,
+81,Angle,Instrument,Polygon /Indexing Table/Optical Dividing Head with Scale,"angular encoder,optical level",IS: 6987 / and,55000,3300,upto 12 Faces and For each additional face beyond 12 faces,,
+82,Angle,Instrument,Spirit Level,Level meter/Point laser level/optical level/line laser level/ Inclinometer,IS: 5706-1991,14000,,,,
+83,Angle,Instrument,Electronic Level,Level meter/Point laser level/optical level/line laser level,,34000,6000,per point after 10 points,,Angle
+84,Angle,Instrument,Auto-collimeter (Single Axis),Collimator/ thodolite station collimator/Angle dekker,,28000,,,,Angle
+85,Angle,Instrument,Auto-collimeter (Dual Axis),Collimator/ thodolite station collimator/Angle dekker,,42000,,,,Angle
+86,Length & Angle,Instrument,Profile Projector,vedio profiler/vedio measuring machine,,48000,8800,for subsequent 100 mm up to 1000 mm,,Linear Scales up to 300mm and magnifications only
+87,Length & Angle,Instrument,Profile Projector,"vedio
+profiler/vedio measuring machine",,24000,,,,Angular Scale only
+88,Length & Angle,Instrument,Profile Projector,vedio profiler/vedio measuring machine,,65500,8800,for subsequent 100 mm up to 1000 mm,,"Linear scales up to 300mm, magnifications"
+89,Length & Angle,Instrument,Profile Projector,vedio profiler/vedio measuring machine,,72000,8800,for subsequent 100 mm up to 1000 mm,,"Linear up to 300mm, Angular Scales & magnifications"
+90,Length & Angle,Instrument,Sine Bar / tilting table,Sine Bar,IS:5359-1993 / IS: 5979-1991,30000,,,up to 300mm,"Centre distance of rollers, Flatness of Face, parallelism of rollers"
+91,Length & Angle,Instrument,Sine Bar / tilting table,Sine Bar,IS:5359-1993 / IS: 5979-1991,34000,,,above 300 mm,"Centre distance of rollers, Flatness of Face, parallelism of rollers"
+92,Length & Frequency,Laser Source,Laser Interferrometer,Customer needs to ensure its frequency stabilty (preferable by its prior calibration- certificate),Distance / fringe count,48000,,,,Linear Displacement
+93,Form,Instrument,Tool Maker’s Microscope,"Universal
+Measuring Microscope",,41000,11000,For Z axis,,Linear Scales and magnifications only
+94,Form,Instrument,Tool Maker’s Microscope,"Universal
+Measuring Microscope",,26500,,,,Angular Scale only
+95,Form,Instrument,Tool Maker’s Microscope,"Universal Measuring
+Microscope",,67500,10000,For Z axis,,"Linear, Angular Scales &
+magnifications"
+96,Form,Instrument,Formtester,Formtester/Round ness measuring machine,,26200,,,,"Roundness,"
+97,Form,Instrument,Formtester,Formtester/Round ness measuring machine,up to 100mm straightness wayguide length,50400,,up to 100mm straightness wayguide length,,"Roundness, Staightness,"
+98,Form,Instrument,Formtester,Formtester/Round ness measuring machine,up to 100mm straightness wayguide length,115000,,up to 100mm straightness wayguide length,,"Roundness, Staightness, R-axis, Z- axis"
+99,Roughness,Roughness Standard@,"Groov Depth Standards (Type D)
+/ Roughness Comparison Specimen",Groov Depth Standards (Type D) / Roughness Comparison Specimen,"ISO: 5436 (Type D)
+/ IS: 4290-1992, IS: 3073-1991",9500,1000,per subsquent roughness paramter,up to 50µm,upto one roughness paramter on the same specimen
+100,Roughness,Roughness Standard@,Roughness measuring machine,Roughness measuring machine/ Roughness tester,"ISO: 5436 (Type D)
+/ IS: 4290-1992, IS: 3073-1991",28500,8800,per axis calibration with a dispalcement standard(laser interferometer/ dial indicator/ glass scale),,"with atleast three Groov Depth Standards (Type D)
+/three Roughness Comparison Specimen"
+101,Roundness,"Roundness
+Standard","Hemispherical
+Standard",,,26200,,,,Roundness
+102,Roundness,"Roundness
+Standard",Flick Standard,"maginification
+standard",,26200,,,,Roundness
+103,Squareness,"Squareness
+Standard",Engineer's Square,,"IS: 2103-1980
+reaffirmed 2006",15900,,,,Squareness
+104,Squareness,"sqness, straightness, roundness, parallelism",Reference /Standard cylinder,,"Roundness , parallelism (four readings)
+,cylindricilty",74500,,,,"Roundness , parallelism (four readings)
+,cylindricilty"
+105,Squareness,Squareness Standard,Cylindrical Square,,On CMM,18300,,,"IS: 6952-1990
+reaffirmed 2006",Squareness
+106,Squareness,Squareness Standard,Engineer's Square,,On CMM,24200,,,"IS: 2103-1980
+reaffirmed 2006",Squareness
+107,Squareness,"Squareness
+Standard",Cylindrical standard,,"On roundness
+Machine",24200,,,,"Squareness
+/Parallelism"
+108,Squareness,Squareness Standard,"Angle Plate, Cast Iron",,Upto 300 mm,16300,,,"IS: 2554-1971
+(Reaffirmed 2005) On CMM",Squareness / Angularity
+109,Squareness,Squareness Standard,"Angle Plate, Cast Iron",,>300 to 600 mm,24400,,,"IS: 2554-1971
+(Reaffirmed 2005) On CMM",Squareness / Angularity
+110,Squareness,Squareness Standard,Precision Box Angle Plate,,Upto 300 mm,30300,,,"IS: 6985-1973
+(Reaffirmed 2005) ,On CMM",Squareness / Angularity
+111,Squareness,Squareness Standard,Precision Box Angle Plate,,>300 to 600 mm,44500,,On CMM,"IS: 6985-1973
+(Reaffirmed 2005), On
+CMM",Squareness / Angularity
+112,Straightness,Accessory,Straight Edge  (Bow Shaped)/ (Camel Back type)/ (I- Section)/ (Parallel),(Bow Shaped)/ (Camel Back type)/ (I-Section)/ (Parallel),Upto 500 mm,11800,,,"IS: 2220-1995
+(Reaffirmed 2005)",Straightness
+113,Straightness,Accessory,Straight Edge  (Bow Shaped)/ (Camel Back type)/ (I- Section)/ (Parallel),(Bow Shaped)/ (Camel Back type)/ (I-Section)/ (Parallel),>500 to 1000 mm,18300,,,"IS: 2220-1995
+(Reaffirmed 2005)",Straightness
+114,Flatness,Accessory,Surface Plate,,160 x 160 mm,11114,,,"IS: 2285-2003
+IS: 7327-2003
+/On CMM",Flatness
+115,Flatness,Accessory,Surface Plate,,450 x 450 mm,11114,,,"IS: 2285-2003
+IS: 7327- 2003/On CMM",Flatness
+116,Flatness,Accessory,Surface Plate,,630 x 630 mm,18018,,,"IS: 2285-2003
+IS: 7327-2003",Flatness
+117,Flatness,Accessory,Surface Plate,,1000 x 630 mm,22620,,,"IS: 2285-2003
+IS: 7327-2003",Flatness
+118,Flatness,Accessory,Surface Plate,,1000 x 1000 mm,29524,,,"IS: 2285-2003
+IS: 7327-2003",Flatness
+119,Flatness,Accessory,Surface Plate,,1600 x 1000 mm,50235,,,"IS: 2285-2003
+IS: 7327-2003",Flatness
+120,Flatness,Accessory,Surface Plate,,2000 x 1000 mm,59440,,,"IS: 2285-2003
+IS: 7327-2003",Flatness
+121,Flatness,Accessory,Surface Plate,,2000 x 1400 mm,59440,,,"IS: 2285-2003
+IS: 7327-2003",Flatness
+122,Flatness,Accessory,Surface Plate,,3000 x 2000 mm,87055,,,"IS: 2285-2003
+IS: 7327-2003",Flatness
+123,Flatness,Accessory,Optical Flat/Parallel,,up to 100mm Diameter,22315,,,"IS: 5440-1969
+(Reaffirmed 2005)",Flatness of one surface
+124,Flatness,Accessory,Optical Flat/Parallel,,up to 100mm Diameter,32876,,,"IS: 5440-1969
+(Reaffirmed 2005)",Flatness of both surface
+125,Flatness,Accessory,Optical Flat/Parallel,,up to 100mm Diameter,46454,,,"IS: 5440-1969
+(Reaffirmed 2005)",Flatness and parallelism/ wedge angle between two surface
+126,Flatness,Accessory,Optical Flat/Parallel,,>100mm to 150mm Diameter,46454,,,"IS: 5440-1969
+(Reaffirmed 2005)",Flatness of one surface
+127,Flatness,Accessory,Optical Flat/Parallel,,>100mm to 150mm Diameter,55506,,,"IS: 5440-1969
+(Reaffirmed 2005)",Flatness of both surface
+128,Laser frequecny,frequency statdard,Laser head,,frequency Standard,51877,,,,
+129,Step height,End standard,step height,End standard,"above 50 µm upto to
+2 mm",14142,,,ISO 5436,"height of the step/
+groove"
+130,Length,Instrument,Vernier Caliper/ Bevel Protector,instrument,up to 300 mm,7200,100,per additional 100 mm,IS 3651,Linear scale including vernier scale
+131,Length,Instrument,Micrometer / Micrometer Head,instrument,up to 25 mm,7200,150,per additional 25 mm,IS 2967,Linear scale including vernier scale
+132,Length,Instrument,Hardness tester Scale,depth measuring system,When the requisite fixtures and accessories are facilitated by customer,48000,,,"0.0003 mm
+accuracy  up to 100mm",Nonmagnetic method
+133,Angle,Instrument,Theodelite calibration station,universal station/ 3D simulator,"When the requisite fixtures and accessories are facilitated by
+customer",60000,,,Three pitch angle and a rotary axis  up to 10 readings,Three pitch angle and a rotary axis  with reference to ground level
+134,Angle,Instrument,Theodelite calibration station,universal station/ 3D simulator,When the requisite fixtures and accessories are facilitated by customer,60000,43000,Additional dual axis collimator upto 40 readings,Three pitch angle and a rotary axis  up to 10 readings,Three pitch angle and a rotary axis  with reference to ground level
+135,Length,artifact,Test rail,Defects in test rail,Notch size (length:5mm to 10 mm)X (width: 0.4mm to 5 mm)X(depth: up to 2 mm),47500,2500,subsequent each Notche/ hole,length Xwidth Xdepth,up to 20 Notches or holes
+136,Length,artifact,Ball bar,Center to center sphere spacing/distance,upto 1000 mm,28000,14000,Rs 14000 for subsequent ball spacing in same artifact. If diameter required then Rs 14000 for each sphere,,"Rs 28000 for center distance of sphere only, If diameter required then Rs 14000 for each sphere"
+137,Length,artifact,Airline/ Waveguide/Snap gauge/wedge/Misc. items,Diameter/length / thikness/width,upto 1000 mm,17300,8000,Rs 8000 for subsequent length/diameter in same artifact,,"length, diameter, width etc."

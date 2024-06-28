@@ -144,3 +144,187 @@ INSERT INTO calibration_testing (service_types, service_name, service_code) VALU
 
 INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('BND', 'In-House Group', 'bd5_01');
 INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('BND', 'Management Group', 'bd5_04');
+
+...
+
+CREATE TABLE "cd1_01" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Range" VARCHAR(255),
+    "No_of_Points_for_Calibration_Procedure_No" VARCHAR(255),
+    "Limitation_Condition" VARCHAR(255),
+    "Charges_per_Item_Rs" DECIMAL(10, 2),
+    "Additional_Charges_Rs" DECIMAL(10, 2),
+    "Description_for_Additional_Charges" TEXT,
+    "Remarks_if_any" TEXT,
+    PRIMARY KEY ("SI_No", "Parameter")
+);
+
+CREATE TABLE "cd1_02" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Limitation_Condition" VARCHAR(255),
+    "Charges_per_Item_Rs" DECIMAL(10, 2),
+    "Additional_Charges_Rs" DECIMAL(10, 2),
+    "Description_for_Additional_Charges" TEXT,
+    "Remarks_if_any" TEXT,
+    "No_of_Points_for_Calibration" VARCHAR(255),
+    PRIMARY KEY ("SI_No", "Parameter")
+);
+
+ALTER TABLE "cd1_02" ALTER COLUMN "Charges_per_Item_Rs" TYPE VARCHAR(255);
+ALTER TABLE "cd1_02" ALTER COLUMN "Additional_Charges_Rs" TYPE VARCHAR(255);
+
+CREATE TABLE "cd1_08b" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Calibration_Parameters" VARCHAR(255),
+    "No_of_Points_for_Calibration" VARCHAR(255),
+    "Limitation_Condition" VARCHAR(255),
+    "Charges_per_Item_Rs" DECIMAL(10, 2),
+    "Additional_Charges_Rs" DECIMAL(10, 2),
+    "Description_for_Additional_Charges" TEXT,
+    "Remarks_if_any" TEXT,
+    "Normal" VARCHAR(255),
+    "Tatkal" VARCHAR(255),
+    PRIMARY KEY ("SI_No", "Parameter")
+);
+
+CREATE TABLE "cd1_08c" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Calibration_Parameters" VARCHAR(255),
+    "No_of_Points_for_Calibration" VARCHAR(255),
+    "Limitation_Condition" VARCHAR(255),
+    "Charges_per_Item_Rs" DECIMAL(10, 2),
+    "Additional_Charges_Rs" DECIMAL(10, 2),
+    "Description_for_Additional_Charges" TEXT,
+    "Remarks_if_any" TEXT,
+    "Normal" VARCHAR(255),
+    "Tatkal" VARCHAR(255),
+    PRIMARY KEY ("SI_No", "Parameter")
+);
+
+CREATE TABLE "cd2_01a" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Range" VARCHAR(255),
+    "No_of_Points_for_Calibration" VARCHAR(255),
+    "Revised_Charges_As_Per_CSIR_Guidlines" DECIMAL(10, 2),
+    "Additional_Charges_Rs" DECIMAL(10, 2),
+    "Description_for_Additional_Charges" TEXT,
+    PRIMARY KEY ("SI_No", "Parameter")
+);
+
+CREATE TABLE "cd2_01c" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Range" VARCHAR(255),
+    "No_Of_Points_For_Calibration" VARCHAR(255),
+    "Limitation_Condition" VARCHAR(255),
+    "New_Charges_Per_Item_In_Rs" DECIMAL(10, 2),
+    "Additional_Charges_Rs" DECIMAL(10, 2),
+    "Description_For_Additional_Charges" TEXT,
+    PRIMARY KEY ("SI_No", "Parameter")
+);
+
+CREATE TABLE "cd2_03" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Range" VARCHAR(255),
+    "No_Of_Points_For_Calibration" VARCHAR(255),
+    "Sample_Requirements_If_Any" VARCHAR(255),
+    "Charges_Per_Item_In_Rs" DECIMAL(10, 2),
+    "Additional_Charges_Rs" DECIMAL(10, 2),
+    "Description_For_Additional_Charges" TEXT,
+    "Remarks_If_Any" TEXT,
+    PRIMARY KEY ("SI_No", "Parameter")
+);
+
+CREATE TABLE "cd3_03" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Range" VARCHAR(255),
+    "No_Of_Points_For_Calibration" VARCHAR(255),
+    "Limitation_Condition" VARCHAR(255),
+    "Charges_Per_Item_In_Rs" VARCHAR(255),
+    "Additional_Charges_Rs" VARCHAR(255),
+    "Description_For_Additional_Charges" TEXT,
+    "Remarks_if_any" TEXT,
+    "Normal" VARCHAR(255),
+    "Tatkal" VARCHAR(255),
+    PRIMARY KEY ("SI_No", "Parameter")
+);
+
+CREATE TABLE "cd6_01" (
+    "SI_No" SERIAL,
+    "Parameter_Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Range" VARCHAR(255),
+    "No_Of_Points_For_Calibration" VARCHAR(255),
+    "Limitation_Condition" VARCHAR(255),
+    "Charges_Per_Item_In_Rs" VARCHAR(255),
+    "Additional_Charges_Rs" VARCHAR(255),
+    "Description_For_Additional_Charges" TEXT,
+    "Remarks_if_any" TEXT,
+    "EDC" VARCHAR(255),
+    PRIMARY KEY ("SI_No", "Parameter_Item_Type_Group")
+);
+
+CREATE TABLE "cd6_02" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Range" VARCHAR(255),
+    "No_Of_Points_For_Calibration" VARCHAR(255),
+    "Present_Charges_Per_Item_Rs" VARCHAR(255),
+    "Present_Additional_Charges_Rs" VARCHAR(255),
+    "Description_For_Additional_Charges" TEXT,
+    "Remarks_If_Any" TEXT,
+    "Normal" VARCHAR(255),
+    "Tatkal" VARCHAR(255),
+    PRIMARY KEY ("SI_No", "Parameter")
+);
+
+CREATE TABLE "cd6_02b" (
+    "SI_No" SERIAL,
+    "Parameter" VARCHAR(255),
+    "Item_Type_Group" VARCHAR(255),
+    "Item_Name" VARCHAR(255),
+    "Alias_Name" VARCHAR(255),
+    "Range" VARCHAR(255),
+    "No_Of_Points_For_Calibration" VARCHAR(255),
+    "Limitation_Condition" VARCHAR(255),
+    "Present_Charges_Per_Item_Rs" VARCHAR(255),
+    "Present_Additional_Charges_Rs" VARCHAR(255),
+    "Description_For_Additional_Charges" TEXT,
+    "Remarks_If_Any" TEXT,
+    PRIMARY KEY ("SI_No", "Parameter")
+);

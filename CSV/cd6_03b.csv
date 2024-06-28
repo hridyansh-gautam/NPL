@@ -1,0 +1,12 @@
+1,Magnetic Flux Density/Resonance Frequency,NMR Magnetometer,NMR Magnetometer with probes (DC Magnetic field),NMR Gaussmeter/ Teslameter,500G to 15kG(0.05Tesla to 1.5 Tesla),5,,50400,8400,for each additional point
+2,Magnetic Flux Density / Magnetic Field,Gauss Meter,Gauss Meter with one probe (DC Magnetic Field),Magnetometer,100 G to 10 kG,8,,25000,,
+3,Magnetic Flux Density / Magnetic Field,Gauss Meter,Gauss Meter with one probe (AC Magnetic Field),Magnetometer,50 G to 2 kG,4,,15000,,
+4,Magnetic Flux Density / Magnetic Field,Gauss Meter,Gauss Meter with one probe (AC & DC Magnetic Field),Magnetometer,"DC (100 G to 10 kG), AC (50 G to 2 kG)",12,,33500,33500,
+5,Magnetic Flux Density / Magnetic Field,Magnetic Field Indicator,Magnetic Field Indicator,Residual Magnetic Gauss Mete,2 G to 20 G/-10G to +10G,5,,37000,,
+6,Magnetic Flux Density / Magnetic Field,Low field Magnetometer,Fluxgate Magnetometer/AMR Magnetometer/Hall Effect Magnetometer,Low field Magnetometer,10 mG to 20 G,10,,41000,9500,for each additional point
+7,Magnetic Flux Density / Magnetic Field,Magnet,Magnet (Fixed value),Reference Magnet,,Single Point,,9500,9500,for each additional point
+8,Magnetic Flux,Magnetic Flux Meter,Magnetic Flux Meter,,10E+4 to 10E+8 Maxwell,8,,25000,,
+9,Volt.Sec,Flux Meter Calibrator,Flux Meter Calibrator,,0.0001V.s to 10 V.s,8,,25000,,
+10,Magnetic Power Loss,Epstien Sample,Epstien Sample,,1 W/kg to 20 W/kg,,,70200,,
+11,Permeability,AlNiCo Magnet,AlNiCo Magnet,,,,,20500,,
+12,Turn Area,Search Coil,Search Coil,,0.0002 to 0.2m²,,,13000,,

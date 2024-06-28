@@ -1,0 +1,38 @@
+1,Attenuation,Attenuator,Coaxial Fixed Attenuator,Attenuation Pad,0.1-60 dB at 30 MHz & 1-40 GHz,3 Frequencies,Connector Type-N/7mm (50 ohm)/2.4mm,26300,8800,For each additional frequency
+2,Attenuation,Attenuator,Waveguide Fixed Attenuator,Attenuation Pad,0.1-60 dB at 5.8-18 GHz,3 Frequencies,Waveguide flang,26300,8800,For each additional frequency
+3,Attenuation,Attenuator,Coaxial step Attenuator,Variable Attenuator,0.1-60 dB at 30 MHz & 1-40 GHz,1 Frequencies,Connector Type-N/7mm (50 ohm)/2.4mm,108100,108100,For each additional frequency
+4,Attenuation,Attenuator,Rotary Vane Attenuator,Variable Attenuator,0.1-60 dB at 5.8-18 GHz,1 Frequencies,Waveguide flang,83700,83700,For each additional frequency
+5,Attenuation,Attenuator,30 MHz WBCO Attenuator,Standard Piston Attenuator,0.05-60 dB at 30 MHz,1 Frequencies,Connector Type-N/7mm (50 ohm),91400,,
+6,Attenuation,Coupler,Coaxial Directional Coupler,,0.1-60 dB at 30 MHz & 1-18 GHz,1 Frequencies,Connector Type-N/7mm (50 ohm),14400,14400,For each additional frequency
+7,Attenuation,Coupler,Waveguide Directional Coupler,,0.1-60 dB at 5.8-18 GHz,3 Frequencies,Waveguide flange,43100,14400,For each additional frequency
+8,Attenuation,Coupler,Dual Directional Coupler,,0.1-60 dB at 30 MHz & 1-18 GHz,1 Frequency,Connector Type-N/7mm (50 ohm),26300,26300,For each additional frequency
+9,Attenuation,30MHz Receiver,"Attenuator &
+Signal
+Calibrato",Receiver with built-in 30MHz Attenuator,0.1-60 dB at 30 MHz,1 Frequency,Connector Type-N/7mm (50 ohm),108100,,
+10,Attenuation,Splitter,Power Splitter,"Power
+Divider",0.1-60 dB at 30 MHz & 1-18 GHz,1 Frequency,Connector Type-N/7mm (50 ohm),14400,14400,For each additional frequency
+11,Reflection Coefficient/ VSWR,Termination,Coaxial Mismatch,Coaxial Termination,1.02-5 at 2 -18 GHz,3 Frequencies,Connector Type-N/7mm (50 ohm),26300,8800,For each additional frequency
+12,Reflection Coefficient/ VSWR,Sensor,RF Transfer Standard,Coaxial Thermister Mount,1.02-5 at 2 -18 GHz,3 Frequencies,Connector Type-N/7mm (50 ohm),26300,8800,For each additional frequency
+13,Attenuation,1kHz Receiver,VSWR Meter,RF Ratiometer,0.1-30 dB at 1kHz,1 Frequency,Connector BNC (50 ohm),46400,,
+14,Attenuation & VSWR,Bridge,SWR Bridge,,"0.1-60 dB at 1- 18 GHz, 1.02-5 at 2 -18 GHz",1 Frequency,Connector Type-N/7mm (50 ohm),26300,26300,For each additional frequency
+15,Reflection Coefficient/ VSWR,Termination,Waveguide Standard Mismatch,Waveguide Match Load,0.01-0.2 at 5.8- 18 GHz,3 Frequencies,Waveguide flange,46400,15300,For each additional frequency
+16, Reflection Coefficient,Reflection Standard,Coaxial Short/Open Circuit,Offset Short Circuit,0.96-0.99 at 2- 18 GHz,3 Frequencies,Connector Type-N/7mm (50 ohm),32300,11100,For each additional frequency
+17,Reflection Coefficient/ VSWR,Impedance Standard,Coxial Airline,Beadless Airline,0.01-0.05 at 2- 18 GHz,1 Frequency,Connector Type-N/7mm (50 ohm),11100,11100,For each additional frequency
+18,Phase,Phase Shifter,Rotary Vane Phase Shifter,Variable Phase Shifter,0-180 degree (X-Band),1 Frequency,Waveguide flange,83700,83700,For each additional frequency
+19,E Field (V/m)/Radiated power density(mW/cm2),Antenna,Probe,Microwave leakage detector,"(19a) Probe (19b)
+Probe (19c)
+Probe as
+per TEC Norm","(19a)1 Freq. and 3 power levels(19b)3 Freq. and 3 power
+levels(19c)TEC/TP/EMF/001/01.SEP2009",,(19a)17200(19b)51400(19c)12500,(19a)17200(19b)17200,For each additional frequency
+20,Shielding effectiveness,Planar Material,MRI tester,"RF transparency
+sheet",,1 Freq. and 3 power levels,,34000,34000,For each additional frequency
+21,Cal Kit calibration,"Open, Short, Load",Calibration Kit,Cal Kit,"21(a) from 1 MHz to 3 GHz 21(b) 1 MHz
+to 8 GHz 21(c) 1 MHz
+to 18 GHz 21(d) 10 MHz
+to 50 GHz",5 Frequncy points,Connector Type-N/7mm (50 ohm),(21a)34939(21b)43395(21c)51851(21d)67744,(21a)34939(21b)43395(21c)51851(21d)67744,For each additional frequency
+22,Cal Kit calibration,"Open, Short, Load",Calibration Kit,,"22(a) from 1
+MHz to 3
+GHz 22(b) 1 MHz
+to 8 GHz 22(c) 1 MHz
+to 18 GHz 22(d) 10 MHz
+to 50 GHz",5 Frequncy points,Connector Type-N/7mm (50 ohm),(22a)50708(22b)58043(22c)67211(22d)84716,(22a)50708(22b)58043(22c)67211(22d)84716,For each additional frequency

@@ -7,11 +7,12 @@ document.getElementById('validate-button').addEventListener('click', async funct
   
     try {
       const response = await fetch(`/verify/${checksum}`);
-      const isValid = await response.text();
+      // const isValid = await response.text();
+      console.log(response);
   
-      if (isValid === 'True') {
+      if (response.status == '200') {
         displayValidationResult('Checksum is valid!', 'text-success');
-      } else {
+      } else if (response.status == '200'){
         displayValidationResult('Checksum is invalid.', 'text-danger');
       }
     } catch (error) {

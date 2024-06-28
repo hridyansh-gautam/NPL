@@ -1,0 +1,59 @@
+1,DC Voltage,DC voltage source,Nanoscan DC Voltage Standard,Zener Refrence Standard,"1, 1.018 & 10V",1 to 2 points,95590,26136,For each additional 1 point
+2,DC Current,DC current source,Transconductance Amplifier (up t0 20A),,1 microA to 20 A ,3 points (one range) ,71390,14883,For each additional 3 point
+3,DC Current,DC current source,Transconductance Amplifier,,1 microA to100 A ,3 points (one range),95590,14883,For each additiona3 point
+4,DC Resistance,DC standard Resistor/ DC Resistance source,Fixed Value Resistor and high Current Shunt,,0.1 μΩ to 1 TΩ ,"one point (for each volt/ current) Current range up to 2000A,Voltage range up to 1000V & Resistance upto 1 G Ω ",36300,36300,For each additional 1 point
+5,DC Resistance,High resistance meter,,High resistance meter,10 μΩ to 1TΩ ,3 points (one range) ,95590,14883,
+6,"DC Voltage, Current & Resistance","DC Voltage, Current & Resistance source",DC Calibrator 7½ digit & above,Calibrator,"10 μV to 1 kV, 1 μA to 20A, 1 Ω to 10 GΩ ",3 points (one range) ,127897,14883,For each additional 3 points in one range
+7,"DC Voltage, Current & Resistance","DC Voltage, Current & Resistance meter",Digital Multimeter 7½ digit & above,DMM,"10 μV to 1 kV, 1 μA to
+20A, 1 Ω to 10 GΩ ",3 points (one range) ,127897,14883,"For each
+additional 3
+points in one
+range
+"
+8,DC current,DC Current source /meter,current source/pico ammeter/ electrometer,,1pA to 10 mA ,"3 points per range 
+",62920,9680,"For each
+additional 3
+points in one
+range
+"
+9,DC Charge,Charge amplifier,Electrometer/ charge amplifier,,100 pC to 2 µC ,3 points per range ,62920,9680,"For each
+additional 3
+points in one
+range
+"
+10,DC Charge,Charge amplifier,coloumb meter,,2 µC to 1 nC ,,21780,,
+11,"DC Voltage, Current & Resistance",DC Voltmeter,Nano voltmeter,,100 nV to 100V ,3 points per range ,41140,7744,"For each
+additional 3
+points in one
+range"
+12,DC current,DC Current source,current coil,,0 to 20A ,,20570,,
+13,DC voltage & current,DC voltage & current source,DC power supply,, up to 1000V & 20A,,0.1694,,
+14,"DC & AC Voltage , current & resistance","DC & AC Voltage , current & Resistance Meter",Digital multimeter 6 & 1/2 digit,DMM,".0 m V - 1 kV, 1 A - 20
+A, 1 Ω to -100 M Ω
+AC parameters:
+1 mV – 1000 V(10 Hz – 1
+MHz),1 mA – 20 A(40
+Hz – 10 kHz)","In DC : 3 points (in each range)
+In AC :3 frequency points and at
+each frequency - 3 Voltage and
+3 Current levels covering the
+entire range of DUC
+",18634,1815,"For each
+additional 3
+points in one
+range"
+15,"AC/DC Voltage AC/DC Current, Frequency, DC Resistance, Capacitance, RTD, Thermocouple","DC Voltage, Current & Resistance source",Multiproduct/mult ifunction Calibrator 6½ digit,Calibrator,"10 μV to 1 kV ,1 μA to
+20A , 1 Ω to 10 GΩ","..In DC : 3 points for voltage and
+current (one range) DC
+resistance in decade values
+In AC : Seven levels @3
+frequencies Seven points in
+frequency
+",71616,10890,"For each
+additional
+frequency or
+points"
+16,"DC Voltage, Current, Resistance, RTD, Thermocouple","DC Voltage, Current & Resistance source & measure",Hand Held Calibrator 5& 1/2 digit and 4& 1/2,Hand Held Multi function calibrator,"10 μV to 1 kV ,1 μA to
+20A , 1 Ω to 10 GΩ ",At discrete points ,40924,1210,"For each
+points"
+17,Thermocouple,"DC voltage simulation method, source and measure",Hand held thermometers and thermal indicators,,10 μV to 10V ,At discrete points ,25740,,

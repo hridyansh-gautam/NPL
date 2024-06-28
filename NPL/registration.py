@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Text, String, Integer, MetaData, Table
+from sqlalchemy import create_engine, Column, Text, String, Integer, MetaData, Table, CHAR
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from typing import List, Dict
@@ -214,5 +214,26 @@ def check_cust_credentials(email: str, password: str) -> bool:
         )
         result = session.execute(query).fetchone()
         return result is not None
+    finally:
+        session.close()
+
+
+checksums_table = Table(
+    'checksums', metadata,
+    Column('id', Integer, autoincrement=True),
+    Column('checksum', CHAR(64),  primary_key=True),
+    Column('certificate_no', String(100)),
+    Column('status', String(20)),
+)
+
+def get_checksum(checksum):
+    session = SessionLocal()
+    try:
+        select_stmt = checksums_table.select().where(checksums_table.c.checksum==checksum)
+        result = session.execute(select_stmt).fetchone()
+        if result:
+            return result
+        else:
+            return None
     finally:
         session.close()
