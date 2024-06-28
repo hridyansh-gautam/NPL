@@ -1,0 +1,17 @@
+%%%% PAGE 1 %%%%%%%
+
+\headsep = 0cm
+\small
+ {
+\renewcommand{\arraystretch}{2.4}
+\hspace{0.95cm}
+\begin{tabular}{p{1cm} p{6.74cm}  p{0.5cm} p{8cm}}
+
+\stepcounter{rownum}\arabic{rownum}. 	&	\makecell[l]{Calibrated for}		&:&	\parbox[t]{7.8cm}{\raggedright \input{inputs/calibratedFor.tex}} \\
+\stepcounter{rownum}\arabic{rownum}. 	&	\makecell[lt]{Description and Identification \\of Item under Calibration}  &:&	\parbox[t]{7.8cm}{ \raggedright \input{inputs/description.tex}} \\
+\stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Environmental Conditions} 	& :&	 \parbox[t]{7.8cm}{\raggedright \input{inputs/environmentalConditions.tex}} \\
+\stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Standard(s) used (with)\\ Associated uncertainty}	&:& 	\parbox[t]{7.8cm}{\raggedright  \input{inputs/standardsUsed.tex}} \\
+\stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Traceability of standard(s) used}	&:&	\parbox[t]{7.8cm}{ \raggedright \input{inputs/tracability.tex}} \\
+\stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Principle /Methodology of\\ calibration and Calibration\\ Procedure number} 	& :&	\parbox[t]{7.8cm}{\raggedright  \input{inputs/calibrationProcedure.tex}} \\
+\end{tabular}
+}

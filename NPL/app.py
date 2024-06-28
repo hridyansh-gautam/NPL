@@ -1,11 +1,13 @@
 from flask import Flask, request, jsonify, session, render_template, redirect, url_for
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import distinct
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from datetime import timedelta
 import os
 import registration
+import calibration_testing
 import pandas as pd
 import checksum
 
@@ -169,7 +171,9 @@ def empwelcome():
 
 @app.route('/custwelcome')
 def custwelcome():
-    return render_template('custwelcome.html')
+    service_types = db.session.query(distinct(calibration_testing.calibration_testing_table.c.service_types)).all()
+    service_types = [row[0] for row in service_types]
+    return render_template('custwelcome.html', service_types=service_types)
 
 @app.route('/ctbr')
 def ctbr():
