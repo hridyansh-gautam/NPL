@@ -1,130 +1,27 @@
 import subprocess
 import os
 import hashlib
-import re
-import pandas as pd
-import json
-
-def sanitize_filename(filename):
-    # Define a regex pattern for disallowed characters
-    disallowed_chars = r'[\/:*?"<>|]'
-    # Replace disallowed characters with an underscore
-    sanitized_filename = re.sub(disallowed_chars, '_', filename)
-    return sanitized_filename
 
 
-def generate_checksum(file_path, algorithm='sha256'):
-    """
-    Generate a checksum for a given file using the specified algorithm.
+def generate_checksum(filename):
+  # Open the file in binary read mode
+  with open(filename, 'rb') as file:
+    # Create a SHA-256 hash object
+    hasher = hashlib.sha256()
+    # Read the file content in chunks and update the hash
+    for chunk in iter(lambda: file.read(4096), b''):
+      hasher.update(chunk)
+    # Return the checksum in hexadecimal format
+    return hasher.hexdigest()
 
-    :param file_path: Path to the file.
-    :param algorithm: Hashing algorithm to use (default: 'sha256').
-    :return: Checksum of the file.
-    """
-    hash_function = hashlib.new(algorithm)
-    with open(file_path, 'rb') as f:
-        while chunk := f.read():
-            hash_function.update(chunk)
-    return hash_function.hexdigest()
-
-
-# Extact Measurement data from the excel sheet
-def extract_measurement_data(df):
-    tables = []  # List to hold all the extracted tables
-    table = []  # Current table being processed
-    header = None  # Header of the current table
-    
-    # Iterate through each row in the dataframe
-    for i, row in df.iterrows():
-        if row.isnull().all():  # Check if the row is completely empty
-            if table:  # If there is a current table being processed
-                if header is not None:  # If header is set
-                    table_df = pd.DataFrame(table, columns=header)
-                    tables.append(table_df.dropna(axis=1, how='all'))  # Add the table to tables list
-                table = []  # Reset table
-                header = None  # Reset header
-        else:
-            if header is None:  # If header is not set
-                header = row.tolist()  # Set the current row as header
-            else:
-                table.append(row.tolist())  # Add row to the current table
-
-    latex_tables = ''
-    # Convert each table to LaTeX format
-    for i, table in enumerate(tables):
-        col_count = len(table.columns)
-        col_width = 19 / col_count
-        col_format = ''.join([f'|>{{\\centering}}p{{{col_width}cm}}' for _ in range(0, col_count - 1)])
-        tex = table.to_latex(
-            multicolumn=True, 
-            header=True, 
-            index=False,
-            longtable=True,
-            column_format= col_format + f'|>{{\\centering\\arraybackslash}}p{{{col_width}cm}}|',  
-            caption=f"This is Table {i + 1}"
-        )
-        # Replace default formatting with desired formatting
-        replacements = {"\\toprule": "", "\\midrule": "", "\\bottomrule": "", "\\\n": "\\ \\hline\n"}
-        def replace_func(match):
-            return replacements[match.group(0)]
-        pattern = re.compile("|".join(re.escape(k) for k in replacements))
-        tex = pattern.sub(replace_func, tex)
-        latex_tables += tex
-        print(f"Table {i + 1} created.")  # Log the table creation
-    return latex_tables
-
-# def convert_to_siunitx(text):
-#     # Regex pattern to find numbers followed by units (alphanumeric)
-#     pattern = re.compile(r'(\d+(\.\d+)?(\textpm \d+(?:\.\d+)?)?)\s*([a-zA-Zµ%Ω]+|(?:\*10\^)\-?\d+)')
-    
-#     def repl(match):
-#         number = match.group(1)
-#         unit = match.group(2).strip()
-#         return f'\\SI{{{number}}}{{{unit}}}'
-    
-#     return pattern.sub(repl, text)
-# Extract administrative and measurement data from Excel file to json
-def excel_to_json(excel_file):
-    xls = pd.ExcelFile(excel_file)
-    sheet_names = xls.sheet_names
-    result = {}
-
-    # Iterate through each sheet in the Excel file
-    for sheet_name in sheet_names:
-        df = pd.read_excel(excel_file, sheet_name=sheet_name, header=None)
-        for row in df.values:
-            value = str('' if pd.isna(row[1]) else row[1])
-            value = handle_sub_superscript(value)
-            # value = convert_to_siunitx(value)
-            if row[0] == 'result_table':
-                result['result_table'] = extract_measurement_data(df)
-            elif not pd.isna(row[0]):
-                value = value.replace('\n', ' \\\\\n').replace(']', ']}').replace('[', '{[')
-                result[str(row[0])] = value
-    
-    result['doi_no'] = 'X'
-    return json.dumps(result, indent=4)
+def verify_checksum(filename, expected_checksum):
+    actual_checksum = generate_checksum(filename)
+    return actual_checksum == expected_checksum
 
 
-# Convert special characters in data to suitable Latex format
-def handle_special_chars(data):
-    for key, val in data.items():
-        val = val.replace('%', '\\%').replace('#', '\\#').replace('^', '\\^')
-        val = val.replace('\u2103', '\\textdegree C').replace('\u03a9', '\\textohm').replace('\u00b1', ' \\textpm ')
-        data[key] = val
-    return json.dumps(data, indent=4)
-
-# Handle Subscript and Superscript characters in string
-def handle_sub_superscript(text):
-    # Replace superscript (^number) with actual superscript notation
-    text = re.sub(r'[\u2070-\u2079]', lambda x: f'\\textsubscript{{{ord(x.group(0)) - 8304}}}', text)
-    # Replace subscript (₀₁₂₃₄₅₆₇₈₉) with _number format
-    text = re.sub(r'[\u2080-\u2089]', lambda x: f'\\textsubscript{{{ord(x.group(0)) - 8320}}}', text)
-    return text
-
-# Create PDF A3 using template code
 def create_pdf(data, embed_file, certificate_id):
-    
+    # LaTeX document
+
     packages = r"""
     %% Language and font encoding
     \usepackage[english]{babel}
@@ -147,6 +44,7 @@ def create_pdf(data, embed_file, certificate_id):
     \usepackage{xcolor} %To define the color of text
     \usepackage{multirow}%For more flexibility in tables
     \usepackage{multicol}%For more flexibility in tables
+    \usepackage{makecell} %For more flexibility in tables
     \usepackage{background} %To create a watermark
     \usepackage{tcolorbox} %To use parbox and wrap text
     \usepackage{graphicx} %To include images
@@ -155,10 +53,43 @@ def create_pdf(data, embed_file, certificate_id):
     \usepackage{fancyhdr}%header & footer
     \usepackage{setspace} % For setting line spacing
     \usepackage{float} % Aligns the tables to the top for better space utilization
-
-
+    \usepackage{ifthen} % For conditional embedding of data
     """
 
+    page_formatting = f"""
+    % Adjust margins
+    \\geometry{{
+        top=0.9cm,
+        bottom=10.7cm,
+        left=0.7cm,
+        right=0.7cm
+    }}
+
+    \\pagestyle{{fancy}} %Defining the page style 
+    \\fancyhf{{}}  %Clear the header and footer
+    \\newcounter{{rownum}} % Create a new counter to count the number of headings given
+    \\renewcommand{{\\headrulewidth}}{{0pt}}	%No line below the header
+    \\renewcommand\\footrule{{\\hrule width 19.65cm height 0.5mm}} %To have a line above footer with the specified dimensions
+    \\newcommand{{\\fullhline}}{{\\noalign{{\\hrule height 0.8mm}}}} %To have a thick horizontal line for selective columns
+    \\newcommand{{\\embedCondition}}{{yes}} % Change to "no" if you don't want to embed the file
+    
+    % Set column separation
+    \\setlength{{\\tabcolsep}}{{0pt}} %To remove the inter-column space
+
+
+    % Define watermark
+    \\backgroundsetup{{
+    scale=1.02,  % Scale the watermark
+    opacity=0.05,  % Opacity of the watermark (1 = opaque, 0 = fully transparent)
+    angle=0,  % Angle of the watermark
+    position=current page.center,  % Position of the watermark
+    vshift=-0.6cm,  % Vertical shift of the watermark
+    hshift=-0.2mm,  % Horizontal shift of the watermark
+    contents={{%
+        \\includegraphics[width=10cm,height=10cm]{{./static/Logo_NPL_india.png}}  % Path to your watermark image
+    }}
+    }}
+    """
 
     header = f"""
     \\fancyhead[L]{{
@@ -286,42 +217,6 @@ def create_pdf(data, embed_file, certificate_id):
     }
     """
 
-    page_formatting = f"""
-    % Adjust margins
-    \\geometry{{
-        top=0.9cm,
-        bottom=10.7cm,
-        left=0.7cm,
-        right=0.7cm
-    }}
-
-    \\pagestyle{{fancy}} %Defining the page style 
-    \\fancyhf{{}}  %Clear the header and footer
-    \\newcounter{{rownum}} % Create a new counter to count the number of headings given
-    \\renewcommand{{\\headrulewidth}}{{0pt}}	%No line below the header
-    \\renewcommand\\footrule{{\\hrule width 19.65cm height 0.5mm}} %To have a line above footer with the specified dimensions
-
-    \\newcommand{{\\fullhline}}{{\\noalign{{\\hrule height 0.8mm}}}} %To have a thick horizontal line for selective columns
-
-    % Set column separation
-    \\setlength{{\\tabcolsep}}{{0pt}} %To remove the inter-column space
-
-
-    % Define watermark
-    \\backgroundsetup{{
-    scale=1.02,  % Scale the watermark
-    opacity=0.05,  % Opacity of the watermark (1 = opaque, 0 = fully transparent)
-    angle=0,  % Angle of the watermark
-    position=current page.center,  % Position of the watermark
-    vshift=-0.6cm,  % Vertical shift of the watermark
-    hshift=-0.2mm,  % Horizontal shift of the watermark
-    contents={{%
-        \\includegraphics[width=10cm,height=10cm]{{./static/Logo_NPL_india.png}}  % Path to your watermark image
-    }}
-    }}
-    """
-
-
 
     latex_template = f"""
     \\DocumentMetadata{{
@@ -354,8 +249,6 @@ def create_pdf(data, embed_file, certificate_id):
 
     \\setlength{{\\headheight}}{{6.9cm}}
     \\setlength{{\\footskip}}{{1.95cm}}
-
-
     %%%%%% DOCUMENT BEGINS HERE  %%%%%%%%%%
     \\begin{{document}}
     
@@ -370,8 +263,11 @@ def create_pdf(data, embed_file, certificate_id):
 
     %%%%%%% LAST PAGE %%%%%%%%%%%
     {last_page}
-
-    \\embedfile{{{embed_file}}}
+    \\ifthenelse{{\\equal{{\\embedCondition}}{{yes}}}}{{
+            \\embedfile{{{embed_file}}}
+    }}   {{
+        % Do nothing if the condition is not met
+    }}
     \\end{{document}}
     """
 
@@ -379,16 +275,14 @@ def create_pdf(data, embed_file, certificate_id):
     aux_file = f"{certificate_id}.tex"
     tex_file = f"./pdfs/{certificate_id}.tex"
     pdf_file = f"./pdfs/{certificate_id}.pdf"
-    checksum_file=f"./checksums/{certificate_id}.txt"
     with open(tex_file, "w", encoding='utf-8') as file:
         file.write(latex_template)
     print('tex written successfully')
-
     # convert tex to pdf
     try:
-        subprocess.run(["lualatex", tex_file], capture_output=True)
+        subprocess.run(["lualatex", tex_file])
         #, capture_output=True
-        subprocess.run(["lualatex", tex_file], capture_output=True)
+        subprocess.run(["lualatex", tex_file])
         print("PDF created successfully.")
     except subprocess.CalledProcessError as e:
         print("An error occurred while compiling the LaTeX document:")
@@ -398,12 +292,6 @@ def create_pdf(data, embed_file, certificate_id):
     if os.path.exists(aux_file.replace(".tex", ".pdf")):
         os.replace(aux_file.replace(".tex", ".pdf"), pdf_file)
     
-    # Generate Checksum
-    expected_checksum = generate_checksum(pdf_file)
-    with open(checksum_file,'w') as f:
-        f.write(expected_checksum)
-        print(f"Generated checksum for {certificate_id}: {expected_checksum}")
-
     # remove extra files generated by LaTeX
     for ext in [".aux", ".log", ".out", ".toc", ".blg", ".bbl"]:
         if os.path.exists(aux_file.replace(".tex", ext)):
