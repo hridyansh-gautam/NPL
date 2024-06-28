@@ -9,7 +9,7 @@ def generate_checksum(filename):
     # Create a SHA-256 hash object
     hasher = hashlib.sha256()
     # Read the file content in chunks and update the hash
-    for chunk in iter(lambda: file.read(4096), b''):
+    for chunk in iter(lambda: file.read(), b''):
       hasher.update(chunk)
     # Return the checksum in hexadecimal format
     return hasher.hexdigest()
