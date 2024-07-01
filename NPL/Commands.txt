@@ -112,6 +112,7 @@ INSERT INTO calibration_testing (service_types, service_name, service_code) VALU
 INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'High Voltage & Current Metrology Section', 'cd2_02');
 INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'AC Power & Energy Metrology', 'cd2_03');
 INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Quantum Hall Resistance Standards', 'cd2_05');
+INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Atmospheric Science & Metrology', 'cd3_01');
 INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Gas Metrology', 'cd3_02');
 INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Defibrillator Analyser & Defibrillator Machine Standard', 'cd3_03');
 INSERT INTO calibration_testing (service_types, service_name, service_code) VALUES ('Calibration Charges', 'Time & Frequency Standard', 'cd6_01');
@@ -147,184 +148,39 @@ INSERT INTO calibration_testing (service_types, service_name, service_code) VALU
 
 ...
 
-CREATE TABLE "cd1_01" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Range" VARCHAR(255),
-    "No_of_Points_for_Calibration_Procedure_No" VARCHAR(255),
-    "Limitation_Condition" VARCHAR(255),
-    "Charges_per_Item_Rs" DECIMAL(10, 2),
-    "Additional_Charges_Rs" DECIMAL(10, 2),
-    "Description_for_Additional_Charges" TEXT,
-    "Remarks_if_any" TEXT,
-    PRIMARY KEY ("SI_No", "Parameter")
+CREATE TABLE "meteorological_services" (
+    "si_no" SERIAL,
+    "service_code" VARCHAR(255),
+    "parameter" VARCHAR(255),
+    "item_type_group" VARCHAR(255),
+    "item_name" VARCHAR(255),
+    "alias_name" VARCHAR(255),
+    "range" VARCHAR(255),
+    "calibration_parameters" VARCHAR(255),
+    "no_of_points_for_calibration_procedure_no" VARCHAR(255),
+    "limitation_condition" VARCHAR(255),
+    PRIMARY KEY ("si_no", "service_code")
 );
 
-CREATE TABLE "cd1_02" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Limitation_Condition" VARCHAR(255),
-    "Charges_per_Item_Rs" DECIMAL(10, 2),
-    "Additional_Charges_Rs" DECIMAL(10, 2),
-    "Description_for_Additional_Charges" TEXT,
-    "Remarks_if_any" TEXT,
-    "No_of_Points_for_Calibration" VARCHAR(255),
-    PRIMARY KEY ("SI_No", "Parameter")
+ALTER TABLE "meteorological_services"
+ADD CONSTRAINT fk_service_code
+FOREIGN KEY ("service_code") REFERENCES "meteorological_classification"("service_code");
+
+
+CREATE TABLE "meteorological_services_charges" (
+    "si_no" SERIAL,
+    "service_code" VARCHAR(255),
+    "charges_per_item_rs" VARCHAR(255),
+    "additional_charges_rs" VARCHAR(255),
+    "description_for_additional_charges" TEXT,
+    "remarks_if_any" TEXT,
+    "normal" VARCHAR(255),
+    "tatkal" VARCHAR(255),
+    "edc" VARCHAR(255),
+    PRIMARY KEY ("si_no", "service_code")
 );
 
-ALTER TABLE "cd1_02" ALTER COLUMN "Charges_per_Item_Rs" TYPE VARCHAR(255);
-ALTER TABLE "cd1_02" ALTER COLUMN "Additional_Charges_Rs" TYPE VARCHAR(255);
-
-CREATE TABLE "cd1_08b" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Calibration_Parameters" VARCHAR(255),
-    "No_of_Points_for_Calibration" VARCHAR(255),
-    "Limitation_Condition" VARCHAR(255),
-    "Charges_per_Item_Rs" DECIMAL(10, 2),
-    "Additional_Charges_Rs" DECIMAL(10, 2),
-    "Description_for_Additional_Charges" TEXT,
-    "Remarks_if_any" TEXT,
-    "Normal" VARCHAR(255),
-    "Tatkal" VARCHAR(255),
-    PRIMARY KEY ("SI_No", "Parameter")
-);
-
-CREATE TABLE "cd1_08c" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Calibration_Parameters" VARCHAR(255),
-    "No_of_Points_for_Calibration" VARCHAR(255),
-    "Limitation_Condition" VARCHAR(255),
-    "Charges_per_Item_Rs" DECIMAL(10, 2),
-    "Additional_Charges_Rs" DECIMAL(10, 2),
-    "Description_for_Additional_Charges" TEXT,
-    "Remarks_if_any" TEXT,
-    "Normal" VARCHAR(255),
-    "Tatkal" VARCHAR(255),
-    PRIMARY KEY ("SI_No", "Parameter")
-);
-
-CREATE TABLE "cd2_01a" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Range" VARCHAR(255),
-    "No_of_Points_for_Calibration" VARCHAR(255),
-    "Revised_Charges_As_Per_CSIR_Guidlines" DECIMAL(10, 2),
-    "Additional_Charges_Rs" DECIMAL(10, 2),
-    "Description_for_Additional_Charges" TEXT,
-    PRIMARY KEY ("SI_No", "Parameter")
-);
-
-CREATE TABLE "cd2_01c" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Range" VARCHAR(255),
-    "No_Of_Points_For_Calibration" VARCHAR(255),
-    "Limitation_Condition" VARCHAR(255),
-    "New_Charges_Per_Item_In_Rs" DECIMAL(10, 2),
-    "Additional_Charges_Rs" DECIMAL(10, 2),
-    "Description_For_Additional_Charges" TEXT,
-    PRIMARY KEY ("SI_No", "Parameter")
-);
-
-CREATE TABLE "cd2_03" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Range" VARCHAR(255),
-    "No_Of_Points_For_Calibration" VARCHAR(255),
-    "Sample_Requirements_If_Any" VARCHAR(255),
-    "Charges_Per_Item_In_Rs" DECIMAL(10, 2),
-    "Additional_Charges_Rs" DECIMAL(10, 2),
-    "Description_For_Additional_Charges" TEXT,
-    "Remarks_If_Any" TEXT,
-    PRIMARY KEY ("SI_No", "Parameter")
-);
-
-CREATE TABLE "cd3_03" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Range" VARCHAR(255),
-    "No_Of_Points_For_Calibration" VARCHAR(255),
-    "Limitation_Condition" VARCHAR(255),
-    "Charges_Per_Item_In_Rs" VARCHAR(255),
-    "Additional_Charges_Rs" VARCHAR(255),
-    "Description_For_Additional_Charges" TEXT,
-    "Remarks_if_any" TEXT,
-    "Normal" VARCHAR(255),
-    "Tatkal" VARCHAR(255),
-    PRIMARY KEY ("SI_No", "Parameter")
-);
-
-CREATE TABLE "cd6_01" (
-    "SI_No" SERIAL,
-    "Parameter_Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Range" VARCHAR(255),
-    "No_Of_Points_For_Calibration" VARCHAR(255),
-    "Limitation_Condition" VARCHAR(255),
-    "Charges_Per_Item_In_Rs" VARCHAR(255),
-    "Additional_Charges_Rs" VARCHAR(255),
-    "Description_For_Additional_Charges" TEXT,
-    "Remarks_if_any" TEXT,
-    "EDC" VARCHAR(255),
-    PRIMARY KEY ("SI_No", "Parameter_Item_Type_Group")
-);
-
-CREATE TABLE "cd6_02" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Range" VARCHAR(255),
-    "No_Of_Points_For_Calibration" VARCHAR(255),
-    "Present_Charges_Per_Item_Rs" VARCHAR(255),
-    "Present_Additional_Charges_Rs" VARCHAR(255),
-    "Description_For_Additional_Charges" TEXT,
-    "Remarks_If_Any" TEXT,
-    "Normal" VARCHAR(255),
-    "Tatkal" VARCHAR(255),
-    PRIMARY KEY ("SI_No", "Parameter")
-);
-
-CREATE TABLE "cd6_02b" (
-    "SI_No" SERIAL,
-    "Parameter" VARCHAR(255),
-    "Item_Type_Group" VARCHAR(255),
-    "Item_Name" VARCHAR(255),
-    "Alias_Name" VARCHAR(255),
-    "Range" VARCHAR(255),
-    "No_Of_Points_For_Calibration" VARCHAR(255),
-    "Limitation_Condition" VARCHAR(255),
-    "Present_Charges_Per_Item_Rs" VARCHAR(255),
-    "Present_Additional_Charges_Rs" VARCHAR(255),
-    "Description_For_Additional_Charges" TEXT,
-    "Remarks_If_Any" TEXT,
-    PRIMARY KEY ("SI_No", "Parameter")
-);
+ALTER TABLE "meteorological_services_charges"
+ADD CONSTRAINT fk_si_no_service_code
+FOREIGN KEY ("si_no", "service_code") 
+REFERENCES "meteorological_services"("si_no", "service_code");

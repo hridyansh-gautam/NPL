@@ -1,0 +1,523 @@
+1,cd1_01,110000,,,Charges will be double in case of ASTM standard [E617],,,
+2,cd1_01,90900,,,Charges will be double in case of ASTM standard [E617],,,
+3,cd1_01,75400,,,Charges will be double in case of ASTM standard [E617],,,
+4,cd1_01,49900,,,Charges will be double in case of ASTM standard [E617],,,
+5,cd1_01,44000,,,Charges will be double in case of ASTM standard [E617],,,
+6,cd1_01,19500,,,Charges will be double in case of ASTM standard [E617],,,
+7,cd1_01,26200,,,Charges will be double in case of ASTM standard [E617],,,
+8,cd1_01,26200,,,Charges will be double in case of ASTM standard [E617],,,
+9,cd1_01,52300,,,Charges will be double in case of ASTM standard [E617],,,
+10,cd1_01,40800,,,Charges will be double in case of ASTM standard [E617],,,
+11,cd1_01,27700,,,Charges will be double in case of ASTM standard [E617],,,
+12,cd1_01,23200,,,Charges will be double in case of ASTM standard [E617],,,
+13,cd1_01,19100,,,Charges will be double in case of ASTM standard [E617],,,
+14,cd1_01,4800,,,Charges will be double in case of ASTM standard [E617],,,
+15,cd1_01,7800,,,Charges will be double in case of ASTM standard [E617],,,
+16,cd1_01,3900,,,Charges will be double in case of ASTM standard [E617],,,
+17,cd1_01,5300,,,Charges will be double in case of ASTM standard [E617],,,
+18,cd1_01,9200,,,Charges will be double in case of ASTM standard [E617],,,
+19,cd1_01,9800,5800,Charges per weight for Adjustment (if required),,,,
+20,cd1_01,53900,,,,,,
+21,cd1_01,36100,,,Legal Metrology,,,
+22,cd1_01,36100,,,,,,
+23,cd1_01,30800,,,Legal Metrology,,,
+24,cd1_01,27500,,,,,,
+25,cd1_01,32300,,,,,,
+26,cd1_01,37200,,,,,,
+27,cd1_01,27500,,,,,,
+28,cd1_01,32300,,,,,,
+29,cd1_01,37200,,,,,,
+30,cd1_01,42500,,,,,,
+31,cd1_01,52000,,,,,,
+32,cd1_01,125000,,,,,,
+33,cd1_01,4400,,,,,,
+34,cd1_01,12000,,,,,,
+35,cd1_01,5000,,,,,,
+36,cd1_01,6000,,,,,,
+37,cd1_01,11600,,,,,,
+38,cd1_01,16900,,,,,,
+39,cd1_01,20700,,,,,,
+40,cd1_01,38500,,,,,,
+41,cd1_01,49200,,,,,,
+42,cd1_01,38500,,,,,,
+43,cd1_01,30800,,,Legal Metrology,,,
+44,cd1_01,10800,2900,For each additional point,Scale calibration,,,
+45,cd1_01,13100,3400,"For each
+additional point",,,,
+46,cd1_01,13100,3400,For each additional point,Charges will be double in case of ASTM standard [E617],,,
+47,cd1_01,15400,3900,For each additional point,Scale calibration,,,
+48,cd1_01,15400,3900,For each additional point,Scale calibration,,,
+49,cd1_01,16200,3900,For each additional point,Scale calibration,,,
+50,cd1_01,20700,5200,For each additional point,Scale calibration,,,
+51,cd1_01,16900,4300,For each additional point,Scale calibration,,,
+52,cd1_01,23200,5600,For each additional point,Scale calibration,,,
+53,cd1_01,9200,2400,For each additional point,IS 3104 (Part I & II) at One Temp.& Scale Calibration,,,
+54,cd1_01,10800,2700,For each additional point,Scale calibration,,,
+55,cd1_01,10800,2700,For each additional point,Scale calibration,,,
+56,cd1_01,10800,2700,For each additional point,Scale calibration,,,
+57,cd1_01,10800,2700,For each additional point,Scale calibration,,,
+58,cd1_01,23900,9400,For each additional point,By Hydrostatic Weighing method,,,
+59,cd1_01,13900,,,"non-absorbent and non-reactive with Xylene, Tetra- Chloroethylene and Fluoro-carbon",,,
+60,cd1_01,5500,,,,,,
+61,cd1_01,12300,,,,,,
+62,cd1_01,19100,,,,,,
+63,cd1_01,15400,,,,,,
+64,cd1_01,23900,,,,,,
+65,cd1_01,16900,,,,,,
+66,cd1_01,14600,,,,,,
+67,cd1_01,16900,,,,,,
+68,cd1_02,48000,1200,For each additional point above 10 points,,,,
+69,cd1_02,9844,700,For each additional point above 10 points,Laser_UMM,,,
+70,cd1_02,29175,1200,For each additional point above 10 points,Q_vision_CM M,,,
+71,cd1_02,10500,4750,For each additional grid with same setting,"Mean of
+upto10 grid spacing of each axis",,,
+72,cd1_02,5342,600,For each additional meter,IS: 1270-1991,,,
+73,cd1_02,15500,,for first gauge block and each gauge   in case the gauges are odd size,"IS: 2984-
+2003, ISO:3650- 1998",,,
+74,cd1_02,15500 for first gauge block,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 1998",,,
+75,cd1_02,54350,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 1998",,,
+76,cd1_02,58900,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2000",,,
+77,cd1_02,57850,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2001",,,
+78,cd1_02,57500,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+79,cd1_02,54000,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+80,cd1_02,51900,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+81,cd1_02,51200,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+82,cd1_02,45600,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+83,cd1_02,44200,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+84,cd1_02,42800,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+85,cd1_02,42450,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+86,cd1_02,41750,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+87,cd1_02,32650,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+88,cd1_02,31600,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+89,cd1_02,31250,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+90,cd1_02,29500,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+91,cd1_02,28450,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+92,cd1_02,26700,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+93,cd1_02,26350,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+94,cd1_02,24600,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+95,cd1_02,21450,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+96,cd1_02,18650,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+97,cd1_02,18300,350,for subsequent gauge blocks up to 100mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+98,cd1_02,22860,22860,for first gauge block and subsequent gauge block above 102mm,"IS: 2984-
+2003, ISO:3650- 1998",,,
+99,cd1_02,22860,1700,for first gauge block and subsequent gauge block up to 102mm,"IS: 2984-
+2003, ISO:3650- 1997",,,
+100,cd1_02,211560,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 1997",,,
+101,cd1_02,233660,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 1998",,,
+102,cd1_02,228560,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 1999",,,
+103,cd1_02,226860,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2000",,,
+104,cd1_02,209860,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2001",,,
+105,cd1_02,199660,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2002",,,
+106,cd1_02,196260,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2003",,,
+107,cd1_02,169060,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2004",,,
+108,cd1_02,162260,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2005",,,
+109,cd1_02,155460,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2006",,,
+110,cd1_02,153760,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2007",,,
+111,cd1_02,150360,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2008",,,
+112,cd1_02,106160,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2009",,,
+113,cd1_02,101060,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2010",,,
+114,cd1_02,99360,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2011",,,
+115,cd1_02,90860,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2012",,,
+116,cd1_02,85760,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2013",,,
+117,cd1_02,77260,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2014",,,
+118,cd1_02,67060,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2016",,,
+119,cd1_02,51760,1700,for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2017",,,
+120,cd1_02,55000 for first ten guages,3500,for first ten guages and for subsequent gauge blocks up to 102mm,"IS: 2984-
+2003, ISO:3650- 2018 ,
+Euramet-Cg- 2,2011",,,
+121,cd1_02,8200,above 100mm upto 300 mm,per gauge Single Point  (length),"IS: 7014-1973
+(Reaffirmed 2005)",,,
+122,cd1_02,8500,"above300m m upto 500
+mm",per gauge Single Point (length),"IS: 7014-1973
+(Reaffirmed 2005)",,,
+123,cd1_02,11500,"above 500 to
+1000 mm",per gauge Single Point (length),"IS: 7014-1973
+(Reaffirmed 2005)",,,
+124,cd1_02,6000,3000 each leaf,for first leaff and subsequent leaf,"IS: 3179-1990
+(Reaffirmed 2005)",,,
+125,cd1_02,8500,,(Upto 100 mm),"IS: 3484-1993
+/ IS: 3485-
+1993
+(Reaffirmed 1998)",,,
+126,cd1_02,11000,,>100 to 300 mm,"IS: 3484-1993
+/ IS: 3485-
+1993
+(Reaffirmed 1998)",,,
+127,cd1_02,11500,Upto 250 mm,,,,,
+128,cd1_02,8000,"0 to 50 mm
+(for 10 points)",Rs 700/- for each additional point,,,,
+129,cd1_02,8000,0 to 10 mm,Rs 700/- for each additional point,,,,
+130,cd1_02,3880,Upto 1000 mm,,,,,
+131,cd1_02,18715,,,,,,
+132,cd1_02,37500,,,,,,
+133,cd1_02,24500,,,,,,
+134,cd1_02,30000,,,,,,
+135,cd1_02,20500,,,wavelenght compensated,,,
+136,cd1_02,20500,2500,for subsequent 100 mm up to 1000 mm,wavelength compensated,,,
+137,cd1_02,46000,8800,For each additional meter,,,,
+138,cd1_02,28000,3000,"Rs 28000  for first 300 mm,then Rs 3000 for subsequent 100 mm up to 1000 mm",,,,
+139,cd1_02,48000,8800,subsequent 220 mm per axis  above 1 m upto 1220 mm *,single axis,,,
+140,cd1_02,150000,8800,"Rs 150000 for three
+axes, upto 1000 mm then Rs 8800 for subsequent 220mm  per axis upto 1220 mm maximum range*",three axis,,,
+141,cd1_02,50000,8800,subsequent 1m per axis  above 1m,,,,
+142,cd1_02,139000,8800,For each additional meter,,,,
+143,cd1_02,24500,5000,per additional orientation/axis,(Except  I Checker / Motorized dial tester),,,
+144,cd1_02,24500,5000,per additional scale,,,,
+145,cd1_02,16000,,,,,,
+146,cd1_02,9500,2000,for subsequent angle measurment on each angle block or on same block,,,,
+147,cd1_02,15500,,,,,,
+148,cd1_02,55000,3300,upto 12 Faces and For each additional face beyond 12 faces,,,,
+149,cd1_02,14000,,,,,,
+150,cd1_02,34000,6000,per point after 10 points,,,,
+151,cd1_02,28000,,,,,,
+152,cd1_02,42000,,,,,,
+153,cd1_02,48000,8800,for subsequent 100 mm up to 1000 mm,,,,
+154,cd1_02,24000,,,,,,
+155,cd1_02,65500,8800,for subsequent 100 mm up to 1000 mm,,,,
+156,cd1_02,72000,8800,for subsequent 100 mm up to 1000 mm,,,,
+157,cd1_02,30000,,,up to 300mm,,,
+158,cd1_02,34000,,,above 300 mm,,,
+159,cd1_02,48000,,,,,,
+160,cd1_02,41000,11000,For Z axis,,,,
+161,cd1_02,26500,,,,,,
+162,cd1_02,67500,10000,For Z axis,,,,
+163,cd1_02,26200,,,,,,
+164,cd1_02,50400,,up to 100mm straightness wayguide length,,,,
+165,cd1_02,115000,,up to 100mm straightness wayguide length,,,,
+166,cd1_02,9500,1000,per subsquent roughness paramter,up to 50µm,,,
+167,cd1_02,28500,8800,per axis calibration with a dispalcement standard(laser interferometer/ dial indicator/ glass scale),,,,
+168,cd1_02,26200,,,,,,
+169,cd1_02,26200,,,,,,
+170,cd1_02,15900,,,,,,
+171,cd1_02,74500,,,,,,
+172,cd1_02,18300,,,"IS: 6952-1990
+reaffirmed 2006",,,
+173,cd1_02,24200,,,"IS: 2103-1980
+reaffirmed 2006",,,
+174,cd1_02,24200,,,,,,
+175,cd1_02,16300,,,"IS: 2554-1971
+(Reaffirmed 2005) On CMM",,,
+176,cd1_02,24400,,,"IS: 2554-1971
+(Reaffirmed 2005) On CMM",,,
+177,cd1_02,30300,,,"IS: 6985-1973
+(Reaffirmed 2005) ,On CMM",,,
+178,cd1_02,44500,,On CMM,"IS: 6985-1973
+(Reaffirmed 2005), On
+CMM",,,
+179,cd1_02,11800,,,"IS: 2220-1995
+(Reaffirmed 2005)",,,
+180,cd1_02,18300,,,"IS: 2220-1995
+(Reaffirmed 2005)",,,
+181,cd1_02,11114,,,"IS: 2285-2003
+IS: 7327-2003
+/On CMM",,,
+182,cd1_02,11114,,,"IS: 2285-2003
+IS: 7327- 2003/On CMM",,,
+183,cd1_02,18018,,,"IS: 2285-2003
+IS: 7327-2003",,,
+184,cd1_02,22620,,,"IS: 2285-2003
+IS: 7327-2003",,,
+185,cd1_02,29524,,,"IS: 2285-2003
+IS: 7327-2003",,,
+186,cd1_02,50235,,,"IS: 2285-2003
+IS: 7327-2003",,,
+187,cd1_02,59440,,,"IS: 2285-2003
+IS: 7327-2003",,,
+188,cd1_02,59440,,,"IS: 2285-2003
+IS: 7327-2003",,,
+189,cd1_02,87055,,,"IS: 2285-2003
+IS: 7327-2003",,,
+190,cd1_02,22315,,,"IS: 5440-1969
+(Reaffirmed 2005)",,,
+191,cd1_02,32876,,,"IS: 5440-1969
+(Reaffirmed 2005)",,,
+192,cd1_02,46454,,,"IS: 5440-1969
+(Reaffirmed 2005)",,,
+193,cd1_02,46454,,,"IS: 5440-1969
+(Reaffirmed 2005)",,,
+194,cd1_02,55506,,,"IS: 5440-1969
+(Reaffirmed 2005)",,,
+195,cd1_02,51877,,,,,,
+196,cd1_02,14142,,,ISO 5436,,,
+197,cd1_02,7200,100,per additional 100 mm,IS 3651,,,
+198,cd1_02,7200,150,per additional 25 mm,IS 2967,,,
+199,cd1_02,48000,,,"0.0003 mm
+accuracy  up to 100mm",,,
+200,cd1_02,60000,,,Three pitch angle and a rotary axis  up to 10 readings,,,
+201,cd1_02,60000,43000,Additional dual axis collimator upto 40 readings,Three pitch angle and a rotary axis  up to 10 readings,,,
+202,cd1_02,47500,2500,subsequent each Notche/ hole,length Xwidth Xdepth,,,
+203,cd1_02,28000,14000,Rs 14000 for subsequent ball spacing in same artifact. If diameter required then Rs 14000 for each sphere,,,,
+204,cd1_02,17300,8000,Rs 8000 for subsequent length/diameter in same artifact,,,,
+205,cd1_08b,11550,2900,"for additional
+ each point","Charges are for each
+ range.Flow
+ range of the system:
+ 1 sccm to 1000 slm
+ for air and 1 sccm to
+ 50 slm for nitrogen",3 days,2 days,
+206,cd1_08b,8140,2100,"for additional
+ each point","Charges are for each
+ range.Flow range
+ of the system: 1
+ sccm to 1000 slm
+ for air and 1 sccm to
+ 50 slm for nitrogen",3 days,2 days,
+207,cd1_08b,18700,4700,"for additional
+ each point","Charges are for each
+ range.Flow
+ range of the system:
+ 1 sccm to 1000 slm
+ for air and 1 sccm to
+ 50 slm for nitrogen",3 days,2 days,
+208,cd1_08c,20020,5100,"for additional each
+ point","Only one calibration
+ parameter.",3 days,2 days,
+209,cd1_08c,23100,5800,"for additional each
+ point","Only one calibration
+ parameter.",3 days,2 days,
+210,cd1_08c,30800,7700,"for additional each
+ point","Only one calibration
+ parameter.",3 days,2 days,
+211,cd1_08c,37180,9300,"for additional each
+ point","Only one calibration
+ parameter.",3 days,2 days,
+212,cd1_08c,44000,11000,"for additional each
+ point","Only one calibration
+ parameter. (Maximum flow
+ rate: 650 m3/h)",3 days,2 days,
+213,cd1_08c,86350,21600,"for additional each
+ point","Only one calibration
+ parameter. (Maximum flow
+ rate: 650 m3/h)",10 days,5 days,
+214,cd1_08c,14850,3800,"for additional each
+ point","Only one calibration
+ parameter.",3 days,2 days,
+215,cd1_08c,17050,4300,"for additional each
+point",Only one calibration parameter.,3 days,2 days,
+216,cd1_08c,19800,5000,for additional each point,Only one calibration parameter.,3 days,2 days,
+217,cd1_08c,26950,6800,for additional each point,Only one calibration parameter.,3 days,2 days,
+218,cd1_08c,30800,7700,for additional each point,Only one calibration parameter. (Maximum flow rate: 650 m3/h),3 days,2 days,
+219,cd1_08c,41800,10500,for additional each point,Only one calibration parameter. (Maximum flow rate: 650 m3/h),7 days,,
+220,cd1_08c,5500,13800,for additional each point,Only one calibration parameter. (Maximum flow rate: 650 m3/h),7 days,,
+221,cd1_08c,71500,17900,for additional each point,Only one calibration parameter. (Maximum flow rate: 650 m3/h),7 days,,
+222,cd1_08c,17050,4300,for additional each point,Only one calibration parameter.,3 days, 2 days,
+223,cd1_08c,19800,5000,for additional each point,Only one calibration parameter.,3 days,2 days,
+224,cd1_08c,26950,6800,for additional each point,Only one calibration parameter.,3 days,2 days,
+225,cd1_08c,30800,7700,for additional each point,Only one calibration parameter.,3 days, 2 days,
+226,cd2_01a,95590,26136,For each additional 1 point,,,,
+227,cd2_01a,71390,14883,For each additional 3 point,,,,
+228,cd2_01a,95590,14883,For each additiona3 point,,,,
+229,cd2_01a,36300,36300,For each additional 1 point,,,,
+230,cd2_01a,95590,14883,,,,,
+231,cd2_01a,127897,14883,For each additional 3 points in one range,,,,
+232,cd2_01a,127897,14883,"For each
+additional 3
+points in one
+range
+",,,,
+233,cd2_01a,62920,9680,"For each
+additional 3
+points in one
+range
+",,,,
+234,cd2_01a,62920,9680,"For each
+additional 3
+points in one
+range
+",,,,
+235,cd2_01a,21780,,,,,,
+236,cd2_01a,41140,7744,"For each
+additional 3
+points in one
+range",,,,
+237,cd2_01a,20570,,,,,,
+238,cd2_01a,0.1694,,,,,,
+239,cd2_01a,18634,1815,"For each
+additional 3
+points in one
+range",,,,
+240,cd2_01a,71616,10890,"For each
+additional
+frequency or
+points",,,,
+241,cd2_01a,40924,1210,"For each
+points",,,,
+242,cd2_01a,25740,,,,,,
+243,cd2_01c,41600,7500,"For each
+additional
+point",,,,
+244,cd2_01c,73500,14600,"For each
+additional
+point",,,,
+245,cd2_01c,45500,8800,"For each
+additional
+point",,,,
+246,cd2_01c,71400,14600,For each additional point,,,,
+247,cd2_01c,38400,7500,For each additional ratio,,,,
+248,cd2_01c,75900,14600,For each additional ratio,,,,
+249,cd2_01c,39100,7500,For each additional point,,,,
+250,cd2_01c,74900,14600,For each additional point,,,,
+251,cd2_03,9000,6900,,,,,
+252,cd2_03,11000,8000,For each additional range,,,,
+253,cd2_03,15000,9700,For each additional range,,,,
+254,cd2_03,9000,6900,For each additional range,,,,
+255,cd2_03,14000,9700,For each additional range,,,,
+256,cd2_03,15000,9700,For each additional range,,,,
+257,cd2_03,9000,6900,For each additional range,,,,
+258,cd2_03,9000,6900,"For each additional 15 points
+",,,,
+259,cd2_03,35000,14000,For each additional range/reactive/apparent power/energy,,,,
+260,cd2_03,56000,19000,For each additional range/reactive/apparent power/energy,,,,
+261,cd2_03,98000,28000,For each additional range/reactive/apparent power/energy,,,,
+262,cd2_03,140000,35000,For each additional range/reactive/apparent power/energy,,,,
+263,cd2_05,,150000,,,,,
+264,cd3_01,,,,,,,
+265,cd3_02,84000,,,"Charges are for
+Calibration of cutoff size
+of PM2.5 /PM10",,,
+266,cd3_03,"16,500","16,500","Extra points: (i) 50J & 100J, (ii) Discharge Time (ms)","Total calibration charges for four points (50 J, 100 J, 150 J, 270 J) are Rs. 33,000/",3 weeks,5 working days,
+267,cd3_03,"9,600","1,070 per point",Extra points (All points): (i) Voltage: 4 mV amplitude for Sine waveform & Normal Sinus waveform (ii) Frequency: Sine waveform: 100 Hz & 150 Hz; Normal Sinus waveform: 4 Hz & 5 Hz),"Total calibration
+charges for 15
+points are Rs.
+16,020/-",4 weeks,7 working days,
+268,cd3_03,"20,900","6,970 per point","Extra points: 10 ml/hr, 200 ml/hr & 900 ml/hr","Total calibration charges for 6 points are Rs.41,810/- (for single channel)","3 weeks
+","5 working days
+",
+269,cd6_01,18000,18000,For each additional Time interval,,,,30 days
+270,cd6_01,18000,18000,For each additional Time interval,,,,30 days
+271,cd6_01,122000,,,,,,30 days
+272,cd6_01,92000,,,,,,30 days
+273,cd6_01,56000,,,,,,30 days
+274,cd6_01,56000,,,Basic Oscillator only,,,30 days
+275,cd6_01,94000,,,,,,30 days
+276,cd6_02a,143100,44900,"\For each
+additional
+frequency7levels/
+अतिरिक्त आवतृि के तिए/
+",,3 to 4 weeks for each parameter in the booked time slot ,8 days,
+277,cd6_02a,143100,44900,For each additional frequency/अतिरिक्त आवतृि के तिए ,,3 to 4 weeks for each parameter in the booked time slot ,8 days,
+278,cd6_02a,60900,20400,For each additional frequency/अतिरिक्त आवतृि के तिए ,,3 to 4 weeks for each parameter in the booked time slot ,5 days,
+279,cd6_02a,44900,44900,"For each
+additional
+frequency/
+अतिरिक्त
+आवतृि
+के
+तिए",,3 to 4 weeks for each parameter in the booked time slot,5 days,
+280,cd6_02a,50700,16900,For each additional frequency/ अतिरिक्त आवतृि के तिए,,3 to 4 weeks for each parameter in the booked time slot,8 days,
+281,cd6_02a,50700,16900,For each additional frequency/ अतिरिक्त आवतृि के तिए,,3 to 4 weeks for each parameter in the booked time slot,8 days,
+282,cd6_02a,126800,111700,For each additional frequency/ अतिरिक्त आवतृि के तिए,,3 to 4 weeks for each parameter in the booked time slot,7 days,
+283,cd6_02a,164100,143100,For each additional frequency/ अतिरिक्त आवतृि के तिए,,3 to 4 weeks for each parameter in the booked time slot,7 days,
+284,cd6_02a,50700,16900,For each additional frequency/ अतिरिक्त आवतृि के तिए,,3 to 4 weeks for each parameter in the booked time slot,7 days,
+285,cd6_02a,86400,84600,For each additional channel / load cell,,3 to 4 weeks for each parameter in the booked time slot,6 days,
+286,cd6_02a,143100,44900,For each additional frequency/ अतिरिक्त आवतृि के तिए,,3 to 4 weeks for each parameter in the booked time slot,6 days,
+287,cd6_02a,50700,16900,For each additional frequency/ अतिरिक्त आवतृि के तिए,,3 to 4 weeks for each parameter in the booked time slot,8 days,
+288,cd6_02a,14500,1000,For each additional frequency/ अतिरिक्त आवतृि के तिए,,3 to 4 weeks for each parameter in the booked time slot,5 days,
+289,cd6_02a,35000,1000,For each additional frequency/ अतिरिक्त आवतृि के तिए,,3 to 4 weeks for each parameter in the booked time slot,5 days,
+290,cd6_02b,41500,6200,For each additional frequency / अतिरिक्त आवृत्ति केलिए,"For 'Basic Oscillator' calibration of this counter, see ""Time & Freqency"" Parameter",,,
+291,cd6_02b,57300,9200,For each additional frequency / अतिरिक्त आवृत्ति केलिए,,,,
+292,cd6_02b,89700,13800,For each additional frequency / अतिरिक्त आवृत्ति केलिए,,,,
+293,cd6_02b,89700,24500,For each additional frequency / अतिरिक्त आवृत्ति केलिए,,,,
+294,cd6_02b,89700,9200,For each additional frequency / अतिरिक्त आवृत्ति केलिए,,,,
+295,cd6_02b,89700,9200,For each additional frequency / अतिरिक्त आवृत्ति केलिए,,,,
+296,cd6_02b,30900,9200,For each additional frequency / अतिरिक्त आवृत्ति केलिए,"(For VSWR, separate charges under VSWR/reflectio n coefficient parameter)/ वोल्टे ज स्टै न् डींग वेव रेशो/परावर्तन दर के लिए अ तिरिक्त प्रभार व्यय",,,
+297,cd6_02b,61500,20200,For each additional frequency / अतिरिक्त आवृत्ति केलिए,"(For VSWR, separate charges under VSWR/reflectio n coefficient parameter)/ वोल्टे ज स्टै न् डींग वेव रेशो/परावर्तन दर के लिए अ तिरिक्त प्रभार व्यय",,,
+298,cd6_02b,18800,17800,For each additional frequency / अतिरिक्त आवृत्ति केलिए,"(For VSWR, separate charges under VSWR/reflectio n coefficient parameter)/ वोल्टे ज स्टै न् डींग वेव रेशो/परावर्तन दर के लिए अ तिरिक्त प्रभार व्यय",,,
+299,cd6_02b,81400,40700,For each additional frequency / अतिरिक्त आवृत्ति केलिए,"(For VSWR, separate charges under VSWR/reflectio n coefficient parameter)/ वोल्टे ज स्टै न् डींग वेव रेशो/परावर्तन दर के लिए अ तिरिक्त प्रभार व्यय",,,
+300,cd6_02b,44600,14900,For each additional frequency / अतिरिक्त आवृत्ति केलिए,"(For VSWR, separate charges under VSWR/reflectio n coefficient parameter)/ वोल्टे ज स्टै न् डींग वेव रेशो/परावर्तन दर के लिए अ तिरिक्त प्रभार व्यय",,,
+301,cd6_02b,1200000,,,,,,
+302,cd6_02b,16400,16400,For each additional frequency / अतिरिक्त आवृत्ति केलिए,,,,
+303,cd6_02b,15400,15400,For each additional frequency / अतिरिक्त आवृत्ति केलिए,,,,
+304,cd6_02c,5222/- ,,,Minimum sample acceptable is restricted to 2 for one time testing,,,
+305,cd6_02c,"7573/-
+",,,"Minimum sample
+acceptable is
+restricted to 2 for
+one time testing
+",,,
+306,cd6_02c,27347/- ,,,Validity 2 years,,,
+307,cd6_02c,12943/- ,,,Validity 2 years,,,
+308,cd6_02c,12943/-,,,Validity 2 years,,,
+309,cd6_02c,16778/-,,,1 hr includes milling and patternoptimization procedure,,,
+310,cd6_02c,26395/-,,,1 hr includes deposition and parameter optimization,,,
+311,cd6_02c,26395/-,,,1 hr includes deposition and parameter optimization,,,
+312,cd6_02c,15060/-,,,1 hr time for FESEM imaging/stent,,,
+313,cd6_02d,155100,NIL,,,,,
+314,cd6_03a,26300,8800,For each additional frequency,,,,
+315,cd6_03a,26300,8800,For each additional frequency,,,,
+316,cd6_03a,108100,108100,For each additional frequency,,,,
+317,cd6_03a,83700,83700,For each additional frequency,,,,
+318,cd6_03a,91400,,,,,,
+319,cd6_03a,14400,14400,For each additional frequency,,,,
+320,cd6_03a,43100,14400,For each additional frequency,,,,
+321,cd6_03a,26300,26300,For each additional frequency,,,,
+322,cd6_03a,108100,,,,,,
+323,cd6_03a,14400,14400,For each additional frequency,,,,
+324,cd6_03a,26300,8800,For each additional frequency,,,,
+325,cd6_03a,26300,8800,For each additional frequency,,,,
+326,cd6_03a,46400,,,,,,
+327,cd6_03a,26300,26300,For each additional frequency,,,,
+328,cd6_03a,46400,15300,For each additional frequency,,,,
+329,cd6_03a,32300,11100,For each additional frequency,,,,
+330,cd6_03a,11100,11100,For each additional frequency,,,,
+331,cd6_03a,83700,83700,For each additional frequency,,,,
+332,cd6_03a,(19a)17200(19b)51400(19c)12500,(19a)17200(19b)17200,For each additional frequency,,,,
+333,cd6_03a,34000,34000,For each additional frequency,,,,
+334,cd6_03a,(21a)34939(21b)43395(21c)51851(21d)67744,(21a)34939(21b)43395(21c)51851(21d)67744,For each additional frequency,,,,
+335,cd6_03a,(22a)50708(22b)58043(22c)67211(22d)84716,(22a)50708(22b)58043(22c)67211(22d)84716,For each additional frequency,,,,
+336,cd6_03b,50400,8400,for each additional point,,,,
+337,cd6_03b,25000,,,,,,
+338,cd6_03b,15000,,,,,,
+339,cd6_03b,33500,33500,,,,,
+340,cd6_03b,37000,,,,,,
+341,cd6_03b,41000,9500,for each additional point,,,,
+342,cd6_03b,9500,9500,for each additional point,,,,
+343,cd6_03b,25000,,,,,,
+344,cd6_03b,25000,,,,,,
+345,cd6_03b,70200,,,,,,
+346,cd6_03b,20500,,,,,,
+347,cd6_03b,13000,,,,,,

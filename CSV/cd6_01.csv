@@ -1,7 +1,0 @@
-1,Time & Frequency,Timer,,,1,For Time Interval = 1740s,18000,18000,For each additional Time interval,,30 days
-2,Time & Frequency,Timer,,,1,For Time Interval = 1s,18000,18000,For each additional Time interval,,30 days
-3,Time & Frequency,Frequency Standard,,,1,"5 MHz,10 MHz",122000,,,,30 days
-4,Time & Frequency,Frequency Standard,,,1,"5 MHz,10 MHz",92000,,,,30 days
-5,Time & Frequency,Frequency Standard,,,1,"5 MHz,10 MHz and 1PPS",56000,,,,30 days
-6,Time & Frequency,Frequency Standard,,,1,"5 MHz,10 MHz and 1PPS",56000,,,Basic Oscillator only,30 days
-7,Time & Frequency,GPS system,,,1,"5 MHz,10 MHz and 1PPS",94000,,,,30 days

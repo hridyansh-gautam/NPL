@@ -1,0 +1,656 @@
+1,cd1_01,Mass,Weight,"A Set of Weights, [Class E1 / ASTM 0]",,1 mg to 10 kg,,,
+2,cd1_01,Mass,Weight,"A Set of Weights, [Class E1 / ASTM 0]",,1 mg to 200 g,,,
+3,cd1_01,Mass,Weight,"A Set of Weights, [Class E1 / ASTM 0]",,1 mg to 5 g,,,
+4,cd1_01,Mass,Weight,"A Set of Weights, [Class E1 / ASTM 0]",,1 mg to 500 mg,,,
+5,cd1_01,Mass,Weight,"A Set of Weights, [Class E1 / ASTM 0]",,1 g to 200 g,,,
+6,cd1_01,Mass,Weight,"Assorted Weight, [Class E1 / ASTM 0]",,"1 mg to 1 kg (per
+Decade : 1,1,2,2,5 only)",,,
+7,cd1_01,Mass,Weight,"Assorted Weight, [Class E1 / ASTM 0]",,"Above 1 kg to 10 kg (per Decade : 1,1,2,2,5,10 only)",,,
+8,cd1_01,Mass,Weight,"Assorted Weight, [Class E1 / ASTM 0]",,20 kg & 50 kg (per weight),,,
+9,cd1_01,Mass,Weight,"A Set of Weights, [Class E2 / ASTM 1]",,1 mg to 10 kg,,,
+10,cd1_01,Mass,Weight,"A Set of Weights, [Class E2 / ASTM 1]",,1 mg to 200 g,,,
+11,cd1_01,Mass,Weight,"A Set of Weights, [Class E2 / ASTM 1]",,1 mg to 5 g,,,
+12,cd1_01,Mass,Weight,"A Set of Weights, [Class E2 / ASTM 1]",,1 mg to 500 mg,,,
+13,cd1_01,Mass,Weight,"A Set of Weights, [Class E2 / ASTM 1]",,1 g to 200 g,,,
+14,cd1_01,Mass,Weight,"Assorted Weight, [Class E2 / ASTM 1]",,1 mg to 1 kg,,,
+15,cd1_01,Mass,Weight,"Assorted Weight, [Class E2 / ASTM 1]",,Above 1 kg to 50 kg,,,
+16,cd1_01,Mass,Weight,"Assorted Weight, [Class F1 / ASTM 2]",,500 g to 50 kg,,,
+17,cd1_01,Mass,Weight,Assorted Weights [Class F2 & lower / ASTM 3 & lower],,Above 50 kg to 500 kg,,,
+18,cd1_01,Mass,Weight,Assorted Weights [Class F2 & lower / ASTM 3 & lower],,Above 500 kg to 2000 kg,,,
+19,cd1_01,Mass,Weight,Assorted Dead Weight,,1 mg to 2000 kg,,,
+20,cd1_01,Mass,Weight,Reference Standard (Set of 28 Weights),,1 mg to 5 kg,,Initial Calibration (including adjustment  aging and final calibration),
+21,cd1_01,Mass,Weight,Reference Standard (Set of 28 Weights),,1 mg to 5 kg,,Subsequent (Not Initial) Calibration,
+22,cd1_01,Mass,Weight,Secondary Standard (Set of 29 Weights),,1 mg to 10 kg,,Initial Calibration (including adjustment  aging and final calibration),
+23,cd1_01,Mass,Weight,Secondary Standard (Set of 29 Weights),,1 mg to 10 kg,,Subsequent (Not Initial) Calibration,
+24,cd1_01,Mass,Weighing Instrument,Two Pan Equal-Arm Balance,,Upto 10 kg,,,
+25,cd1_01,Mass,Weighing Instrument,Two Pan Equal-Arm Balance,,Above 10 kg to 50 kg,,,
+26,cd1_01,Mass,Weighing Instrument,Two Pan Equal-Arm Balance,,Above 50 kg to 500 kg,,,
+27,cd1_01,Mass,Weighing Instrument,Electronic Weighing Machine,,Upto 10 kg,,OIML R-76,
+28,cd1_01,Mass,Weighing Instrument,Electronic Weighing Machine,,Above 10 kg to 50 kg,,OIML R-76,
+29,cd1_01,Mass,Weighing Instrument,Electronic Weighing Machine,,Above 50 kg to 500 kg,,OIML R-76,
+30,cd1_01,Mass,Weighing Instrument,Electronic Weighing Machine,,Above 500 kg to 2000 kg,,OIML R-76,
+31,cd1_01,Mass,Weighing Instrument,Electronic Weighing Machine,,Above 2000 kg to 3000 kg,,OIML R-76,
+32,cd1_01,Mass,Weighing Instrument,Electronic Weighing Machine,,Above 3000 kg to 10000 kg,,OIML R-76,
+33,cd1_01,Volume,Pipette,Micro-Pipette,,Syringe,,Single Point,
+34,cd1_01,Volume,Pipette,Micro-Pipette,,Syringe,,3 Points (for variable Micro-Pipette),
+35,cd1_01,Volume,Volumetric Measure/Glassware,Volumetric Measure/Glassware,,1 mL to 100 mL,,Single Point,At 27 degree C
+36,cd1_01,Volume,Volumetric Measure/Glassware,Volumetric Measure/Glassware,,Above 100 mL to 2 L,,Single Point,At 27 degree C
+37,cd1_01,Volume,Large Volumetric Measure,Large Volumetric Measure,,Above 2 L to 20 L,,Single Point,At 27 degree C
+38,cd1_01,Volume,Large Volumetric Measure,Large Volumetric Measure,,Above 20 L to 50 L,,Single Point,At 27 degree C
+39,cd1_01,Volume,Large Volumetric Measure,Large Volumetric Measure,,Above 50 L to 100 L,,Single Point,At 27 degree C
+40,cd1_01,Volume,Large Volumetric Measure,Large Volumetric Measure,,Above 100 L to 500 L,,Single Point,At 27 degree C
+41,cd1_01,Volume,Large Volumetric Measure,Large Volumetric Measure,,Above 500 L to 2000 L,,Single Point,At 27 degree C
+42,cd1_01,Volume,Secondary Standard,Secondary Standard (Set of 9 measures),,10 mL to 5 L,,Initial calibration i.e. adjusting the capacity and final calibration,At 27 degree C
+43,cd1_01,Volume,Secondary Standard,Secondary Standard (Set of 9 measures),,10 mL to 5 L,,Subsequent (Not Initial) Calibration,At 27 degree C
+44,cd1_01,Density,Glass Hydrometer,Density Hydrometers,,650 to 1400 kg/cubic meter L.C. 0.0005,,4 points as per IS 3104 (Part I & II) at One Temp.,At 15  20 27.5 & 28.89 degree C 
+45,cd1_01,Density,Glass Hydrometer,Density Hydrometers,,"650 to 1400
+kg/cubic meter
+L.C. 0.0002",,"No. of Points for Calibration /
+Procedure No.","At 15, 20, 27.5
+& 28.89 degree C"
+46,cd1_01,Density,Glass Hydrometer,Density Hydrometers,,"Below 650 and
+above 1400 kg/cubic meter
+L.C. 0.0005",,4 points as per IS 3104 (Part I & II) at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+47,cd1_01,Density,Glass Hydrometer,Density Hydrometers,,"Below 650 and
+above 1400 kg/cubic meter
+L.C. 0.0002",,4 points as per IS 3104 (Part I & II) at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+48,cd1_01,Density,Glass Hydrometer,Specific Gravity Hydrometers,,"0.650 to 1.400
+sp.gr. L.C upto 0.001",,4 points at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+49,cd1_01,Density,Glass Hydrometer,Specific Gravity Hydrometers,,"0.650 to 1.400
+sp.gr. L.C upto 0.0005",,4 points at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+50,cd1_01,Density,Glass Hydrometer,Specific Gravity Hydrometers,,"0.650 to 1.400
+sp.gr. L.C = 0.0002",,4 points at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+51,cd1_01,Density,Glass Hydrometer,Specific Gravity Hydrometers,,"Below 0.650 and
+above 1.400 sp.gr.
+L.C upto 0.001",,4 points at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+52,cd1_01,Density,Glass Hydrometer,Specific Gravity Hydrometers,,"Below 0.650 and
+above 1.400 sp.gr.
+L.C = 0.0002",,4 points at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+53,cd1_01,Density,Glass Hydrometer,Brix Hydrometer,,0 to 30 degree Brix,,4 points as per IS 7324 at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+54,cd1_01,Density,Glass Hydrometer,Brix Hydrometer,,Above 30 degree Brix,,4 points as per IS 7324 at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+55,cd1_01,Density,Glass Hydrometer,Lactometer,,"1.000 to 1.040 sp.
+Gr.",,4 points as per IS 9585 at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+56,cd1_01,Density,Glass Hydrometer,Alcoholmeter,,(0 to 100) % V/V,,4 points as per IS 3608 (Part I & II) at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+57,cd1_01,Density,Glass Hydrometer,Sikes,,0 - 100,,4 points at One Temp.,"At 10.54, 15, 20,
+27.5 & 28.89
+degree C"
+58,cd1_01,Density,Glass Hydrometer,High precision Hydrometer (Reference Hydrometer),,,,4 points at One Temp.,"At 15, 20, 27.5
+& 28.89 degree C"
+59,cd1_01,Density,Solid,Solid with polished surface,,,,Single Point,At 27 degree C
+60,cd1_01,Density,Liquid,Liquid,,,,,At 27 degree C
+61,cd1_01,Viscosity,Viscometer,Glass Capillary Viscometer (Direct Flow),,Upto 1 cSt/s,,At one temp.,
+62,cd1_01,Viscosity,Viscometer,Glass Capillary Viscometer (Reverse Flow),,Upto 1 cSt/s,,At one temp.,
+63,cd1_01,Viscosity,Viscometer,Glass Capillary Viscometer (Direct Flow),,Above 1 cSt/s to 10 cSt/s,,At one temp.,
+64,cd1_01,Viscosity,Viscometer,Glass Capillary Viscometer (Reverse Flow),,Above 1 cSt/s to 10 cSt/s,,At one temp.,
+65,cd1_01,Viscosity,Viscometer,Flow Cup,Ford Cup,,,,
+66,cd1_01,Viscosity,Newtonian liquids,Transaparent liquids,,Upto 1000 cSt,,At one temp.,
+67,cd1_01,Viscosity,Newtonian liquids,Transaparent liquids,,Above 1000 cSt to 10000 cSt,,At one temp.,
+68,cd1_02,Length,Line Standard,"Reference Standard Meter Bar / Line
+Scale",Meter Bar,,,10,1m
+69,cd1_02,Length,Line Standard,Graticule Scale upto 300 mm,Glass Scale,,,10,300 mm
+70,cd1_02,Length,Line Standard,"Graticule Scale
+>300mm -1000 mm",Glass Scale,,,10,>300 upto600 mm
+71,cd1_02,Length,Line Standard,Glass Grid,10X comparator,,,1,
+72,cd1_02,Length,Line Standard,Measuring Tape (Steel /woven/glass Fibre .),,,,One point per  meter,50 m
+73,cd1_02,Length,End Standard,single Gauge Block,Slip Gauge,,,"for first gauge block or each gauge bloack of odd size provided NPL-India accepts  to calibrate ,Deviation from central length #",By Comparison Method
+74,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge,,,"for first gauge block of set with traditional denomination considered by NPL- india, , Deviation from central length #",By Comparison Method
+75,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  ( Designated M112),,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+76,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / Designated  M125,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+77,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / Designated  M122,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+78,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  ( Designated M121),,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+79,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / Designated M111,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+80,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M105,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+81,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M103,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+82,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M87,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+83,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M83,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+84,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M79,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+85,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M78,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+86,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M76,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+87,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M50,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+88,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M47,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+89,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M46,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+90,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M41,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+91,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M38,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+92,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M33,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+93,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M32,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+94,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M27,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+95,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M18,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+96,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M10/Mic check set,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+97,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Comparison Method  / M9,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Comparison Method
+98,cd1_02,Length,End Standard,single Gauge Block,Slip Gauge,,,Deviation from central length #,By Interferometric Method
+99,cd1_02,Length,End Standard,Gauge Blocks as Set,slip gauges submiited as a set,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+100,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge Set By Interferometric Method/M112,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+101,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M125,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+102,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M122,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+103,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M121,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+104,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M111,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+105,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M105,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+106,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M103,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+107,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M87,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+108,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M83,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+109,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M79,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+110,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M78,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+111,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M76,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+112,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M50,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+113,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M47,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+114,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M46,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+115,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M41,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+116,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M38,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+117,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M33,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+118,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M27,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+119,cd1_02,Length,End Standard,Gauge Block Set,Slip Gauge By Interferometric Method  / M18,,,"for first gauge block of set with traditional denomination considered by NPL- india,  Deviation from central length #",By Interferometric Method
+120,cd1_02,Length,End Standard,Gauge Block Set for Mechncial comparator calibration,"Special Gauge Set viz.
+M10/M11/M12/
+M18 (Excluding bridge type Gauge)",,,"Deviation from central length by inteferometry and ( Fo, Fu by comparison or Length variation 1mm, 1.005mm, 1.01mm size of  gauge blocks)",By Interferometric Method
+121,cd1_02,Length,End Standard,Length Bar,Long Slip Gauge,,,per gauge (central length dev),By Comparison Method  ( Horizontal)
+122,cd1_02,Length,End Standard,Length Bar,Long Slip Gauge,,,per gauge (central length dev),"By Comparison Method  (
+Horizontal)"
+123,cd1_02,Length,End Standard,Length Bar,Long Slip Gauge,,,per gauge (central length dev),"By Comparison Method  (
+Horizontal)"
+124,cd1_02,Length,Thickness Standard,Feeler Gauge,Leaf Gauge / Slip,,,Thickness,"By Comparison Method  (
+Horizontal)"
+125,cd1_02,Length,Diameter Standard,Plain Ring / Plug Gauge/sphere 3 Pi wire set,,,,Diameter and Variation in Diameter,By Comparison Method  ( Horizontal)
+126,cd1_02,Length,Dia Standard,Plain Ring / Plug Gauge/sphere,,,,Diameter and Variation in Diameter,By Comparison Method  ( Horizontal)
+127,cd1_02,Length,Dia Standard,Taper Plug/ Ring Gauge,,,,Taper,By Comparison Method  ( Horizontal)
+128,cd1_02,Length,Instrument,"Dial Gauge, Plunger Type",,,,IS: 2092-1993,By Comparison Method  ( Horizontal)
+129,cd1_02,Length,Instrument,"Dial Gauge, Lever Type",,,,IS: 11498-1995,By Comparison Method  ( Horizontal)
+130,cd1_02,Length,Instrument,Engineering Parallel,,,,IS: 4241-1995,
+131,cd1_02,Length,Instrument,"Gauge Block
+Calibrator *",Comparator,,,Single Scale only,"By Comparison
+Method"
+132,cd1_02,Length,Instrument,"Gauge Block
+Calibrator",Comparator,,,Three Scales,"By Comparison
+Method"
+133,cd1_02,Length,Instrument,"Mechanical
+Comparator",,,,,"By Comparison
+Method"
+134,cd1_02,Length,Instrument,Floating Carriage Diameter Measuring Machine,FCDMM,,,,By Comparison Method
+135,cd1_02,Error of Indiacate Displacement,Instrument,Length Measuring Machine  / Dial Gauge Tester / Dial Gauge Calibrator,"LMM /
+Horinzontal Metroscope / I Checker
+/Universal Measuring Machine /Digital Height Gauge",,,Upto 25 mm  (per Axis ),
+136,cd1_02,Length,Instrument,Length Measuring Machine / Dial Gauge Tester,LMM or Horinzontal Metroscope  or Universal Measuring Machine/Digital Height Gauge,,,for first 100mm (above 25 mm upto 100mm) of Single Axis in one orientation  /each axis,
+137,cd1_02,Length,Instrument,Length Measuring Machine (Single Axis),LMM or Horinzontal Metroscope or Universal Measuring Machine /Digital Height Gauge,,,up to 1000 mm (Single Axis/each axis),
+138,cd1_02,Length,Instrument,Caliper Checker/ Check Master,step gauge,,,"Rs 28000 for first 300mm ,then Rs 3000 for subsequent 100mm upto 1000mm",
+139,cd1_02,Length,Instrument,3D-Coordnate Measuring Machine,CMM/Articulated CMM,,,up to 1m  (additional charges for subsequent 220mm upto 1220mm  ),
+140,cd1_02,Length,Instrument,3D-Coordnate Measuring Machine,CMM/Articulated CMM,,,"Rs 150000 for three
+axes, upto 1000 mm then Rs 8800 for subsequent 220mm per axis upto 1220 mm maximum range",
+141,cd1_02,Length,Instrument,CNC Machine,"Boring Machine
+/automatic moving machine up to 30m single axis",,,up to 1m x1m x 1m (additional charges for subsequent 1m per axis ),
+142,cd1_02,Length,Instrument,CNC Machine,"Boring Machine
+/automatic moving machine up to 30m three axis",,,"Three axes, upto 1000 mm per axis",
+143,cd1_02,Length,Instrument,Dial Gauge Tester / Extensometer,(Except  I Checker / Motorized dial tester),,,,
+144,cd1_02,Length,Instrument,Electronic Probe/LVDT Probe,,,,,
+145,cd1_02,Length,Accessory,Test Sieve,Sieve,,,,IS: 460- 1985
+146,cd1_02,Angle,Angle Standard,Angle Gauge block,,,,,IS: 6231-1994
+147,cd1_02,Angle,Angle Standard,Angle square block,,,,,IS: 6231-1994
+148,cd1_02,Angle,Instrument,Polygon /Indexing Table/Optical Dividing Head with Scale,"angular encoder,optical level",,,,IS: 6987 / and
+149,cd1_02,Angle,Instrument,Spirit Level,Level meter/Point laser level/optical level/line laser level/ Inclinometer,,,,IS: 5706-1991
+150,cd1_02,Angle,Instrument,Electronic Level,Level meter/Point laser level/optical level/line laser level,,,Angle,
+151,cd1_02,Angle,Instrument,Auto-collimeter (Single Axis),Collimator/ thodolite station collimator/Angle dekker,,,Angle,
+152,cd1_02,Angle,Instrument,Auto-collimeter (Dual Axis),Collimator/ thodolite station collimator/Angle dekker,,,Angle,
+153,cd1_02,Length & Angle,Instrument,Profile Projector,vedio profiler/vedio measuring machine,,,Linear Scales up to 300mm and magnifications only,
+154,cd1_02,Length & Angle,Instrument,Profile Projector,"vedio
+profiler/vedio measuring machine",,,Angular Scale only,
+155,cd1_02,Length & Angle,Instrument,Profile Projector,vedio profiler/vedio measuring machine,,,"Linear scales up to 300mm, magnifications",
+156,cd1_02,Length & Angle,Instrument,Profile Projector,vedio profiler/vedio measuring machine,,,"Linear up to 300mm, Angular Scales & magnifications",
+157,cd1_02,Length & Angle,Instrument,Sine Bar / tilting table,Sine Bar,,,"Centre distance of rollers, Flatness of Face, parallelism of rollers",IS:5359-1993 / IS: 5979-1991
+158,cd1_02,Length & Angle,Instrument,Sine Bar / tilting table,Sine Bar,,,"Centre distance of rollers, Flatness of Face, parallelism of rollers",IS:5359-1993 / IS: 5979-1991
+159,cd1_02,Length & Frequency,Laser Source,Laser Interferrometer,Customer needs to ensure its frequency stabilty (preferable by its prior calibration- certificate),,,Linear Displacement,Distance / fringe count
+160,cd1_02,Form,Instrument,Tool Maker’s Microscope,"Universal
+Measuring Microscope",,,Linear Scales and magnifications only,
+161,cd1_02,Form,Instrument,Tool Maker’s Microscope,"Universal
+Measuring Microscope",,,Angular Scale only,
+162,cd1_02,Form,Instrument,Tool Maker’s Microscope,"Universal Measuring
+Microscope",,,"Linear, Angular Scales &
+magnifications",
+163,cd1_02,Form,Instrument,Formtester,Formtester/Round ness measuring machine,,,"Roundness,",
+164,cd1_02,Form,Instrument,Formtester,Formtester/Round ness measuring machine,,,"Roundness, Staightness,",up to 100mm straightness wayguide length
+165,cd1_02,Form,Instrument,Formtester,Formtester/Round ness measuring machine,,,"Roundness, Staightness, R-axis, Z- axis",up to 100mm straightness wayguide length
+166,cd1_02,Roughness,Roughness Standard@,"Groov Depth Standards (Type D)
+/ Roughness Comparison Specimen",Groov Depth Standards (Type D) / Roughness Comparison Specimen,,,upto one roughness paramter on the same specimen,"ISO: 5436 (Type D)
+/ IS: 4290-1992, IS: 3073-1991"
+167,cd1_02,Roughness,Roughness Standard@,Roughness measuring machine,Roughness measuring machine/ Roughness tester,,,"with atleast three Groov Depth Standards (Type D)
+/three Roughness Comparison Specimen","ISO: 5436 (Type D)
+/ IS: 4290-1992, IS: 3073-1991"
+168,cd1_02,Roundness,"Roundness
+Standard","Hemispherical
+Standard",,,,Roundness,
+169,cd1_02,Roundness,"Roundness
+Standard",Flick Standard,"maginification
+standard",,,Roundness,
+170,cd1_02,Squareness,"Squareness
+Standard",Engineer's Square,,,,Squareness,"IS: 2103-1980
+reaffirmed 2006"
+171,cd1_02,Squareness,"sqness, straightness, roundness, parallelism",Reference /Standard cylinder,,,,"Roundness , parallelism (four readings)
+,cylindricilty","Roundness , parallelism (four readings)
+,cylindricilty"
+172,cd1_02,Squareness,Squareness Standard,Cylindrical Square,,,,Squareness,On CMM
+173,cd1_02,Squareness,Squareness Standard,Engineer's Square,,,,Squareness,On CMM
+174,cd1_02,Squareness,"Squareness
+Standard",Cylindrical standard,,,,"Squareness
+/Parallelism","On roundness
+Machine"
+175,cd1_02,Squareness,Squareness Standard,"Angle Plate, Cast Iron",,,,Squareness / Angularity,Upto 300 mm
+176,cd1_02,Squareness,Squareness Standard,"Angle Plate, Cast Iron",,,,Squareness / Angularity,>300 to 600 mm
+177,cd1_02,Squareness,Squareness Standard,Precision Box Angle Plate,,,,Squareness / Angularity,Upto 300 mm
+178,cd1_02,Squareness,Squareness Standard,Precision Box Angle Plate,,,,Squareness / Angularity,>300 to 600 mm
+179,cd1_02,Straightness,Accessory,Straight Edge  (Bow Shaped)/ (Camel Back type)/ (I- Section)/ (Parallel),(Bow Shaped)/ (Camel Back type)/ (I-Section)/ (Parallel),,,Straightness,Upto 500 mm
+180,cd1_02,Straightness,Accessory,Straight Edge  (Bow Shaped)/ (Camel Back type)/ (I- Section)/ (Parallel),(Bow Shaped)/ (Camel Back type)/ (I-Section)/ (Parallel),,,Straightness,>500 to 1000 mm
+181,cd1_02,Flatness,Accessory,Surface Plate,,,,Flatness,160 x 160 mm
+182,cd1_02,Flatness,Accessory,Surface Plate,,,,Flatness,450 x 450 mm
+183,cd1_02,Flatness,Accessory,Surface Plate,,,,Flatness,630 x 630 mm
+184,cd1_02,Flatness,Accessory,Surface Plate,,,,Flatness,1000 x 630 mm
+185,cd1_02,Flatness,Accessory,Surface Plate,,,,Flatness,1000 x 1000 mm
+186,cd1_02,Flatness,Accessory,Surface Plate,,,,Flatness,1600 x 1000 mm
+187,cd1_02,Flatness,Accessory,Surface Plate,,,,Flatness,2000 x 1000 mm
+188,cd1_02,Flatness,Accessory,Surface Plate,,,,Flatness,2000 x 1400 mm
+189,cd1_02,Flatness,Accessory,Surface Plate,,,,Flatness,3000 x 2000 mm
+190,cd1_02,Flatness,Accessory,Optical Flat/Parallel,,,,Flatness of one surface,up to 100mm Diameter
+191,cd1_02,Flatness,Accessory,Optical Flat/Parallel,,,,Flatness of both surface,up to 100mm Diameter
+192,cd1_02,Flatness,Accessory,Optical Flat/Parallel,,,,Flatness and parallelism/ wedge angle between two surface,up to 100mm Diameter
+193,cd1_02,Flatness,Accessory,Optical Flat/Parallel,,,,Flatness of one surface,>100mm to 150mm Diameter
+194,cd1_02,Flatness,Accessory,Optical Flat/Parallel,,,,Flatness of both surface,>100mm to 150mm Diameter
+195,cd1_02,Laser frequecny,frequency statdard,Laser head,,,,,frequency Standard
+196,cd1_02,Step height,End standard,step height,End standard,,,"height of the step/
+groove","above 50 µm upto to
+2 mm"
+197,cd1_02,Length,Instrument,Vernier Caliper/ Bevel Protector,instrument,,,Linear scale including vernier scale,up to 300 mm
+198,cd1_02,Length,Instrument,Micrometer / Micrometer Head,instrument,,,Linear scale including vernier scale,up to 25 mm
+199,cd1_02,Length,Instrument,Hardness tester Scale,depth measuring system,,,Nonmagnetic method,When the requisite fixtures and accessories are facilitated by customer
+200,cd1_02,Angle,Instrument,Theodelite calibration station,universal station/ 3D simulator,,,Three pitch angle and a rotary axis  with reference to ground level,"When the requisite fixtures and accessories are facilitated by
+customer"
+201,cd1_02,Angle,Instrument,Theodelite calibration station,universal station/ 3D simulator,,,Three pitch angle and a rotary axis  with reference to ground level,When the requisite fixtures and accessories are facilitated by customer
+202,cd1_02,Length,artifact,Test rail,Defects in test rail,,,up to 20 Notches or holes,Notch size (length:5mm to 10 mm)X (width: 0.4mm to 5 mm)X(depth: up to 2 mm)
+203,cd1_02,Length,artifact,Ball bar,Center to center sphere spacing/distance,,,"Rs 28000 for center distance of sphere only, If diameter required then Rs 14000 for each sphere",upto 1000 mm
+204,cd1_02,Length,artifact,Airline/ Waveguide/Snap gauge/wedge/Misc. items,Diameter/length / thikness/width,,,"length, diameter, width etc.",upto 1000 mm
+205,cd1_08b,Gas Flow,Gas Meter,"Mass Flow Controller
+ (MFC), Mass Flow
+ Meter (MFM), digital
+ flowmeter, digital air
+ flow calibrator (sensor
+ type), volume sampler
+ (digital type) etc.","Digtial
+ Flowmeter",,"Gas: Air,
+ Nitrogen",4,
+206,cd1_08b,Gas Flow,Gas Meter,"Rotameter, dry gas
+ meter, volume sampler
+ (analog type), roots
+ meter, totalizer type
+ meter, manometer
+ (differential pressure)
+ typeflowmeter, Gas
+ Flow Resistor","Analog
+ Flowmeter",,"Gas: Air,
+ Nitrogen",4,
+207,cd1_08b,Gas Flow,Gas Meter,"Laminar flow meter,
+ sonic flow meter, air
+ flow calibrator (piston
+ prover type), orifice
+ flowmeter, comapct
+ prover or other high
+ precision flowmeter","High
+ Precision
+ Digital
+ Flowmeter",,"Gas: Air,
+ Nitrogen",5,
+208,cd1_08c,Water Flow,"Water Flow
+ Meter/ Water
+ Meter","Coriolis Mass Flow
+ Meter (size: 2-25
+ mm diameter)",,,"total mass/ total volume/
+ mass flow rate/volume
+ flow rate",4,
+209,cd1_08c,Water Flow,"Water Flow
+ Meter/ Water
+ Meter","Coriolis Mass Flow
+ Meter (size: above
+ 25 & upto 50 mm
+ diameter)",,,"total mass/ total volume/
+ mass flow rate/volume
+ flow rate",4,
+210,cd1_08c,Water Flow,"Water Flow
+ Meter/ Water
+ Meter","Coriolis Mass Flow
+ Meter (size: above
+ 50 & upto 100 mm
+ diameter)",,,"total mass/ total volume/
+ mass flow rate/volume
+ flow rate",4,
+211,cd1_08c,Water Flow,"Water Flow
+ Meter/ Water
+ Meter","Coriolis Mass Flow
+ Meter (size: above
+ 100 & upto 150 mm
+ diameter)",,,"total mass/ total volume/
+ mass flow rate/volume
+ flow rate",4,
+212,cd1_08c,Water Flow,"Water Flow
+ Meter/ Water
+ Meter","Coriolis Mass Flow
+ Meter (size: above
+ 150 & upto 200 mm
+ diameter)",,,"total mass/ total volume/
+ mass flow rate/volume
+ flow rate",4,
+213,cd1_08c,Water Flow,"Water Flow
+ Meter/ Water
+ Meter","Coriolis Mass Flow
+ Meter (size: above
+ 200 & upto 300 mm
+ diameter)",,,"total mass/ total volume/
+ mass flow rate/volume
+ flow rate",4,
+214,cd1_08c,Water Flow,"Water Flow
+ Meter/ Water
+ Meter","Magnetic, orifice,
+ ultrasonic, turbine,
+ vortex, water meter,
+ infusion pump,
+ infusion pump
+ analyzer, mass flow
+ controller etc. (size:
+ upto 25 mm
+ diameter)",,,"total volume/volume
+ flow rate",4,
+215,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,"Magnetic, orifice, ultrasonic, turbine, vortex, water meter, etc. (size: above 25 & upto 50 mm diameter)",,,total volume/volume flow rate,4,
+216,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,"Magnetic, orifice, ultrasonic, turbine, vortex, water meter, etc. (size: above 50 & upto 100 mm diameter)",,,total volume/volume flow rate,4,
+217,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,"Magnetic, ultrasonic, orifice, turbine, vortex, water meter, etc. (size: above 100 & upto 150 mm diameter)",,,total volume/volume flow rate,4,
+218,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,"Magnetic, ultrasonic, orifice, turbine, vortex, water meter, etc. (size: above 150 & upto 200 mm diameter)",,,total volume/volume flow rate,4,
+219,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,"Magnetic, ultrasonic, turbine, vortex, water meter, etc. (size: above 200 & upto 300 mm diameter)",,,total volume/volume flow rate,4,
+220,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,"Magnetic, vortex, ultrasonic, turbine, water meter, etc. (size: above 300 & upto 400 mm diameter)",,,total volume/volume flow rate,4,
+221,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,"Magnetic, vortex, ultrasonic, turbine, water meter, etc. (size: above 400 & upto 500 mm diameter)",,,total volume/volume flow rate,4,
+222,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,Clamp-on type ultrasonic flow meter (flow range: upto 60 m3/h and for each sensor),,,total volume/volume flow rate,4,
+223,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,Clamp-on type ultrasonic flow meter (flow range: upto 210 m3/h and for each sensor),,,total volume/volume flow rate,4,
+224,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,Clamp-on type ultrasonic flow meter (flow range: upto 400 m3/h and for each sensor),,,total volume/volume flow rate,4,
+225,cd1_08c,Water Flow,Water Flow Meter/ Water Meter,Clamp-on type ultrasonic flow meter (flow range: upto 650 m3/h and for each sensor),,,total volume/volume flow rate,4,
+226,cd2_01a,DC Voltage,DC voltage source,Nanoscan DC Voltage Standard,Zener Refrence Standard,"1, 1.018 & 10V",,1 to 2 points,
+227,cd2_01a,DC Current,DC current source,Transconductance Amplifier (up t0 20A),,1 microA to 20 A ,,3 points (one range) ,
+228,cd2_01a,DC Current,DC current source,Transconductance Amplifier,,1 microA to100 A ,,3 points (one range),
+229,cd2_01a,DC Resistance,DC standard Resistor/ DC Resistance source,Fixed Value Resistor and high Current Shunt,,0.1 μΩ to 1 TΩ ,,"one point (for each volt/ current) Current range up to 2000A,Voltage range up to 1000V & Resistance upto 1 G Ω ",
+230,cd2_01a,DC Resistance,High resistance meter,,High resistance meter,10 μΩ to 1TΩ ,,3 points (one range) ,
+231,cd2_01a,"DC Voltage, Current & Resistance","DC Voltage, Current & Resistance source",DC Calibrator 7½ digit & above,Calibrator,"10 μV to 1 kV, 1 μA to 20A, 1 Ω to 10 GΩ ",,3 points (one range) ,
+232,cd2_01a,"DC Voltage, Current & Resistance","DC Voltage, Current & Resistance meter",Digital Multimeter 7½ digit & above,DMM,"10 μV to 1 kV, 1 μA to
+20A, 1 Ω to 10 GΩ ",,3 points (one range) ,
+233,cd2_01a,DC current,DC Current source /meter,current source/pico ammeter/ electrometer,,1pA to 10 mA ,,"3 points per range 
+",
+234,cd2_01a,DC Charge,Charge amplifier,Electrometer/ charge amplifier,,100 pC to 2 µC ,,3 points per range ,
+235,cd2_01a,DC Charge,Charge amplifier,coloumb meter,,2 µC to 1 nC ,,,
+236,cd2_01a,"DC Voltage, Current & Resistance",DC Voltmeter,Nano voltmeter,,100 nV to 100V ,,3 points per range ,
+237,cd2_01a,DC current,DC Current source,current coil,,0 to 20A ,,,
+238,cd2_01a,DC voltage & current,DC voltage & current source,DC power supply,, up to 1000V & 20A,,,
+239,cd2_01a,"DC & AC Voltage , current & resistance","DC & AC Voltage , current & Resistance Meter",Digital multimeter 6 & 1/2 digit,DMM,".0 m V - 1 kV, 1 A - 20
+A, 1 Ω to -100 M Ω
+AC parameters:
+1 mV – 1000 V(10 Hz – 1
+MHz),1 mA – 20 A(40
+Hz – 10 kHz)",,"In DC : 3 points (in each range)
+In AC :3 frequency points and at
+each frequency - 3 Voltage and
+3 Current levels covering the
+entire range of DUC
+",
+240,cd2_01a,"AC/DC Voltage AC/DC Current, Frequency, DC Resistance, Capacitance, RTD, Thermocouple","DC Voltage, Current & Resistance source",Multiproduct/mult ifunction Calibrator 6½ digit,Calibrator,"10 μV to 1 kV ,1 μA to
+20A , 1 Ω to 10 GΩ",,"..In DC : 3 points for voltage and
+current (one range) DC
+resistance in decade values
+In AC : Seven levels @3
+frequencies Seven points in
+frequency
+",
+241,cd2_01a,"DC Voltage, Current, Resistance, RTD, Thermocouple","DC Voltage, Current & Resistance source & measure",Hand Held Calibrator 5& 1/2 digit and 4& 1/2,Hand Held Multi function calibrator,"10 μV to 1 kV ,1 μA to
+20A , 1 Ω to 10 GΩ ",,At discrete points ,
+242,cd2_01a,Thermocouple,"DC voltage simulation method, source and measure",Hand held thermometers and thermal indicators,,10 μV to 10V ,,At discrete points ,
+243,cd2_01c,DC High Voltage,DC High Voltage Source,HV Supply,HV Power Supply,Up to 50 kV,,5,
+244,cd2_01c,DC High Voltage,DC High Voltage Source,HV Supply,HV Power Supply,Up to 100 kV,,5,
+245,cd2_01c,DC High Voltage,DC High Voltage Meter,Kilo-Volt Meter (without Divider),Electrostatic Voltmeter,Up to 100 kV,,5,
+246,cd2_01c,DC High Voltage,DC High Voltage Meter,Kilo-Volt Meter with Divider,Electrostatic Voltmeter,Up to 100 kV,,5,
+247,cd2_01c,DC High Voltage Divider Ratio,DC High Voltage Divider,HV Divider (Upto 50 kV),,1000:1 & 10000:1,,One Ratio (5 points),
+248,cd2_01c,DC High Voltage Divider Ratio,DC High Voltage Divider,HV Divider (Upto 100 kV),,1000:1 & 10000:1,,One Ratio (5 points),
+249,cd2_01c,DC High Voltage Divider Ratio,DC High Voltage Divider,HV Probe,,Upto 50 kV,,5,
+250,cd2_01c,DC High Current,DC High Current Source,High Current Supply,,Upto 600A,,5,
+251,cd2_03,AC  Energy,Energy Meters,1-Phase Energy Meter,1-Phase Energy Meter,,,"One Voltage*Current Range (Accuracy, voltage & frequency influences)",
+252,cd2_03,AC  Energy,Energy Meters,3-Phase energy/ 1- Phase PRS Meter,Phase Energy Meter/1-Phase Metronic / Songyang,,,"One Voltage*Current Range  (Accuracy, Voltages/currents & voltage/frequency influences)",
+253,cd2_03,AC  Energy,Energy Meters,3-Phase PRS Meter/Trivector / Accucheck Meter,Trivector Energy Meter/Accucheck meter/song yang,,,"One Voltage*Current Range  (Accuracy, Voltages/currents & voltage/frequency influences)",
+254,cd2_03,AC Power,Power Meters,"1-Phase High Precision Power Meter/Phase Angle Meter/Transducer, Class 0.5 &above",1-Phase Watt Meter/Phase Angle Meter/Transducer,,,One Voltage*Current Range,
+255,cd2_03,AC Power ,"Power Meters
+","3-Phase High Precision Power Meter,Class:0.5 &above
+","3-Phase Watt Meter
+",,,"One Voltage*Current Range
+",
+256,cd2_03,AC Power ,"Power Meters
+","3-Phase Transducer , Class: 0.5& above
+","3-Phase Transducer
+",,,"One Voltage*Current Range
+",
+257,cd2_03,"Power
+Factor
+",Power Factor,"
+Meters 1/3 Phase Power Factor Meter
+","1/3 Phase PF Meter
+",,,"One Voltage*Current Range
+",
+258,cd2_03,"AC Current & AC Voltage
+","Power /Energy Meters
+","Power/Energy Meter
+","Power /Energy Meter/WattMeter/ PRS Meter
+ ",,,"One Voltage & Current Range
+",
+259,cd2_03,"AC Power /Energy
+","1/3-Phase Reference Power /Energy Meters
+","1/3-Phase Power & Energy Meter/Calibrator, 3W/4W, Class 0.05/0.02
+","1/3-Phase Reference Power / Energy Meter
+","Four Power & Energy ranges
+",,,
+260,cd2_03,"AC Power /Energy
+","1/3-Phase Reference Power /Energy Meters
+","1/3-Phase Power & Energy Meter/Calibrator, 3W / 4W, Class 0.05/0.02
+","1/3-Phase Reference Power / Energy Meter
+","Six Power & Energy ranges and Voltage, Current & PF ranges
+",,,
+261,cd2_03,"AC Power /Energy
+","1/3-Phase Reference Power /Energy Meters
+","1/3-Phase Power & EnergyMeter/Calibrator,3W/4W Class 0.01
+","1/3-Phase Reference Power / Energy Meter
+","Six Power & Energy ranges and Voltage, Current & PF ranges
+",,,
+262,cd2_03,"AC Power /Energy
+","1/3-Phase Reference Power /Energy Meters
+","1/3 Phase Power & Energy Meter/Calibrator,3W/4W Class 0.01
+","1/3-Phase Reference Power / Energy Meter
+","Eight Power & Energy ranges and Voltage, Current , PF ranges
+",,,
+263,cd2_05,"Quantum Hall Resistance (QHR)
+","1kOhm
+DC Resistor
+","1kOhm
+DC Resistor
+",,"Single Point
+",,"18-30
+degree C
+","Availability of
+Liquid Helium
+"
+264,cd3_01,Ozone Concentration,Gases Environmental,Ozone Analyser,,"(0-500) n
+mol/mol",,,
+265,cd3_02,"Cutoff size of
+PM2.5/PM10
+","Impactor/
+Cyclone/
+Particulate count
+sampler
+","Impactor/ Cyclone/
+Particulate count sampler
+","Impactor/
+Cyclone/
+Particulate count
+sampler
+",,"Cutoff size of
+PM2.5/ PM10
+",,
+266,cd3_03,Calibration of measured energy by Defibrillator Analyzer,"Defibrillator Analyser (1 unit)
+","(i) Measured energy (J), (ii) Internal /load Resistance (Ohm), (iii) Pacer Resistance (Ohm)",,150 J & 270 J at 50 Ohm,,Two Points,Calibration charges are to be paid for a minimum of two energy (J) points
+267,cd3_03,Calibration of Voltage & Frequency of ECG Simulator,ECG Simulator,(i) Voltage (ii) Frequency,,"(i) 3 & 5 mV amplitude for Sine waveform and Normal Sinus waveform (ii) Sine waveform: 60 Hz, Square waveform: 2 Hz, Normal Sinus waveform: 1 Hz, 2 Hz & 3 Hz",,Nine Points,Calibration charges are to be paid for a minimum of nine points
+268,cd3_03,Calibration of flow rate of Infusion Pump Analyzer,Infusion Pump Analyzer,(i) Flow Rate (ml/hr) (ii) Occlusion Pressure (kPa),,"50 ml/hr, 100 ml/hr & 300 ml/hr",,Three Points,Calibration charges are to be paid for a minimum of three points.
+269,cd6_01,Time & Frequency,Time & Frequency,Timer,,,,1,For Time Interval = 1740s
+270,cd6_01,Time & Frequency,Time & Frequency,Timer,,,,1,For Time Interval = 1s
+271,cd6_01,Time & Frequency,Time & Frequency,Frequency Standard,,,,1,"5 MHz,10 MHz"
+272,cd6_01,Time & Frequency,Time & Frequency,Frequency Standard,,,,1,"5 MHz,10 MHz"
+273,cd6_01,Time & Frequency,Time & Frequency,Frequency Standard,,,,1,"5 MHz,10 MHz and 1PPS"
+274,cd6_01,Time & Frequency,Time & Frequency,Frequency Standard,,,,1,"5 MHz,10 MHz and 1PPS"
+275,cd6_01,Time & Frequency,Time & Frequency,GPS system,,,,1,"5 MHz,10 MHz and 1PPS"
+276,cd6_02a,AC Voltage & Current / *AC-DC Voltage Transfer Difference,Multimeter ,"Digital
+Multimeter
+",,"1mV to 1000
+V 1mA to
+20A
+",,"3 Frequencies 7
+levels/ *3
+Frequencies 5
+levels
+",
+277,cd6_02a,AC Voltage & Current / *AC-DC Voltage Transfer Difference,"Calibrator
+","Voltage &
+Current
+Calibrator
+","Multifunction
+/ Multi
+Product
+Calibrator
+","1mV to 1000
+V 1mA to
+10A
+",,"3 Frequencies 7
+levels/ *3
+Frequencies 5
+levels
+",
+278,cd6_02a,AC Voltage,Reference Source ,AC Reference Source ,,,,3 Frequency ,
+279,cd6_02a,AC Current,Transconduct ance Amplifier,Transconduct ance Amplifier,AC Current Source,Up to 20A,,1 Frequency,
+280,cd6_02a,AC-DC Voltage Transfer Difference,Potentiometer,Micropotentio meter,Low Voltage TVC,1mV to 200 mV,,3 Frequency,
+281,cd6_02a,AC-DC Voltage Transfer Difference,Thermal Converter/AC Measurement Standard/,Thermal Voltage Converter,,1mV to 1000V,,3 Frequency per voltage level,
+282,cd6_02a,AC-DC Voltage Transfer Difference,Thermal Transfer Standard,Thermal Transfer Standard,,250 mV to 1000 V,,1 Frequency,
+283,cd6_02a,AC-DC Voltage Transfer Difference,Thermal Transfer Standard,Thermal Transfer Standard,,2mV to 1000 V,,1 Frequency,
+284,cd6_02a,AC-DC Voltage Transfer Difference,Shunt,Current Shunt,,1mA to 20A,,3 Frequency,
+285,cd6_02a,AC-DC Voltage & Force,Amplifier with Load cell,Dynamic Strain Meter,,0-5 V and upto 100 kN,,"One channel in
+one load cell",
+286,cd6_02a,AC Voltage,AC Measurement Std,AC Measurement Std,AC Measurement Std,1mV to 1000V,,3 Frequencies,
+287,cd6_02a,AC-DC Current Transfer Difference,Current Shunt,AC Measurement Std/+Current Shunt,AC Measurement Std/+Current Shunt,1mA to 20A,,3 Frequencies,
+288,cd6_02a,"AC/DC Voltage, Frequency, Time base, DC gain Accuracy, Bandwidth",Handheld CRO,Oscilloscope/ Scope Calibrator,Handheld CRO,10Hz to 1MHz,,3 Frequencies,
+289,cd6_02a,"AC/DC Voltage, Frequency, Time base, DC gain Accuracy, Bandwidth",CRO,Oscilloscope/ Scope Calibrator,CRO/DSO/M SO,10Hz to 1MHz,,3 Frequencies,
+290,cd6_02b,Frequency/ आवृत्ति,Frequency Counter/ आवृत्ति काउन्टर,Frequency Counter/ आवृत्ति काउन्टर,Frequency meter/ आवृत्ति मीटर,,,6 Frequency points for Frequency / Period,Stability >1.0E-8
+291,cd6_02b,Frequency/ आवृत्ति,Frequency Counter/ आवृत्ति काउन्टर,"Universal
+Counter/
+सार्विक काउन्टर",,,,6 Freq. points for Frequency / Period & Time Interval,
+292,cd6_02b,RF Voltage/ रेडियो-आवृत्ति वोल्टे ज,Voltmeter/ वोल्टमीटर,Selective Microvoltmet er/ चयनात्मक माइक्रोवोल्टमीटर,Level Meter/ लेवलमीट,Up to 1000 MHz,,6 Frequencies with 50 ohm Input Impedance,
+293,cd6_02b,RF Voltage/ रेडियो-आवृत्ति वोल्टे ज,Voltmeter/ वोल्टमीटर,"RF Millivoltmeter
+/ मिलीवोल्टमीटर
+",,Up to 1000 MHz,,6 Frequencies per probe,
+294,cd6_02b,RF Power & Frequency/ रेडियो-पावर एवं आवृत्त,"Signal
+Generator/
+संकेतउत्पादक",Synthesizer/ सिंथसाइज़र,Sweep Oscillator/ स्वीपआसलैट र,1 MHz to 18 GHz,,"5 frequencies for Power Level, Time Base Accuracy & Frequency Response","Type N
+connector"
+295,cd6_02b,RF Power & Frequency/ रेडियो-पावर एवं आवृत्त,Spectrum Analyser/ स्पेक्ट्रमविश्लेषक,Spectrum Analyser/ स्पेक्ट्रमविश्लेषक,Wave Analyser/ तरंगविश्लेषक,1 MHz to 18 GHz,,"5 frequencies for Power Level, Time Base Accuracy & Frequency Response",Type N connector
+296,cd6_02b,Effective Efficiency / Calibration Factor / RF Power,Power Meter/ पावर मीटर,RF Power Meter with Sensor/ रेडियो- आवृत्ति पावर मीटर संवेदक के साथ,,1 MHz to 18 GHz,,3 Frequencies with one Sensor (Effective Efficiency/ Calibration Factor/ RF Power),Type N connector
+297,cd6_02b,Effective Efficiency / Calibration Factor,Coaxial Thermistor Mount/ समाक्षीय थर्मिस्टर माउन्ट,"Coaxial
+Thermistor
+Mount/ समाक्षीय
+थर्मिस्टर माउन्ट","Power
+Mount/
+पावर माउन्ट",1 MHz to 18 GHz,,1 Frequency/एक आवृत्ति केलिए,Type N connector
+298,cd6_02b,Effective Efficiency / Calibration Factor,RF Power Transfer Standard/ रेडियो- आवृत्ति पावरअंतरण मानक,"RF Power
+Transfer
+Standard/ रेडियो-
+आवृत्ति
+पावरअंतरण मानक",,1 MHz to 18 GHz,,1 Frequency/एक आवृत्ति केलिए,Type N connector
+299,cd6_02b,Effective Efficiency / Calibration Factor,RF Power Transfer Standard/ रेडियो- आवृत्ति पावरअंतरण मानक,RF Power Transfer Standard/ रेडियो- आवृत्ति पावरअंतरण मानक,,1 MHz to 50 GHz,,2 Frequency/एक आवृत्ति केलिए,2.4mm connector
+300,cd6_02b,Effective Efficiency / Calibration Factor,Power Meter/ पावर मीटर,RF Power Meter with Sensor/ रेडियो- आवृत्ति पावर मीटर संवेदक के साथ,,1 MHz to 50 GHz,,3 Frequencies with one Sensor (Effective Efficiency/ Calibration Factor/ RF Power),2.4mm connector
+301,cd6_02b,"AC & DC Voltage and Curent at different configuration , Line Frequency, GPS Validation",PMU CAL System,Phasor Measurement Unit Calibrator System/,PMU-CAL,ACV~100 0V ACC~20A DCV~150 DCC~5A GPS Lime Freq,,Full Calibration @ pre selected points,Congigurati on of System at CSIR-NPL should be done by USER
+302,cd6_02b,PMU Calibration,M Class,Phasor Measurement Unit,PMU,50V to 150V 1A to 5A 50/60 Hz 25/50 fps,,One Level/ Freq/reporting rate,Congigurati on of PMU at CSIRNPL should be done by USER
+303,cd6_02b,PMU Calibration,P Class,Phasor Measurement Unit,PMU,50V to 150V 1A to 5A 50/60 Hz 25/50 fps,,One Level/ Freq/reporting rate,Congigurati on of PMU at CSIRNPL should be done by USER
+304,cd6_02c,Testing charges for High resolution FESEM imaging per sample ,FESEM imaging ,Nanomaterials/ thin films / powders / wafers /substrates/ pellets/stents /textile fibers ,,Mag. 12x1000kx ,,"Three magnifications, 4 images/ mag ",
+305,cd6_02c,"Testing Charges for high resolution FESEM & EDS per sample
+","FESEM imaging & EDS
+","Nanomaterials/ thin films / powders / wafers /substrates pellets/stents /textile fibers
+",,"Mag. 50x1000kx
+",,"Three magnifications, 3 images and 3 EDS spectrographs/ mag
+",
+306,cd6_02c,"Charges for FESEM calibration Standard fabricated by electron beam lithography (EBL) per standard (BND 2009-P) SemCali Array
+","Reference Material
+","Dimensional artifact/ Calibration reference material for SEM and AFM
+",,"Chip (SiO2/Si) size 10x10 mm or less, pattern size 1.5x1.5 mm area
+",,"Low reso square patterns of 100 um, and 10 um. High reso line patterns of 300nm and 200nm
+",
+307,cd6_02c,"Charges for Optical microscope calibration Standard fabricated by electron beam lithography (EBL) per sample (BND 2007-P (OptoMicroRuler))
+","Reference Material
+","Dimensional artifact/ Calibration reference material for optical microscope
+",,"Chip (SiO2/Si) size 10x10 mm or less, pattern size 1.5x1.5 mm area
+",,"Low reso square patterns of 100 um, and 10 um.Highresopatternsof 2um squares and 400nm lines",
+308,cd6_02c,Charges for Optical microscope calibration Standard fabricated by electron beam lithography (EBL) per standard )(BND 2008- P (TransMicroRuler)),Reference Material,Dimensional artifact/ Calibration reference material for optical microscope (transmission mode),,"Chip (ITO glass) size 10x10 mm or less, pattern size 1.5x1.5 mm area
+`",,"Low reso square patterns of 100 um, and 10 um.High reso patterns of 2um squares and 400nm lines
+",
+309,cd6_02c,Charges for Nanopattern Fabrication using FIB Milling (per hour),FIB milling,FIB milling for device fabrication/ckt modifications/ pattern writing,,"Low mag 100 um x 100 um area, high mag single pixel line/ dot milling down to 40nm",,Pattern milling as per request. Max milling time is 1 h,
+310,cd6_02c,Charges for FIB - GIS assisted Tungsten (W) deposition Nano Contacts (per hour),FIB deposition,W deposition,,"Low mag deposition 50 um x 50 um area, high mag deposition 500 nm x 20 um line",,depostion (sequencially) as per request. Max depostion time is 1 hr,
+311,cd6_02c,Charges for FIB - GIS assisted Platinum (Pt) deposition Nano Contacts (per hour),FIB deposition,Pt deposition,,"Low mag deposition 50 um x 50 um area, high mag deposition 500 nm x 20 um line",,depostion (sequencially) as per request. Max depostion time is 1 hr,
+312,cd6_02c,Testing Charges for stent per hour,FESEM imaging and metal coating,Drug coating integrity and thickness determination test,,Mag. 12x1000kx ,,"Three magnifications, 4 images/ mag, for expanded and non expanded stents",
+313,cd6_02d,DC Volatage,DC Reference Standard,Zener Reference Standard,,1.018 V and 10 V,,Two points at 1.018 V and 10 V,
+314,cd6_03a,Attenuation,Attenuator,Coaxial Fixed Attenuator,Attenuation Pad,0.1-60 dB at 30 MHz & 1-40 GHz,,3 Frequencies,Connector Type-N/7mm (50 ohm)/2.4mm
+315,cd6_03a,Attenuation,Attenuator,Waveguide Fixed Attenuator,Attenuation Pad,0.1-60 dB at 5.8-18 GHz,,3 Frequencies,Waveguide flang
+316,cd6_03a,Attenuation,Attenuator,Coaxial step Attenuator,Variable Attenuator,0.1-60 dB at 30 MHz & 1-40 GHz,,1 Frequencies,Connector Type-N/7mm (50 ohm)/2.4mm
+317,cd6_03a,Attenuation,Attenuator,Rotary Vane Attenuator,Variable Attenuator,0.1-60 dB at 5.8-18 GHz,,1 Frequencies,Waveguide flang
+318,cd6_03a,Attenuation,Attenuator,30 MHz WBCO Attenuator,Standard Piston Attenuator,0.05-60 dB at 30 MHz,,1 Frequencies,Connector Type-N/7mm (50 ohm)
+319,cd6_03a,Attenuation,Coupler,Coaxial Directional Coupler,,0.1-60 dB at 30 MHz & 1-18 GHz,,1 Frequencies,Connector Type-N/7mm (50 ohm)
+320,cd6_03a,Attenuation,Coupler,Waveguide Directional Coupler,,0.1-60 dB at 5.8-18 GHz,,3 Frequencies,Waveguide flange
+321,cd6_03a,Attenuation,Coupler,Dual Directional Coupler,,0.1-60 dB at 30 MHz & 1-18 GHz,,1 Frequency,Connector Type-N/7mm (50 ohm)
+322,cd6_03a,Attenuation,30MHz Receiver,"Attenuator &
+Signal
+Calibrato",Receiver with built-in 30MHz Attenuator,0.1-60 dB at 30 MHz,,1 Frequency,Connector Type-N/7mm (50 ohm)
+323,cd6_03a,Attenuation,Splitter,Power Splitter,"Power
+Divider",0.1-60 dB at 30 MHz & 1-18 GHz,,1 Frequency,Connector Type-N/7mm (50 ohm)
+324,cd6_03a,Reflection Coefficient/ VSWR,Termination,Coaxial Mismatch,Coaxial Termination,1.02-5 at 2 -18 GHz,,3 Frequencies,Connector Type-N/7mm (50 ohm)
+325,cd6_03a,Reflection Coefficient/ VSWR,Sensor,RF Transfer Standard,Coaxial Thermister Mount,1.02-5 at 2 -18 GHz,,3 Frequencies,Connector Type-N/7mm (50 ohm)
+326,cd6_03a,Attenuation,1kHz Receiver,VSWR Meter,RF Ratiometer,0.1-30 dB at 1kHz,,1 Frequency,Connector BNC (50 ohm)
+327,cd6_03a,Attenuation & VSWR,Bridge,SWR Bridge,,"0.1-60 dB at 1- 18 GHz, 1.02-5 at 2 -18 GHz",,1 Frequency,Connector Type-N/7mm (50 ohm)
+328,cd6_03a,Reflection Coefficient/ VSWR,Termination,Waveguide Standard Mismatch,Waveguide Match Load,0.01-0.2 at 5.8- 18 GHz,,3 Frequencies,Waveguide flange
+329,cd6_03a, Reflection Coefficient,Reflection Standard,Coaxial Short/Open Circuit,Offset Short Circuit,0.96-0.99 at 2- 18 GHz,,3 Frequencies,Connector Type-N/7mm (50 ohm)
+330,cd6_03a,Reflection Coefficient/ VSWR,Impedance Standard,Coxial Airline,Beadless Airline,0.01-0.05 at 2- 18 GHz,,1 Frequency,Connector Type-N/7mm (50 ohm)
+331,cd6_03a,Phase,Phase Shifter,Rotary Vane Phase Shifter,Variable Phase Shifter,0-180 degree (X-Band),,1 Frequency,Waveguide flange
+332,cd6_03a,E Field (V/m)/Radiated power density(mW/cm2),Antenna,Probe,Microwave leakage detector,"(19a) Probe (19b)
+Probe (19c)
+Probe as
+per TEC Norm",,"(19a)1 Freq. and 3 power levels(19b)3 Freq. and 3 power
+levels(19c)TEC/TP/EMF/001/01.SEP2009",
+333,cd6_03a,Shielding effectiveness,Planar Material,MRI tester,"RF transparency
+sheet",,,1 Freq. and 3 power levels,
+334,cd6_03a,Cal Kit calibration,"Open, Short, Load",Calibration Kit,Cal Kit,"21(a) from 1 MHz to 3 GHz 21(b) 1 MHz
+to 8 GHz 21(c) 1 MHz
+to 18 GHz 21(d) 10 MHz
+to 50 GHz",,5 Frequncy points,Connector Type-N/7mm (50 ohm)
+335,cd6_03a,Cal Kit calibration,"Open, Short, Load",Calibration Kit,,"22(a) from 1
+MHz to 3
+GHz 22(b) 1 MHz
+to 8 GHz 22(c) 1 MHz
+to 18 GHz 22(d) 10 MHz
+to 50 GHz",,5 Frequncy points,Connector Type-N/7mm (50 ohm)
+336,cd6_03b,Magnetic Flux Density/Resonance Frequency,NMR Magnetometer,NMR Magnetometer with probes (DC Magnetic field),NMR Gaussmeter/ Teslameter,500G to 15kG(0.05Tesla to 1.5 Tesla),,5,
+337,cd6_03b,Magnetic Flux Density / Magnetic Field,Gauss Meter,Gauss Meter with one probe (DC Magnetic Field),Magnetometer,100 G to 10 kG,,8,
+338,cd6_03b,Magnetic Flux Density / Magnetic Field,Gauss Meter,Gauss Meter with one probe (AC Magnetic Field),Magnetometer,50 G to 2 kG,,4,
+339,cd6_03b,Magnetic Flux Density / Magnetic Field,Gauss Meter,Gauss Meter with one probe (AC & DC Magnetic Field),Magnetometer,"DC (100 G to 10 kG), AC (50 G to 2 kG)",,12,
+340,cd6_03b,Magnetic Flux Density / Magnetic Field,Magnetic Field Indicator,Magnetic Field Indicator,Residual Magnetic Gauss Mete,2 G to 20 G/-10G to +10G,,5,
+341,cd6_03b,Magnetic Flux Density / Magnetic Field,Low field Magnetometer,Fluxgate Magnetometer/AMR Magnetometer/Hall Effect Magnetometer,Low field Magnetometer,10 mG to 20 G,,10,
+342,cd6_03b,Magnetic Flux Density / Magnetic Field,Magnet,Magnet (Fixed value),Reference Magnet,,,Single Point,
+343,cd6_03b,Magnetic Flux,Magnetic Flux Meter,Magnetic Flux Meter,,10E+4 to 10E+8 Maxwell,,8,
+344,cd6_03b,Volt.Sec,Flux Meter Calibrator,Flux Meter Calibrator,,0.0001V.s to 10 V.s,,8,
+345,cd6_03b,Magnetic Power Loss,Epstien Sample,Epstien Sample,,1 W/kg to 20 W/kg,,,
+346,cd6_03b,Permeability,AlNiCo Magnet,AlNiCo Magnet,,,,,
+347,cd6_03b,Turn Area,Search Coil,Search Coil,,0.0002 to 0.2m²,,,
