@@ -1,7 +1,6 @@
-from sqlalchemy import create_engine, Column, Text, String, MetaData, Table, Integer, select
+from sqlalchemy import create_engine, Column, Integer, String, CHAR
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from typing import List, Dict
 
 # Connect to database
 db_name = "dcc"
@@ -10,70 +9,45 @@ password="root"
 host="localhost"
 port="5432"
 engine = create_engine(f"postgresql://{user}:{password}@{host}:{port}/{db_name}")
+Base = declarative_base()
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# Query data template
-metadata = MetaData()
-certificate_table = Table(
-    'certificate', metadata,
-    Column('cert_id', Integer, autoincrement=True),
-    Column('cert_no', String(255), primary_key=True),
-    Column('device_name', String(255)),
-    Column('end_date', String(12)),
-    Column('next_date', String(12)),
-    Column('calibrated_for', Text),
-    Column('description', Text),
-    Column('env_conditions', Text),
-    Column('stds_used', Text),
-    Column('tracability', Text),
-    Column('procedure', Text),
-    Column('calibrated_by', String(255)),
-    Column('checked_by', String(255)),
-    Column('incharge', String(255)),
-    Column('issued_by', String(255)),
-    Column('result_table', Text),
-    Column('result_desc', Text),
-    Column('calibration_date', String(255)),
-    Column('dio_no', String(50)),
-    Column('remarks', Text),
-    Column('checksum', String(255))
-)
+# Define the Checksums class
+class Checksums(Base):
+    __tablename__ = 'checksums'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    checksum = Column(CHAR(64), unique=True, nullable=False)
+    certificate_no = Column(String(100), nullable=False)
+    status = Column(String(20), nullable=False)
 
-def add_new_org(data: dict):
-    session = SessionLocal()
-    try:
-        insert_stmt = certificate_table.insert().values(**data)
-        session.execute(insert_stmt)
+# Create the table
+Base.metadata.create_all(engine)
+
+def add_checksum(data):
+    # Create a new session
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    existing_row = session.query(Checksums).filter_by(certificate_no=data['certificate_no']).first()
+
+    curr_status = data['status']
+    # If such a row exists, delete it
+    if existing_row:
+        session.delete(existing_row)
         session.commit()
-        return 'New record added successfully'
-    except Exception as e:
-        session.rollback()
-        raise e
-    finally:
-        session.close()
+        curr_status = existing_row.status
 
-def get_org(org_reg_id: str):
-    session = SessionLocal()
-    try:
-        select_stmt = certificate_table.select().where(certificate_table.c.org_reg_id == org_reg_id)
-        result = session.execute(select_stmt).fetchone()
-        if result:
-            return dict(result)
-        else:
-            return None
-    finally:
-        session.close()
-
-# def check_org_credentials(email: str, password: str) -> bool:
-#     session = SessionLocal()
-#     try:
-#         # Query to check if the given email and password exist in the table
-#         query = session.query(certificate_table).filter(
-#             certificate_table.c.email == email,
-#             certificate_table.c.password == password
-#         )
-#         # Execute the query and check if any row matches
-#         result = session.execute(query).fetchone()
-#         return result is not None
-#     finally:
-#         session.close()
+    # Insert a new row
+    new_checksum = Checksums(
+        checksum=data['checksum'],
+        certificate_no=data['certificate_no'],
+        status=curr_status
+    )
+    
+    # Add the new row to the session and commit
+    session.add(new_checksum)
+    session.commit()
+    # Close the session
+    session.close()
+    
+    return "New checksum added to the checksums table."
