@@ -7,7 +7,7 @@ from werkzeug.utils import secure_filename
 from datetime import timedelta
 import os
 import registration
-import calibration_testing
+import meteorological
 import pandas as pd
 import checksum
 
@@ -171,7 +171,7 @@ def empwelcome():
 
 @app.route('/custwelcome')
 def custwelcome():
-    service_types = db.session.query(distinct(calibration_testing.calibration_testing_table.c.service_types)).all()
+    service_types = db.session.query(distinct(meteorological.meteorological_classification.c.service_types)).all()
     service_types = [row[0] for row in service_types]
     return render_template('custwelcome.html', service_types=service_types)
 
@@ -202,21 +202,6 @@ def contact():
 @app.route('/test')
 def test():
     return render_template('test.html')
-
-@app.route('/add_new_service')
-def add_new_service():
-    data_folder = 'data'
-    excel_files = [file for file in os.listdir(data_folder) if file.endswith('.xlsx')]
-    dataframes = []
-    filenames = []
-
-    for file in excel_files:
-        file_path = os.path.join(data_folder, file)
-        df = pd.read_excel(file_path)
-        filenames.append(file)
-        dataframes.append(df.to_html(classes="table table-striped", index=False))
-
-    return render_template('display_sheets.html', dataframes=dataframes, filenames=filenames, enumerate=enumerate)
 
 if __name__ == '__main__':
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
