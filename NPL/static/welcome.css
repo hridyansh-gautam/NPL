@@ -13,7 +13,7 @@ body {
   }
   
   .logo {
-    width: 10rem; /* Adjust the width as needed */
+    width: 10rem;
   }
   
   .page-title {
@@ -62,7 +62,7 @@ body {
     position: relative; 
   }
   
-  .dropdown-toggle { /* Styles for the dropdown button */
+  .dropdown-toggle {
     padding: 0.75rem;
     display: block;
     text-decoration: none;
@@ -74,28 +74,28 @@ body {
     transition: 0.3s;
   }
   
-  .dropdown-menu { /* Styles for the dropdown menu itself */
-    float: none; /* Avoids potential layout issues */
-    overflow: auto; /* Enables scrolling if there are many dropdown items */
+  .dropdown-menu {
+    float: none;
+    overflow: auto;
     min-width: 100%; 
-    position: absolute; /* Positions the menu relative to the dropdown button */
+    position: absolute;
     background-color: whitesmoke; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
     border-radius: 0.5rem; 
   }
   
-  .dropdown-menu a { /* Styles for the dropdown menu items (anchor tags) */
-    padding: 0.75rem 1.25rem; /* Adjusts padding for alignment with main nav */
+  .dropdown-menu a {
+    padding: 0.75rem 1.25rem;
     display: block;
     text-decoration: none;
-    color: #212529; /* Darker text color for better contrast */
-    white-space: nowrap; /* Prevents long text from wrapping */
-    border-bottom: 0; /* Removes default bottom border */
+    color: #212529;
+    white-space: nowrap;
+    border-bottom: 0;
   }
   
-  .dropdown-menu a:hover { /* Hover effect for dropdown menu items */
-    background-color: #e9ecef; /* Matches hover background color from nav */
-    box-shadow: 0 0 0 2px #fff, 0 0 0 3px blue; /* Matches hover effect from nav */
+  .dropdown-menu a:hover {
+    background-color: #e9ecef;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px blue;
   }
   
   .btn-secondary{
@@ -135,13 +135,7 @@ body {
     justify-content: space-around;
     
   }
-  /* .footer {
-    background-color: whitesmoke;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-  } */
+ 
   
   footer a {
     padding: 0.75rem;

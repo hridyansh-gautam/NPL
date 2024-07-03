@@ -41,6 +41,19 @@ CREATE TABLE ind_reg (
   password VARCHAR(255)
 );
 
+INSERT INTO ind_reg (f_name, l_name, email, alt_email, mobile_no, addr_1, addr_2, country, state, city, pincode, password)
+VALUES 
+('John', 'Doe', 'john.doe@example.com', 'john.doe.alt@example.com', '9876543210', '123 Main St', 'Apt 101', 'USA', 'California', 'Los Angeles', '90001', 'password123'),
+('Alice', 'Smith', 'alice.smith@example.com', 'alice.smith.alt@example.com', '9871234560', '456 Oak Ave', 'Suite 202', 'USA', 'New York', 'New York City', '10001', 'password456'),
+('Michael', 'Johnson', 'michael.johnson@example.com', 'michael.johnson.alt@example.com', '9879876543', '789 Elm Blvd', '', 'USA', 'Texas', 'Houston', '77002', 'password789'),
+('Emily', 'Brown', 'emily.brown@example.com', 'emily.brown.alt@example.com', '9878765432', '321 Pine Rd', '', 'USA', 'Florida', 'Miami', '33101', 'passwordabc'),
+('David', 'Martinez', 'david.martinez@example.com', 'david.martinez.alt@example.com', '9877654321', '567 Cedar Ln', 'Unit 303', 'USA', 'Illinois', 'Chicago', '60601', 'passwordxyz'),
+('Sophia', 'Garcia', 'sophia.garcia@example.com', 'sophia.garcia.alt@example.com', '9876543210', '234 Birch St', '', 'USA', 'Ohio', 'Columbus', '43085', 'password123'),
+('James', 'Lopez', 'james.lopez@example.com', 'james.lopez.alt@example.com', '9879876543', '876 Maple Ave', 'Apt 405', 'USA', 'Washington', 'Seattle', '98101', 'password456'),
+('Emma', 'Gonzalez', 'emma.gonzalez@example.com', 'emma.gonzalez.alt@example.com', '9878765432', '789 Walnut Dr', '', 'USA', 'Massachusetts', 'Boston', '02108', 'password789'),
+('William', 'Wilson', 'william.wilson@example.com', 'william.wilson.alt@example.com', '9877654321', '432 Pine Ln', '', 'USA', 'Pennsylvania', 'Philadelphia', '19103', 'passwordabc'),
+('Olivia', 'Rodriguez', 'olivia.rodriguez@example.com', 'olivia.rodriguez.alt@example.com', '9876543210', '567 Elm St', 'Suite 501', 'USA', 'Georgia', 'Atlanta', '30303', 'passwordxyz');
+
 CREATE TABLE org_reg (
   org_reg_id SERIAL PRIMARY KEY,
   org_type VARCHAR(40),
@@ -58,6 +71,18 @@ CREATE TABLE org_reg (
   password VARCHAR(255)
 );
 
+INSERT INTO org_reg (org_type, org_name, gst_no, email, alt_email, phone, landline, addr_1, country, state, city, pincode, password)
+VALUES 
+('Private Limited', 'ABC Company Pvt Ltd', 'GST1234567', 'info@abccompany.com', 'contact@abccompany.com', '9876543210', '022-12345678', '789 Main Rd', 'India', 'Maharashtra', 'Mumbai', '400001', 'password123'),
+('Public Limited', 'XYZ Corporation Ltd', 'GST9876543', 'info@xyzcorp.com', 'contact@xyzcorp.com', '9871234560', '011-98765432', '456 Oak St', 'India', 'Delhi', 'New Delhi', '110001', 'password456'),
+('Partnership Firm', 'LMN Partners', 'GST4567890', 'info@lmnpartners.com', 'contact@lmnpartners.com', '9879876543', '033-87654321', '321 Elm Ave', 'India', 'West Bengal', 'Kolkata', '700001', 'password789'),
+('Sole Proprietorship', 'PQR Enterprises', 'GST2345678', 'info@pqrenterprises.com', 'contact@pqrenterprises.com', '9878765432', '044-76543210', '567 Pine Blvd', 'India', 'Tamil Nadu', 'Chennai', '600001', 'passwordabc'),
+('Limited Liability Partnership', 'EFG LLP', 'GST3456789', 'info@efgllp.com', 'contact@efgllp.com', '9877654321', '080-65432109', '234 Cedar Rd', 'India', 'Karnataka', 'Bangalore', '560001', 'passwordxyz'),
+('Private Limited', 'RST Solutions Pvt Ltd', 'GST5678901', 'info@rstsolutions.com', 'contact@rstsolutions.com', '9876543210', '022-12345678', '789 Maple Dr', 'India', 'Goa', 'Panaji', '403001', 'password123'),
+('Public Limited', 'UVW Corporation Ltd', 'GST7890123', 'info@uvwcorp.com', 'contact@uvwcorp.com', '9871234560', '011-98765432', '456 Birch Ln', 'India', 'Gujarat', 'Ahmedabad', '380001', 'password456'),
+('Partnership Firm', 'XYZ Partners', 'GST8901234', 'info@xyzpartners.com', 'contact@xyzpartners.com', '9879876543', '033-87654321', '321 Cedar Dr', 'India', 'Rajasthan', 'Jaipur', '302001', 'password789'),
+('Sole Proprietorship', 'LMN Enterprises', 'GST0123456', 'info@lmnenterprises.com', 'contact@lmnenterprises.com', '9878765432', '044-76543210', '567 Elm Rd', 'India', 'Uttar Pradesh', 'Lucknow', '226001', 'passwordabc'),
+('Limited Liability Partnership', 'PQR LLP', 'GST2345678', 'info@pqrllp.com', 'contact@pqrllp.com', '9877654321', '080-65432109', '234 Pine Blvd', 'India', 'Bihar', 'Patna', '800001', 'passwordxyz');
 
 CREATE TABLE emp_reg (
 emp_reg_id SERIAL PRIMARY KEY,

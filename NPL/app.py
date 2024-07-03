@@ -165,6 +165,54 @@ def empregister():
 def admwelcome():
     return render_template('admwelcome.html')
 
+@app.route('/admwelcome/add_cust', methods=['GET', 'POST'])
+def add_cust():
+    if request.method == 'GET' :
+        ind_list = registration.get_ind()
+        org_list = registration.get_org()
+        return render_template('add_cust.html', ind_list=ind_list, org_list=org_list)
+    elif request.method == 'POST': 
+        data = request.form
+        print(data)
+        print(data.get('ind'))
+        print(data.get('org'))
+        return render_template('add_cust.html')
+
+@app.route('/admwelcome/add_service', methods=['GET', 'POST'])
+def add_service():
+    if request.method == 'POST':
+        service_details = {
+            'service_code': request.form['service_code'],
+            'parameter': request.form['parameter'],
+            'item_type_group': request.form['item_type_group'],
+            'item_name': request.form['item_name'],
+            'alias_name': request.form['alias_name'],
+            'range': request.form['range'],
+            'calibration_parameters': request.form['calibration_parameters'],
+            'no_of_points_for_calibration_procedure_no': request.form['no_of_points_for_calibration_procedure_no'],
+            'limitation_condition': request.form['limitation_condition'],
+            'sample_requirements': request.form['sample_requirements']
+        }
+        service_charges = {
+            'service_code': request.form['service_code'],
+            'charges_per_item_rs': request.form['charges_per_item_rs'],
+            'additional_charges_rs': request.form['additional_charges_rs'],
+            'description_for_additional_charges': request.form['description_for_additional_charges'],
+            'remarks_if_any': request.form['remarks_if_any'],
+            'normal': request.form['normal'],
+            'tatkal': request.form['tatkal'],
+            'edc': request.form['edc']
+        }
+        try:
+            add_new_service(service_details)
+            add_new_service_charges(service_charges)
+
+            flash('Service and charges added successfully', 'success')
+        except Exception as e:
+            flash(f'An error occurred: {e}', 'danger')
+        return redirect(url_for('add_service'))
+    return render_template('add_service.html')
+
 @app.route('/empwelcome')
 def empwelcome():
     return render_template('empwelcome.html')

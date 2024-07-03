@@ -92,15 +92,15 @@ def add_new_org(data: dict):
     finally:
         session.close()
 
-def get_org(org_reg_id: int):
+def get_org():
     session = SessionLocal()
     try:
-        select_stmt = org_reg_table.select().where(org_reg_table.c.org_reg_id == org_reg_id)
-        result = session.execute(select_stmt).fetchone()
+        select_stmt = org_reg_table.select()
+        result = session.execute(select_stmt).fetchall()
         if result:
-            return dict(result)
+            return result
         else:
-            return None
+            return []
     finally:
         session.close()
 
@@ -129,15 +129,15 @@ def add_new_ind(data: dict):
     finally:
         session.close()
 
-def get_ind(ind_reg_id: int):
+def get_ind():
     session = SessionLocal()
     try:
-        select_stmt = ind_reg_table.select().where(ind_reg_table.c.ind_reg_id == ind_reg_id)
-        result = session.execute(select_stmt).fetchone()
+        select_stmt = ind_reg_table.select()
+        result = session.execute(select_stmt).fetchall()
         if result:
-            return dict(result)
+            return result
         else:
-            return None
+            return []
     finally:
         session.close()
 
