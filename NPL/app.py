@@ -180,7 +180,9 @@ def add_cust():
 
 @app.route('/admwelcome/add_service', methods=['GET', 'POST'])
 def add_service():
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render_template('add_service.html')
+    elif request.method == 'POST':
         service_details = {
             'service_code': request.form['service_code'],
             'parameter': request.form['parameter'],
@@ -211,8 +213,7 @@ def add_service():
         except Exception as e:
             flash(f'An error occurred: {e}', 'danger')
         return redirect(url_for('add_service'))
-    return render_template('add_service.html')
-
+            
 @app.route('/empwelcome')
 def empwelcome():
     return render_template('empwelcome.html')
