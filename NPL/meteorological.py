@@ -64,8 +64,8 @@ def add_new_classification(data: dict):
 def add_new_service(data: dict):
     session = SessionLocal()
     try:
-        service = MeteorologicalServices(**data)
-        session.add(service)
+        insert_stmt = meteorological_services.insert().values(**data)
+        session.execute(insert_stmt)
         session.commit()
         return 'Service details successfully added'
     except Exception as e:
@@ -77,8 +77,8 @@ def add_new_service(data: dict):
 def add_new_service_charges(data: dict):
     session = SessionLocal()
     try:
-        service = MeteorologicalServicesCharges(**data)
-        session.add(service)
+        insert_stmt = meteorological_services_charges.insert().values(**data)
+        session.execute(insert_stmt)
         session.commit()
         return 'Service charges successfully added'
     except Exception as e:

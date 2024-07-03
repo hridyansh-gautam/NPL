@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session, render_template, redirect, url_for
+from flask import Flask, request, jsonify, session, render_template, redirect, url_for, flash
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import distinct
@@ -74,7 +74,7 @@ def emplogin():
 def logout():
     session.pop('username', None)
     
-    return redirect( url_for('home') )
+    return redirect(url_for('home'))
 
 @app.route('/download')
 def download():
@@ -206,9 +206,10 @@ def add_service():
             'edc': request.form['edc']
         }
         try:
-            add_new_service(service_details)
-            add_new_service_charges(service_charges)
-
+            print(service_details)
+            print(service_charges)
+            meteorological.add_new_service(service_details)
+            meteorological.add_new_service_charges(service_charges)
             flash('Service and charges added successfully', 'success')
         except Exception as e:
             flash(f'An error occurred: {e}', 'danger')

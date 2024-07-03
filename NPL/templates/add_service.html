@@ -19,98 +19,99 @@
     <main>
         <div class="container">
             <form method="POST" action="{{ url_for('add_service') }}">
-              <h1 class="text-center">Add New Service</h1>
-              <div class="progressbar">
-                <div class="progress" id="progress"></div>
-                <div class="progress-step progress-step-active" data-title="Service Information"></div>
-                <div class="progress-step" data-title="Service Charges"></div>
-              </div>
+                <h1 class="text-center">Add New Service</h1>
+                <div class="progressbar">
+                    <div class="progress" id="progress"></div>
+                    <div class="progress-step progress-step-active" data-title="Service Information"></div>
+                    <div class="progress-step" data-title="Service Charges"></div>
+                </div>
       
-              <div class="form-step form-step-active">
-                <div class="mb-3">
-                    <label for="service_code" class="form-label">Service Code</label>
-                    <input type="text" class="form-control" id="service_code" name="service_code" required>
+                <!-- Step 1: Service Information -->
+                <div class="form-step form-step-active">
+                    <div class="mb-3">
+                        <label for="service_code" class="form-label">Service Code</label>
+                        <input type="text" class="form-control" id="service_code" name="service_code" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="parameter" class="form-label">Parameter</label>
+                        <input type="text" class="form-control" id="parameter" name="parameter" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="item_type_group" class="form-label">Item Type Group</label>
+                        <input type="text" class="form-control" id="item_type_group" name="item_type_group" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="item_name" class="form-label">Item Name</label>
+                        <input type="text" class="form-control" id="item_name" name="item_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="alias_name" class="form-label">Alias Name</label>
+                        <input type="text" class="form-control" id="alias_name" name="alias_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="range" class="form-label">Range</label>
+                        <input type="text" class="form-control" id="range" name="range" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="calibration_parameters" class="form-label">Calibration Parameters</label>
+                        <input type="text" class="form-control" id="calibration_parameters" name="calibration_parameters" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="no_of_points_for_calibration_procedure_no" class="form-label">No. Of Points For Calibration</label>
+                        <input type="text" class="form-control" id="no_of_points_for_calibration_procedure_no" name="no_of_points_for_calibration_procedure_no" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="limitation_condition" class="form-label">Limitation Condition</label>
+                        <input type="text" class="form-control" id="limitation_condition" name="limitation_condition" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sample_requirements" class="form-label">Sample Requirements</label>
+                        <input type="text" class="form-control" id="sample_requirements" name="sample_requirements" required>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <a href="#" class="btn btn-primary btn-next">Next</a>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="parameter" class="form-label">Parameter</label>
-                    <input type="text" class="form-control" id="parameter" name="parameter" required>
-                </div>
-                <div class="mb-3">
-                  <label for="item_type_group" class="form-label">Item Type Group</label>
-                  <input type="text" class="form-control" id="item_type_group" name="item_type_group" required>
-                </div>
-                <div class="mb-3">
-                    <label for="item_name" class="form-label">Item Name</label>
-                    <input type="text" class="form-control" id="item_name" name="item_name" required>
-                </div>
-                <div class="mb-3">
-                  <label for="alias_name" class="form-label">Alias Name</label>
-                  <input type="text" class="form-control" id="alias_name" name="alias_name" required>
-                </div>
-                <div class="mb-3">
-                  <label for="range" class="form-label">Range</label>
-                  <input type="text" class="form-control" id="range" name="range" required>
-                </div>
-                <div class="mb-3">
-                  <label for="calibration_parameters" class="form-label">Calibration Parameters</label>
-                  <input type="text" class="form-control" id="calibration_parameters" name="calibration_parameters" required>
-                </div>
-                <div class="mb-3">
-                  <label for="no_of_points_for_calibration_procedure_no" class="form-label">No. Of Points For Calibration</label>
-                  <input type="text" class="form-control" id="no_of_points_for_calibration_procedure_no" name="no_of_points_for_calibration_procedure_no" required>
-                </div>
-                <div class="mb-3">
-                  <label for="limitation_condition" class="form-label">Limitation Condition</label>
-                  <input type="text" class="form-control" id="limitation_condition" name="limitation_condition" required>
-                </div>
-                <div class="mb-3">
-                  <label for="sample_requirements" class="form-label">Sample Requirements</label>
-                  <input type="text" class="form-control" id="sample_requirements" name="sample_requirements" required>
-                </div>
-                <div class="d-flex justify-content-end">
-                  <a href="#" class="btn btn-primary btn-next">Next</a>
-                </div>
-              </div>
       
-              <!-- Step 2 -->
-              <div class="form-step">
-                <div id="services_charges">
-                  <div class="services_charges">
-                    <div class="mb-3">
-                        <label for="charges_per_item_rs" class="form-label">Charges per Item (Rs)</label>
-                        <input type="text" class="form-control" id="charges_per_item_rs" name="charges_per_item_rs" required>
+                <!-- Step 2: Service Charges -->
+                <div class="form-step">
+                    <div id="services_charges">
+                        <div class="services_charges">
+                            <div class="mb-3">
+                                <label for="charges_per_item_rs" class="form-label">Charges per Item (Rs)</label>
+                                <input type="text" class="form-control" id="charges_per_item_rs" name="charges_per_item_rs" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="additional_charges_rs" class="form-label">Additional Charges (Rs)</label>
+                                <input type="text" class="form-control" id="additional_charges_rs" name="additional_charges_rs" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description_for_additional_charges" class="form-label">Description For Additional Charges</label>
+                                <input type="text" class="form-control" id="description_for_additional_charges" name="description_for_additional_charges" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="remarks_if_any" class="form-label">Remarks If Any</label>
+                                <input type="text" class="form-control" id="remarks_if_any" name="remarks_if_any" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="normal" class="form-label">Normal</label>
+                                <input type="text" class="form-control" id="normal" name="normal" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tatkal" class="form-label">Tatkal</label>
+                                <input type="text" class="form-control" id="tatkal" name="tatkal" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="edc" class="form-label">EDC</label>
+                                <input type="text" class="form-control" id="edc" name="edc" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Service</button>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="#" class="btn btn-secondary btn-prev">Previous</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="additional_charges_rs" class="form-label">Additional Charges (Rs)</label>
-                        <input type="text" class="form-control" id="additional_charges_rs" name="additional_charges_rs" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="description_for_additional_charges" class="form-label">Description For Additional Charges</label>
-                      <input type="text" class="form-control" id="description_for_additional_charges" name="description_for_additional_charges" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="remarks_if_any" class="form-label">Remarks If Any</label>
-                      <input type="text" class="form-control" id="remarks_if_any" name="remarks_if_any" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="normal" class="form-label">Normal</label>
-                        <input type="text" class="form-control" id="normal" name="normal" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="tatkal" class="form-label">Tatkal</label>
-                      <input type="text" class="form-control" id="tatkal" name="tatkal" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="edc" class="form-label">EDC</label>
-                      <input type="text" class="form-control" id="edc" name="edc" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Add Service</button>
-                    <div class="d-flex justify-content-between mt-3">
-                      <a href="#" class="btn btn-secondary btn-prev">Previous</a>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </form>
         </div>
     </main>
@@ -121,5 +122,53 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ url_for('static', filename='add_new.js') }}"></script>
+    <script>
+        // JavaScript for progress bar and form steps
+        $(document).ready(function() {
+            const steps = Array.from(document.querySelectorAll(".form-step"));
+            const nextBtn = document.querySelectorAll(".btn-next");
+            const prevBtn = document.querySelectorAll(".btn-prev");
+            const progress = document.getElementById("progress");
+            const progressSteps = Array.from(document.querySelectorAll(".progress-step"));
+
+            let formStepNum = 0;
+
+            nextBtn.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    formStepNum++;
+                    updateFormSteps();
+                    updateProgressBar();
+                });
+            });
+
+            prevBtn.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    formStepNum--;
+                    updateFormSteps();
+                    updateProgressBar();
+                });
+            });
+
+            function updateFormSteps() {
+                steps.forEach(step => {
+                    step.classList.contains("form-step-active") &&
+                        step.classList.remove("form-step-active");
+                });
+                steps[formStepNum].classList.add("form-step-active");
+            }
+
+            function updateProgressBar() {
+                progressSteps.forEach((step, idx) => {
+                    if (idx < formStepNum + 1) {
+                        step.classList.add("progress-step-active");
+                    } else {
+                        step.classList.remove("progress-step-active");
+                    }
+                });
+                const progressActive = document.querySelectorAll(".progress-step-active");
+                progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+            }
+        });
+    </script>
 </body>
 </html>
