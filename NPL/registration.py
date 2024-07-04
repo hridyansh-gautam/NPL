@@ -68,6 +68,7 @@ cust_reg_table = Table(
     Column('cust_name', String(100)),
     Column('cust_email', String(255)),
     Column('alt_email', String(255)),
+    Column('gst_no', CHAR(15)),
     Column('mobile_no', String(20)),
     Column('landline_no', String(20)),
     Column('cust_addr_1', Text),
@@ -138,6 +139,56 @@ def get_ind():
             return result
         else:
             return []
+    finally:
+        session.close()
+
+def get_one_ind(ind_reg_id: int):
+    session = SessionLocal()
+    try:
+        select_stmt = ind_reg_table.select().where(ind_reg_table.c.ind_reg_id == ind_reg_id)
+        result = session.execute(select_stmt).fetchone()
+        if result:
+            return result._mapping
+        else:
+            return None
+    finally:
+        session.close()
+
+def get_one_ind(org_reg_id: int):
+    session = SessionLocal()
+    try:
+        select_stmt = org_reg_table.select().where(org_reg_table.c.org_reg_id == org_reg_id)
+        result = session.execute(select_stmt).fetchone()
+        if result:
+            return result._mapping
+        else:
+            return None
+    finally:
+        session.close()
+
+def delete_ind(ind_reg_id: int):
+    session = SessionLocal()
+    try:
+        delete_stmt = delete(ind_reg_table).where(ind_reg_table.c.ind_reg_id == ind_reg_id)
+        result = session.execute(delete_stmt)
+        session.commit()
+        return f"Deleted Individual"
+    except Exception as e:
+        session.rollback()
+        raise e
+    finally:
+        session.close()
+
+def delete_org(org_reg_id: int):
+    session = SessionLocal()
+    try:
+        delete_stmt = delete(org_reg_table).where(org_reg_table.c.org_reg_id == org_reg_id)
+        result = session.execute(delete_stmt)
+        session.commit()
+        return f"Deleted Organisation"
+    except Exception as e:
+        session.rollback()
+        raise e
     finally:
         session.close()
 

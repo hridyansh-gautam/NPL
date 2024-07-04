@@ -99,6 +99,7 @@ emp_reg_id SERIAL PRIMARY KEY,
 CREATE TABLE cust_reg (
   cust_reg_id SERIAL PRIMARY KEY,
   cust_type VARCHAR(40),
+  gst_no CHAR(15),
   cust_name VARCHAR(100),
   cust_email VARCHAR(255) UNIQUE,
   alt_email VARCHAR(255) UNIQUE,

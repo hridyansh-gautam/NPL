@@ -40,7 +40,7 @@
                         <td>{{ ind.mobile_no }}</td>
                         <td>
                             <form method="post" action="/admwelcome/add_cust">
-                                <button type="submit" class="btn btn-success verify-ind" value="{{ ind.ind_reg_id }}" name="ind">Verify</button>
+                                <button type="submit" class="btn btn-success verify-ind" id="{{ ind.ind_reg_id }}" value="{{ ind.ind_reg_id }}" name="ind_reg">Verify</button>
                             </form>
                         </td>
                     </tr>
@@ -69,7 +69,7 @@
                     <td>{{ org.phone }}</td>
                     <td>
                         <form method="post" action="/admwelcome/add_cust">
-                            <button type="submit" class="btn btn-success verify-org" value="{{ org.org_reg_id }}" name="org">Verify</button>
+                            <button type="submit" class="btn btn-success verify-org" value="{{ org.org_reg_id }}" id="{{ org.org_reg_id }}" name="org_reg">Verify</button>
                         </form>
                     </td>
                 </tr>

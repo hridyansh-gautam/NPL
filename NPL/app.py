@@ -172,11 +172,49 @@ def add_cust():
         org_list = registration.get_org()
         return render_template('add_cust.html', ind_list=ind_list, org_list=org_list)
     elif request.method == 'POST': 
-        data = request.form
-        print(data)
-        print(data.get('ind'))
-        print(data.get('org'))
-        return render_template('add_cust.html')
+        data = request.form.to_dict()
+        ind_id = data.get('ind_reg')
+        org_id = data.get('org_reg')
+        if ind_id:
+            user_data = registration.get_one_ind(ind_id)
+            cust_data = {
+                'cust_type': 'Individual',
+                'cust_name': user_data['f_name'] + ' ' + user_data['l_name'],
+                'cust_email': user_data['email'],
+                'alt_email': user_data['alt_email'],
+                'mobile_no': user_data['mobile_no'],
+                'cust_addr_1': user_data['addr_1'],
+                'cust_addr_2': user_data['addr_2'],
+                'country': user_data['country'],
+                'state': user_data['state'],
+                'city': user_data['city'],
+                'pincode': user_data['pincode'],
+                'password': user_data['password']
+            }
+            print(registration.add_new_cust(cust_data))
+            print(registration.delete_org(ind_id))
+        else:
+            user_data = registration.get_one_ind(org_id)
+            cust_data = {
+                'cust_type': user_data['org_type'],
+                'cust_name': user_data['org_name'],
+                'cust_email': user_data['email'],
+                'alt_email': user_data['alt_email'],
+                'gst_no': user_data['gst_no'],                
+                'mobile_no': user_data['phone'],
+                'landline_no': user_data['landline'],
+                'cust_addr_1': user_data['addr_1'],
+                'country': user_data['country'],
+                'state': user_data['state'],
+                'city': user_data['city'],
+                'pincode': user_data['pincode'],
+                'password': user_data['password']
+            }
+            print(registration.add_new_cust(cust_data))
+            print(registration.delete_ind(org_id))
+        ind_list = registration.get_ind()
+        org_list = registration.get_org()
+        return render_template('add_cust.html', ind_list=ind_list, org_list=org_list)
 
 @app.route('/admwelcome/add_service', methods=['GET', 'POST'])
 def add_service():
