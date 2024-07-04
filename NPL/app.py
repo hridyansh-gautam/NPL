@@ -38,7 +38,7 @@ def custlogin():
         if not email or not password or not captchaToken:
             return jsonify({'message': 'Email, password, and CAPTCHA are required'}), 400
 
-        if registration.check_org_credentials(email, password):
+        if registration.check_cust_credentials(email, password):
             session['username'] = email
             session.permanent = True
             return jsonify({'message': 'Login successful', 'username': email}), 200
@@ -225,9 +225,17 @@ def custwelcome():
     service_types = [row[0] for row in service_types]
     return render_template('custwelcome.html', service_types=service_types)
 
-@app.route('/ctbr')
+@app.route('/ctbr', methods=['GET', 'POST'])
 def ctbr():
-    return render_template('ctbr.html')
+    if request.method == 'GET':
+        return render_template('ctbr.html', customer=None)  
+    elif request.method == 'POST':
+        cust_reg_id = request.form.get('cust_reg_id')  
+        if cust_reg_id:
+            customer = registration.get_cust(int(cust_reg_id))
+            return render_template('ctbr.html', customer=customer)
+        else:
+            return render_template('ctbr.html', customer=None)
 
 @app.route('/verify/<checksum>')
 def verify(checksum):

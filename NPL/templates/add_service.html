@@ -122,53 +122,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ url_for('static', filename='add_new.js') }}"></script>
-    <script>
-        // JavaScript for progress bar and form steps
-        $(document).ready(function() {
-            const steps = Array.from(document.querySelectorAll(".form-step"));
-            const nextBtn = document.querySelectorAll(".btn-next");
-            const prevBtn = document.querySelectorAll(".btn-prev");
-            const progress = document.getElementById("progress");
-            const progressSteps = Array.from(document.querySelectorAll(".progress-step"));
-
-            let formStepNum = 0;
-
-            nextBtn.forEach(btn => {
-                btn.addEventListener("click", () => {
-                    formStepNum++;
-                    updateFormSteps();
-                    updateProgressBar();
-                });
-            });
-
-            prevBtn.forEach(btn => {
-                btn.addEventListener("click", () => {
-                    formStepNum--;
-                    updateFormSteps();
-                    updateProgressBar();
-                });
-            });
-
-            function updateFormSteps() {
-                steps.forEach(step => {
-                    step.classList.contains("form-step-active") &&
-                        step.classList.remove("form-step-active");
-                });
-                steps[formStepNum].classList.add("form-step-active");
-            }
-
-            function updateProgressBar() {
-                progressSteps.forEach((step, idx) => {
-                    if (idx < formStepNum + 1) {
-                        step.classList.add("progress-step-active");
-                    } else {
-                        step.classList.remove("progress-step-active");
-                    }
-                });
-                const progressActive = document.querySelectorAll(".progress-step-active");
-                progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
-            }
-        });
-    </script>
 </body>
 </html>
