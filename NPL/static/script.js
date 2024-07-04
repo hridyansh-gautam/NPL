@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const sameAsAboveCheckbox = document.getElementById("sameAsAbove");
-  const differentAddressInputs = document.getElementById(
-    "differentAddressInputs"
-  );
+  const differentAddressInputs = document.getElementById("differentAddressInputs");
 
-  // Show different address inputs by default
   differentAddressInputs.classList.remove("hidden");
 
   sameAsAboveCheckbox.addEventListener("change", function () {
@@ -47,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     alert("Successfully submitted.");
-    // Add your form submission logic here
   });
 
   document.getElementById("addRow").addEventListener("click", () => {
@@ -86,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     progressBar.style.width = progress + "%";
   }
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const footer = document.querySelector(".footer");
 
@@ -103,4 +100,3 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", checkScroll);
   window.addEventListener("resize", checkScroll);
 });
-

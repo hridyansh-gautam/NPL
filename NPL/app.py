@@ -228,14 +228,17 @@ def custwelcome():
 @app.route('/ctbr', methods=['GET', 'POST'])
 def ctbr():
     if request.method == 'GET':
-        return render_template('ctbr.html', customer=None)  
-    elif request.method == 'POST':
-        cust_reg_id = request.form.get('cust_reg_id')  
+        cust_reg_id = request.form.get('cust_reg_id')
+        print(cust_reg_id)
         if cust_reg_id:
             customer = registration.get_cust(int(cust_reg_id))
+            print(customer)
+            print(type(customer))
             return render_template('ctbr.html', customer=customer)
         else:
             return render_template('ctbr.html', customer=None)
+    elif request.method == 'POST':
+        print("Yipee")
 
 @app.route('/verify/<checksum>')
 def verify(checksum):

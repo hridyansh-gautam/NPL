@@ -199,7 +199,7 @@ def get_cust(cust_reg_id: int):
         select_stmt = cust_reg_table.select().where(cust_reg_table.c.cust_reg_id == cust_reg_id)
         result = session.execute(select_stmt).fetchone()
         if result:
-            return dict(result)
+            return result
         else:
             return None
     finally:
