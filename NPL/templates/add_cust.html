@@ -16,6 +16,7 @@
         </div>
         <img class="company-name" src="{{ url_for('static', filename='images/logo2.png') }}" alt="CSIR - NPL">
     </header>
+    <button type="button" class="btn btn-primary" style="width: 15%; margin: 1% 42%;" id="back-to-home">Back To HomePage</button>
     <div class="container mt-5">
         <h2>New Individual Registrations</h2>
         <table class="table table-bordered">
@@ -82,5 +83,10 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        document.getElementById("back-to-home").addEventListener("click", function() {
+        window.location.href = "/admwelcome";
+        });
+    </script>
 </body>
 </html>

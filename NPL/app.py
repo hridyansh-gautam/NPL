@@ -211,7 +211,7 @@ def add_cust():
                 'password': user_data['password']
             }
             print(registration.add_new_cust(cust_data))
-            print(registration.delete_ind(org_id))
+            print(registration.delete_org(org_id))
         ind_list = registration.get_ind()
         org_list = registration.get_org()
         return render_template('add_cust.html', ind_list=ind_list, org_list=org_list)

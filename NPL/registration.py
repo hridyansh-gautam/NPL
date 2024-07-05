@@ -1,11 +1,11 @@
-from sqlalchemy import create_engine, Column, Text, String, Integer, MetaData, Table, CHAR
+from sqlalchemy import create_engine, Column, Text, String, Integer, MetaData, Table, CHAR, delete
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from typing import List, Dict
 
-db_name = "npl"
+db_name = "dcc"
 user = "postgres"
-password = "clearpointdivine"
+password = "root"
 host = "localhost"
 port = "5432"
 engine = create_engine(f"postgresql://{user}:{password}@{host}:{port}/{db_name}")
