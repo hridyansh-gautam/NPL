@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Text, String, Integer, MetaData, Table, CHAR, delete
+from sqlalchemy import create_engine, Column, Text, String, Integer, MetaData, Table, CHAR, delete, LargeBinary
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from typing import List, Dict
@@ -58,7 +58,8 @@ emp_reg_table = Table(
     Column('emp_id', String(255), unique=True),
     Column('designation', String(50)),
     Column('addr_1', Text),
-    Column('password', String(255))
+    Column('password', String(255)),
+    Column('signature', LargeBinary),
 )
 
 cust_reg_table = Table(
