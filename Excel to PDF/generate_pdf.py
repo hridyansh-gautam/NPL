@@ -91,6 +91,7 @@ class Generator:
                 "\\midrule": "",
                 "\\bottomrule": "",
                 "\\\n": "\\ \\hline\n",
+                "{Continued on next page} \\\\ \\hline":"{Continued on next page} \\\\",
             }
 
             def replace_func(match):
@@ -99,6 +100,7 @@ class Generator:
             pattern = re.compile("|".join(re.escape(k) for k in replacements))
             latex_tables += pattern.sub(replace_func, tex)
             print(f"Table {i + 1} created.")  # Log the table creation
+        print(latex_tables)
         return latex_tables
 
 
@@ -106,6 +108,7 @@ class Generator:
         # Define the N variable for number matching
         N = r'((\-)?\d+(\.\d+)?)'
         pattern = fr'(\(|)({N}|) (±|to) ({N})( [x] 10{N})?(\)|) (?!.*%)([µ]?\w+)'
+        #((\(|)({N}|) (±|to) ({N})( [x] 10{N})?(\)|) (?!.*%)([µ]?\w+)| )({N}) ([µ]?\w+)
 
         # Search for the pattern
         matches = re.findall(pattern, text)
@@ -151,7 +154,7 @@ class Generator:
                 elif not pd.isna(row[0]):
                     value = (
                         value.replace("\n", " \\\\\n").replace("]", "]}").replace("[", "{[")
-                    )
+                    )   
                     result[str(row[0])] = value
 
         result["doi_no"] = "X"
@@ -176,6 +179,8 @@ class Generator:
                 "\u2103": "\\textdegree C",
                 "\u03a9": "\\textohm",
                 "\u00b1": " \\textpm ",
+                "\\endlastfoot":" ",
+                "\\end{longtable}":"\\endlastfoot\n\\end{longtable}",
             }
 
             def replace_func(match):
@@ -290,14 +295,14 @@ class Generator:
         \\fancyfoot[C]{{
         \\begin{{minipage}}{{\\textwidth}}
         \\centering
-        \\begin{{tabular}}{{ p{{7 cm}}  p{{7 cm}}  p{{7 cm}}}}
-        \\texthindi{{आशंकितकर्ता}} & \\texthindi{{जाँचकर्ता}} & \\texthindi{{प्रभारी वैज्ञानिक}} \\\\
-        \\textbf{{Caliberated by :}} & \\textbf{{Checked by :}} & \\textbf{{Scientist-in-charge :}}\\multirow{{-1}}{{*}}{{}} \\\\
-        \\multicolumn{{1}}{{c}}{{{data['calibrated_by']}}} & \\multicolumn{{1}}{{c}}{{{data['checked_by']}}} & \\multicolumn{{1}}{{c}}{{{data['incharge']}}} \\\\[1.5 ex]
+        \\begin{{tabular}}{{ p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} }}
+        \\makecell[lb]{{\\texthindi{{आशंकितकर्ता}}\\\\\\textbf{{Calibrated by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./static/sign.jpeg}}}}
+        & \\makecell[lb]{{\\texthindi{{जाँचकर्ता}}\\\\\\textbf{{Checked by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./static/sign.jpeg}}}}
+        & \\makecell[lb]{{\\texthindi{{प्रभारी वैज्ञानिक}}\\\\ \\textbf{{Scientist-in-charge :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./static/sign.jpeg}}}}\\\\
+        \\multicolumn{{2}}{{c}}{{{data['calibrated_by']}}} & \\multicolumn{{2}}{{c}}{{{data['checked_by']}}} & \\multicolumn{{2}}{{c}}{{{data['incharge']}}} \\\\[1.5 ex]
         \\\\
-        & \\texthindi{{जारिकर्ता}}	 &\\\\
-        & \\textbf{{Issued by :}} &\\\\
-        & \\multicolumn{{1}}{{c}}{{{data['issued_by']}}} & \\\\
+        & & \\makecell[lb]{{\\texthindi{{जारिकर्ता}}\\\\\\textbf{{Issued by :}}}} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./static/sign.jpeg}}}} & &\\\\
+        & & \\multicolumn{{2}}{{c}}{{{data['issued_by']}}} & & \\\\
         \\end{{tabular}}
         \\end{{minipage}}
         }}
@@ -332,7 +337,6 @@ class Generator:
         }}
         
         %%%%%%%%% Date and Remarks %%%%%%%%%%
-
         {{
         \\renewcommand{{\\arraystretch}}{{2.4}}
         \\hspace{{0.95cm}}
@@ -458,7 +462,7 @@ class Generator:
         \\newpage
 
         %%%%%% Measurement Data %%%%%%%%
-    {Measurement_data}
+        {Measurement_data}
 
 
         %%%%%%% LAST PAGE %%%%%%%%%%%
@@ -480,7 +484,7 @@ class Generator:
 
         # convert tex to pdf
         try:
-            subprocess.run(["lualatex", tex_file], capture_output=False)
+            subprocess.run(["lualatex", tex_file], capture_output=True)
             # , capture_output=True
             subprocess.run(["lualatex", tex_file], capture_output=True)
             print("PDF created successfully.")
