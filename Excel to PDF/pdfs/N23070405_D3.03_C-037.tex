@@ -121,14 +121,14 @@
         \fancyfoot[C]{
         \begin{minipage}{\textwidth}
         \centering
-        \begin{tabular}{ p{7 cm}  p{7 cm}  p{7 cm}}
-        \texthindi{आशंकितकर्ता} & \texthindi{जाँचकर्ता} & \texthindi{प्रभारी वैज्ञानिक} \\
-        \textbf{Caliberated by :} & \textbf{Checked by :} & \textbf{Scientist-in-charge :}\multirow{-1}{*}{} \\
-        \multicolumn{1}{c}{VINOD KUMAR TANWAR} & \multicolumn{1}{c}{VED VARUN AGRAWAL} & \multicolumn{1}{c}{Dr. RAJESH} \\[1.5 ex]
+        \begin{tabular}{ p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} }
+        \makecell[lb]{\texthindi{आशंकितकर्ता}\\\textbf{Calibrated by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}}
+        & \makecell[lb]{\texthindi{जाँचकर्ता}\\\textbf{Checked by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}}
+        & \makecell[lb]{\texthindi{प्रभारी वैज्ञानिक}\\ \textbf{Scientist-in-charge :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}}\\
+        \multicolumn{2}{c}{VINOD KUMAR TANWAR} & \multicolumn{2}{c}{VED VARUN AGRAWAL} & \multicolumn{2}{c}{Dr. RAJESH} \\[1.5 ex]
         \\
-        & \texthindi{जारिकर्ता}	 &\\
-        & \textbf{Issued by :} &\\
-        & \multicolumn{1}{c}{} & \\
+        & & \makecell[lb]{\texthindi{जारिकर्ता}\\\textbf{Issued by :}} & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}} & &\\
+        & & \multicolumn{2}{c}{} & & \\
         \end{tabular}
         \end{minipage}
         }
@@ -184,7 +184,7 @@ Make: Nihon Kohden); \\
         \newpage
 
         %%%%%% Measurement Data %%%%%%%%
-    
+        
         \hspace{0.95cm}
         \begin{tabular}{p{1cm} p{6.74cm}}
         \stepcounter{rownum}\arabic{rownum}. & Result(s): \\
@@ -209,13 +209,14 @@ Sr. No. & Energy applied (J) to UUC & Calculated (J) level & Measured Energy (J)
 
 \endfoot
 
-\endlastfoot
+ 
 1 & 10 & 9.500000 & 9.600000 & (-) 0.1 &  \textpm  0.1 & 2 \\ \hline
 2 & 20 & 19.300000 & 19.400000 & (-) 0.1 &  \textpm  0.1 & 2 \\ \hline
 3 & 50 & 48.200000 & 48.400000 & (-) 0.2 &  \textpm  0.2 & 2 \\ \hline
 4 & 100 & 97.100000 & 97.400000 & (-) 0.3 &  \textpm  0.3 & 2 \\ \hline
 5 & 150 & 146.100000 & 146.400000 & (-) 0.3 &  \textpm  0.5 & 2 \\ \hline
 6 & 270 & 259.500000 & 260.300000 & (-) 0.8 &  \textpm  0.9 & 2 \\ \hline
+\endlastfoot
 \end{longtable}
 \begin{longtable}{|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering\arraybackslash}p{3.1666666666666665cm}|}
 \caption{This is Table 2} \\ \hline
@@ -233,9 +234,10 @@ Sr. No. & Discharge Time & Calculated Discharge Time (ms) & Measured Discharge T
 
 \endfoot
 
-\endlastfoot
+ 
 1 & Discharge Time (Positive Pulse Width) & 6.600000 & 6.400000 &  \textpm  0.1 & 2.170000 \\ \hline
 2 & Discharge Time (Negative Pulse Wdith) & 4.400000 & 4.500000 &  \textpm  0.1 & 2.000000 \\ \hline
+\endlastfoot
 \end{longtable}
 \begin{longtable}{|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering\arraybackslash}p{3.1666666666666665cm}|}
 \caption{This is Table 3} \\ \hline
@@ -253,8 +255,9 @@ Sr. No. & Defribillator Analyser Load Resistance (\textohm) & Expected Value (\t
 
 \endfoot
 
-\endlastfoot
+ 
 1 & 50 & 50 & 50.017900 &   \textpm  0.00041 & 2.050000 \\ \hline
+\endlastfoot
 \end{longtable}
 \begin{longtable}{|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering}p{3.1666666666666665cm}|>{\centering\arraybackslash}p{3.1666666666666665cm}|}
 \caption{This is Table 4} \\ \hline
@@ -272,14 +275,14 @@ Sr. No. & Defribillator Analyser Load Resistance (\textohm) & Expected Value (\t
 
 \endfoot
 
-\endlastfoot
+ 
 1 & 50 & 50 & 51.012800 &   \textpm  0.0005 & 2.110000 \\ \hline
+\endlastfoot
 \end{longtable}
 
         }
         
         %%%%%%%%% Date and Remarks %%%%%%%%%%
-
         {
         \renewcommand{\arraystretch}{2.4}
         \hspace{0.95cm}

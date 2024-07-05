@@ -10,7 +10,7 @@
             filesystem=URL, 
             mimetype=application/octet-stream, % Defined syntax to embed excel files
             afrelationship={/Data}, %Relationship of the pdf to the embedded file is data
-            stringmethod=escape % Treats an unknown symbol as an escape character
+            stringmethod = escape %Treats an unknown symbol as an escape character
         }
 
         %%%%%% Packages included %%%%%%
@@ -121,14 +121,14 @@
         \fancyfoot[C]{
         \begin{minipage}{\textwidth}
         \centering
-        \begin{tabular}{ p{7 cm}  p{7 cm}  p{7 cm}}
-        \texthindi{आशंकितकर्ता} & \texthindi{जाँचकर्ता} & \texthindi{प्रभारी वैज्ञानिक} \\
-        \textbf{Caliberated by :} & \textbf{Checked by :} & \textbf{Scientist-in-charge :}\multirow{-1}{*}{} \\
-        \multicolumn{1}{c}{(SANDHYA M. PATEL)} & \multicolumn{1}{c}{(SAOOD AHMAD)} & \multicolumn{1}{c}{(ANURAG GUPTA)} \\[1.5 ex]
+        \begin{tabular}{ p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} }
+        \makecell[lb]{\texthindi{आशंकितकर्ता}\\\textbf{Calibrated by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}}
+        & \makecell[lb]{\texthindi{जाँचकर्ता}\\\textbf{Checked by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}}
+        & \makecell[lb]{\texthindi{प्रभारी वैज्ञानिक}\\ \textbf{Scientist-in-charge :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}}\\
+        \multicolumn{2}{c}{(SANDHYA M. PATEL)} & \multicolumn{2}{c}{(SAOOD AHMAD)} & \multicolumn{2}{c}{(ANURAG GUPTA)} \\[1.5 ex]
         \\
-        & \texthindi{जारिकर्ता}	 &\\
-        & \textbf{Issued by :} &\\
-        & \multicolumn{1}{c}{} & \\
+        & & \makecell[lb]{\texthindi{जारिकर्ता}\\\textbf{Issued by :}} & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}} & &\\
+        & & \multicolumn{2}{c}{} & & \\
         \end{tabular}
         \end{minipage}
         }
@@ -173,7 +173,7 @@ NA (Quantum based Primary Voltage Standard )} \end{minipage}\\
         \newpage
 
         %%%%%% Measurement Data %%%%%%%%
-    
+        
         \hspace{0.95cm}
         \begin{tabular}{p{1cm} p{6.74cm}}
         \stepcounter{rownum}\arabic{rownum}. & Result(s): \\
@@ -196,15 +196,15 @@ S.no. & Nominal Value & Measured value & Expanded Uncertainty \\ \hline
 
 \endfoot
 
-\endlastfoot
+ 
 1 & 10.0 v & 10.000 038 35 v & = 91 n V \\ \hline
 2 & 1.018V & 1.018 159 396 v & 86 n V \\ \hline
+\endlastfoot
 \end{longtable}
 
         }
         
         %%%%%%%%% Date and Remarks %%%%%%%%%%
-
         {
         \renewcommand{\arraystretch}{2.4}
         \hspace{0.95cm}

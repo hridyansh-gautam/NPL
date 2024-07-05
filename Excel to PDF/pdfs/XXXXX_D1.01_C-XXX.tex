@@ -10,7 +10,7 @@
             filesystem=URL, 
             mimetype=application/octet-stream, % Defined syntax to embed excel files
             afrelationship={/Data}, %Relationship of the pdf to the embedded file is data
-            stringmethod=escape % Treats an unknown symbol as an escape character
+            stringmethod = escape %Treats an unknown symbol as an escape character
         }
 
         %%%%%% Packages included %%%%%%
@@ -121,14 +121,14 @@
         \fancyfoot[C]{
         \begin{minipage}{\textwidth}
         \centering
-        \begin{tabular}{ p{7 cm}  p{7 cm}  p{7 cm}}
-        \texthindi{आशंकितकर्ता} & \texthindi{जाँचकर्ता} & \texthindi{प्रभारी वैज्ञानिक} \\
-        \textbf{Caliberated by :} & \textbf{Checked by :} & \textbf{Scientist-in-charge :}\multirow{-1}{*}{} \\
-        \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\[1.5 ex]
+        \begin{tabular}{ p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} }
+        \makecell[lb]{\texthindi{आशंकितकर्ता}\\\textbf{Calibrated by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}}
+        & \makecell[lb]{\texthindi{जाँचकर्ता}\\\textbf{Checked by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}}
+        & \makecell[lb]{\texthindi{प्रभारी वैज्ञानिक}\\ \textbf{Scientist-in-charge :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}}\\
+        \multicolumn{2}{c}{} & \multicolumn{2}{c}{} & \multicolumn{2}{c}{} \\[1.5 ex]
         \\
-        & \texthindi{जारिकर्ता}	 &\\
-        & \textbf{Issued by :} &\\
-        & \multicolumn{1}{c}{} & \\
+        & & \makecell[lb]{\texthindi{जारिकर्ता}\\\textbf{Issued by :}} & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./static/sign.jpeg}} & &\\
+        & & \multicolumn{2}{c}{} & & \\
         \end{tabular}
         \end{minipage}
         }
@@ -153,10 +153,10 @@
         \stepcounter{rownum}\arabic{rownum}. 	&	\makecell[l]{Calibrated for}		&:&	\parbox[t]{7.8cm}{\raggedright XXXXX \\
 Customer Ref. No. XXXXX \\
 Date: XXXXX} \\
-        \stepcounter{rownum}\arabic{rownum}. 	&	\makecell[lt]{Description and Identification \\of Item under Calibration}  &:&	\parbox[t]{7.8cm}{ \raggedright 5 kg to 1 g (20 Nos.) : Integral knob bronze weights. \\
-500 mg to 1 mg (12 Nos.) : Stainless steel wire weights. \\
-Assumed Density (d)  : (8400  \textpm  150) kg/cm3   k=2 \\
-Assumed Density (d)  : (7950  \textpm  150) kg/cm3   k=2 \\
+        \stepcounter{rownum}\arabic{rownum}. 	&	\makecell[lt]{Description and Identification \\of Item under Calibration}  &:&	\parbox[t]{7.8cm}{ \raggedright 5 \si{kg} to 1 \si{g} (20 Nos.) : Inte\si{g}ral knob bronze wei\si{g}hts. \\
+500 \si{mg} to 1 \si{mg} (12 Nos.) : Stainless steel wire wei\si{g}hts. \\
+Assumed Density (d)  : (8400  \textpm  150) \si{kg}/cm3   k=2 \\
+Assumed Density (d)  : (7950  \textpm  150) \si{kg}/cm3   k=2 \\
 Make : XXXX \\
 Model No. : XXXX \\
 Serial No. : XXXXX \\
@@ -174,7 +174,7 @@ Relative Humidity: (50  \textpm  10)\% \\
         \newpage
 
         %%%%%% Measurement Data %%%%%%%%
-    
+        
         \hspace{0.95cm}
         \begin{tabular}{p{1cm} p{6.74cm}}
         \stepcounter{rownum}\arabic{rownum}. & Result(s): \\
@@ -203,7 +203,7 @@ Mark &  Mass Value
 
 \endfoot
 
-\endlastfoot
+ 
 50 kg & XXXX & 50000.000400 &  \textpm  0.025 \\ \hline
 20 kg & XXXX & 20000.000400 &  \textpm  0.01 \\ \hline
 . 20 kg & XXXX & 20000.000400 &  \textpm  0.01 \\ \hline
@@ -236,12 +236,12 @@ Mark &  Mass Value
 2 mg & XXXX & 0.002003 &  \textpm  0.000003 \\ \hline
 . 2 mg & XXXX & 0.002003 &  \textpm  0.000003 \\ \hline
 1 mg & XXXX & 0.001003 &  \textpm  0.000003 \\ \hline
+\endlastfoot
 \end{longtable}
 
         }
         
         %%%%%%%%% Date and Remarks %%%%%%%%%%
-
         {
         \renewcommand{\arraystretch}{2.4}
         \hspace{0.95cm}
