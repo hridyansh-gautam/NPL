@@ -93,7 +93,8 @@ emp_reg_id SERIAL PRIMARY KEY,
   mobile_no VARCHAR(20),
   designation VARCHAR(50),
   addr_1 TEXT,
-  password VARCHAR(255)
+  password VARCHAR(255), 
+  signature BYTEA
 );
 
 CREATE TABLE cust_reg (

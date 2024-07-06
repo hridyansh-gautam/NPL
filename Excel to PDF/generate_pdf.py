@@ -100,7 +100,6 @@ class Generator:
             pattern = re.compile("|".join(re.escape(k) for k in replacements))
             latex_tables += pattern.sub(replace_func, tex)
             print(f"Table {i + 1} created.")  # Log the table creation
-        print(latex_tables)
         return latex_tables
 
 
@@ -296,12 +295,12 @@ class Generator:
         \\begin{{minipage}}{{\\textwidth}}
         \\centering
         \\begin{{tabular}}{{ p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} }}
-        \\makecell[lb]{{\\texthindi{{आशंकितकर्ता}}\\\\\\textbf{{Calibrated by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./static/sign.jpeg}}}}
-        & \\makecell[lb]{{\\texthindi{{जाँचकर्ता}}\\\\\\textbf{{Checked by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./static/sign.jpeg}}}}
-        & \\makecell[lb]{{\\texthindi{{प्रभारी वैज्ञानिक}}\\\\ \\textbf{{Scientist-in-charge :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./static/sign.jpeg}}}}\\\\
+        \\makecell[lb]{{\\texthindi{{आशंकितकर्ता}}\\\\\\textbf{{Calibrated by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/calibrated_by.jpeg}}}}
+        & \\makecell[lb]{{\\texthindi{{जाँचकर्ता}}\\\\\\textbf{{Checked by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/checked_by.jpeg}}}}
+        & \\makecell[lb]{{\\texthindi{{प्रभारी वैज्ञानिक}}\\\\ \\textbf{{Scientist-in-charge :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/in_charge.jpeg}}}}\\\\
         \\multicolumn{{2}}{{c}}{{{data['calibrated_by']}}} & \\multicolumn{{2}}{{c}}{{{data['checked_by']}}} & \\multicolumn{{2}}{{c}}{{{data['incharge']}}} \\\\[1.5 ex]
         \\\\
-        & & \\makecell[lb]{{\\texthindi{{जारिकर्ता}}\\\\\\textbf{{Issued by :}}}} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./static/sign.jpeg}}}} & &\\\\
+        & & \\makecell[lb]{{\\texthindi{{जारिकर्ता}}\\\\\\textbf{{Issued by :}}}} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/issued_by.jpeg}}}} & &\\\\
         & & \\multicolumn{{2}}{{c}}{{{data['issued_by']}}} & & \\\\
         \\end{{tabular}}
         \\end{{minipage}}
@@ -484,8 +483,7 @@ class Generator:
 
         # convert tex to pdf
         try:
-            subprocess.run(["lualatex", tex_file], capture_output=True)
-            # , capture_output=True
+            subprocess.run(["lualatex", tex_file], capture_output=False)
             subprocess.run(["lualatex", tex_file], capture_output=True)
             print("PDF created successfully.")
         except subprocess.CalledProcessError as e:

@@ -144,6 +144,11 @@ def empregister():
         return render_template('empregister.html')
     elif request.method == 'POST':
         data = request.form
+        file = request.files['signature']
+        if file:
+            signature_binary = file.read()
+        else:
+            return jsonify({'message': 'Signature is required'}), 400
         data_dict = {
             'f_name': data.get('firstName'),
             'l_name': data.get('lastName'),
@@ -153,6 +158,7 @@ def empregister():
             'email': data.get('email'),
             'addr_1': data.get('addressLine1'),
             'password': data.get('newPassword'),
+            'signature': signature_binary
         }
         if data_dict['password'] != data.get('confirmPassword'):
             return jsonify({'message': 'Passwords do not match'}), 400
@@ -211,7 +217,7 @@ def add_cust():
                 'password': user_data['password']
             }
             print(registration.add_new_cust(cust_data))
-            print(registration.delete_ind(org_id))
+            print(registration.delete_org(org_id))
         ind_list = registration.get_ind()
         org_list = registration.get_org()
         return render_template('add_cust.html', ind_list=ind_list, org_list=org_list)
