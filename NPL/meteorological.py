@@ -87,12 +87,13 @@ def add_new_service_charges(data: dict):
     finally:
         session.close()
 
-def get_classification(service_code: str):
+def get_classification():
     session = SessionLocal()
     try:
-        service = session.query(MeteorologicalClassification).filter_by(service_code=service_code).first()
-        if service:
-            return service.__dict__
+        select_stmt = meteorological_classification.select().distinct()
+        classifications = session.execute(select_stmt).fetchall()
+        if classifications:
+            return classifications
         else:
             return None
     finally:
@@ -119,6 +120,22 @@ def get_service_charges():
             return charges
         else:
             return None
+    finally:
+        session.close()
+
+def get_service_by_category(service_code): #Takes category from form
+    session = SessionLocal()
+    try:
+        services = session.query(meteorological_services).filter_by(service_code=service_code).all()
+        return [service.__dict__ for service in services]
+    finally:
+        session.close()
+
+def get_service_charges_by_category(service_code): #Takes category from form
+    session = SessionLocal()
+    try:
+        charges = session.query(meteorological_services_charges).filter_by(service_code=service_code).all()
+        return [charge.__dict__ for charge in charges]
     finally:
         session.close()
 

@@ -139,8 +139,10 @@
                                 <!-- Category Dropdown -->
                                 <div class="form-group">
                                     <label for="categorySelect">Category</label>
-                                    <select class="form-control" id="categorySelect" name="categorySelect">
-                                        <option value="{{ service}}">Sheet1</option>
+                                    <select class="form-control" id="categorySelect" name="categorySelect" onchange="fetchServices()">
+                                        {% for classification in classifications %}
+                                        <option value="{{ classification.service_code }}">{{ classification.service_name }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                                 <!-- Parameters Dropdown -->
@@ -475,6 +477,47 @@
             });
 
             // window.onload = loadCountries; Change later if need to edit
+        </script>
+        <script>
+            function fetchServices() {
+                var category = document.getElementById('categorySelect').value;
+                fetch('/ctbr', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'categorySelect=' + category
+                })
+                .then(response => response.json())
+                .then(data => {
+                    var services = data.services;
+                    var charges = data.charges;
+        
+                    populateDropdown('parametersSelect', services, 'parameter');
+                    populateDropdown('itemTypeSelect', services, 'item_type_group');
+                    populateDropdown('itemNameSelect', services, 'item_name');
+                    populateDropdown('aliasNameSelect', services, 'alias_name');
+                    populateDropdown('rangeSelect', services, 'range');
+                    populateDropdown('pointsSelect', services, 'calibration_parameters');
+                    populateDropdown('noOfPointsSelect', services, 'no_of_points_for_calibration_procedure_no');
+                    populateDropdown('limitationSelect', services, 'limitation_condition');
+                    populateDropdown('chargesSelect', charges, 'charge_amount');
+                    populateDropdown('additionalChargesSelect', charges, 'additional_charges');
+                    populateDropdown('descriptionSelect', charges, 'additional_charges_description');
+                    populateDropdown('remarksSelect', charges, 'remarks');
+                });
+            }
+        
+            function populateDropdown(dropdownId, data, key) {
+                var dropdown = document.getElementById(dropdownId);
+                dropdown.innerHTML = '';
+                data.forEach(item => {
+                    var option = document.createElement('option');
+                    option.value = item.service_code;
+                    option.text = item[key];
+                    dropdown.appendChild(option);
+                });
+            }
         </script>
     </body>
 </html>

@@ -279,13 +279,18 @@ def ctbr():
         if cust_reg_id:
             customer = registration.get_cust(int(cust_reg_id))
             print(customer)
+            classifications = meteorological.get_classification()
             services = meteorological.get_service()
             charges = meteorological.get_service_charges()
-            return render_template('ctbr.html', customer=customer, services=services, charges=charges)
+            return render_template('ctbr.html', customer=customer, classifications=classifications, services=services, charges=charges)
         else:
             return render_template('ctbr.html', customer=None)
     elif request.method == 'POST':
-        pass
+        category = request.form.get('categorySelect')
+        print(category)
+        services = meteorological.get_service_by_category(category)
+        charges = meteorological.get_service_charges_by_category(category)
+        return jsonify({'services': services, 'charges': charges})
 
 @app.route('/verify/<checksum>')
 def verify(checksum):
