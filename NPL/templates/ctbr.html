@@ -43,36 +43,36 @@
                             <div class="row mb-3">
                                 <div class="col required">
                                     <label for="orgName" class="form-label">Organisation Name</label>
-                                    <input type="text" class="form-control" id="orgName" placeholder="Organisation Name" value="{{ customer.org_name if customer else '' }}" required />
+                                    <input type="text" class="form-control" id="orgName" placeholder="Organisation Name" value="{{ customer['cust_name'] if customer else '' }}" required />
                                 </div>
                             </div>
                             <div class="mb-3 required">
                                 <label for="addressLine1" class="form-label">Organisation Address</label>
-                                <input type="text" class="form-control" id="addressLine1" placeholder="Organisation Address" value="{{ customer.org_address if customer else '' }}" required />
+                                <input type="text" class="form-control" id="addressLine1" placeholder="Organisation Address" value="{{ customer['cust_addr_1'] if customer else '' }}" required />
                             </div>
 
                             <div class="row mb-3">
                                 <div class="col required">
                                     <label for="country" class="form-label">Country</label>
                                     <select class="form-select" id="country" name="country" required>
-                                        <option value="{{ customer.country if customer else '' }}" selected>{{ customer.country if customer else 'Select Country' }}</option>
+                                        <option value="{{ customer['country'] if customer else '' }}" selected>{{ customer['country'] if customer else 'Select Country' }}</option>
                                     </select>
                                 </div>
                                 <div class="col required">
                                     <label for="state" class="form-label">State</label>
                                     <select class="form-select" id="state" name="state" required>
-                                        <option value="{{ customer.state if customer else '' }}" selected>{{ customer.state if customer else 'Select State' }}</option>
+                                        <option value="{{ customer['state'] if customer else '' }}" selected>{{ customer['state'] if customer else 'Select State' }}</option>
                                     </select>
                                 </div>
                                 <div class="col required">
                                     <label for="city" class="form-label">City</label>
                                     <select class="form-select" id="city" name="city" required>
-                                        <option value="{{ customer.city if customer else '' }}" selected>{{ customer.city if customer else 'Select City' }}</option>
+                                        <option value="{{ customer['city'] if customer else '' }}" selected>{{ customer['city'] if customer else 'Select City' }}</option>
                                     </select>
                                 </div>
                                 <div class="col required">
                                     <label for="pincode" class="form-label">Pincode</label>
-                                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Pincode" value="{{ customer.pincode if customer else '' }}" required />
+                                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Pincode" value="{{ customer['pincode'] if customer else '' }}" required />
                                 </div>
                             </div>
 
@@ -139,76 +139,116 @@
                                 <!-- Category Dropdown -->
                                 <div class="form-group">
                                     <label for="categorySelect">Category</label>
-                                    <select class="form-control" id="categorySelect">
-                                        <option value="Sheet1">Sheet1</option>
+                                    <select class="form-control" id="categorySelect" name="categorySelect">
+                                        <option value="{{ service}}">Sheet1</option>
                                     </select>
                                 </div>
                                 <!-- Parameters Dropdown -->
                                 <div class="form-group">
                                     <label for="parametersSelect">Parameters</label>
-                                    <select class="form-control" id="parametersSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="parametersSelect" name="parametersSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.parameter }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
-                                <!-- Other Columns Dropdowns -->
+                                <!-- Item Type / Group Dropdown -->
                                 <div class="form-group">
                                     <label for="itemTypeSelect">Item Type / Group</label>
-                                    <select class="form-control" id="itemTypeSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="itemTypeSelect" name="itemTypeSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.item_type_group }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
+                                <!-- Item Name Dropdown -->
                                 <div class="form-group">
                                     <label for="itemNameSelect">Item Name</label>
-                                    <select class="form-control" id="itemNameSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="itemNameSelect" name="itemNameSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.item_name }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
+                                <!-- Alias Name Dropdown -->
                                 <div class="form-group">
                                     <label for="aliasNameSelect">Alias Name</label>
-                                    <select class="form-control" id="aliasNameSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="aliasNameSelect" name="aliasNameSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.alias_name }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
+                                <!-- Range Dropdown -->
                                 <div class="form-group">
                                     <label for="rangeSelect">Range</label>
-                                    <select class="form-control" id="rangeSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="rangeSelect" name="rangeSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.range }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
+                                <!-- Calibration Parameters Dropdown -->
+                                <div class="form-group">
+                                    <label for="pointsSelect">Calibration Parameters</label>
+                                    <select class="form-control" id="pointsSelect" name="pointsSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.calibration_parameters }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <!-- No. of Points for Calibration / Procedure No. Dropdown -->
                                 <div class="form-group">
                                     <label for="pointsSelect">No. of Points for Calibration / Procedure No.</label>
-                                    <select class="form-control" id="pointsSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="pointsSelect" name="pointsSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.no_of_points_for_calibration_procedure_no }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
+                                <!-- Limitation / Condition Dropdown -->
                                 <div class="form-group">
                                     <label for="limitationSelect">Limitation / Condition</label>
-                                    <select class="form-control" id="limitationSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="limitationSelect" name="limitationSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.limitation_condition }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
+                                <!-- Charges per Item Rs. Dropdown -->
                                 <div class="form-group">
                                     <label for="chargesSelect">Charges per Item Rs.</label>
-                                    <select class="form-control" id="chargesSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="chargesSelect" name="chargesSelect">
+                                        {% for charge in charges %}
+                                        <option value="{{ charge.charge_id }}">{{ charge.charge_amount }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
+                                <!-- Additional Charges Rs. Dropdown -->
                                 <div class="form-group">
                                     <label for="additionalChargesSelect">Additional Charges Rs.</label>
-                                    <select class="form-control" id="additionalChargesSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="additionalChargesSelect" name="additionalChargesSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.additional_charges }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
+                                <!-- Description for Additional Charges Dropdown -->
                                 <div class="form-group">
                                     <label for="descriptionSelect">Description for Additional Charges</label>
-                                    <select class="form-control" id="descriptionSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="descriptionSelect" name="descriptionSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.additional_charges_description }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
+                                <!-- Remarks Dropdown -->
                                 <div class="form-group">
                                     <label for="remarksSelect">Remarks, if any</label>
-                                    <select class="form-control" id="remarksSelect">
-                                        <!-- Options will be populated here -->
+                                    <select class="form-control" id="remarksSelect" name="remarksSelect">
+                                        {% for service in services %}
+                                        <option value="{{ service.service_code }}">{{ service.remarks }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
@@ -359,7 +399,7 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <script src="{{ url_for('static', filename='ctbr.js') }}"></script>
         <script>
             const apiConfig = {
                 baseUrl: "https://api.countrystatecity.in/v1",
@@ -434,7 +474,7 @@
                 }
             });
 
-            window.onload = loadCountries;
+            // window.onload = loadCountries; Change later if need to edit
         </script>
     </body>
 </html>

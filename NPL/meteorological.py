@@ -98,23 +98,25 @@ def get_classification(service_code: str):
     finally:
         session.close()
 
-def get_service(service_code: str):
+def get_service():
     session = SessionLocal()
     try:
-        service = session.query(MeteorologicalServices).filter_by(service_code=service_code).first()
-        if service:
-            return service.__dict__
+        select_stmt = meteorological_services.select().distinct()
+        services = session.execute(select_stmt).fetchall()
+        if services:
+            return services
         else:
             return None
     finally:
         session.close()
 
-def get_service_charges(service_code: str):
+def get_service_charges():
     session = SessionLocal()
     try:
-        charges = session.query(MeteorologicalServicesCharges).filter_by(service_code=service_code).first()
+        select_stmt = meteorological_services_charges.select().distinct()
+        charges = session.execute(select_stmt).fetchall()
         if charges:
-            return charges.__dict__
+            return charges
         else:
             return None
     finally:
