@@ -95,7 +95,11 @@ emp_reg_id SERIAL PRIMARY KEY,
   addr_1 TEXT,
   password VARCHAR(255), 
   signature BYTEA
+  password VARCHAR(255)
 );
+
+ALTER TABLE emp_reg
+ADD COLUMN signature BYTEA;
 
 CREATE TABLE cust_reg (
   cust_reg_id SERIAL PRIMARY KEY,

@@ -3,9 +3,9 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from typing import List, Dict
 
-db_name = "dcc"
+db_name = "npl"
 user = "postgres"
-password = "root"
+password = "clearpointdivine"
 host = "localhost"
 port = "5432"
 engine = create_engine(f"postgresql://{user}:{password}@{host}:{port}/{db_name}")
@@ -251,13 +251,13 @@ def get_cust(cust_reg_id: int):
         select_stmt = cust_reg_table.select().where(cust_reg_table.c.cust_reg_id == cust_reg_id)
         result = session.execute(select_stmt).fetchone()
         if result:
-            return result
+            return result._mapping
         else:
             return None
     finally:
         session.close()
 
-def check_cust_credentials(email: str, password: str) -> bool:
+def check_cust_credentials(email: str, password: str) -> dict:
     session = SessionLocal()
     try:
         query = session.query(cust_reg_table).filter(
@@ -265,10 +265,12 @@ def check_cust_credentials(email: str, password: str) -> bool:
             cust_reg_table.c.password == password
         )
         result = session.execute(query).fetchone()
-        return result is not None
+        if result:
+            return result._mapping #New method to pass dict?
+        else:
+            return None
     finally:
         session.close()
-
 
 checksums_table = Table(
     'checksums', metadata,
