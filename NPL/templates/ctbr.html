@@ -139,118 +139,95 @@
                                 <!-- Category Dropdown -->
                                 <div class="form-group">
                                     <label for="categorySelect">Category</label>
-                                    <select class="form-control" id="categorySelect" name="categorySelect" onchange="fetchServices()">
+                                    <select class="form-control" id="categorySelect" name="categorySelect" onchange="categorySelect()">
+                                        <!-- <option value="">Select Category</option> -->
                                         {% for classification in classifications %}
                                         <option value="{{ classification.service_code }}">{{ classification.service_name }}</option>
                                         {% endfor %}
-                                    </select>
+                                    </select>                                    
                                 </div>
                                 <!-- Parameters Dropdown -->
                                 <div class="form-group">
                                     <label for="parametersSelect">Parameters</label>
-                                    <select class="form-control" id="parametersSelect" name="parametersSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.parameter }}</option>
-                                        {% endfor %}
+                                    <select class="form-control" id="parametersSelect" name="parametersSelect" onchange="parametersSelect()">
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Item Type / Group Dropdown -->
                                 <div class="form-group">
                                     <label for="itemTypeSelect">Item Type / Group</label>
                                     <select class="form-control" id="itemTypeSelect" name="itemTypeSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.item_type_group }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Item Name Dropdown -->
                                 <div class="form-group">
                                     <label for="itemNameSelect">Item Name</label>
                                     <select class="form-control" id="itemNameSelect" name="itemNameSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.item_name }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Alias Name Dropdown -->
                                 <div class="form-group">
                                     <label for="aliasNameSelect">Alias Name</label>
                                     <select class="form-control" id="aliasNameSelect" name="aliasNameSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.alias_name }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Range Dropdown -->
                                 <div class="form-group">
                                     <label for="rangeSelect">Range</label>
                                     <select class="form-control" id="rangeSelect" name="rangeSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.range }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Calibration Parameters Dropdown -->
                                 <div class="form-group">
                                     <label for="pointsSelect">Calibration Parameters</label>
                                     <select class="form-control" id="pointsSelect" name="pointsSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.calibration_parameters }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- No. of Points for Calibration / Procedure No. Dropdown -->
                                 <div class="form-group">
                                     <label for="pointsSelect">No. of Points for Calibration / Procedure No.</label>
                                     <select class="form-control" id="pointsSelect" name="pointsSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.no_of_points_for_calibration_procedure_no }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Limitation / Condition Dropdown -->
                                 <div class="form-group">
                                     <label for="limitationSelect">Limitation / Condition</label>
                                     <select class="form-control" id="limitationSelect" name="limitationSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.limitation_condition }}</option>
-                                        {% endfor %}
+                                            <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Charges per Item Rs. Dropdown -->
                                 <div class="form-group">
                                     <label for="chargesSelect">Charges per Item Rs.</label>
                                     <select class="form-control" id="chargesSelect" name="chargesSelect">
-                                        {% for charge in charges %}
-                                        <option value="{{ charge.charge_id }}">{{ charge.charge_amount }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Additional Charges Rs. Dropdown -->
                                 <div class="form-group">
                                     <label for="additionalChargesSelect">Additional Charges Rs.</label>
                                     <select class="form-control" id="additionalChargesSelect" name="additionalChargesSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.additional_charges }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Description for Additional Charges Dropdown -->
                                 <div class="form-group">
                                     <label for="descriptionSelect">Description for Additional Charges</label>
                                     <select class="form-control" id="descriptionSelect" name="descriptionSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.additional_charges_description }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Remarks Dropdown -->
                                 <div class="form-group">
                                     <label for="remarksSelect">Remarks, if any</label>
                                     <select class="form-control" id="remarksSelect" name="remarksSelect">
-                                        {% for service in services %}
-                                        <option value="{{ service.service_code }}">{{ service.remarks }}</option>
-                                        {% endfor %}
+                                        <option value=""></option>
                                     </select>
                                 </div>
                             </div>
@@ -277,6 +254,7 @@
                                                 Make/Model/Sr. No./Batch/Lot No. or any other identification
                                             </th>
                                             <th>Quantity</th>
+                                            <th>Total Charge</th>
                                             <th>Calibration/Testing Requirements/Specifications</th>
                                             <th>Remarks (If Any)</th>
                                             <th>Actions</th>
@@ -479,7 +457,7 @@
             // window.onload = loadCountries; Change later if need to edit
         </script>
         <script>
-            function fetchServices() {
+            function categorySelect() {
                 var category = document.getElementById('categorySelect').value;
                 fetch('/ctbr', {
                     method: 'POST',
@@ -492,8 +470,34 @@
                 .then(data => {
                     var services = data.services;
                     var charges = data.charges;
-        
                     populateDropdown('parametersSelect', services, 'parameter');
+                    clearDropdown('itemTypeSelect');
+                    clearDropdown('itemNameSelect');
+                    clearDropdown('aliasNameSelect');
+                    clearDropdown('rangeSelect');
+                    clearDropdown('pointsSelect');
+                    clearDropdown('noOfPointsSelect');
+                    clearDropdown('limitationSelect');
+                    clearDropdown('chargesSelect');
+                    clearDropdown('additionalChargesSelect');
+                    clearDropdown('descriptionSelect');
+                    clearDropdown('remarksSelect');
+                });
+            }
+
+            function parametersSelect() {
+                var parameters = document.getElementById('parametersSelect').value;
+                fetch('/ctbr', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'parametersSelect=' + parameters
+                })
+                .then(response => response.json())
+                .then(data => {
+                    var services = data.services;
+                    var charges = data.charges;
                     populateDropdown('itemTypeSelect', services, 'item_type_group');
                     populateDropdown('itemNameSelect', services, 'item_name');
                     populateDropdown('aliasNameSelect', services, 'alias_name');
@@ -510,14 +514,16 @@
         
             function populateDropdown(dropdownId, data, key) {
                 var dropdown = document.getElementById(dropdownId);
-                dropdown.innerHTML = '';
-                data.forEach(item => {
+                dropdown.innerHTML = '<option value="">Select ' + dropdownId + '</option>';
+                var uniqueItems = [...new Set(data.map(item => item[key]))];
+                uniqueItems.forEach(value => {
                     var option = document.createElement('option');
-                    option.value = item.service_code;
-                    option.text = item[key];
+                    option.value = value;
+                    option.text = value;
                     dropdown.appendChild(option);
                 });
             }
         </script>
+        
     </body>
 </html>

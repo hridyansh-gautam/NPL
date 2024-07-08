@@ -75,6 +75,7 @@ def emplogin():
 @app.route('/logout', methods=['GET'])
 def logout():
     session.pop('username', None)
+    session.pop('cust_reg_id', None)
     
     return redirect(url_for('home'))
 
@@ -274,23 +275,29 @@ def custwelcome():
 @app.route('/ctbr', methods=['GET', 'POST'])
 def ctbr():
     if request.method == 'GET':
-        cust_reg_id = session.get('cust_reg_id')  # Retrieve cust_reg_id from the session
-        print(cust_reg_id)
+        cust_reg_id = session.get('cust_reg_id')
+        # print(cust_reg_id)
         if cust_reg_id:
             customer = registration.get_cust(int(cust_reg_id))
-            print(customer)
             classifications = meteorological.get_classification()
-            services = meteorological.get_service()
-            charges = meteorological.get_service_charges()
-            return render_template('ctbr.html', customer=customer, classifications=classifications, services=services, charges=charges)
+            # services = meteorological.get_service()
+            # charges = meteorological.get_service_charges()
+            # return render_template('ctbr.html', customer=customer, classifications=classifications, services=services, charges=charges)
+            return render_template('ctbr.html', customer=customer, classifications=classifications)
         else:
             return render_template('ctbr.html', customer=None)
     elif request.method == 'POST':
-        category = request.form.get('categorySelect')
-        print(category)
-        services = meteorological.get_service_by_category(category)
-        charges = meteorological.get_service_charges_by_category(category)
-        return jsonify({'services': services, 'charges': charges})
+        # column_name = request.form.get('')
+        print(request.form)
+        if 'categorySelect' in request.form:
+            category = request.form.get('categorySelect')
+            services = meteorological.get_service_by_category('service_code', category)
+            print(services)
+            return jsonify({'services': services})
+        elif 'parameterSelect' in request.form:
+            parameter = request.form.get('parameterSelect')
+            services = meteorological.get_service_by_category('parameter', parameter)
+            return jsonify({'services': services})
 
 @app.route('/verify/<checksum>')
 def verify(checksum):

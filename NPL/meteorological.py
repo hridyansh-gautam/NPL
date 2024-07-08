@@ -99,43 +99,57 @@ def get_classification():
     finally:
         session.close()
 
-def get_service():
+# def get_service():
+#     session = SessionLocal()
+#     try:
+#         select_stmt = meteorological_services.select().distinct()
+#         services = session.execute(select_stmt).fetchall()
+#         if services:
+#             return services
+#         else:
+#             return None
+#     finally:
+#         session.close()
+
+# def get_service_charges():
+#     session = SessionLocal()
+#     try:
+#         select_stmt = meteorological_services_charges.select().distinct()
+#         charges = session.execute(select_stmt).fetchall()
+#         if charges:
+#             return charges
+#         else:
+#             return None
+#     finally:
+#         session.close()
+
+def row_to_dict(row):
+    return {key: getattr(row, key) for key in row._mapping.keys()}
+
+def get_service_by_category(column_name, value):
     session = SessionLocal()
     try:
-        select_stmt = meteorological_services.select().distinct()
+        column = getattr(meteorological_services.c, column_name)
+        select_stmt = meteorological_services.select().where(column == value)
         services = session.execute(select_stmt).fetchall()
-        if services:
-            return services
+        service_list = [row_to_dict(row) for row in services]
+        if service_list:
+            return service_list
         else:
             return None
     finally:
         session.close()
 
-def get_service_charges():
+def get_service_charges_by_category(category):
     session = SessionLocal()
     try:
-        select_stmt = meteorological_services_charges.select().distinct()
+        select_stmt = meteorological_services_charges.select().where(meteorological_services_charges.c.service_code == category)
         charges = session.execute(select_stmt).fetchall()
-        if charges:
-            return charges
+        charge_list = [row_to_dict(row) for row in charges]
+        if charge_list:
+            return charge_list
         else:
             return None
-    finally:
-        session.close()
-
-def get_service_by_category(service_code): #Takes category from form
-    session = SessionLocal()
-    try:
-        services = session.query(meteorological_services).filter_by(service_code=service_code).all()
-        return [service.__dict__ for service in services]
-    finally:
-        session.close()
-
-def get_service_charges_by_category(service_code): #Takes category from form
-    session = SessionLocal()
-    try:
-        charges = session.query(meteorological_services_charges).filter_by(service_code=service_code).all()
-        return [charge.__dict__ for charge in charges]
     finally:
         session.close()
 
