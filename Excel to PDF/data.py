@@ -5,7 +5,7 @@ from generate_pdf import Generator
 generator = Generator()
 
 # Call the extraction function
-excel_file_name = './excel_files/N23070405_D3.03_C-037.xlsx'
+excel_file_name = './excel_files/N21080387_D6.02c_C-06.xlsx'
 json_form = generator.excel_to_json(excel_file_name)
 
 # format data for latex code
@@ -17,6 +17,7 @@ with open('json_latex.json', 'w') as file:
 
 # Create pdf using extracted data
 data_to_send = loads(latex_data)
+generator.store_signatures(data_to_send)
 file_name = generator.sanitize_filename(data_to_send['certificate_no'])
 generator.create_pdf(data_to_send, excel_file_name, file_name, True)
 

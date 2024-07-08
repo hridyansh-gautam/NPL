@@ -4,7 +4,9 @@ import hashlib
 import re
 import pandas as pd
 import json
-from db_access import add_checksum
+from db_access import add_checksum, get_signature
+import numpy as np
+import cv2
 
 class Generator:
     def sanitize_filename(self, filename):
@@ -178,8 +180,7 @@ class Generator:
                 "\u2103": "\\textdegree C",
                 "\u03a9": "\\textohm",
                 "\u00b1": " \\textpm ",
-                "\\endlastfoot":" ",
-                "\\end{longtable}":"\\endlastfoot\n\\end{longtable}",
+                "\\multicolumn{4}{r}{Continued on next page} \\\\ \\hline\n":" ",
             }
 
             def replace_func(match):
@@ -187,6 +188,7 @@ class Generator:
 
             pattern = re.compile("|".join(re.escape(k) for k in replacements))
             data[key] = pattern.sub(replace_func, val)
+            #print (data)
         return json.dumps(data, indent=4)
 
     
@@ -213,6 +215,30 @@ class Generator:
             text,
         )
         return text
+
+    def store_signatures(self, data):
+        """
+        Store signatures as images in the 'signatures' directory.
+
+        This method retrieves signatures based on the names provided in the 'data' dictionary
+        and stores them as images. If a signature is not found, a blank image is saved instead.
+
+        Parameters:
+        data (dict): The dictionary containing the signature names and corresponding data.
+
+        Returns:
+        None
+        """
+        img_names = ['calibrated_by', 'checked_by', 'incharge', 'issued_by']
+        blank_img = np.ones((150, 300, 3), dtype=np.uint8) * 255
+        for name in img_names:
+            sign = get_signature(name=data[name].lower())
+            if sign:
+                with open(f'signatures/{name}.jpg', 'wb') as img:
+                    img.write(sign)
+            else:
+                cv2.imwrite(f'signatures/{name}.jpg', blank_img)
+
 
     def create_pdf(self, data, embed_file, certificate_name, attach):
         """
@@ -295,12 +321,12 @@ class Generator:
         \\begin{{minipage}}{{\\textwidth}}
         \\centering
         \\begin{{tabular}}{{ p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} }}
-        \\makecell[lb]{{\\texthindi{{आशंकितकर्ता}}\\\\\\textbf{{Calibrated by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/calibrated_by.jpeg}}}}
-        & \\makecell[lb]{{\\texthindi{{जाँचकर्ता}}\\\\\\textbf{{Checked by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/checked_by.jpeg}}}}
-        & \\makecell[lb]{{\\texthindi{{प्रभारी वैज्ञानिक}}\\\\ \\textbf{{Scientist-in-charge :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/in_charge.jpeg}}}}\\\\
+        \\makecell[lb]{{\\texthindi{{आशंकितकर्ता}}\\\\\\textbf{{Calibrated by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/calibrated_by.jpg}}}}
+        & \\makecell[lb]{{\\texthindi{{जाँचकर्ता}}\\\\\\textbf{{Checked by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/checked_by.jpg}}}}
+        & \\makecell[lb]{{\\texthindi{{प्रभारी वैज्ञानिक}}\\\\ \\textbf{{Scientist-in-charge :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/incharge.jpg}}}}\\\\
         \\multicolumn{{2}}{{c}}{{{data['calibrated_by']}}} & \\multicolumn{{2}}{{c}}{{{data['checked_by']}}} & \\multicolumn{{2}}{{c}}{{{data['incharge']}}} \\\\[1.5 ex]
         \\\\
-        & & \\makecell[lb]{{\\texthindi{{जारिकर्ता}}\\\\\\textbf{{Issued by :}}}} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/issued_by.jpeg}}}} & &\\\\
+        & & \\makecell[lb]{{\\texthindi{{जारिकर्ता}}\\\\\\textbf{{Issued by :}}}} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/issued_by.jpg}}}} & &\\\\
         & & \\multicolumn{{2}}{{c}}{{{data['issued_by']}}} & & \\\\
         \\end{{tabular}}
         \\end{{minipage}}
