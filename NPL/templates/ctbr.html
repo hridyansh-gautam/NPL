@@ -156,77 +156,77 @@
                                 <!-- Item Type / Group Dropdown -->
                                 <div class="form-group">
                                     <label for="itemTypeSelect">Item Type / Group</label>
-                                    <select class="form-control" id="itemTypeSelect" name="itemTypeSelect">
+                                    <select class="form-control" id="itemTypeSelect" name="itemTypeSelect" onchange="onItemTypeSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Item Name Dropdown -->
                                 <div class="form-group">
                                     <label for="itemNameSelect">Item Name</label>
-                                    <select class="form-control" id="itemNameSelect" name="itemNameSelect">
+                                    <select class="form-control" id="itemNameSelect" name="itemNameSelect" onchange="onItemNameSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Alias Name Dropdown -->
                                 <div class="form-group">
                                     <label for="aliasNameSelect">Alias Name</label>
-                                    <select class="form-control" id="aliasNameSelect" name="aliasNameSelect">
+                                    <select class="form-control" id="aliasNameSelect" name="aliasNameSelect" onchange="onAliasNameSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Range Dropdown -->
                                 <div class="form-group">
                                     <label for="rangeSelect">Range</label>
-                                    <select class="form-control" id="rangeSelect" name="rangeSelect">
+                                    <select class="form-control" id="rangeSelect" name="rangeSelect" onchange="onRangeSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Calibration Parameters Dropdown -->
                                 <div class="form-group">
                                     <label for="pointsSelect">Calibration Parameters</label>
-                                    <select class="form-control" id="pointsSelect" name="pointsSelect">
+                                    <select class="form-control" id="pointsSelect" name="pointsSelect" onchange="onPointsSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- No. of Points for Calibration / Procedure No. Dropdown -->
                                 <div class="form-group">
                                     <label for="pointsSelect">No. of Points for Calibration / Procedure No.</label>
-                                    <select class="form-control" id="pointsSelect" name="pointsSelect">
+                                    <select class="form-control" id="pointsSelect" name="pointsSelect" onchange="onNoOfPointsSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Limitation / Condition Dropdown -->
                                 <div class="form-group">
                                     <label for="limitationSelect">Limitation / Condition</label>
-                                    <select class="form-control" id="limitationSelect" name="limitationSelect">
+                                    <select class="form-control" id="limitationSelect" name="limitationSelect" onchange="onLimitationSelect()">
                                             <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Charges per Item Rs. Dropdown -->
                                 <div class="form-group">
                                     <label for="chargesSelect">Charges per Item Rs.</label>
-                                    <select class="form-control" id="chargesSelect" name="chargesSelect">
+                                    <select class="form-control" id="chargesSelect" name="chargesSelect" onchange="onChargesSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Additional Charges Rs. Dropdown -->
                                 <div class="form-group">
                                     <label for="additionalChargesSelect">Additional Charges Rs.</label>
-                                    <select class="form-control" id="additionalChargesSelect" name="additionalChargesSelect">
+                                    <select class="form-control" id="additionalChargesSelect" name="additionalChargesSelect" onchange="onAdditionalChargesSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Description for Additional Charges Dropdown -->
                                 <div class="form-group">
                                     <label for="descriptionSelect">Description for Additional Charges</label>
-                                    <select class="form-control" id="descriptionSelect" name="descriptionSelect">
+                                    <select class="form-control" id="descriptionSelect" name="descriptionSelect" onchange="onDescriptionSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Remarks Dropdown -->
                                 <div class="form-group">
                                     <label for="remarksSelect">Remarks, if any</label>
-                                    <select class="form-control" id="remarksSelect" name="remarksSelect">
+                                    <select class="form-control" id="remarksSelect" name="remarksSelect" onchange="onRemarksSelect()">
                                         <option value=""></option>
                                     </select>
                                 </div>
@@ -458,20 +458,87 @@
         </script>
         <script>
             function onCategorySelect() {
-                var category = document.getElementById('categorySelect').value;
-                // console.log(category);
-                fetch('/ctbr', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: 'categorySelect=' + encodeURIComponent(category)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    var services = data.services;
-                    var charges = data.charges;
-                    populateDropdown('parametersSelect', services, 'parameter');
+            var category = document.getElementById('categorySelect').value;
+            var categoryLabel = document.getElementById('categorySelect').text;
+            fetchDataAndPopulate('categorySelect', category, categoryLabel);
+            }
+        
+            function onParametersSelect() {
+            var parameters = document.getElementById('parametersSelect').value;
+            fetchDataAndPopulate('parametersSelect', parameters);
+            }
+            
+            function onItemTypeSelect() {
+                var itemTypeSelect = document.getElementById('itemTypeSelect').value;
+                fetchDataAndPopulate('itemTypeSelect', itemTypeSelect);
+            }
+        
+            function onItemNameSelect() {
+                var itemNameSelect = document.getElementById('itemNameSelect').value;
+                fetchDataAndPopulate('itemNameSelect', itemNameSelect);
+            }
+        
+            function onAliasNameSelect() {
+                var aliasNameSelect = document.getElementById('aliasNameSelect').value;
+                fetchDataAndPopulate('aliasNameSelect', aliasNameSelect);
+            }
+        
+            function onRangeSelect() {
+                var rangeSelect = document.getElementById('rangeSelect').value;
+                fetchDataAndPopulate('rangeSelect', rangeSelect);
+            }
+        
+            function onPointsSelect() {
+                var pointsSelect = document.getElementById('pointsSelect').value;
+                fetchDataAndPopulate('pointsSelect', pointsSelect);
+            }
+        
+            function onNoOfPointsSelect() {
+                var noOfPointsSelect = document.getElementById('noOfPointsSelect').value;
+                fetchDataAndPopulate('noOfPointsSelect', noOfPointsSelect);
+            }
+        
+            function onLimitationSelect() {
+                var limitationSelect = document.getElementById('limitationSelect').value;
+                fetchDataAndPopulate('limitationSelect', limitationSelect);
+            }
+        
+            function onChargesSelect() {
+                var chargesSelect = document.getElementById('chargesSelect').value;
+                fetchDataAndPopulate('chargesSelect', chargesSelect);
+            }
+        
+            function onAdditionalChargesSelect() {
+                var additionalChargesSelect = document.getElementById('additionalChargesSelect').value;
+                fetchDataAndPopulate('additionalChargesSelect', additionalChargesSelect);
+            }
+        
+            function onDescriptionSelect() {
+                var descriptionSelect = document.getElementById('descriptionSelect').value;
+                fetchDataAndPopulate('descriptionSelect', descriptionSelect);
+            }
+        
+            function onRemarksSelect() {
+                var remarksSelect = document.getElementById('remarksSelect').value;
+                fetchDataAndPopulate('remarksSelect', remarksSelect);
+            }
+        
+            function fetchDataAndPopulate(field, value, label) {
+            var body = {};
+            body[field] = value;
+            fetch('/ctbr', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(body).toString()
+            })
+            .then(response => response.json())
+            .then(data => {
+                var services = data.services;
+                var charges = data.charges;
+                if (field === 'categorySelect') {
+                    populateDropdown('parametersSelect', services, 'parameter', label);
                     clearDropdown('itemTypeSelect');
                     clearDropdown('itemNameSelect');
                     clearDropdown('aliasNameSelect');
@@ -483,24 +550,7 @@
                     clearDropdown('additionalChargesSelect');
                     clearDropdown('descriptionSelect');
                     clearDropdown('remarksSelect');
-                });
-            }
-    
-            function onParametersSelect() {
-                var parametersSelect = document.getElementById('parametersSelect');
-                var parameters = parametersSelect.value;
-                var parametersLabel = parametersSelect.options[parametersSelect.selectedIndex].text;
-                fetch('/ctbr', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: 'parametersSelect=' + encodeURIComponent(parameters)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    var services = data.services;
-                    var charges = data.charges;
+                } else if (field === 'parametersSelect') {
                     populateDropdown('itemTypeSelect', services, 'item_type_group');
                     clearDropdown('itemNameSelect');
                     clearDropdown('aliasNameSelect');
@@ -512,12 +562,78 @@
                     clearDropdown('additionalChargesSelect');
                     clearDropdown('descriptionSelect');
                     clearDropdown('remarksSelect');
+                } else if (field === 'itemTypeSelect') {
+                    populateDropdown('itemNameSelect', services, 'item_name');
+                    clearDropdown('aliasNameSelect');
+                    clearDropdown('rangeSelect');
+                    clearDropdown('pointsSelect');
+                    clearDropdown('noOfPointsSelect');
+                    clearDropdown('limitationSelect');
+                    clearDropdown('chargesSelect');
+                    clearDropdown('additionalChargesSelect');
+                    clearDropdown('descriptionSelect');
+                    clearDropdown('remarksSelect');
+                } else if (field === 'itemNameSelect') {
+                    populateDropdown('aliasNameSelect', services, 'alias_name');
+                    clearDropdown('rangeSelect');
+                    clearDropdown('pointsSelect');
+                    clearDropdown('noOfPointsSelect');
+                    clearDropdown('limitationSelect');
+                    clearDropdown('chargesSelect');
+                    clearDropdown('additionalChargesSelect');
+                    clearDropdown('descriptionSelect');
+                    clearDropdown('remarksSelect');
+                } else if (field === 'aliasNameSelect') {
+                    populateDropdown('rangeSelect', services, 'range');
+                    clearDropdown('pointsSelect');
+                    clearDropdown('noOfPointsSelect');
+                    clearDropdown('limitationSelect');
+                    clearDropdown('chargesSelect');
+                    clearDropdown('additionalChargesSelect');
+                    clearDropdown('descriptionSelect');
+                    clearDropdown('remarksSelect');
+                } else if (field === 'rangeSelect') {
+                    populateDropdown('pointsSelect', services, 'calibration_parameters');
+                    clearDropdown('noOfPointsSelect');
+                    clearDropdown('limitationSelect');
+                    clearDropdown('chargesSelect');
+                    clearDropdown('additionalChargesSelect');
+                    clearDropdown('descriptionSelect');
+                    clearDropdown('remarksSelect');
+                } else if (field === 'pointsSelect') {
+                    populateDropdown('noOfPointsSelect', services, 'no_of_points_for_calibration_procedure_no');
+                    clearDropdown('limitationSelect');
+                    clearDropdown('chargesSelect');
+                    clearDropdown('additionalChargesSelect');
+                    clearDropdown('descriptionSelect');
+                    clearDropdown('remarksSelect');
+                } else if (field === 'noOfPointsSelect') {
+                    populateDropdown('limitationSelect', services, 'limitation_condition');
+                    clearDropdown('chargesSelect');
+                    clearDropdown('additionalChargesSelect');
+                    clearDropdown('descriptionSelect');
+                    clearDropdown('remarksSelect');
+                } else if (field === 'limitationSelect') {
+                    populateDropdown('chargesSelect', charges, 'charge_amount');
+                    clearDropdown('additionalChargesSelect');
+                    clearDropdown('descriptionSelect');
+                    clearDropdown('remarksSelect');
+                } else if (field === 'chargesSelect') {
+                    populateDropdown('additionalChargesSelect', charges, 'additional_charges');
+                    clearDropdown('descriptionSelect');
+                    clearDropdown('remarksSelect');
+                } else if (field === 'additionalChargesSelect') {
+                    populateDropdown('descriptionSelect', charges, 'additional_charges_description');
+                    clearDropdown('remarksSelect');
+                } else if (field === 'descriptionSelect') {
+                    populateDropdown('remarksSelect', charges, 'remarks');
+                }
                 });
             }
-            
-            function populateDropdown(dropdownId, data, key) {
+        
+            function populateDropdown(dropdownId, data, key, label) {
                 var dropdown = document.getElementById(dropdownId);
-                // dropdown.innerHTML = '<option value="">Select ' + dropdownId + '</option>';
+                dropdown.innerHTML = '<option value="">Select ' + dropdownId + '</option>';
                 var uniqueItems = [...new Set(data.map(item => item[key]))];
                 uniqueItems.forEach(value => {
                     var option = document.createElement('option');
@@ -526,11 +642,11 @@
                     dropdown.appendChild(option);
                 });
             }
-    
+        
             function clearDropdown(dropdownId) {
                 var dropdown = document.getElementById(dropdownId);
-                // dropdown.innerHTML = '<option value="">Select ' + dropdownId + '</option>';
+                dropdown.innerHTML = '<option value="">Select ' + dropdownId + '</option>';
             }
-        </script>       
+        </script>          
     </body>
 </html>
