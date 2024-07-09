@@ -287,17 +287,43 @@ def ctbr():
         else:
             return render_template('ctbr.html', customer=None)
     elif request.method == 'POST':
-        # column_name = request.form.get('')
         print(request.form)
-        if 'categorySelect' in request.form:
-            category = request.form.get('categorySelect')
-            services = meteorological.get_service_by_category('service_code', category)
-            print(services)
-            return jsonify({'services': services})
-        elif 'parameterSelect' in request.form:
-            parameter = request.form.get('parameterSelect')
-            services = meteorological.get_service_by_category('parameter', parameter)
-            return jsonify({'services': services})
+        # if 'categorySelect' in request.form:
+        #     category = request.form.get('categorySelect')
+        #     services = meteorological.get_service_by_category('service_code', category)
+        #     return jsonify({'services': services})
+        # elif 'parameterSelect' in request.form:
+        #     parameter = request.form.get('parameterSelect')
+        #     services = meteorological.get_service_by_category('parameter', parameter)
+        #     return jsonify({'services': services})
+        if request.form:
+            key = next(iter(request.form))
+            value = request.form.get(key)
+            print(f"Key: {key}, Value: {value}")
+
+            column_map = {
+                'categorySelect': 'service_code',
+                'parametersSelect': 'parameter',
+                'itemTypeSelect': 'item_type_group',
+                'itemNameSelect': 'item_name',
+                'aliasNameSelect': 'alias_name',
+                'rangeSelect': 'range',
+                'pointsSelect': 'calibration_parameters',
+                'noOfPointsSelect': 'no_of_points_for_calibration_procedure_no',
+                'limitationSelect': 'limitation_condition',
+                'chargesSelect': 'charges_per_item_rs',
+                'additionalChargesSelect': 'additional_charges_rs',
+                'descriptionSelect': 'description_for_additional_charges',
+                'remarksSelect': 'remarks_if_any'
+            }
+
+            column = column_map.get(key)
+
+            if column:
+                services = meteorological.get_service_by_category(column, value)
+                return jsonify({'services': services})
+        
+        return jsonify({'error': 'Invalid request'}), 400
 
 @app.route('/verify/<checksum>')
 def verify(checksum):
