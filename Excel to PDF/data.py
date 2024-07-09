@@ -15,11 +15,15 @@ latex_data = generator.handle_special_chars(loads(json_form))
 with open('json_latex.json', 'w') as file:
     file.write(latex_data)
 
+#optional vairables
+embed_file=True
+plot_graph=True
+
 # Create pdf using extracted data
 data_to_send = loads(latex_data)
 generator.store_signatures(data_to_send)
 file_name = generator.sanitize_filename(data_to_send['certificate_no'])
-generator.create_pdf(data_to_send, excel_file_name, file_name, True)
+generator.create_pdf(data_to_send, excel_file_name, file_name, embed_file, plot_graph)
 
 
 # XXXXX_D1.01_C-XXX
