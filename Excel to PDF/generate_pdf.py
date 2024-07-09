@@ -239,8 +239,7 @@ class Generator:
             else:
                 cv2.imwrite(f'signatures/{name}.jpg', blank_img)
 
-
-    def create_pdf(self, data, embed_file, certificate_name, attach):
+    def create_pdf(self, data, embed_file, certificate_name, attach, graph):
         """
         Create a PDF using the provided data and LaTeX template, and optionally embed a file.
 
@@ -350,6 +349,8 @@ class Generator:
         \\end{{tabular}}
         }}
         """
+        
+        Plot_graph=f"\\includegraphics[width=0.6\\textwidth]{{./static/graph.png}}\\\\" if graph else ""
 
         Measurement_data = f"""
         \\hspace{{0.95cm}}
@@ -360,7 +361,11 @@ class Generator:
         \\renewcommand{{\\arraystretch}}{{1.3}}
         {data['result_table']}
         }}
-        
+
+        %%%%%%%%%%%%%% Conditional graph plotting %%%%%%%%%%%%%%%%
+        \\begin{{center}}
+        {Plot_graph}
+        \\end{{center}}
         %%%%%%%%% Date and Remarks %%%%%%%%%%
         {{
         \\renewcommand{{\\arraystretch}}{{2.4}}
