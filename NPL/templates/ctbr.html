@@ -458,16 +458,15 @@
         </script>
         <script>
             function onCategorySelect() {
-            var category = document.getElementById('categorySelect').value;
-            var categoryLabel = document.getElementById('categorySelect').text;
-            fetchDataAndPopulate('categorySelect', category, categoryLabel);
+                var category = document.getElementById('categorySelect').value;
+                fetchDataAndPopulate('categorySelect', category);
             }
         
             function onParametersSelect() {
-            var parameters = document.getElementById('parametersSelect').value;
-            fetchDataAndPopulate('parametersSelect', parameters);
+                var parameters = document.getElementById('parametersSelect').value;
+                fetchDataAndPopulate('parametersSelect', parameters);
             }
-            
+        
             function onItemTypeSelect() {
                 var itemTypeSelect = document.getElementById('itemTypeSelect').value;
                 fetchDataAndPopulate('itemTypeSelect', itemTypeSelect);
@@ -523,117 +522,133 @@
                 fetchDataAndPopulate('remarksSelect', remarksSelect);
             }
         
-            function fetchDataAndPopulate(field, value, label) {
-            var body = {};
-            body[field] = value;
-            fetch('/ctbr', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams(body).toString()
-            })
-            .then(response => response.json())
-            .then(data => {
-                var services = data.services;
-                var charges = data.charges;
-                if (field === 'categorySelect') {
-                    populateDropdown('parametersSelect', services, 'parameter', label);
-                    clearDropdown('itemTypeSelect');
-                    clearDropdown('itemNameSelect');
-                    clearDropdown('aliasNameSelect');
-                    clearDropdown('rangeSelect');
-                    clearDropdown('pointsSelect');
-                    clearDropdown('noOfPointsSelect');
-                    clearDropdown('limitationSelect');
-                    clearDropdown('chargesSelect');
-                    clearDropdown('additionalChargesSelect');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'parametersSelect') {
-                    populateDropdown('itemTypeSelect', services, 'item_type_group');
-                    clearDropdown('itemNameSelect');
-                    clearDropdown('aliasNameSelect');
-                    clearDropdown('rangeSelect');
-                    clearDropdown('pointsSelect');
-                    clearDropdown('noOfPointsSelect');
-                    clearDropdown('limitationSelect');
-                    clearDropdown('chargesSelect');
-                    clearDropdown('additionalChargesSelect');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'itemTypeSelect') {
-                    populateDropdown('itemNameSelect', services, 'item_name');
-                    clearDropdown('aliasNameSelect');
-                    clearDropdown('rangeSelect');
-                    clearDropdown('pointsSelect');
-                    clearDropdown('noOfPointsSelect');
-                    clearDropdown('limitationSelect');
-                    clearDropdown('chargesSelect');
-                    clearDropdown('additionalChargesSelect');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'itemNameSelect') {
-                    populateDropdown('aliasNameSelect', services, 'alias_name');
-                    clearDropdown('rangeSelect');
-                    clearDropdown('pointsSelect');
-                    clearDropdown('noOfPointsSelect');
-                    clearDropdown('limitationSelect');
-                    clearDropdown('chargesSelect');
-                    clearDropdown('additionalChargesSelect');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'aliasNameSelect') {
-                    populateDropdown('rangeSelect', services, 'range');
-                    clearDropdown('pointsSelect');
-                    clearDropdown('noOfPointsSelect');
-                    clearDropdown('limitationSelect');
-                    clearDropdown('chargesSelect');
-                    clearDropdown('additionalChargesSelect');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'rangeSelect') {
-                    populateDropdown('pointsSelect', services, 'calibration_parameters');
-                    clearDropdown('noOfPointsSelect');
-                    clearDropdown('limitationSelect');
-                    clearDropdown('chargesSelect');
-                    clearDropdown('additionalChargesSelect');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'pointsSelect') {
-                    populateDropdown('noOfPointsSelect', services, 'no_of_points_for_calibration_procedure_no');
-                    clearDropdown('limitationSelect');
-                    clearDropdown('chargesSelect');
-                    clearDropdown('additionalChargesSelect');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'noOfPointsSelect') {
-                    populateDropdown('limitationSelect', services, 'limitation_condition');
-                    clearDropdown('chargesSelect');
-                    clearDropdown('additionalChargesSelect');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'limitationSelect') {
-                    populateDropdown('chargesSelect', charges, 'charge_amount');
-                    clearDropdown('additionalChargesSelect');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'chargesSelect') {
-                    populateDropdown('additionalChargesSelect', charges, 'additional_charges');
-                    clearDropdown('descriptionSelect');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'additionalChargesSelect') {
-                    populateDropdown('descriptionSelect', charges, 'additional_charges_description');
-                    clearDropdown('remarksSelect');
-                } else if (field === 'descriptionSelect') {
-                    populateDropdown('remarksSelect', charges, 'remarks');
-                }
+            function fetchDataAndPopulate(field, value) {
+                var body = {};
+                body[field] = value;
+                fetch('/ctbr', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams(body).toString()
+                })
+                .then(response => response.json())
+                .then(data => {
+                    var services = data.services;
+                    var charges = data.charges;
+                    switch (field) {
+                        case 'categorySelect':
+                            populateDropdown('parametersSelect', services, 'parameter');
+                            clearDropdown('itemTypeSelect');
+                            clearDropdown('itemNameSelect');
+                            clearDropdown('aliasNameSelect');
+                            clearDropdown('rangeSelect');
+                            clearDropdown('pointsSelect');
+                            clearDropdown('noOfPointsSelect');
+                            clearDropdown('limitationSelect');
+                            clearDropdown('chargesSelect');
+                            clearDropdown('additionalChargesSelect');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'parametersSelect':
+                            populateDropdown('itemTypeSelect', services, 'item_type_group');
+                            clearDropdown('itemNameSelect');
+                            clearDropdown('aliasNameSelect');
+                            clearDropdown('rangeSelect');
+                            clearDropdown('pointsSelect');
+                            clearDropdown('noOfPointsSelect');
+                            clearDropdown('limitationSelect');
+                            clearDropdown('chargesSelect');
+                            clearDropdown('additionalChargesSelect');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'itemTypeSelect':
+                            populateDropdown('itemNameSelect', services, 'item_name');
+                            clearDropdown('aliasNameSelect');
+                            clearDropdown('rangeSelect');
+                            clearDropdown('pointsSelect');
+                            clearDropdown('noOfPointsSelect');
+                            clearDropdown('limitationSelect');
+                            clearDropdown('chargesSelect');
+                            clearDropdown('additionalChargesSelect');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'itemNameSelect':
+                            populateDropdown('aliasNameSelect', services, 'alias_name');
+                            clearDropdown('rangeSelect');
+                            clearDropdown('pointsSelect');
+                            clearDropdown('noOfPointsSelect');
+                            clearDropdown('limitationSelect');
+                            clearDropdown('chargesSelect');
+                            clearDropdown('additionalChargesSelect');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'aliasNameSelect':
+                            populateDropdown('rangeSelect', services, 'range');
+                            clearDropdown('pointsSelect');
+                            clearDropdown('noOfPointsSelect');
+                            clearDropdown('limitationSelect');
+                            clearDropdown('chargesSelect');
+                            clearDropdown('additionalChargesSelect');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'rangeSelect':
+                            populateDropdown('pointsSelect', services, 'calibration_parameters');
+                            clearDropdown('noOfPointsSelect');
+                            clearDropdown('limitationSelect');
+                            clearDropdown('chargesSelect');
+                            clearDropdown('additionalChargesSelect');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'pointsSelect':
+                            populateDropdown('noOfPointsSelect', services, 'no_of_points_for_calibration_procedure_no');
+                            clearDropdown('limitationSelect');
+                            clearDropdown('chargesSelect');
+                            clearDropdown('additionalChargesSelect');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'noOfPointsSelect':
+                            populateDropdown('limitationSelect', services, 'limitation_condition');
+                            clearDropdown('chargesSelect');
+                            clearDropdown('additionalChargesSelect');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'limitationSelect':
+                            populateDropdown('chargesSelect', charges, 'charge_amount');
+                            clearDropdown('additionalChargesSelect');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'chargesSelect':
+                            populateDropdown('additionalChargesSelect', charges, 'additional_charges');
+                            clearDropdown('descriptionSelect');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'additionalChargesSelect':
+                            populateDropdown('descriptionSelect', charges, 'additional_charges_description');
+                            clearDropdown('remarksSelect');
+                            break;
+                        case 'descriptionSelect':
+                            populateDropdown('remarksSelect', charges, 'remarks');
+                            break;
+                        default:
+                            break;
+                    }
                 });
             }
         
-            function populateDropdown(dropdownId, data, key, label) {
+            function populateDropdown(dropdownId, data, key) {
                 var dropdown = document.getElementById(dropdownId);
-                dropdown.innerHTML = '<option value="">Select ' + dropdownId + '</option>';
+                var labelText = getLabelText(dropdownId);
+                dropdown.innerHTML = '<option value="">Select ' + labelText + '</option>';
                 var uniqueItems = [...new Set(data.map(item => item[key]))];
                 uniqueItems.forEach(value => {
                     var option = document.createElement('option');
@@ -645,8 +660,14 @@
         
             function clearDropdown(dropdownId) {
                 var dropdown = document.getElementById(dropdownId);
-                dropdown.innerHTML = '<option value="">Select ' + dropdownId + '</option>';
+                var labelText = getLabelText(dropdownId);
+                dropdown.innerHTML = '<option value="">Select ' + labelText + '</option>';
             }
-        </script>          
+        
+            function getLabelText(dropdownId) {
+                var label = document.querySelector('label[for="' + dropdownId + '"]');
+                return label ? label.textContent : dropdownId;
+            }
+        </script>                  
     </body>
 </html>
