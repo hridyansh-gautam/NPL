@@ -280,22 +280,11 @@ def ctbr():
         if cust_reg_id:
             customer = registration.get_cust(int(cust_reg_id))
             classifications = meteorological.get_classification()
-            # services = meteorological.get_service()
-            # charges = meteorological.get_service_charges()
-            # return render_template('ctbr.html', customer=customer, classifications=classifications, services=services, charges=charges)
             return render_template('ctbr.html', customer=customer, classifications=classifications)
         else:
             return render_template('ctbr.html', customer=None)
     elif request.method == 'POST':
         print(request.form)
-        # if 'categorySelect' in request.form:
-        #     category = request.form.get('categorySelect')
-        #     services = meteorological.get_service_by_category('service_code', category)
-        #     return jsonify({'services': services})
-        # elif 'parameterSelect' in request.form:
-        #     parameter = request.form.get('parameterSelect')
-        #     services = meteorological.get_service_by_category('parameter', parameter)
-        #     return jsonify({'services': services})
         if request.form:
             key = next(iter(request.form))
             value = request.form.get(key)
@@ -321,6 +310,7 @@ def ctbr():
 
             if column:
                 services = meteorological.get_service_by_category(column, value)
+                # print(column, value)
                 return jsonify({'services': services})
         
         return jsonify({'error': 'Invalid request'}), 400
