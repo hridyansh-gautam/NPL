@@ -266,6 +266,10 @@ def add_service():
 def empwelcome():
     return render_template('empwelcome.html')
 
+@app.route('/dcc2')
+def admwelcome():
+    return render_template('dcc2.html')
+
 @app.route('/custwelcome')
 def custwelcome():
     service_types = db.session.query(distinct(meteorological.meteorological_classification.c.service_types)).all()

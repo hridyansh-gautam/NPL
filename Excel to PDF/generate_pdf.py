@@ -239,7 +239,7 @@ class Generator:
             else:
                 cv2.imwrite(f'signatures/{name}.jpg', blank_img)
 
-    def create_pdf(self, data, embed_file, certificate_name, attach, graph):
+    def create_pdf(self, data, embed_file, certificate_name, attach_data, attach_graph):
         """
         Create a PDF using the provided data and LaTeX template, and optionally embed a file.
 
@@ -247,7 +247,7 @@ class Generator:
         data (dict): The dictionary containing the data to be included in the PDF.
         embed_file (str): The path to the file to be embedded in the PDF.
         certificate_name (str): The unique identifier for the certificate file name.
-        attach (bool): Whether to attach the file to the PDF or not.
+        attach_data (bool): Whether to attach the file to the PDF or not.
 
         Returns:
         None
@@ -350,7 +350,11 @@ class Generator:
         }}
         """
         
-        Plot_graph=f"\\includegraphics[width=0.6\\textwidth]{{./static/graph.png}}\\\\" if graph else ""
+        Plot_graph=f"""
+        \\begin{{center}}
+        \\includegraphics[width=0.6\\textwidth]{{./static/graph.png}}\\\\
+        \\end{{center}}
+        """ if attach_graph else ""
 
         Measurement_data = f"""
         \\hspace{{0.95cm}}
@@ -363,9 +367,7 @@ class Generator:
         }}
 
         %%%%%%%%%%%%%% Conditional graph plotting %%%%%%%%%%%%%%%%
-        \\begin{{center}}
         {Plot_graph}
-        \\end{{center}}
         %%%%%%%%% Date and Remarks %%%%%%%%%%
         {{
         \\renewcommand{{\\arraystretch}}{{2.4}}
@@ -448,7 +450,7 @@ class Generator:
         }}
         """
 
-        embedding = f"\\embedfile{{{embed_file}}}" if attach else ""
+        embedding = f"\\embedfile{{{embed_file}}}" if attach_data else ""
 
         latex_template = f"""
         \\DocumentMetadata{{
