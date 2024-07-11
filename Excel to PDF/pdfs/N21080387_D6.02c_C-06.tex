@@ -45,7 +45,6 @@
         \usepackage{setspace} % For setting line spacing
         \usepackage{float} % Aligns the tables to the top for better space utilization
 
-
         
 
 
@@ -88,51 +87,52 @@
 
         %%% HEADER %%%
         
-        \fancyhead[L]{
-        \begin{minipage}{13.4cm}
-        \begin{spacing}{0.6}
-        \begin{tabular}{>{\centering}m{2.2cm} >{\centering}m{9 cm} >{\centering\arraybackslash} m{2.1 cm}}
+            \fancyhead[L]{
+            \begin{minipage}{13.4cm}
+            \begin{spacing}{0.6}
+            \begin{tabular}{>{\centering}m{2.2cm} >{\centering}m{9 cm} >{\centering\arraybackslash} m{2.1 cm}}
 
-        \includegraphics[width=3cm, height=3cm]{./static/CSIR_logo.png}		&	\makecell[bc]{\fontsize{11}{12}\selectfont \textbf{\texthindi{सी एस आई आर- राष्ट्रीय भौतिक प्रयोगशाला}}\\\fontsize{11}{12}\selectfont \textbf{CSIR-NATIONAL PHYSICAL LABORATORY}\\\fontsize{8}{12}\selectfont \texthindi{(वैज्ञानिक और औद्योगिक अनुसंधान परिषद)}\\\fontsize{9}{12}\selectfont (Council of Scientific and Industrial Research)\\\fontsize{6}{12}\selectfont \texthindi{(राष्ट्रीय मापिकी विज्ञान संस्थान (एनएमआई), सदस्य बीआईपीएम एवं हस्ताक्षरकर्ता सीआईपीएम --एमआरए)}\\\fontsize{6}{12}\selectfont \textbf{(National Metrology Institute (NMI), Member BIPM and Signatory CIPM - MRA)}\\\fontsize{6}{12}\selectfont \textbf{\texthindi{डॉ के एस कृष्णन मार्ग, नई दिल्ली-110012, भारत}}\\\fontsize{6}{12}\selectfont \textbf{Dr. K. S. Krishnan Marg, New Delhi-110012, INDIA}\\\fontsize{6}{12}\selectfont \texthindi{दूरभाष}\textbf{/Phone : 91-11-4560 8441, 8589, 8610, 9447,}\texthindi{फैक्स}\textbf{/Fax : 91-11-4560 8448}\\\fontsize{6}{12}\selectfont \texthindi{ई-मेल}\textbf{/E-mail: cfct@nplindia.org,} \texthindi{वेबसाईट}\textbf{/Website: www.nplindia.org}}	&	\hspace{-0.6cm}\raisebox{0.6cm}{\includegraphics[width=2.35cm, height=2.35cm]{./static/Logo_NPL_india.png}}\\
-        \end{tabular}
-        \end{spacing}
-        \end{minipage}%
-        \begin{minipage}{6.2cm}
-        \begin{tabular}{>{\centering\arraybackslash \vrule width 0.8mm} p{6.2 cm}}
-        \makecell{\texthindi{अंशांकन प्रमाण पत्र}\\\textbf{CALLIBRATION CERTIFICATE:}\\DC REFERENCE STANDARD}\\[1.5ex]
-        \fullhline
-        \makecell{\rule{0pt}{1em}\texthindi{प्रमाण पत्र संख्या}/Certificate number:\\ \rule{0pt}{1.5em}N21080387/D6.02c/C-06} \\ [1.5ex]
-        \fullhline
-        \makecell{\texthindi{डी ओ आई संख्या}/DOI number :\vspace{0.15cm}\\ X }\\[1.5ex]
+            \includegraphics[width=3cm, height=3cm]{./static/CSIR_logo.png}		&	\makecell[bc]{\fontsize{11}{12}\selectfont \textbf{\texthindi{सी एस आई आर- राष्ट्रीय भौतिक प्रयोगशाला}}\\\fontsize{11}{12}\selectfont \textbf{CSIR-NATIONAL PHYSICAL LABORATORY}\\\fontsize{8}{12}\selectfont \texthindi{(वैज्ञानिक और औद्योगिक अनुसंधान परिषद)}\\\fontsize{9}{12}\selectfont (Council of Scientific and Industrial Research)\\\fontsize{6}{12}\selectfont \texthindi{(राष्ट्रीय मापिकी विज्ञान संस्थान (एनएमआई), सदस्य बीआईपीएम एवं हस्ताक्षरकर्ता सीआईपीएम --एमआरए)}\\\fontsize{6}{12}\selectfont \textbf{(National Metrology Institute (NMI), Member BIPM and Signatory CIPM - MRA)}\\\fontsize{6}{12}\selectfont \textbf{\texthindi{डॉ के एस कृष्णन मार्ग, नई दिल्ली-110012, भारत}}\\\fontsize{6}{12}\selectfont \textbf{Dr. K. S. Krishnan Marg, New Delhi-110012, INDIA}\\\fontsize{6}{12}\selectfont \texthindi{दूरभाष}\textbf{/Phone : 91-11-4560 8441, 8589, 8610, 9447,}\texthindi{फैक्स}\textbf{/Fax : 91-11-4560 8448}\\\fontsize{6}{12}\selectfont \texthindi{ई-मेल}\textbf{/E-mail: cfct@nplindia.org,} \texthindi{वेबसाईट}\textbf{/Website: www.nplindia.org}}	&	\hspace{-0.6cm}\raisebox{0.6cm}{\includegraphics[width=2.35cm, height=2.35cm]{./static/Logo_NPL_india.png}}\\
+            \end{tabular}
+            \end{spacing}
+            \end{minipage}%
+            \begin{minipage}{6.2cm}
+            \setlength{\arrayrulewidth}{0.8mm}
+            \begin{tabular}{|>{\centering\arraybackslash} p{6.2 cm}}
+            \makecell{\texthindi{अंशांकन प्रमाण पत्र}\\\textbf{CALLIBRATION CERTIFICATE:}\\DC REFERENCE STANDARD}\\[1.5ex]
+            \hline
+            \makecell{\rule{0pt}{1em}\texthindi{प्रमाण पत्र संख्या}/Certificate number:\\ \rule{0pt}{1.5em}N21080387/D6.02c/C-06} \\ [1.5ex]
+            \hline
+            \makecell{\texthindi{डी ओ आई संख्या}/DOI number :\vspace{0.15cm}\\ X }\\[1.5ex]
 
-        \end{tabular}
-        \end{minipage}
-        \begin{tabular}{>{\centering}p{3.8cm}!{\vrule width 0.8mm}>{\centering}p{8.3cm}!{\vrule width 0.8mm}>{\centering}p{2.5cm}!{\vrule width 0.8mm}>{\centering\arraybackslash}p{4.9cm}}
-        \fullhline
-        \texthindi{दिनंक}/\textbf{Date} & \makecell{\texthindi{अगले अंशांकन हेतु अनुशंसित तिथि}\\\textbf{Recommended date for the next calibration}} & \texthindi{पृष्ठ}/\textbf{Page} & \texthindi{पृष्ठों की संख्या}/\textbf{No of pages}\\
-        21.09 2021&21.03.2000&\thepage&\pageref{LastPage}\\[1.8ex]
-        \fullhline
-        \end{tabular}
-        }
-        
+            \end{tabular}
+            \end{minipage}
+            \begin{tabular}{>{\centering}p{3.8cm}!{\vrule width 0.8mm}>{\centering}p{8.3cm}!{\vrule width 0.8mm}>{\centering}p{2.5cm}!{\vrule width 0.8mm}>{\centering\arraybackslash}p{4.9cm}}
+            \fullhline
+            \texthindi{दिनंक}/\textbf{Date} & \makecell{\texthindi{अगले अंशांकन हेतु अनुशंसित तिथि}\\\textbf{Recommended date for the next calibration}} & \texthindi{पृष्ठ}/\textbf{Page} & \texthindi{पृष्ठों की संख्या}/\textbf{No of pages}\\
+            21.09 2021&21.03.2000&\thepage&\pageref{LastPage}\\[1.8ex]
+            \fullhline
+            \end{tabular}
+            }
+            
 
         %%% FOOTER %%%
         
-        \fancyfoot[C]{
-        \begin{minipage}{\textwidth}
-        \centering
-        \begin{tabular}{ p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} }
-        \makecell[lb]{\texthindi{आशंकितकर्ता}\\\textbf{Calibrated by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./signatures/calibrated_by.jpg}}
-        & \makecell[lb]{\texthindi{जाँचकर्ता}\\\textbf{Checked by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./signatures/checked_by.jpg}}
-        & \makecell[lb]{\texthindi{प्रभारी वैज्ञानिक}\\ \textbf{Scientist-in-charge :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./signatures/incharge.jpg}}\\
-        \multicolumn{2}{c}{(SANDHYA M. PATEL)} & \multicolumn{2}{c}{(SAOOD AHMAD)} & \multicolumn{2}{c}{(ANURAG GUPTA)} \\[1.5 ex]
-        \\
-        & & \makecell[lb]{\texthindi{जारिकर्ता}\\\textbf{Issued by :}} & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./signatures/issued_by.jpg}} & &\\
-        & & \multicolumn{2}{c}{} & & \\
-        \end{tabular}
-        \end{minipage}
-        }
-        
+            \fancyfoot[C]{
+            \begin{minipage}{\textwidth}
+            \centering
+            \begin{tabular}{ p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} p{3.5 cm} }
+            \makecell[lb]{\texthindi{आशंकितकर्ता}\\\textbf{Calibrated by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./signatures/calibrated_by.jpg}}
+            & \makecell[lb]{\texthindi{जाँचकर्ता}\\\textbf{Checked by :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./signatures/checked_by.jpg}}
+            & \makecell[lb]{\texthindi{प्रभारी वैज्ञानिक}\\ \textbf{Scientist-in-charge :} } & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./signatures/incharge.jpg}}\\
+            \multicolumn{2}{c}{(SANDHYA M. PATEL)} & \multicolumn{2}{c}{(SAOOD AHMAD)} & \multicolumn{2}{c}{(ANURAG GUPTA)} \\[1.5 ex]
+            \\
+            & & \makecell[lb]{\texthindi{जारिकर्ता}\\\textbf{Issued by :}} & \parbox[t][0.5cm][l]{2cm}{\includegraphics[width=1.8cm, height=0.8cm]{./signatures/issued_by.jpg}} & &\\
+            & & \multicolumn{2}{c}{} & & \\
+            \end{tabular}
+            \end{minipage}
+            }
+            
 
         \setlength{\headheight}{6.9cm}
         \setlength{\footskip}{1.95cm}
@@ -143,32 +143,32 @@
         
         %%%% Administrative Data %%%%%%%
         
-        \headsep = 0cm
-        \small
-        
-        {
-        \renewcommand{\arraystretch}{2.4}
-        \hspace{0.95cm}
-        \begin{tabular}{p{1cm} p{6.74cm}  p{0.5cm} p{8cm}}
-        \stepcounter{rownum}\arabic{rownum}. 	&	\makecell[l]{Calibrated for}		&:&	\parbox[t]{7.8cm}{\raggedright LF, HF Impedance and DC Metrology \\
+            \headsep = 0cm
+            \small
+            
+            {
+            \renewcommand{\arraystretch}{2.4}
+            \hspace{0.95cm}
+            \begin{tabular}{p{1cm} p{6.74cm}  p{0.5cm} p{8cm}}
+            \stepcounter{rownum}\arabic{rownum}. 	&	\makecell[l]{Calibrated for}		&:&	\parbox[t]{7.8cm}{\raggedright LF, HF Impedance and DC Metrology \\
 CSIR-National Physical Laboratory. \\
 Dr. K.S. Krishnan Road, \\
 New Delhi- 110012 \\
 Customer Reference: Note dated 15.07.2021} \\
-        \stepcounter{rownum}\arabic{rownum}. 	&	\makecell[lt]{Description and Identification \\of Item under Calibration}  &:&	\parbox[t]{7.8cm}{ \raggedright DC Reference Standard \\
+            \stepcounter{rownum}\arabic{rownum}. 	&	\makecell[lt]{Description and Identification \\of Item under Calibration}  &:&	\parbox[t]{7.8cm}{ \raggedright DC Reference Standard \\
 Model No.: 732B \\
 S..No.: 9130702 \\
 Make: Fluke Corporation. USA} \\
-        \stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Environmental Conditions} 	& :&	 \begin{minipage}[t]{7.8cm}{\raggedright Temperature: (25  \textpm  1)\textdegree C \\
+            \stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Environmental Conditions} 	& :&	 \begin{minipage}[t]{7.8cm}{\raggedright Temperature: (25  \textpm  1)\textdegree C \\
 Humidity (RH): (50  \textpm  10)\%} \end{minipage}\\
-        \stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Standard(s) used (with)\\ Associated uncertainty}  &:& \begin{minipage}[t]{7.8cm}{\raggedright Programmable Josephson Voltage Standard. \\
+            \stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Standard(s) used (with)\\ Associated uncertainty}  &:& \begin{minipage}[t]{7.8cm}{\raggedright Programmable Josephson Voltage Standard. \\
 NA (Quantum based Primary Voltage Standard )} \end{minipage}\\
-        \stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Traceability of standard(s) used}	&:&	\parbox[t]{7.8cm}{ \raggedright Programmable Josephson Voltage Standard. \\
+            \stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Traceability of standard(s) used}	&:&	\parbox[t]{7.8cm}{ \raggedright Programmable Josephson Voltage Standard. \\
 (Primary standard)} \\
-        \stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Principle /Methodology of\\ calibration and Calibration\\ Procedure number} 	& :&	\parbox[t]{7.8cm}{\raggedright The DC Reference standard has been calibrated by comparison method with Programmable Josephson Voltage Standard as per calibration procedure no. 6.02c/Doe.3/CP \# 01.} \\
-        \end{tabular}
-        }
-        
+            \stepcounter{rownum}\arabic{rownum}.	&	\makecell[lt]{Principle /Methodology of\\ calibration and Calibration\\ Procedure number} 	& :&	\parbox[t]{7.8cm}{\raggedright The DC Reference standard has been calibrated by comparison method with Programmable Josephson Voltage Standard as per calibration procedure no. 6.02c/Doe.3/CP \# 01.} \\
+            \end{tabular}
+            }
+            
 
         \newpage
 
@@ -204,6 +204,15 @@ S.no. & Nominal Value & Measured value & Expanded Uncertainty \\ \hline
 
         %%%%%%%%%%%%%% Conditional graph plotting %%%%%%%%%%%%%%%%
         
+        \textbf{Sample:} DC REFERENCE STANDARD\\
+        \begin{center}
+        \includegraphics[width=0.6\textwidth]{./static/graph.png}\\
+        \end{center}
+        
+
+        \hspace{0.8 cm}\begin{minipage}[c]{0.85\textwidth}
+        The reported expanded uncertainty is at coverage factor k = 2 which corresponds to a coverage probability of approximately 95\% for a normal distribution.
+        \end{minipage}\\
         %%%%%%%%% Date and Remarks %%%%%%%%%%
         {
         \renewcommand{\arraystretch}{2.4}
