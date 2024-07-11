@@ -125,7 +125,7 @@ def get_classification():
 
 def row_to_dict(row):
     return {key: getattr(row, key) for key in row._mapping.keys()}
-
+    
 def get_service_by_category(column_name, value):
     session = SessionLocal()
     try:

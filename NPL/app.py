@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify, session, render_template, redirect, url_for, flash
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import distinct
+from sqlalchemy import distinct, create_engine, text
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from datetime import timedelta
 import os
-import registration
+import registration 
 import meteorological
 import pandas as pd
 import checksum
@@ -297,8 +297,8 @@ def ctbr():
                 'itemNameSelect': 'item_name',
                 'aliasNameSelect': 'alias_name',
                 'rangeSelect': 'range',
-                'pointsSelect': 'calibration_parameters',
-                'noOfPointsSelect': 'no_of_points_for_calibration_procedure_no',
+                'calibrationParametersSelect': 'calibration_parameters',
+                'pointsSelect': 'no_of_points_for_calibration_procedure_no',
                 'limitationSelect': 'limitation_condition',
                 'chargesSelect': 'charges_per_item_rs',
                 'additionalChargesSelect': 'additional_charges_rs',
@@ -310,10 +310,12 @@ def ctbr():
 
             if column:
                 services = meteorological.get_service_by_category(column, value)
-                # print(column, value)
+                print(column, value)
                 return jsonify({'services': services})
         
         return jsonify({'error': 'Invalid request'}), 400
+
+        return jsonify({'services': services, 'charges': charges})
 
 @app.route('/verify/<checksum>')
 def verify(checksum):
