@@ -239,7 +239,7 @@ class Generator:
             else:
                 cv2.imwrite(f'signatures/{name}.jpg', blank_img)
 
-    def create_pdf(self, data, embed_file, certificate_name, attach_data, attach_graph):
+    def create_pdf(self, data, embed_file, certificate_name, attach_data, attach_graph,doc_type):
         """
         Create a PDF using the provided data and LaTeX template, and optionally embed a file.
 
@@ -283,74 +283,145 @@ class Generator:
         \usepackage{setspace} % For setting line spacing
         \usepackage{float} % Aligns the tables to the top for better space utilization
 
-
         """
 
-        header = f"""
-        \\fancyhead[L]{{
-        \\begin{{minipage}}{{13.4cm}}
-        \\begin{{spacing}}{{0.6}}
-        \\begin{{tabular}}{{>{{\\centering}}m{{2.2cm}} >{{\\centering}}m{{9 cm}} >{{\\centering\\arraybackslash}} m{{2.1 cm}}}}
 
-        \\includegraphics[width=3cm, height=3cm]{{./static/CSIR_logo.png}}		&	\\makecell[bc]{{\\fontsize{{11}}{{12}}\\selectfont \\textbf{{\\texthindi{{सी एस आई आर- राष्ट्रीय भौतिक प्रयोगशाला}}}}\\\\\\fontsize{{11}}{{12}}\\selectfont \\textbf{{CSIR-NATIONAL PHYSICAL LABORATORY}}\\\\\\fontsize{{8}}{{12}}\\selectfont \\texthindi{{(वैज्ञानिक और औद्योगिक अनुसंधान परिषद)}}\\\\\\fontsize{{9}}{{12}}\\selectfont (Council of Scientific and Industrial Research)\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{(राष्ट्रीय मापिकी विज्ञान संस्थान (एनएमआई), सदस्य बीआईपीएम एवं हस्ताक्षरकर्ता सीआईपीएम --एमआरए)}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{(National Metrology Institute (NMI), Member BIPM and Signatory CIPM - MRA)}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{\\texthindi{{डॉ के एस कृष्णन मार्ग, नई दिल्ली-110012, भारत}}}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{Dr. K. S. Krishnan Marg, New Delhi-110012, INDIA}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{दूरभाष}}\\textbf{{/Phone : 91-11-4560 8441, 8589, 8610, 9447,}}\\texthindi{{फैक्स}}\\textbf{{/Fax : 91-11-4560 8448}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{ई-मेल}}\\textbf{{/E-mail: cfct@nplindia.org,}} \\texthindi{{वेबसाईट}}\\textbf{{/Website: www.nplindia.org}}}}	&	\\hspace{{-0.6cm}}\\raisebox{{0.6cm}}{{\\includegraphics[width=2.35cm, height=2.35cm]{{./static/Logo_NPL_india.png}}}}\\\\
-        \\end{{tabular}}
-        \\end{{spacing}}
-        \\end{{minipage}}%
-        \\begin{{minipage}}{{6.2cm}}
-        \\begin{{tabular}}{{>{{\\centering\\arraybackslash \\vrule width 0.8mm}} p{{6.2 cm}}}}
-        \\makecell{{\\texthindi{{अंशांकन प्रमाण पत्र}}\\\\\\textbf{{CALLIBRATION CERTIFICATE:}}\\\\{data['device_name']}}}\\\\[1.5ex]
-        \\fullhline
-        \\makecell{{\\rule{{0pt}}{{1em}}\\texthindi{{प्रमाण पत्र संख्या}}/Certificate number:\\\\ \\rule{{0pt}}{{1.5em}}{data['certificate_no']}}} \\\\ [1.5ex]
-        \\fullhline
-        \\makecell{{\\texthindi{{डी ओ आई संख्या}}/DOI number :\\vspace{{0.15cm}}\\\\ {data['doi_no']} }}\\\\[1.5ex]
+        headers = {
+            'calibration': f"""
+            \\fancyhead[L]{{
+            \\begin{{minipage}}{{13.4cm}}
+            \\begin{{spacing}}{{0.6}}
+            \\begin{{tabular}}{{>{{\\centering}}m{{2.2cm}} >{{\\centering}}m{{9 cm}} >{{\\centering\\arraybackslash}} m{{2.1 cm}}}}
 
-        \\end{{tabular}}
-        \\end{{minipage}}
-        \\begin{{tabular}}{{>{{\\centering}}p{{3.8cm}}!{{\\vrule width 0.8mm}}>{{\\centering}}p{{8.3cm}}!{{\\vrule width 0.8mm}}>{{\\centering}}p{{2.5cm}}!{{\\vrule width 0.8mm}}>{{\\centering\\arraybackslash}}p{{4.9cm}}}}
-        \\fullhline
-        \\texthindi{{दिनंक}}/\\textbf{{Date}} & \\makecell{{\\texthindi{{अगले अंशांकन हेतु अनुशंसित तिथि}}\\\\\\textbf{{Recommended date for the next calibration}}}} & \\texthindi{{पृष्ठ}}/\\textbf{{Page}} & \\texthindi{{पृष्ठों की संख्या}}/\\textbf{{No of pages}}\\\\
-        {data['end_date']}&{data['next_date']}&\\thepage&\\pageref{{LastPage}}\\\\[1.8ex]
-        \\fullhline
-        \\end{{tabular}}
-        }}
-        """
+            \\includegraphics[width=3cm, height=3cm]{{./static/CSIR_logo.png}}		&	\\makecell[bc]{{\\fontsize{{11}}{{12}}\\selectfont \\textbf{{\\texthindi{{सी एस आई आर- राष्ट्रीय भौतिक प्रयोगशाला}}}}\\\\\\fontsize{{11}}{{12}}\\selectfont \\textbf{{CSIR-NATIONAL PHYSICAL LABORATORY}}\\\\\\fontsize{{8}}{{12}}\\selectfont \\texthindi{{(वैज्ञानिक और औद्योगिक अनुसंधान परिषद)}}\\\\\\fontsize{{9}}{{12}}\\selectfont (Council of Scientific and Industrial Research)\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{(राष्ट्रीय मापिकी विज्ञान संस्थान (एनएमआई), सदस्य बीआईपीएम एवं हस्ताक्षरकर्ता सीआईपीएम --एमआरए)}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{(National Metrology Institute (NMI), Member BIPM and Signatory CIPM - MRA)}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{\\texthindi{{डॉ के एस कृष्णन मार्ग, नई दिल्ली-110012, भारत}}}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{Dr. K. S. Krishnan Marg, New Delhi-110012, INDIA}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{दूरभाष}}\\textbf{{/Phone : 91-11-4560 8441, 8589, 8610, 9447,}}\\texthindi{{फैक्स}}\\textbf{{/Fax : 91-11-4560 8448}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{ई-मेल}}\\textbf{{/E-mail: cfct@nplindia.org,}} \\texthindi{{वेबसाईट}}\\textbf{{/Website: www.nplindia.org}}}}	&	\\hspace{{-0.6cm}}\\raisebox{{0.6cm}}{{\\includegraphics[width=2.35cm, height=2.35cm]{{./static/Logo_NPL_india.png}}}}\\\\
+            \\end{{tabular}}
+            \\end{{spacing}}
+            \\end{{minipage}}%
+            \\begin{{minipage}}{{6.2cm}}
+            \\setlength{{\\arrayrulewidth}}{{0.8mm}}
+            \\begin{{tabular}}{{|>{{\\centering\\arraybackslash}} p{{6.2 cm}}}}
+            \\makecell{{\\texthindi{{अंशांकन प्रमाण पत्र}}\\\\\\textbf{{CALLIBRATION CERTIFICATE:}}\\\\{data['device_name']}}}\\\\[1.5ex]
+            \\hline
+            \\makecell{{\\rule{{0pt}}{{1em}}\\texthindi{{प्रमाण पत्र संख्या}}/Certificate number:\\\\ \\rule{{0pt}}{{1.5em}}{data['certificate_no']}}} \\\\ [1.5ex]
+            \\hline
+            \\makecell{{\\texthindi{{डी ओ आई संख्या}}/DOI number :\\vspace{{0.15cm}}\\\\ {data['doi_no']} }}\\\\[1.5ex]
 
-        footer = f"""
-        \\fancyfoot[C]{{
-        \\begin{{minipage}}{{\\textwidth}}
-        \\centering
-        \\begin{{tabular}}{{ p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} }}
-        \\makecell[lb]{{\\texthindi{{आशंकितकर्ता}}\\\\\\textbf{{Calibrated by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/calibrated_by.jpg}}}}
-        & \\makecell[lb]{{\\texthindi{{जाँचकर्ता}}\\\\\\textbf{{Checked by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/checked_by.jpg}}}}
-        & \\makecell[lb]{{\\texthindi{{प्रभारी वैज्ञानिक}}\\\\ \\textbf{{Scientist-in-charge :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/incharge.jpg}}}}\\\\
-        \\multicolumn{{2}}{{c}}{{{data['calibrated_by']}}} & \\multicolumn{{2}}{{c}}{{{data['checked_by']}}} & \\multicolumn{{2}}{{c}}{{{data['incharge']}}} \\\\[1.5 ex]
-        \\\\
-        & & \\makecell[lb]{{\\texthindi{{जारिकर्ता}}\\\\\\textbf{{Issued by :}}}} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/issued_by.jpg}}}} & &\\\\
-        & & \\multicolumn{{2}}{{c}}{{{data['issued_by']}}} & & \\\\
-        \\end{{tabular}}
-        \\end{{minipage}}
-        }}
-        """
+            \\end{{tabular}}
+            \\end{{minipage}}
+            \\begin{{tabular}}{{>{{\\centering}}p{{3.8cm}}!{{\\vrule width 0.8mm}}>{{\\centering}}p{{8.3cm}}!{{\\vrule width 0.8mm}}>{{\\centering}}p{{2.5cm}}!{{\\vrule width 0.8mm}}>{{\\centering\\arraybackslash}}p{{4.9cm}}}}
+            \\fullhline
+            \\texthindi{{दिनंक}}/\\textbf{{Date}} & \\makecell{{\\texthindi{{अगले अंशांकन हेतु अनुशंसित तिथि}}\\\\\\textbf{{Recommended date for the next calibration}}}} & \\texthindi{{पृष्ठ}}/\\textbf{{Page}} & \\texthindi{{पृष्ठों की संख्या}}/\\textbf{{No of pages}}\\\\
+            {data['end_date']}&{data['next_date']}&\\thepage&\\pageref{{LastPage}}\\\\[1.8ex]
+            \\fullhline
+            \\end{{tabular}}
+            }}
+            """,
+            'testing': f"""
+            \\fancyhead[L]{{
+            \\begin{{minipage}}{{13.4cm}}
+            \\begin{{spacing}}{{0.6}}
+            \\begin{{tabular}}{{>{{\\centering}}m{{2.2cm}} >{{\\centering}}m{{9 cm}} >{{\\centering\\arraybackslash}} m{{2.1 cm}}}}
 
-        administrative_data = f"""
-        \\headsep = 0cm
-        \\small
+            \\includegraphics[width=3cm, height=3cm]{{./static/CSIR_logo.png}}		&	\\makecell[bc]{{\\fontsize{{11}}{{12}}\\selectfont \\textbf{{\\texthindi{{सी एस आई आर- राष्ट्रीय भौतिक प्रयोगशाला}}}}\\\\\\fontsize{{11}}{{12}}\\selectfont \\textbf{{CSIR-NATIONAL PHYSICAL LABORATORY}}\\\\\\fontsize{{8}}{{12}}\\selectfont \\texthindi{{(वैज्ञानिक और औद्योगिक अनुसंधान परिषद)}}\\\\\\fontsize{{9}}{{12}}\\selectfont (Council of Scientific and Industrial Research)\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{(राष्ट्रीय मापिकी विज्ञान संस्थान (एनएमआई), सदस्य बीआईपीएम एवं हस्ताक्षरकर्ता सीआईपीएम --एमआरए)}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{(National Metrology Institute (NMI), Member BIPM and Signatory CIPM - MRA)}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{\\texthindi{{डॉ के एस कृष्णन मार्ग, नई दिल्ली-110012, भारत}}}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\textbf{{Dr. K. S. Krishnan Marg, New Delhi-110012, INDIA}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{दूरभाष}}\\textbf{{/Phone : 91-11-4560 8441, 8589, 8610, 9447,}}\\texthindi{{फैक्स}}\\textbf{{/Fax : 91-11-4560 8448}}\\\\\\fontsize{{6}}{{12}}\\selectfont \\texthindi{{ई-मेल}}\\textbf{{/E-mail: cfct@nplindia.org,}} \\texthindi{{वेबसाईट}}\\textbf{{/Website: www.nplindia.org}}}}	&	\\hspace{{-0.6cm}}\\raisebox{{0.6cm}}{{\\includegraphics[width=2.35cm, height=2.35cm]{{./static/Logo_NPL_india.png}}}}\\\\
+            \\end{{tabular}}
+            \\end{{spacing}}
+            \\end{{minipage}}%
+            \\begin{{minipage}}{{6.2cm}}
+            \\centering
+            \\setlength{{\\arrayrulewidth}}{{0.8mm}}
+            \\begin{{tabular}}{{|>{{\\centering\\arraybackslash}}p{{6.2 cm}}}}
+            \\makecell{{\\texthindi{{परीक्षण रिपोर्ट}}\\\\\\textbf{{TEST REPORT}}}}\\\\
+            \\begin{{minipage}}{{6.2cm}}\\centering{{{data['report_name']}}}\\end{{minipage}}\\\\[0.5cm]
+            \\hline
+            \\makecell{{\\texthindi{{डी ओ आई संख्या}}/DOI number :\\vspace{{0.15cm}}\\\\ {data['doi_no']} }}\\\\[0.5cm]
+
+            \\end{{tabular}}
+            \\end{{minipage}}
+            \\begin{{tabular}}{{>{{\\centering}}p{{3.8cm}}!{{\\vrule width 0.8mm}}>{{\\centering}}p{{8.3cm}}!{{\\vrule width 0.8mm}}>{{\\centering}}p{{2.5cm}}!{{\\vrule width 0.8mm}}>{{\\centering\\arraybackslash}}p{{4.9cm}}}}
+            \\fullhline
+            \\texthindi{{दिनंक}}/\\textbf{{Date}} & \\texthindi{{परीक्षण रिपोर्ट संख्या}}/\\textbf{{Test Report No.}} & \\texthindi{{पृष्ठ}}/\\textbf{{Page}} & \\texthindi{{पृष्ठों की संख्या}}/\\textbf{{No of pages}}\\\\
+            {data['end_date']}&{data['report_no']}&\\thepage&\\pageref{{LastPage}}\\\\[1.8ex]
+            \\fullhline
+            \\end{{tabular}}
+            }}
+            """
+        }
+
+        administrative_data = {
+            'calibration': f"""
+            \\headsep = 0cm
+            \\small
+            
+            {{
+            \\renewcommand{{\\arraystretch}}{{2.4}}
+            \\hspace{{0.95cm}}
+            \\begin{{tabular}}{{p{{1cm}} p{{6.74cm}}  p{{0.5cm}} p{{8cm}}}}
+            \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	\\makecell[l]{{Calibrated for}}		&:&	\\parbox[t]{{7.8cm}}{{\\raggedright {data['calibrated_for']}}} \\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	\\makecell[lt]{{Description and Identification \\\\of Item under Calibration}}  &:&	\\parbox[t]{{7.8cm}}{{ \\raggedright {data['description']}}} \\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Environmental Conditions}} 	& :&	 \\begin{{minipage}}[t]{{7.8cm}}{{\\raggedright {data['env_conditions']}}} \\end{{minipage}}\\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Standard(s) used (with)\\\\ Associated uncertainty}}  &:& \\begin{{minipage}}[t]{{7.8cm}}{{\\raggedright {data['stds_used']}}} \\end{{minipage}}\\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Traceability of standard(s) used}}	&:&	\\parbox[t]{{7.8cm}}{{ \\raggedright {data['tracability']}}} \\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Principle /Methodology of\\\\ calibration and Calibration\\\\ Procedure number}} 	& :&	\\parbox[t]{{7.8cm}}{{\\raggedright {data['procedure']}}} \\\\
+            \\end{{tabular}}
+            }}
+            """,
+            'testing': f"""
+            \\headsep = 0cm
+            \\small
+            
+            {{
+            \\renewcommand{{\\arraystretch}}{{2.4}}
+            \\hspace{{0.95cm}}
+            \\begin{{tabular}}{{p{{1cm}} p{{6.74cm}}  p{{0.5cm}} p{{8cm}}}}
+            \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	\\makecell[l]{{Tested for}}		&:&	\\parbox[t]{{7.8cm}}{{\\raggedright {data['tested_for']}}} \\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	\\makecell[lt]{{Description and Identification \\\\of Sample}}  &:&	\\parbox[t]{{7.8cm}}{{ \\raggedright {data['description']}}} \\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Environmental Conditions}} 	& :&	 \\begin{{minipage}}[t]{{7.8cm}}{{\\raggedright {data['env_conditions']}}} \\end{{minipage}}\\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Standard(s) used (with)\\\\ Associated Uncertainty}}  &:& \\begin{{minipage}}[t]{{7.8cm}}{{\\raggedright {data['stds_used']}}} \\end{{minipage}}\\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Traceability of Standard(s) used}}	&:&	\\parbox[t]{{7.8cm}}{{ \\raggedright {data['tracability']}}} \\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Principle /Methodology of Test and\\\\Test Procedure number}} 	& :&	\\parbox[t]{{7.8cm}}{{\\raggedright {data['procedure']}}} \\\\
+            \\end{{tabular}}
+            }}
+            """
+        }
         
-        {{
-        \\renewcommand{{\\arraystretch}}{{2.4}}
-        \\hspace{{0.95cm}}
-        \\begin{{tabular}}{{p{{1cm}} p{{6.74cm}}  p{{0.5cm}} p{{8cm}}}}
-        \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	\\makecell[l]{{Calibrated for}}		&:&	\\parbox[t]{{7.8cm}}{{\\raggedright {data['calibrated_for']}}} \\\\
-        \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	\\makecell[lt]{{Description and Identification \\\\of Item under Calibration}}  &:&	\\parbox[t]{{7.8cm}}{{ \\raggedright {data['description']}}} \\\\
-        \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Environmental Conditions}} 	& :&	 \\begin{{minipage}}[t]{{7.8cm}}{{\\raggedright {data['env_conditions']}}} \\end{{minipage}}\\\\
-        \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Standard(s) used (with)\\\\ Associated uncertainty}}  &:& \\begin{{minipage}}[t]{{7.8cm}}{{\\raggedright {data['stds_used']}}} \\end{{minipage}}\\\\
-        \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Traceability of standard(s) used}}	&:&	\\parbox[t]{{7.8cm}}{{ \\raggedright {data['tracability']}}} \\\\
-        \\stepcounter{{rownum}}\\arabic{{rownum}}.	&	\\makecell[lt]{{Principle /Methodology of\\\\ calibration and Calibration\\\\ Procedure number}} 	& :&	\\parbox[t]{{7.8cm}}{{\\raggedright {data['procedure']}}} \\\\
-        \\end{{tabular}}
-        }}
-        """
+        footers = {
+            'calibration': f"""
+            \\fancyfoot[C]{{
+            \\begin{{minipage}}{{\\textwidth}}
+            \\centering
+            \\begin{{tabular}}{{ p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} }}
+            \\makecell[lb]{{\\texthindi{{आशंकितकर्ता}}\\\\\\textbf{{Calibrated by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/calibrated_by.jpg}}}}
+            & \\makecell[lb]{{\\texthindi{{जाँचकर्ता}}\\\\\\textbf{{Checked by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/checked_by.jpg}}}}
+            & \\makecell[lb]{{\\texthindi{{प्रभारी वैज्ञानिक}}\\\\ \\textbf{{Scientist-in-charge :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/incharge.jpg}}}}\\\\
+            \\multicolumn{{2}}{{c}}{{{data['calibrated_by']}}} & \\multicolumn{{2}}{{c}}{{{data['checked_by']}}} & \\multicolumn{{2}}{{c}}{{{data['incharge']}}} \\\\[1.5 ex]
+            \\\\
+            & & \\makecell[lb]{{\\texthindi{{जारिकर्ता}}\\\\\\textbf{{Issued by :}}}} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/issued_by.jpg}}}} & &\\\\
+            & & \\multicolumn{{2}}{{c}}{{{data['issued_by']}}} & & \\\\
+            \\end{{tabular}}
+            \\end{{minipage}}
+            }}
+            """,
+            'testing': f"""
+            \\fancyfoot[C]{{
+            \\begin{{minipage}}{{\\textwidth}}
+            \\centering
+            \\begin{{tabular}}{{ p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} p{{3.5 cm}} }}
+            \\makecell[lb]{{\\texthindi{{परीक्षाणकर्ता}}\\\\\\textbf{{Tested by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/calibrated_by.jpg}}}}
+            & \\makecell[lb]{{\\texthindi{{जाँचकर्ता}}\\\\\\textbf{{Checked by :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/checked_by.jpg}}}}
+            & \\makecell[lb]{{\\texthindi{{प्रभारी वैज्ञानिक}}\\\\ \\textbf{{Scientist-in-charge :}} }} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/incharge.jpg}}}}\\\\
+            \\multicolumn{{2}}{{c}}{{{data['tested_by']}}} & \\multicolumn{{2}}{{c}}{{{data['checked_by']}}} & \\multicolumn{{2}}{{c}}{{{data['incharge']}}} \\\\[1.5 ex]
+            \\\\
+            & & \\makecell[lb]{{\\texthindi{{जारिकर्ता}}\\\\\\textbf{{Issued by :}}}} & \\parbox[t][0.5cm][l]{{2cm}}{{\\includegraphics[width=1.8cm, height=0.8cm]{{./signatures/issued_by.jpg}}}} & &\\\\
+            & & \\multicolumn{{2}}{{c}}{{{data['issued_by']}}} & & \\\\
+            \\end{{tabular}}
+            \\end{{minipage}}
+            }}
+            """
+        }
         
+
         Plot_graph=f"""
+        \\textbf{{Sample:}} {data['device_name']}\\\\
         \\begin{{center}}
         \\includegraphics[width=0.6\\textwidth]{{./static/graph.png}}\\\\
         \\end{{center}}
@@ -368,6 +439,10 @@ class Generator:
 
         %%%%%%%%%%%%%% Conditional graph plotting %%%%%%%%%%%%%%%%
         {Plot_graph}
+
+        \\hspace{{0.8 cm}}\\begin{{minipage}}[c]{{0.85\\textwidth}}
+        {data['result_desc']}
+        \\end{{minipage}}\\\\
         %%%%%%%%% Date and Remarks %%%%%%%%%%
         {{
         \\renewcommand{{\\arraystretch}}{{2.4}}
@@ -476,10 +551,10 @@ class Generator:
 
 
         %%% HEADER %%%
-        {header}
+        {headers[doc_type]}
 
         %%% FOOTER %%%
-        {footer}
+        {footers[doc_type]}
 
         \\setlength{{\\headheight}}{{6.9cm}}
         \\setlength{{\\footskip}}{{1.95cm}}
@@ -489,7 +564,7 @@ class Generator:
         \\begin{{document}}
         
         %%%% Administrative Data %%%%%%%
-        {administrative_data}
+        {administrative_data[doc_type]}
 
         \\newpage
 
@@ -539,7 +614,7 @@ class Generator:
         })
         print(response)
 
-        # remove extra files generated by LaTeX
+        #remove extra files generated by LaTeX
         for ext in [".aux", ".log", ".out", ".toc", ".blg", ".bbl"]:
             if os.path.exists(aux_file.replace(".tex", ext)):
                 os.remove(aux_file.replace(".tex", ext))
