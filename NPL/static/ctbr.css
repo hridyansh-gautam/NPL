@@ -126,3 +126,7 @@ header {
   .hidden {
     display: none;
   }
+
+  #remarksSelect{
+    margin-bottom: 20px;
+  }

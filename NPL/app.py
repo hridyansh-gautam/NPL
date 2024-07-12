@@ -267,7 +267,7 @@ def empwelcome():
     return render_template('empwelcome.html')
 
 @app.route('/dcc2')
-def admwelcome():
+def dcc2():
     return render_template('dcc2.html')
 
 @app.route('/custwelcome')
@@ -275,6 +275,30 @@ def custwelcome():
     service_types = db.session.query(distinct(meteorological.meteorological_classification.c.service_types)).all()
     service_types = [row[0] for row in service_types]
     return render_template('custwelcome.html', service_types=service_types)
+
+services_data = {
+        'service_code': '',
+        'parameter': '',
+        'item_type_group': '',
+        'item_name': '',
+        'alias_name': '',
+        'range': '',
+        'calibration_parameters': '',
+        'no_of_points_for_calibration_procedure_no': '',
+        'limitation_condition': '',
+        'charges_per_item_rs': '',
+        'additional_charges_rs': '',
+        'description_for_additional_charges': '',
+        'remarks_if_any': ''
+}
+
+charges_data = {
+    'service_code': '',
+    'charges_per_item_rs': '',
+    'additional_charges_rs': '',
+    'description_for_additional_charges': '',
+    'remarks_if_any': ''
+}
 
 @app.route('/ctbr', methods=['GET', 'POST'])
 def ctbr():
@@ -288,11 +312,10 @@ def ctbr():
         else:
             return render_template('ctbr.html', customer=None)
     elif request.method == 'POST':
-        print(request.form)
         if request.form:
             key = next(iter(request.form))
             value = request.form.get(key)
-            print(f"Key: {key}, Value: {value}")
+            # print(f"Key: {key}, Value: {value}")
 
             column_map = {
                 'categorySelect': 'service_code',
@@ -313,13 +336,23 @@ def ctbr():
             column = column_map.get(key)
 
             if column:
-                services = meteorological.get_service_by_category(column, value)
-                print(column, value)
-                return jsonify({'services': services})
+                if services_data[column]:
+                    for key in services_data:
+                        services_data[key] = ''
+                services_data[column] = value
+                services = meteorological.get_services(services_data)
+                if column in charges_data:
+                    charges_data[column] = value
+                charges = meteorological.get_service_charges(charges_data)
+                for c in charges:
+                    print(c)
+                return jsonify({'services': services, 'charges': charges})
         
         return jsonify({'error': 'Invalid request'}), 400
 
-        return jsonify({'services': services, 'charges': charges})
+        # return jsonify({'services': services, 'charges': charges})
+
+# @app.route()
 
 @app.route('/verify/<checksum>')
 def verify(checksum):

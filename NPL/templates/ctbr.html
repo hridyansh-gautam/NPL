@@ -139,7 +139,7 @@
                                 <!-- Category Dropdown -->
                                 <div class="form-group">
                                     <label for="categorySelect">Category</label>
-                                    <select class="form-control" id="categorySelect" name="categorySelect" onchange="onCategorySelect('categorySelect')">
+                                    <select class="form-control" id="categorySelect" name="categorySelect" onchange="onSelectChange('categorySelect')">
                                         <option value="">Select Category</option>
                                         {% for classification in classifications %}
                                         <option value="{{ classification.service_code }}">{{ classification.service_name }}</option>
@@ -149,88 +149,95 @@
                                 <!-- Parameters Dropdown -->
                                 <div class="form-group">
                                     <label for="parametersSelect">Parameters</label>
-                                    <select class="form-control" id="parametersSelect" name="parametersSelect" onchange="onParametersSelect('parametersSelect')">
+                                    <select class="form-control" id="parametersSelect" name="parametersSelect" onchange="onSelectChange('parametersSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Item Type / Group Dropdown -->
                                 <div class="form-group">
                                     <label for="itemTypeSelect">Item Type / Group</label>
-                                    <select class="form-control" id="itemTypeSelect" name="itemTypeSelect" onchange="onItemTypeSelect('itemTypeSelect')">
+                                    <select class="form-control" id="itemTypeSelect" name="itemTypeSelect" onchange="onSelectChange('itemTypeSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Item Name Dropdown -->
                                 <div class="form-group">
                                     <label for="itemNameSelect">Item Name</label>
-                                    <select class="form-control" id="itemNameSelect" name="itemNameSelect" onchange="onItemNameSelect('itemNameSelect')">
+                                    <select class="form-control" id="itemNameSelect" name="itemNameSelect" onchange="onSelectChange('itemNameSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Alias Name Dropdown -->
                                 <div class="form-group">
                                     <label for="aliasNameSelect">Alias Name</label>
-                                    <select class="form-control" id="aliasNameSelect" name="aliasNameSelect" onchange="onAliasNameSelect('aliasNameSelect')">
+                                    <select class="form-control" id="aliasNameSelect" name="aliasNameSelect" onchange="onSelectChange('aliasNameSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Range Dropdown -->
                                 <div class="form-group">
                                     <label for="rangeSelect">Range</label>
-                                    <select class="form-control" id="rangeSelect" name="rangeSelect" onchange="onRangeSelect('rangeSelect')">
+                                    <select class="form-control" id="rangeSelect" name="rangeSelect" onchange="onSelectChange('rangeSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Calibration Parameters Dropdown -->
                                 <div class="form-group">
                                     <label for="calibrationParametersSelect">Calibration Parameters</label>
-                                    <select class="form-control" id="calibrationParametersSelect" name="calibrationParametersSelect" onchange="onCalibrationParametersSelect('calibrationParametersSelect')">
+                                    <select class="form-control" id="calibrationParametersSelect" name="calibrationParametersSelect" onchange="onSelectChange('calibrationParametersSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- No. of Points for Calibration / Procedure No. Dropdown -->
                                 <div class="form-group">
                                     <label for="pointsSelect">No. of Points for Calibration / Procedure No.</label>
-                                    <select class="form-control" id="pointsSelect" name="pointsSelect" onchange="onPointsSelect('pointsSelect')">
+                                    <select class="form-control" id="pointsSelect" name="pointsSelect" onchange="onSelectChange('pointsSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Limitation / Condition Dropdown -->
                                 <div class="form-group">
                                     <label for="limitationSelect">Limitation / Condition</label>
-                                    <select class="form-control" id="limitationSelect" name="limitationSelect" onchange="onLimitationSelect('limitationSelect')">
+                                    <select class="form-control" id="limitationSelect" name="limitationSelect" onchange="onSelectChange('limitationSelect')">
                                             <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Charges per Item Rs. Dropdown -->
                                 <div class="form-group">
                                     <label for="chargesSelect">Charges per Item Rs.</label>
-                                    <select class="form-control" id="chargesSelect" name="chargesSelect" onchange="onChargesSelect('chargesSelect')">
+                                    <select class="form-control" id="chargesSelect" name="chargesSelect" onchange="onSelectChange('chargesSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Additional Charges Rs. Dropdown -->
                                 <div class="form-group">
                                     <label for="additionalChargesSelect">Additional Charges Rs.</label>
-                                    <select class="form-control" id="additionalChargesSelect" name="additionalChargesSelect" onchange="onAdditionalChargesSelect('additionalChargesSelect')">
+                                    <select class="form-control" id="additionalChargesSelect" name="additionalChargesSelect" onchange="onSelectChange('additionalChargesSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Description for Additional Charges Dropdown -->
                                 <div class="form-group">
                                     <label for="descriptionSelect">Description for Additional Charges</label>
-                                    <select class="form-control" id="descriptionSelect" name="descriptionSelect" onchange="onDescriptionSelect('descriptionSelect')">
+                                    <select class="form-control" id="descriptionSelect" name="descriptionSelect" onchange="onSelectChange('descriptionSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
                                 <!-- Remarks Dropdown -->
                                 <div class="form-group">
                                     <label for="remarksSelect">Remarks, if any</label>
-                                    <select class="form-control" id="remarksSelect" name="remarksSelect" onchange="onRemarksSelect('remarksSelect')">
+                                    <select class="form-control" id="remarksSelect" name="remarksSelect" onchange="onSelectChange('remarksSelect')">
                                         <option value=""></option>
                                     </select>
                                 </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-secondary prev">
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary next">Next</button>
+                                </div>
                             </div>
+                        </div>
 
                         <div class="step">
                             <h3>Instrument(s)/Sample(s)/Reference Material/BND:</h3>
@@ -449,81 +456,16 @@
             // window.onload = loadCountries; Change later if need to edit
         </script>
         <script>
-            // function onSelectChange(dropdownId) {
-            // console.log("Dropdown ID: ", dropdownId);
-            // var element = document.getElementById(dropdownId);
-            // if (!element) {
-            //     console.error("Element not found: ", dropdownId);
-            //     return;
-            // }
-            // var value = element.value;
-            // console.log("Selected value: ", value);
-            // var selectedValues = getSelectedValues();
-            // fetchDataAndPopulate(dropdownId, value, selectedValues);
-            // } 
-            function onCategorySelect() {
-                var category = document.getElementById('categorySelect').value;
-                fetchDataAndPopulate('categorySelect', category);
+            function onSelectChange(dropdownId) {
+            console.log("Dropdown ID: ", dropdownId);
+            var element = document.getElementById(dropdownId);
+            if (!element) {
+                console.error("Element not found: ", dropdownId);
+                return;
             }
-        
-            function onParametersSelect() {
-                var parameters = document.getElementById('parametersSelect').value;
-                fetchDataAndPopulate('parametersSelect', parameters);
-            }
-        
-            function onItemTypeSelect() {
-                var itemTypeSelect = document.getElementById('itemTypeSelect').value;
-                fetchDataAndPopulate('itemTypeSelect', itemTypeSelect);
-            }
-        
-            function onItemNameSelect() {
-                var itemNameSelect = document.getElementById('itemNameSelect').value;
-                fetchDataAndPopulate('itemNameSelect', itemNameSelect);
-            }
-        
-            function onAliasNameSelect() {
-                var aliasNameSelect = document.getElementById('aliasNameSelect').value;
-                fetchDataAndPopulate('aliasNameSelect', aliasNameSelect);
-            }
-        
-            function onRangeSelect() {
-                var rangeSelect = document.getElementById('rangeSelect').value;
-                fetchDataAndPopulate('rangeSelect', rangeSelect);
-            }
-
-            function onCalibrationParametersSelect() {
-                var calibrationParametersSelect = document.getElementById('calibrationParametersSelect').value;
-                fetchDataAndPopulate('calibrationParametersSelect', calibrationParametersSelect);
-            }
-        
-            function onPointsSelect() {
-                var pointsSelect = document.getElementById('pointsSelect').value;
-                fetchDataAndPopulate('pointsSelect', pointsSelect);
-            }
-        
-            function onLimitationSelect() {
-                var limitationSelect = document.getElementById('limitationSelect').value;
-                fetchDataAndPopulate('limitationSelect', limitationSelect);
-            }
-        
-            function onChargesSelect() {
-                var chargesSelect = document.getElementById('chargesSelect').value;
-                fetchDataAndPopulate('chargesSelect', chargesSelect);
-            }
-        
-            function onAdditionalChargesSelect() {
-                var additionalChargesSelect = document.getElementById('additionalChargesSelect').value;
-                fetchDataAndPopulate('additionalChargesSelect', additionalChargesSelect);
-            }
-        
-            function onDescriptionSelect() {
-                var descriptionSelect = document.getElementById('descriptionSelect').value;
-                fetchDataAndPopulate('descriptionSelect', descriptionSelect);
-            }
-        
-            function onRemarksSelect() {
-                var remarksSelect = document.getElementById('remarksSelect').value;
-                fetchDataAndPopulate('remarksSelect', remarksSelect);
+            var value = element.value;
+            console.log("Selected value: ", value);
+            fetchDataAndPopulate(dropdownId, value);
             }
         
             function fetchDataAndPopulate(field, value) {
@@ -610,7 +552,7 @@
                             clearDropdown('descriptionSelect');
                             clearDropdown('remarksSelect');
                             break;
-                        case 'pointsSelect':
+                        case 'calibrationParametersSelect':
                             populateDropdown('pointsSelect', services, 'no_of_points_for_calibration_procedure_no');
                             clearDropdown('limitationSelect');
                             clearDropdown('chargesSelect');
@@ -618,7 +560,7 @@
                             clearDropdown('descriptionSelect');
                             clearDropdown('remarksSelect');
                             break;
-                        case 'noOfPointsSelect':
+                        case 'pointsSelect':
                             populateDropdown('limitationSelect', services, 'limitation_condition');
                             clearDropdown('chargesSelect');
                             clearDropdown('additionalChargesSelect');
@@ -626,22 +568,22 @@
                             clearDropdown('remarksSelect');
                             break;
                         case 'limitationSelect':
-                            populateDropdown('chargesSelect', charges, 'charge_amount');
+                            populateDropdown('chargesSelect', charges, 'charges_per_item_rs');
                             clearDropdown('additionalChargesSelect');
                             clearDropdown('descriptionSelect');
                             clearDropdown('remarksSelect');
                             break;
                         case 'chargesSelect':
-                            populateDropdown('additionalChargesSelect', charges, 'additional_charges');
+                            populateDropdown('additionalChargesSelect', charges, 'additional_charges_rs');
                             clearDropdown('descriptionSelect');
                             clearDropdown('remarksSelect');
                             break;
                         case 'additionalChargesSelect':
-                            populateDropdown('descriptionSelect', charges, 'additional_charges_description');
+                            populateDropdown('descriptionSelect', charges, 'description_for_additional_charges_for_additional_charges');
                             clearDropdown('remarksSelect');
                             break;
                         case 'descriptionSelect':
-                            populateDropdown('remarksSelect', charges, 'remarks');
+                            populateDropdown('remarksSelect', charges, 'remarks_if_any_i');
                             break;
                         default:
                             break;

@@ -99,40 +99,28 @@ def get_classification():
     finally:
         session.close()
 
-# def get_service():
-#     session = SessionLocal()
-#     try:
-#         select_stmt = meteorological_services.select().distinct()
-#         services = session.execute(select_stmt).fetchall()
-#         if services:
-#             return services
-#         else:
-#             return None
-#     finally:
-#         session.close()
-
-# def get_service_charges():
-#     session = SessionLocal()
-#     try:
-#         select_stmt = meteorological_services_charges.select().distinct()
-#         charges = session.execute(select_stmt).fetchall()
-#         if charges:
-#             return charges
-#         else:
-#             return None
-#     finally:
-#         session.close()
-
 def row_to_dict(row):
     return {key: getattr(row, key) for key in row._mapping.keys()}
     
-def get_service_by_category(column_name, value):
+def get_services(filters):
     session = SessionLocal()
     try:
-        column = getattr(meteorological_services.c, column_name)
-        select_stmt = meteorological_services.select().where(column == value)
+        # Start with a base query
+        select_stmt = meteorological_services.select()
+        
+        # Iterate over the dictionary and apply filters for non-empty values
+        for column_name, value in filters.items():
+            if value:  # Check if the value is not empty
+                column = getattr(meteorological_services.c, column_name)
+                if value == 'null':
+                    select_stmt = select_stmt.where(column.is_(None))
+                else:
+                    select_stmt = select_stmt.where(column == value)
+        
+        # Execute the query
         services = session.execute(select_stmt).fetchall()
         service_list = [row_to_dict(row) for row in services]
+        
         if service_list:
             return service_list
         else:
@@ -140,12 +128,20 @@ def get_service_by_category(column_name, value):
     finally:
         session.close()
 
-def get_service_charges_by_category(category):
+
+def get_service_charges(filters):
     session = SessionLocal()
     try:
-        select_stmt = meteorological_services_charges.select().where(meteorological_services_charges.c.service_code == category)
+        select_stmt = meteorological_services_charges.select()
+        
+        # Apply filters
+        for key, value in filters.items():
+            if value:  # Only apply filter if value is not empty
+                select_stmt = select_stmt.where(getattr(meteorological_services_charges.c, key) == value)
+        
         charges = session.execute(select_stmt).fetchall()
         charge_list = [row_to_dict(row) for row in charges]
+        
         if charge_list:
             return charge_list
         else:
