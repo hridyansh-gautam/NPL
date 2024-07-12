@@ -137,7 +137,12 @@ def get_service_charges(filters):
         # Apply filters
         for key, value in filters.items():
             if value:  # Only apply filter if value is not empty
-                select_stmt = select_stmt.where(getattr(meteorological_services_charges.c, key) == value)
+                column = getattr(meteorological_services_charges.c, key)
+                if value == 'null':
+                    select_stmt = select_stmt.where(column.is_(None))
+                else:
+                    select_stmt = select_stmt.where(column == value)
+                # select_stmt = select_stmt.where(getattr(meteorological_services_charges.c, key) == value)
         
         charges = session.execute(select_stmt).fetchall()
         charge_list = [row_to_dict(row) for row in charges]

@@ -59,7 +59,7 @@ body {
   
   .dropdown {
     display: inline-block; 
-    position: relative; 
+    position: relative;
   }
   
   .dropdown-toggle {
@@ -67,7 +67,7 @@ body {
     display: block;
     text-decoration: none;
     background-color: transparent;
-    color: blue;
+    color: blue !important;
     text-align: center;
     border-radius: 0.25rem;
     cursor: pointer;
@@ -97,13 +97,14 @@ body {
     background-color: #e9ecef;
     box-shadow: 0 0 0 2px #fff, 0 0 0 3px blue;
   }
-  
-  .btn-secondary{
+
+  .custom-btn-secondary.btn-secondary {
     border-color: transparent;
+    color: blue !important;
   }
-  .btn-secondary:hover{
+  .custom-btn-secondary.btn-secondary:hover {
     background-color: transparent;
-    color: blue;
+    color: blue !important;
   }
   
   .caps {

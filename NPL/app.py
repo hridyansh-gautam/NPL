@@ -266,9 +266,6 @@ def add_service():
 def empwelcome():
     return render_template('empwelcome.html')
 
-@app.route('/dcc2')
-def dcc2():
-    return render_template('dcc2.html')
 
 @app.route('/custwelcome')
 def custwelcome():
@@ -286,10 +283,6 @@ services_data = {
         'calibration_parameters': '',
         'no_of_points_for_calibration_procedure_no': '',
         'limitation_condition': '',
-        'charges_per_item_rs': '',
-        'additional_charges_rs': '',
-        'description_for_additional_charges': '',
-        'remarks_if_any': ''
 }
 
 charges_data = {
@@ -304,7 +297,6 @@ charges_data = {
 def ctbr():
     if request.method == 'GET':
         cust_reg_id = session.get('cust_reg_id')
-        # print(cust_reg_id)
         if cust_reg_id:
             customer = registration.get_cust(int(cust_reg_id))
             classifications = meteorological.get_classification()
@@ -315,7 +307,6 @@ def ctbr():
         if request.form:
             key = next(iter(request.form))
             value = request.form.get(key)
-            # print(f"Key: {key}, Value: {value}")
 
             column_map = {
                 'categorySelect': 'service_code',
@@ -336,23 +327,22 @@ def ctbr():
             column = column_map.get(key)
 
             if column:
-                if services_data[column]:
-                    for key in services_data:
-                        services_data[key] = ''
-                services_data[column] = value
+                if column in services_data:
+                    if services_data[column]:
+                        for key in services_data:
+                            services_data[key] = ''
+                    services_data[column] = value
                 services = meteorological.get_services(services_data)
                 if column in charges_data:
+                    if charges_data[column]:
+                        for key in charges_data:
+                            charges_data[key] = ''
                     charges_data[column] = value
                 charges = meteorological.get_service_charges(charges_data)
-                for c in charges:
-                    print(c)
                 return jsonify({'services': services, 'charges': charges})
         
         return jsonify({'error': 'Invalid request'}), 400
 
-        # return jsonify({'services': services, 'charges': charges})
-
-# @app.route()
 
 @app.route('/verify/<checksum>')
 def verify(checksum):
@@ -365,6 +355,10 @@ def verify(checksum):
 @app.route('/dcc')
 def dcc():
     return render_template('dcc.html')
+
+@app.route('/dcc2')
+def dcc2():
+    return render_template('dcc2.html')
 
 @app.route('/about')
 def about():

@@ -30,7 +30,31 @@
       />
     </header>
     <nav>
-      <a href="dcc">Generate New Certificate</a>
+      <div class="dropdown">
+        <button
+          class="btn custom-btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+        Generate New Certificate
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <a
+              class="dropdown-item"
+              href="dcc"
+              >Via Form</a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="dcc2"
+              >Via Excel</a>
+          </li>
+        </ul>
+      </div>
       <a href="#">Calibration Records</a>
     </nav>
 
