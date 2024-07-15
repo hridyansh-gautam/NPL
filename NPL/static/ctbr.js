@@ -48,13 +48,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("addRow").addEventListener("click", () => {
     const newRow = document.createElement("tr");
+    const srNumber = document.createElement("td");
+    srNumber.textContent = document.getElementById("tableBody").rows.length + 1;
+    newRow.appendChild(srNumber);
     for (let i = 0; i < 6; i++) {
-      const newCell = document.createElement("td");
-      const input = document.createElement("input");
-      input.type = "text";
-      input.classList.add("form-control");
-      newCell.appendChild(input);
-      newRow.appendChild(newCell);
+        const newCell = document.createElement("td");
+        const input = document.createElement("input");
+        if (i === 3 || i === 4) {
+            input.type = "number";
+        } else {
+            input.type = "text";
+        }
+        input.classList.add("form-control");
+        newCell.appendChild(input);
+        newRow.appendChild(newCell);
     }
     const actionsCell = document.createElement("td");
     const deleteButton = document.createElement("button");
