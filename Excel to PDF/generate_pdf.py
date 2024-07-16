@@ -188,7 +188,6 @@ class Generator:
 
             pattern = re.compile("|".join(re.escape(k) for k in replacements))
             data[key] = pattern.sub(replace_func, val)
-            #print (data)
         return json.dumps(data, indent=4)
 
     
@@ -229,15 +228,16 @@ class Generator:
         Returns:
         None
         """
-        img_names = ['calibrated_by', 'checked_by', 'incharge', 'issued_by']
+        img_names = ['calibrated_by', 'checked_by', 'incharge', 'issued_by', 'tested_by']
         blank_img = np.ones((150, 300, 3), dtype=np.uint8) * 255
         for name in img_names:
-            sign = get_signature(name=data[name].lower())
-            if sign:
-                with open(f'signatures/{name}.jpg', 'wb') as img:
-                    img.write(sign)
-            else:
-                cv2.imwrite(f'signatures/{name}.jpg', blank_img)
+            if name in data:
+                sign = get_signature(name=data[name].lower())
+                if sign:
+                    with open(f'signatures/{name}.jpg', 'wb') as img:
+                        img.write(sign)
+                else:
+                    cv2.imwrite(f'signatures/{name}.jpg', blank_img)
 
     def create_pdf(self, data, embed_file, certificate_name, attach_data, attach_graph,doc_type):
         """
@@ -421,38 +421,67 @@ class Generator:
         
 
         Plot_graph=f"""
-        \\textbf{{Sample:}} {data['device_name']}\\\\
+        \\vspace{{0.2 cm}}
+        \\hspace{{0.8 cm}}\\textbf{{Sample:}} {data['description']}\\\\
         \\begin{{center}}
         \\includegraphics[width=0.6\\textwidth]{{./static/graph.png}}\\\\
         \\end{{center}}
         """ if attach_graph else ""
 
-        Measurement_data = f"""
-        \\hspace{{0.95cm}}
-        \\begin{{tabular}}{{p{{1cm}} p{{6.74cm}}}}
-        \\stepcounter{{rownum}}\\arabic{{rownum}}. & Result(s): \\\\
-        \\end{{tabular}}
-        {{
-        \\renewcommand{{\\arraystretch}}{{1.3}}
-        {data['result_table']}
-        }}
+        Measurement_data = {
+            'calibration': f"""
+            \\hspace{{0.95cm}}
+            \\begin{{tabular}}{{p{{1cm}} p{{6.74cm}}}}
+            \\stepcounter{{rownum}}\\arabic{{rownum}}. & Result(s): \\\\
+            \\end{{tabular}}
+            {{
+            \\renewcommand{{\\arraystretch}}{{1.3}}
+            {data['result_table']}
+            }}
 
-        %%%%%%%%%%%%%% Conditional graph plotting %%%%%%%%%%%%%%%%
-        {Plot_graph}
+            %%%%%%%%%%%%%% Conditional graph plotting %%%%%%%%%%%%%%%%
+            {Plot_graph}
 
-        \\hspace{{0.8 cm}}\\begin{{minipage}}[c]{{0.85\\textwidth}}
-        {data['result_desc']}
-        \\end{{minipage}}\\\\
-        %%%%%%%%% Date and Remarks %%%%%%%%%%
-        {{
-        \\renewcommand{{\\arraystretch}}{{2.4}}
-        \\hspace{{0.95cm}}
-        \\begin{{tabular}}{{p{{1cm}} p{{6.74cm}} p{{8cm}}}}
-        \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	Date(s) for calibration: &	{data['calibration_date']} \\\\
-        \\stepcounter{{rownum}}\\arabic{{rownum}}.		&	Remark(s):	&	\\parbox[t]{{8.5cm}}{{\\raggedright {data['remarks']}}}   \\\\
-        \\end{{tabular}}
-        }}
-        """
+            \\hspace{{0.8 cm}}\\begin{{minipage}}[c]{{0.85\\textwidth}}
+            {data['result_desc']}
+            \\end{{minipage}}\\\\
+            %%%%%%%%% Date and Remarks %%%%%%%%%%
+            {{
+            \\renewcommand{{\\arraystretch}}{{2.4}}
+            \\hspace{{0.95cm}}
+            \\begin{{tabular}}{{p{{1cm}} p{{6.74cm}} p{{8cm}}}}
+            \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	Date(s) for calibration: &	{data['calibration_date']} \\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.		&	Remark(s):	&	\\parbox[t]{{8.5cm}}{{\\raggedright {data['remarks']}}}   \\\\
+            \\end{{tabular}}
+            }}
+            """,
+        'testing': f"""
+            \\hspace{{0.95cm}}
+            \\begin{{tabular}}{{p{{1cm}} p{{6.74cm}}}}
+            \\stepcounter{{rownum}}\\arabic{{rownum}}. & Result(s): \\\\
+            \\end{{tabular}}
+            {{
+            \\renewcommand{{\\arraystretch}}{{1.3}}
+            {data['result_table']}
+            }}
+
+            %%%%%%%%%%%%%% Conditional graph plotting %%%%%%%%%%%%%%%%
+            {Plot_graph}
+
+            \\hspace{{0.8 cm}}\\begin{{minipage}}[c]{{0.85\\textwidth}}
+            {data['result_desc']}
+            \\end{{minipage}}\\\\
+            %%%%%%%%% Date and Remarks %%%%%%%%%%
+            {{
+            \\renewcommand{{\\arraystretch}}{{2.4}}
+            \\hspace{{0.95cm}}
+            \\begin{{tabular}}{{p{{1cm}} p{{6.74cm}} p{{8cm}}}}
+            \\stepcounter{{rownum}}\\arabic{{rownum}}. 	&	Date(s) for Testing: &	{data['testing_date']} \\\\
+            \\stepcounter{{rownum}}\\arabic{{rownum}}.		&	Remark(s):	&	\\parbox[t]{{8.5cm}}{{\\raggedright {data['remarks']}}}   \\\\
+            \\end{{tabular}}
+            }}
+            """
+        }
 
         last_page = r"""
         \AtEndDocument{ %To keep this at the end of the document
@@ -569,7 +598,7 @@ class Generator:
         \\newpage
 
         %%%%%% Measurement Data %%%%%%%%
-        {Measurement_data}
+        {Measurement_data[doc_type]}
 
 
         %%%%%%% LAST PAGE %%%%%%%%%%%
@@ -618,3 +647,42 @@ class Generator:
         for ext in [".aux", ".log", ".out", ".toc", ".blg", ".bbl"]:
             if os.path.exists(aux_file.replace(".tex", ext)):
                 os.remove(aux_file.replace(".tex", ext))
+
+    def execute_pdf_generator(self, excel_file, doc_type, attach_data=True, attach_graph=False):
+        dict_template = {
+            "report_name": "",
+            "device_name":"",
+            "certificate_no":"",
+            "end_date": "",
+            "report_no": "",
+            "next_date":"",
+            "tested_for": "",
+            "calibrated_for": "",
+            "description": "",
+            "env_conditions": "",
+            "stds_used": "",
+            "tracability": "",
+            "procedure": "",
+            "tested_by": "",
+            "calibrated_by": "",
+            "checked_by": "",
+            "incharge": "",
+            "issued_by": "",
+            "result_table": "",
+            "result_desc": "",
+            "testing_date": "",
+            "calibration_date": "",
+            "remarks": "",
+            "doi_no": "",
+        }
+        json_data = self.excel_to_json(excel_file)
+        latex_data = self.handle_special_chars(json.loads(json_data))
+        data_to_send = json.loads(latex_data)
+        self.store_signatures(data_to_send)
+        dict_template = {
+            key: data_to_send[key] if key in data_to_send else ""
+            for key in dict_template
+        }
+        file_name = self.sanitize_filename(data_to_send['certificate_no'] if doc_type=='calibration' else (data_to_send['report_no']))
+        self.create_pdf(dict_template, excel_file, file_name, attach_data, attach_graph, doc_type)
+
