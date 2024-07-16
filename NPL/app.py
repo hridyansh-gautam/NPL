@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session, render_template, redirect, url_for, flash
+from flask import Flask, request, jsonify, session, render_template, redirect, url_for, flash, send_from_directory
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import distinct, create_engine, text
@@ -10,14 +10,17 @@ import registration
 import meteorological
 import pandas as pd
 import checksum
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:clearpointdivine@localhost/npl'
+load_dotenv()
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'your_secret_key_here'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7)
 app.config['UPLOAD_FOLDER'] = 'uploads'
+UPLOAD_FOLDER = 'uploads'
 
 db = SQLAlchemy(app)
 
@@ -359,6 +362,27 @@ def dcc():
 @app.route('/dcc2')
 def dcc2():
     return render_template('dcc2.html')
+
+@app.route('/download-template/<certificate_type>')
+def download_template(certificate_type):
+    template_file = f"{certificate_type}.xlsx"
+    template_path = os.path.join('static/excel_templates', template_file)
+    if os.path.exists(template_path):
+        return send_from_directory(directory='static/excel_templates', path=template_file, as_attachment=True)
+    else:
+        return "Template not found", 404
+
+@app.route('/upload-excel', methods=['POST'])
+def upload_excel():
+    if 'excelFile' not in request.files:
+        return jsonify(success=False), 400
+    
+    file = request.files['excelFile']
+    if file.filename == '':
+        return jsonify(success=False), 400
+    
+    file.save(os.path.join(UPLOAD_FOLDER, file.filename))
+    return jsonify(success=True)
 
 @app.route('/about')
 def about():

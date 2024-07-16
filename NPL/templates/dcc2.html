@@ -14,79 +14,8 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script src="dcc.html" defer></script>
     <title>DCC Registraion Form</title>
-  </head>
-  <body>
-    <header>
-      <img
-        src="{{ url_for('static', filename='images/logo1.png') }}"
-        alt="National Physical Laboratory Logo"
-        class="logo"
-      />
-      <div>
-        <h1 class="page-title">CSIR - National Physical Laboratory</h1>
-        <h3 class="page-subtitle">सी एस आई आर - राष्ट्रीय भौतिक प्रयोगशाला</h3>
-      </div>
-      <img
-        class="company-name"
-        src="{{ url_for('static', filename='images/logo2.png') }}"
-        alt="CSIR - NPL"
-      />
-    </header>
-    <!-- Navigation -->
-    <nav class="p-2">
-      <a href="/Users/adityatyagi/Downloads/NPL Form/index.html">Home</a>
-    </nav>
-
-    <!-- Container -->
-    <div class="container">
-        <h2>Select Certificate Type</h2>
-        <form id="certificateForm">
-            <label for="certificateType">Type of Certificate:</label>
-            <select id="certificateType" name="certificateType">
-                <option value="testing">Testing Certificate</option>
-                <option value="calibration">Calibration Certificate</option>
-                <option value="bnd">BND Certificate</option>
-            </select>
-            <br>
-            <br>
-            <div class="download-template">
-                <label>Download Excel Template:</label>
-                <button type="button" onclick="downloadTemplate()">Download</button>
-            </div>
-            <br>
-            <br>
-            <div class="upload-excel">
-                <label for="excelFile">Upload Excel:</label>
-                <input type="file" id="excelFile" name="excelFile" accept=".xls,.xlsx">
-                <button type="button" onclick="chooseFile()">Choose a file</button>
-            </div>
-            <br>
-            <button type="button" onclick="submitForm()">Submit</button>
-        </form>
-    </div>
-  </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             background: color #0070ff;
@@ -155,28 +84,84 @@
         button[type="button"]:hover {
             background-color: #456ba0;
         }
-        footer {
-            margin-top: 40%;
-        }
     </style> 
+  </head>
+  <body>
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/logo1.png') }}"
+        alt="National Physical Laboratory Logo"
+        class="logo"
+      />
+      <div>
+        <h1 class="page-title">CSIR - National Physical Laboratory</h1>
+        <h3 class="page-subtitle">सी एस आई आर - राष्ट्रीय भौतिक प्रयोगशाला</h3>
+      </div>
+      <img
+        class="company-name"
+        src="{{ url_for('static', filename='images/logo2.png') }}"
+        alt="CSIR - NPL"
+      />
+    </header>
+    <!-- Navigation -->
+    <nav class="p-2">
+      <a href="/">Home</a>
+    </nav>
+
+    <!-- Container -->
+    <div class="container">
+        <h2>Select Certificate Type</h2>
+        <form id="certificateForm" method="post" enctype="multipart/form-data">
+            <label for="certificateType">Type of Certificate:</label>
+            <select id="certificateType" name="certificateType">
+                <option value="testing_template">Testing Certificate</option>
+                <option value="calibration_template">Calibration Certificate</option>
+                <option value="bnd_template">BND Certificate</option>
+            </select>
+            <br>
+            <br>
+            <div class="download-template">
+                <label>Download Excel Template:</label>
+                <button type="button" onclick="downloadTemplate()">Download</button>
+            </div>
+            <br>
+            <br>
+            <div class="upload-excel">
+                <label for="excelFile">Upload Excel:</label>
+                <input type="file" id="excelFile" name="excelFile" accept=".xls,.xlsx">
+            </div>
+            <br>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+    <footer class="footer bg-light text-dark text-center py-3">
+        <a href="{{ url_for('logout')}}">Logout</a>
+    </footer>
+
     <script>
+        function downloadTemplate() {
+            const certificateType = document.getElementById('certificateType').value;
+            window.location.href = `/download-template/${certificateType}`;
+        }
+
         function submitForm() {
             const form = document.getElementById('certificateForm');
-            const selectedType = form.certificateType.value;
-            alert(`Selected Certificate Type: ${selectedType}`);
-            // Here you can perform further actions based on the selected certificate type
-            // For example, you can redirect to another page or perform an AJAX request
-        }
-
-        function downloadTemplate() {
-            // Replace with actual download logic if needed
-            alert('Downloading Excel template...');
-        }
-
-        function chooseFile() {
-            const fileInput = document.getElementById('excelFile');
-            fileInput.click();
+            const formData = new FormData(form);
+            fetch('/upload-excel', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('File uploaded successfully!');
+                } else {
+                    alert('File upload failed!');
+                }
+            })
+            .catch(error => console.error('Error:', error));
         }
     </script>
-</body>
+    </body>
 </html>
+

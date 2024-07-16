@@ -21,7 +21,7 @@
             </header>
 
             <nav>
-                <a href="index.html">Home</a>
+                <a href="/">Home</a>
             </nav>
 
             <h1>CTBR Form</h1>
@@ -274,7 +274,7 @@
                                 </table>
                             </div>
                             <div class="text-center mb-3">
-                                <button type="button" class="btn btn-secondary" id="addRow" onclick="redirectRow()">
+                                <button type="button" class="btn btn-secondary" id="addRow">
                                     Add Row
                                 </button>
                             </div>
@@ -614,6 +614,7 @@
         <script>
             function calculateRowTotal(input) {
             var row = input.closest('tr');
+            console.log(row);
             var quantity = parseInt(row.querySelector('.quantity').value) || 0;
             var chargesPerItem = parseFloat(document.getElementById('chargesSelect').value) || 0;
             var additionalCharges = parseFloat(document.getElementById('additionalChargesSelect').value) || 0;
@@ -621,11 +622,5 @@
             row.querySelector('.totalCharge').value = totalCharge;
             }
         </script>                  
-        <script>
-            function redirectRow(){
-                steps[3].classList.remove("active");
-                steps[2].classList.add("active");
-            }
-        </script>            
     </body>
 </html>
