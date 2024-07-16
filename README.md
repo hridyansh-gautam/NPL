@@ -4,8 +4,6 @@
 
 <hr>
 
-<h2 align="center">Project Screenshots:</h2>
-
 <div align="center">
     <img src="https://github.com/user-attachments/assets/fb20d8f5-c484-48d5-89b1-3f757222d37a" alt="project-screenshot" width="800" height="400"/>
 </div>
@@ -20,7 +18,7 @@
 
 <hr>
 
-<h2 align="center">💻 Built with</h2>
+<h2 align="center">Built with</h2>
 
 <table align="center">
     <tr>
