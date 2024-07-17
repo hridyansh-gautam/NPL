@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ctbr Form</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='ctbr.css') }}" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="National Physical Laboratory Logo" class="logo" />
+                <div>
+                    <h1 class="page-title">CSIR - National Physical Laboratory</h1>
+                    <h3 class="page-subtitle">
+                        सी एस आई आर - राष्ट्रीय भौतिक प्रयोगशाला
+                    </h3>
+                </div>
+                <img class="company-name" src="{{ url_for('static', filename='images/logo2.png') }}" alt="CSIR - NPL" />
+            </header>
+
+            <nav>
+                <a href="/">Home</a>
+            </nav>
+
+            <h1>CTBR Step 1</h1>
+
+            <div class="content">
+                <main class="container my-5">
+                    <form id="multiStepForm">
+                        <div class="step active">
+                            <h3>Organisation Details</h3>
+                            <div class="row mb-3">
+                                <div class="col required">
+                                    <label for="orgName" class="form-label">Organisation Name</label>
+                                    <input type="text" class="form-control" id="orgName" placeholder="Organisation Name" value="{{ customer['cust_name'] if customer else '' }}" required />
+                                </div>
+                            </div>
+                            <div class="mb-3 required">
+                                <label for="addressLine1" class="form-label">Organisation Address</label>
+                                <input type="text" class="form-control" id="addressLine1" placeholder="Organisation Address" value="{{ customer['cust_addr_1'] if customer else '' }}" required />
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col required">
+                                    <label for="country" class="form-label">Country</label>
+                                    <select class="form-select" id="country" name="country" required>
+                                        <option value="{{ customer['country'] if customer else '' }}" selected>{{ customer['country'] if customer else 'Select Country' }}</option>
+                                    </select>
+                                </div>
+                                <div class="col required">
+                                    <label for="state" class="form-label">State</label>
+                                    <select class="form-select" id="state" name="state" required>
+                                        <option value="{{ customer['state'] if customer else '' }}" selected>{{ customer['state'] if customer else 'Select State' }}</option>
+                                    </select>
+                                </div>
+                                <div class="col required">
+                                    <label for="city" class="form-label">City</label>
+                                    <select class="form-select" id="city" name="city" required>
+                                        <option value="{{ customer['city'] if customer else '' }}" selected>{{ customer['city'] if customer else 'Select City' }}</option>
+                                    </select>
+                                </div>
+                                <div class="col required">
+                                    <label for="pincode" class="form-label">Pincode</label>
+                                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Pincode" value="{{ customer['pincode'] if customer else '' }}" required />
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactPerson" class="form-label">Contact Person</label>
+                                <input type="text" class="form-control" id="contactPerson" required />
+                            </div>
+                            <p>
+                                Name & address of the organisation/firm in favour of which the Calibration certificate/ Test Report is to be issued (required if it is different from the above; else checkbox "same as above address" )
+                            </p>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="sameAsAbove" />
+                                <label class="form-check-label" for="sameAsAbove">Same as above address</label>
+                            </div>
+
+                            <div id="differentAddressInputs" class="hidden">
+                                <div class="row mb-3">
+                                    <div class="col required">
+                                        <label for="diffOrgName" class="form-label">Organisation Name</label>
+                                        <input type="text" class="form-control" id="diffOrgName" placeholder="Organisation Name" required />
+                                    </div>
+                                </div>
+                                <div class="mb-3 required">
+                                    <label for="diffAddressLine1" class="form-label">Organisation Address</label>
+                                    <input type="text" class="form-control" id="diffAddressLine1" placeholder="Organisation Address" required />
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col required">
+                                        <label for="diffCity" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="diffCity" placeholder="City" required />
+                                    </div>
+                                    <div class="col required">
+                                        <label for="diffState" class="form-label">State</label>
+                                        <select class="form-select" id="diffState" required>
+                                            <option selected disabled>Select State</option>
+                                            <option value="state1">State 1</option>
+                                            <option value="state2">State 2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col required">
+                                        <label for="diffCountry" class="form-label">Country</label>
+                                        <select class="form-select" id="diffCountry" required>
+                                            <option selected disabled>Select Country</option>
+                                            <option value="country1">Country 1</option>
+                                            <option value="country2">Country 2</option>
+                                        </select>
+                                    </div>
+                                    <div class="col required">
+                                        <label for="diffPincode" class="form-label">Pincode</label>
+                                        <input type="text" class="form-control" id="diffPincode" placeholder="Pincode" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary next" onclick="window.location.href='/ctbr2'">Next</button>
+                            </div>
+                        </div>
+                    </form>
+                </main>
+            </div>
+
+            <footer class="footer bg-light text-dark text-center py-3">
+                <a href="{{ url_for('logout')}}">Logout</a>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ url_for('static', filename='ctbr.js') }}"></script>
+        <script>
+            const apiConfig = {
+                baseUrl: "https://api.countrystatecity.in/v1",
+                apiKey: "NHhvOEcyWk50N2Vna3VFTE00bFp3MjFKR0ZEOUhkZlg4RTk1MlJlaA==",
+            };
+
+            const countryDropdown = document.getElementById("country");
+            const stateDropdown = document.getElementById("state");
+            const cityDropdown = document.getElementById("city");
+
+            function populateDropdown(dropdown, items, defaultText) {
+                dropdown.innerHTML = `<option value="">${defaultText}</option>`;
+                items.forEach((item) => {
+                    const option = document.createElement("option");
+                    option.value = item.iso2 || item.id;
+                    option.textContent = item.name;
+                    dropdown.appendChild(option);
+                });
+            }
+
+            function loadCountries() {
+                fetch(`${apiConfig.baseUrl}/countries`, {
+                    headers: { "X-CSCAPI-KEY": apiConfig.apiKey },
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        populateDropdown(countryDropdown, data, "Select Country");
+                    })
+                    .catch((error) => console.error("Error loading countries:", error));
+            }
+
+            function loadStates(countryCode) {
+                fetch(`${apiConfig.baseUrl}/countries/${countryCode}/states`, {
+                    headers: { "X-CSCAPI-KEY": apiConfig.apiKey },
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        populateDropdown(stateDropdown, data, "Select State");
+                        cityDropdown.innerHTML = '<option value="">Select City</option>';
+                    })
+                    .catch((error) => console.error("Error loading states:", error));
+            }
+
+            function loadCities(countryCode, stateCode) {
+                fetch(`${apiConfig.baseUrl}/countries/${countryCode}/states/${stateCode}/cities`, {
+                    headers: { "X-CSCAPI-KEY": apiConfig.apiKey },
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        populateDropdown(cityDropdown, data, "Select City");
+                    })
+                    .catch((error) => console.error("Error loading cities:", error));
+            }
+
+            countryDropdown.addEventListener("change", () => {
+                const countryCode = countryDropdown.value;
+                if (countryCode) {
+                    loadStates(countryCode);
+                } else {
+                    stateDropdown.innerHTML = '<option value="">Select State</option>';
+                    cityDropdown.innerHTML = '<option value="">Select City</option>';
+                }
+            });
+
+            stateDropdown.addEventListener("change", () => {
+                const countryCode = countryDropdown.value;
+                const stateCode = stateDropdown.value;
+                if (countryCode && stateCode) {
+                    loadCities(countryCode, stateCode);
+                } else {
+                    cityDropdown.innerHTML = '<option value="">Select City</option>';
+                }
+            });
+
+            // window.onload = loadCountries; Change later if need to edit
+        </script>              
+    </body>
+</html>

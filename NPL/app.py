@@ -296,16 +296,27 @@ charges_data = {
     'remarks_if_any': ''
 }
 
-@app.route('/ctbr', methods=['GET', 'POST'])
-def ctbr():
+@app.route('/ctbr1', methods=['GET', 'POST'])
+def ctbr1():
     if request.method == 'GET':
         cust_reg_id = session.get('cust_reg_id')
         if cust_reg_id:
             customer = registration.get_cust(int(cust_reg_id))
             classifications = meteorological.get_classification()
-            return render_template('ctbr.html', customer=customer, classifications=classifications)
+            return render_template('ctbr1.html', customer=customer, classifications=classifications)
         else:
-            return render_template('ctbr.html', customer=None)
+            return render_template('ctbr1.html', customer=None)
+
+@app.route('/ctbr2', methods=['GET', 'POST'])
+def ctbr2():
+    if request.method == 'GET':
+        cust_reg_id = session.get('cust_reg_id')
+        if cust_reg_id:
+            customer = registration.get_cust(int(cust_reg_id))
+            classifications = meteorological.get_classification()
+            return render_template('ctbr2.html', customer=customer, classifications=classifications)
+        else:
+            return render_template('ctbr2.html', customer=None)
     elif request.method == 'POST':
         if request.form:
             key = next(iter(request.form))
@@ -346,6 +357,26 @@ def ctbr():
         
         return jsonify({'error': 'Invalid request'}), 400
 
+@app.route('/ctbr3', methods=['GET', 'POST'])
+def ctbr3():
+    if request.method == 'GET':
+        return render_template('ctbr3.html')
+    elif request.method == 'POST':
+        return jsonify({'error': 'Invalid request'}), 400
+
+@app.route('/ctbr4', methods=['GET', 'POST'])
+def ctbr4():
+    if request.method == 'GET':
+        return render_template('ctbr4.html')
+    elif request.method == 'POST':
+        return jsonify({'error': 'Invalid request'}), 400
+
+@app.route('/ctbr5', methods=['GET', 'POST'])
+def ctbr5():
+    if request.method == 'GET':
+        return render_template('ctbr5.html')
+    elif request.method == 'POST':
+        return jsonify({'error': 'Invalid request'}), 400
 
 @app.route('/verify/<checksum>')
 def verify(checksum):
