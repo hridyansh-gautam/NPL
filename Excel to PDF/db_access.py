@@ -1,14 +1,12 @@
 from sqlalchemy import create_engine, Column, Integer, String, CHAR, LargeBinary, Text
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from dotenv import load_dotenv
+import os
 
 # Connect to database
-db_name = "dcc"
-user="postgres"
-password="root"
-host="localhost"
-port="5432"
-engine = create_engine(f"postgresql://{user}:{password}@{host}:{port}/{db_name}")
+load_dotenv()
+engine = create_engine(os.getenv('DATABASE_URL'))
 Base = declarative_base()
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
