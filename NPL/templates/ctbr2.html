@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="text-center">
                                     <button type="button" class="btn btn-secondary prev" onclick="window.location.href='/ctbr1'">Previous</button>
-                                    <button type="button" class="btn btn-primary next" onclick="window.location.href='/ctbr3'">Next</button>
+                                    <button type="button" class="btn btn-primary next" onclick="calculateRowTotal()">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -302,6 +302,31 @@
                 var label = document.querySelector('label[for="' + dropdownId + '"]');
                 return label ? label.textContent : dropdownId;
             }
-        </script>                
+        </script>      
+        <script>
+            function calculateRowTotal() {
+            var chargesPerItem = parseFloat(document.getElementById('chargesSelect').value) || 0;
+            var additionalCharges = parseFloat(document.getElementById('additionalChargesSelect').value) || 0;
+            var totalCharge = (chargesPerItem + additionalCharges);
+
+            console.log('Total Charge:', totalCharge);
+
+            fetch('/send_charges', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ totalCharge: totalCharge })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                window.location.href = '/ctbr3';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+            }
+        </script>           
     </body>
 </html>
