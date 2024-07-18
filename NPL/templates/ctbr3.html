@@ -51,6 +51,7 @@
                                             <td><input type="text" class="form-control" /></td>
                                             <td><input type="text" class="form-control" /></td>
                                             <td><input type="number" class="form-control quantity" oninput="calculateRowTotal(this)" required/></td>
+                                            <input type="hidden" id="totalCharge" value="{{ totalCharge }}"> <!--DO NOT DELETE THIS LINE-->
                                             <td><input type="number" class="form-control totalCharge" readonly /></td>
                                             <td><input type="text" class="form-control" /></td>
                                             <td><input type="text" class="form-control" /></td>
@@ -86,14 +87,14 @@
         <script src="{{ url_for('static', filename='ctbr.js') }}"></script>
         <script>
             function calculateRowTotal(input) {
-            var row = input.closest('tr');
-            console.log(row);
-            var quantity = parseInt(row.querySelector('.quantity').value) || 0;
-            var chargesPerItem = parseFloat(document.getElementById('chargesSelect').value) || 0;
-            var additionalCharges = parseFloat(document.getElementById('additionalChargesSelect').value) || 0;
-            var totalCharge = (chargesPerItem + additionalCharges) * quantity;
-            row.querySelector('.totalCharge').value = totalCharge;
+                var row = input.closest('tr');
+                var quantity = parseInt(row.querySelector('.quantity').value) || 0;
+                console.log(quantity);
+                var totalCharge = parseFloat(document.getElementById('totalCharge').value) || 0;
+                console.log(totalCharge);
+                var calculatedCharge = quantity * totalCharge;
+                row.querySelector('.totalCharge').value = calculatedCharge.toFixed(2);
             }
-        </script>          
+        </script>         
     </body>
 </html>

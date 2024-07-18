@@ -357,12 +357,19 @@ def ctbr2():
         
         return jsonify({'error': 'Invalid request'}), 400
 
-@app.route('/ctbr3', methods=['GET', 'POST'])
+@app.route('/send_charges', methods=['POST'])
+def send_charges():
+    data = request.get_json()
+    totalCharge = data.get('totalCharge')
+    print(f"Stored totalCharge: {totalCharge}")
+    session['totalCharge'] = totalCharge    
+    return jsonify({"status": "success", "totalCharge": totalCharge})
+
+@app.route('/ctbr3', methods=['GET'])
 def ctbr3():
-    if request.method == 'GET':
-        return render_template('ctbr3.html')
-    elif request.method == 'POST':
-        return jsonify({'error': 'Invalid request'}), 400
+    totalCharge = session.get('totalCharge')
+    print(f"Received totalCharge: {totalCharge}")
+    return render_template('ctbr3.html', totalCharge=totalCharge)
 
 @app.route('/ctbr4', methods=['GET', 'POST'])
 def ctbr4():
