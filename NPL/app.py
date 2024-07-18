@@ -11,6 +11,8 @@ import meteorological
 import pandas as pd
 import checksum
 from dotenv import load_dotenv
+from generate_pdf import Generator
+
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -23,6 +25,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 UPLOAD_FOLDER = 'uploads'
 
 db = SQLAlchemy(app)
+pdf_generator = Generator()
 
 @app.route('/')
 def home():
@@ -396,7 +399,7 @@ def dcc2():
 
 @app.route('/download-template/<certificate_type>')
 def download_template(certificate_type):
-    template_file = f"{certificate_type}.xlsx"
+    template_file = f"{certificate_type}_template.xlsx"
     template_path = os.path.join('static/excel_templates', template_file)
     if os.path.exists(template_path):
         return send_from_directory(directory='static/excel_templates', path=template_file, as_attachment=True)
@@ -407,12 +410,19 @@ def download_template(certificate_type):
 def upload_excel():
     if 'excelFile' not in request.files:
         return jsonify(success=False), 400
-    
+
     file = request.files['excelFile']
     if file.filename == '':
         return jsonify(success=False), 400
     
+    data = request.form
     file.save(os.path.join(UPLOAD_FOLDER, file.filename))
+    pdf_generator.execute_pdf_generator(
+        excel_file=f'./uploads/{file.filename}', 
+        doc_type=data.get('certificateType'), 
+        attach_data=data.get('embed'), 
+        attach_graph=False
+    )
     return jsonify(success=True)
 
 @app.route('/about')
