@@ -11,6 +11,8 @@ import meteorological
 import pandas as pd
 import checksum
 from dotenv import load_dotenv
+from generate_pdf import Generator
+
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -23,6 +25,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 UPLOAD_FOLDER = 'uploads'
 
 db = SQLAlchemy(app)
+pdf_generator = Generator()
 
 @app.route('/')
 def home():
@@ -66,6 +69,7 @@ def emplogin():
         user_info = registration.check_emp_credentials(email, password)
         if user_info:
             session['username'] = email
+            session['emp_reg_id'] = user_info['emp_reg_id']
             session.permanent = True
             return jsonify({
                 'message': 'Login successful',
@@ -403,7 +407,7 @@ def dcc2():
 
 @app.route('/download-template/<certificate_type>')
 def download_template(certificate_type):
-    template_file = f"{certificate_type}.xlsx"
+    template_file = f"{certificate_type}_template.xlsx"
     template_path = os.path.join('static/excel_templates', template_file)
     if os.path.exists(template_path):
         return send_from_directory(directory='static/excel_templates', path=template_file, as_attachment=True)
@@ -414,12 +418,31 @@ def download_template(certificate_type):
 def upload_excel():
     if 'excelFile' not in request.files:
         return jsonify(success=False), 400
-    
-    file = request.files['excelFile']
-    if file.filename == '':
+
+    excel_file = request.files['excelFile']
+    graph_img = request.files['graphImg']
+    if excel_file.filename == '':
         return jsonify(success=False), 400
     
-    file.save(os.path.join(UPLOAD_FOLDER, file.filename))
+    user_id = str(session['emp_reg_id'])
+    if not user_id:
+        return jsonify(success=False, message="User not authenticated"), 403
+
+    user_folder = os.path.join(UPLOAD_FOLDER, user_id)
+    os.makedirs(user_folder, exist_ok=True)
+
+    excel_file.save(os.path.join(user_folder, excel_file.filename))
+    graph_img.save(os.path.join(user_folder , graph_img.filename))
+    data = request.form
+    attach_data = True if data.get('embed') == 'True' else False
+    attach_graph = True if data.get('graph') == 'True' else False
+    pdf_generator.execute_pdf_generator(
+        excel_file=f'./uploads/{user_id}/{excel_file.filename}', 
+        doc_type=data.get('certificateType'), 
+        attach_data=attach_data, 
+        attach_graph=attach_graph,
+        graph_img=f'./uploads/{user_id}/{graph_img.filename}'
+    )
     return jsonify(success=True)
 
 @app.route('/about')

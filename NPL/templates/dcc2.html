@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
@@ -14,77 +14,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dcc2.css') }}"
+    />
     <title>DCC Registraion Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: color #0070ff;
-            padding: 20px;
-            margin: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color:#fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-       
-        h1 {
-            margin: 0;
-            margin-bottom: 1em;
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 8px;
-        }
-        select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        .download-template, .upload-excel {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-        }
-        .download-template label, .upload-excel label {
-            margin-bottom: 0;
-        }
-        .download-template button, .upload-excel button {
-            background-color: #0070ff;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .download-template button:hover, .upload-excel button:hover {
-            background-color: #0070ff;
-        }
-        button[type="button"] {
-            background-color: #0070ff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button[type="button"]:hover {
-            background-color: #456ba0;
-        }
-    </style> 
   </head>
   <body>
     <header>
@@ -114,24 +48,34 @@
         <form id="certificateForm" method="post" enctype="multipart/form-data">
             <label for="certificateType">Type of Certificate:</label>
             <select id="certificateType" name="certificateType">
-                <option value="testing_template">Testing Certificate</option>
-                <option value="calibration_template">Calibration Certificate</option>
-                <option value="bnd_template">BND Certificate</option>
+                <option value="">Select an option</option>
+                <option value="calibration">Calibration Certificate</option>
+                <option value="testing">Testing Certificate</option>
+                <option value="bnd">BND Certificate</option>
             </select>
-            <br>
-            <br>
             <div class="download-template">
                 <label>Download Excel Template:</label>
                 <button type="button" onclick="downloadTemplate()">Download</button>
             </div>
-            <br>
-            <br>
             <div class="upload-excel">
                 <label for="excelFile">Upload Excel:</label>
                 <input type="file" id="excelFile" name="excelFile" accept=".xls,.xlsx">
             </div>
-            <br>
-            <button type="button" onclick="submitForm()">Submit</button>
+            <div class="checkbox">
+                <label for="to_embed">Embed data in PDF: </label>
+                <input type="checkbox" id="to_embed" name="embed" value="False">
+            </div>
+            <div class="checkbox">
+                <label for="attach_graph">Add Graph in PDF: </label>
+                <input type="checkbox" id="attach_graph" name="graph" value="False" onclick="toggleGraphUpload()">
+            </div>
+            <div class="upload-graph" id="uploadGraph" style="display: none;">
+                <label for="graphFile">Upload Graph Image:</label>
+                <input type="file" id="graphFile" name="graphImg" accept=".png, .jpg, .jpeg">
+            </div>
+            <button type="button" class="button" onclick="submitForm()">
+                <span class="button_text">Generate PDF</span>
+            </button>
         </form>
     </div>
     <footer class="footer bg-light text-dark text-center py-3">
@@ -144,8 +88,30 @@
             window.location.href = `/download-template/${certificateType}`;
         }
 
+        function toggleGraphUpload() {
+            const graphCheckbox = document.getElementById('attach_graph');
+            const uploadGraphDiv = document.getElementById('uploadGraph');
+            if (graphCheckbox.checked) {
+                graphCheckbox.value = 'True';
+                uploadGraphDiv.style.display = 'block';
+            } else {
+                uploadGraphDiv.style.display = 'none';
+            }
+        }
+
         function submitForm() {
             const form = document.getElementById('certificateForm');
+            const toEmbed = document.getElementById('to_embed');
+            const theButton = document.querySelector(".button");
+
+            theButton.addEventListener("click", () => {
+                theButton.classList.add("button--loading");
+            });
+            
+            if (toEmbed.checked) {
+                toEmbed.value = 'True';
+            }
+
             const formData = new FormData(form);
             fetch('/upload-excel', {
                 method: 'POST',
@@ -153,8 +119,9 @@
             })
             .then(response => response.json())
             .then(data => {
+                theButton.classList.remove("button--loading");
                 if (data.success) {
-                    alert('File uploaded successfully!');
+                    alert('PDF Generated successfully!');                    
                 } else {
                     alert('File upload failed!');
                 }

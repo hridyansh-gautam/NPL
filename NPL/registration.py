@@ -225,7 +225,7 @@ def check_emp_credentials(email: str, password: str):
         )
         result = session.execute(query).fetchone()
         if result:
-            return {'email': result.email, 'designation': result.designation}
+            return {'email': result.email, 'designation': result.designation, 'emp_reg_id': result.emp_reg_id}
         return None
     finally:
         session.close()
