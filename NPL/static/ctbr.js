@@ -43,12 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const add_row = document.querySelector('#addRow');
   add_row.addEventListener("click", function redirectRow(){
-    const progress = (1 / (steps.length - 1)) * 100;
-    progressBar.style.width = progress + "%";
-    steps[2].classList.remove("active");
-    steps[1].classList.add("active");
-    currentStep--;
-    // location.href = "/ctbr";
+    location.href = "/ctbr";
   });
 
   form.addEventListener("submit", (e) => {

@@ -239,7 +239,7 @@ class Generator:
                 else:
                     cv2.imwrite(f'signatures/{name}.jpg', blank_img)
 
-    def create_pdf(self, data, embed_file, certificate_name, attach_data, attach_graph,doc_type):
+    def create_pdf(self, data, embed_file, certificate_name, attach_data, attach_graph,doc_type, graph_img):
         """
         Create a PDF using the provided data and LaTeX template, and optionally embed a file.
 
@@ -424,7 +424,7 @@ class Generator:
         \\vspace{{0.2 cm}}
         \\hspace{{0.8 cm}}\\textbf{{Sample:}} {data['description']}\\\\
         \\begin{{center}}
-        \\includegraphics[width=0.6\\textwidth]{{./static/pdf_images/graph.png}}\\\\
+        \\includegraphics[width=0.6\\textwidth]{{{graph_img}}}\\\\
         \\end{{center}}
         """ if attach_graph else ""
 
@@ -620,7 +620,7 @@ class Generator:
 
         # convert tex to pdf
         try:
-            subprocess.run(["lualatex", tex_file], capture_output=False)
+            subprocess.run(["lualatex", tex_file], capture_output=True)
             subprocess.run(["lualatex", tex_file], capture_output=True)
             print("PDF created successfully.")
         except subprocess.CalledProcessError as e:
@@ -648,7 +648,7 @@ class Generator:
             if os.path.exists(aux_file.replace(".tex", ext)):
                 os.remove(aux_file.replace(".tex", ext))
 
-    def execute_pdf_generator(self, excel_file, doc_type, attach_data=True, attach_graph=False):
+    def execute_pdf_generator(self, excel_file, doc_type, graph_img, attach_data=True, attach_graph=False):
         dict_template = {
             "report_name": "",
             "device_name":"",
@@ -684,5 +684,5 @@ class Generator:
             for key in dict_template
         }
         file_name = self.sanitize_filename(data_to_send['certificate_no'] if doc_type=='calibration' else (data_to_send['report_no']))
-        self.create_pdf(dict_template, excel_file, file_name, attach_data, attach_graph, doc_type)
+        self.create_pdf(dict_template, excel_file, file_name, attach_data, attach_graph, doc_type, graph_img)
 
