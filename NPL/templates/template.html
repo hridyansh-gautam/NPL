@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ctbr Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='ctbr.css') }}" />
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="National Physical Laboratory Logo" class="logo" />
+            <div>
+                <h1 class="page-title">CSIR - National Physical Laboratory</h1>
+                <h3 class="page-subtitle">
+                    सी एस आई आर - राष्ट्रीय भौतिक प्रयोगशाला
+                </h3>
+            </div>
+            <img class="company-name" src="{{ url_for('static', filename='images/logo2.png') }}" alt="CSIR - NPL" />
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+
+        <h1>CTBR Step 3</h1>
+
+        <div class="content">
+            <main class="container my-5">
+                <form id="multiStepForm">
+                    <div class="step active">
+                        <h3>Instrument(s)/Sample(s)/Reference Material/BND:</h3>
+                        <div class="table-responsive mb-3">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>SR. No.</th>
+                                        <th>Name of Instrument/Sample/Reference Material (BND)</th>
+                                        <th>Make/Model/Sr. No./Batch/Lot No. or any other identification</th>
+                                        <th>Quantity</th>
+                                        <th>Total Charge</th>
+                                        <th>Calibration/Testing Requirements/Specifications</th>
+                                        <th>Remarks (If Any)</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    <tr>
+                                        <td>1</td>
+                                        <td><input type="text" class="form-control" /></td>
+                                        <td><input type="text" class="form-control" /></td>
+                                        <td><input type="number" class="form-control quantity" oninput="calculateRowTotal(this)" required/></td>
+                                        <input type="hidden" id="totalCharge" value="{{ totalCharge }}"> <!--DO NOT DELETE THIS LINE-->
+                                        <td><input type="number" class="form-control totalCharge" readonly /></td>
+                                        <td><input type="text" class="form-control" /></td>
+                                        <td><input type="text" class="form-control" /></td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger btn-sm deleteRow">
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center mb-3">
+                            <button type="button" class="btn btn-secondary" id="addRow">
+                                Add Row
+                            </button>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-secondary prev" onclick="redirectToStep2()">Previous</button>
+                            <button type="button" class="btn btn-primary next" onclick="submitForm()">Next</button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+
+        <footer class="footer bg-light text-dark text-center py-3">
+            <a href="{{ url_for('logout')}}">Logout</a>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function calculateRowTotal(input) {
+            var row = input.closest('tr');
+            var quantity = parseInt(row.querySelector('.quantity').value) || 0;
+            var totalCharge = parseFloat(document.getElementById('totalCharge').value) || 0;
+            var calculatedCharge = quantity * totalCharge;
+            row.querySelector('.totalCharge').value = calculatedCharge.toFixed(2);
+        }
+
+        function addRow() {
+            var tableBody = document.getElementById('tableBody');
+            var rowCount = tableBody.rows.length;
+            var newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+                <td>${rowCount + 1}</td>
+                <td><input type="text" class="form-control" /></td>
+                <td><input type="text" class="form-control" /></td>
+                <td><input type="number" class="form-control quantity" oninput="calculateRowTotal(this)" required/></td>
+                <td><input type="number" class="form-control totalCharge" readonly /></td>
+                <td><input type="text" class="form-control" /></td>
+                <td><input type="text" class="form-control" /></td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm deleteRow">Delete</button>
+                </td>
+            `;
+
+            tableBody.appendChild(newRow);
+        }
+
+        function redirectToStep2() {
+            var rowsData = getTableData();
+            fetch('/save_rows', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ rows: rowsData })
+            }).then(response => {
+                window.location.href = '/ctbr2';
+            });
+        }
+
+        function getTableData() {
+            var tableBody = document.getElementById('tableBody');
+            var rows = tableBody.querySelectorAll('tr');
+            var rowsData = [];
+
+            rows.forEach((row, index) => {
+                var rowData = {
+                    srNo: index + 1,
+                    name: row.cells[1].querySelector('input').value,
+                    makeModel: row.cells[2].querySelector('input').value,
+                    quantity: row.cells[3].querySelector('input').value,
+                    totalCharge: row.cells[4].querySelector('input').value,
+                    requirements: row.cells[5].querySelector('input').value,
+                    remarks: row.cells[6].querySelector('input').value
+                };
+                rowsData.push(rowData);
+            });
+
+            return rowsData;
+        }
+
+        function submitForm() {
+            var rowsData = getTableData();
+            fetch('/submit_form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ rows: rowsData })
+            }).then(response => {
+                window.location.href = '/ctbr4';
+            });
+        }
+
+        document.getElementById('addRow').addEventListener('click', addRow);
+
+        document.addEventListener('click', function (e) {
+            if (e.target && e.target.classList.contains('deleteRow')) {
+                var row = e.target.closest('tr');
+                row.parentNode.removeChild(row);
+            }
+        });
+    </script>
+</body>
+</html>
