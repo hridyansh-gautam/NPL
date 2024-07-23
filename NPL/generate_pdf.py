@@ -611,7 +611,7 @@ class Generator:
         # Save the LaTeX code to a file
         aux_file = f"{certificate_name}.tex"
         tex_file = f"./{aux_file}"
-        pdf_file = f"./pdfs/{certificate_name}.pdf"
+        pdf_file = f"./static/pdfs/{certificate_name}.pdf"
         
         # write latex file
         with open(tex_file, "w", encoding="utf-8") as file:

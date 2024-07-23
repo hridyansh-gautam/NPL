@@ -60,6 +60,16 @@
 
     <main>
       <h1>Welcome! You are logged in.</h1>
+      <hr>
+      <h2>View Current DCC</h2>
+      <object data="{{ url_for('static', filename='pdfs/N19110969_D1.06_T-272.pdf')}}" type="application/pdf"></object>
+      <div class="textarea">
+        <textarea id="remarks" name="remarks" rows="4" placeholder="Type Remarks Here..."></textarea>
+      </div>
+      <div>
+        <button class="remark-btn" id="revert">Revert</button>
+        <button class="remark-btn" id="approve">Approve</button>
+      </div>
     </main>
     <footer class="footer bg-light text-dark text-center py-3">
       <a href="{{ url_for('logout')}}">Logout</a>
