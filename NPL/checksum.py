@@ -32,13 +32,22 @@ class Emp_reg(Base):
     password = Column(String(255))
     signature = Column(LargeBinary)
 
+class DccPdf(Base):
+    __tablename__ = 'dcc_pdf'
+    pdf_serial_id = Column(Integer, primary_key=True, autoincrement=True)
+    pdf_directory = Column(String(255))
+    current_stage = Column(Integer)
+    current_employee = Column(String(255))
+    calibrated_by = Column(String(255))
+    checked_by = Column(String(255))
+    scientist_in_charge = Column(String(255))
+    version = Column(Integer)
 
-# Create the table
 Base.metadata.create_all(engine)
+Session = sessionmaker(bind=engine)
 
 def add_checksum(data):
     # Create a new session
-    Session = sessionmaker(bind=engine)
     session = Session()
 
     existing_row = session.query(Checksums).filter_by(certificate_no=data['certificate_no']).first()
@@ -66,7 +75,6 @@ def add_checksum(data):
     return "New checksum added to the checksums table."
 
 def get_signature(name=None, emp_id=None):
-    Session = sessionmaker(bind=engine)
     session = Session()
     query = session.query(Emp_reg)
     
@@ -99,10 +107,39 @@ def generate_checksum(file_path, algorithm='sha256'):
             hash_function.update(chunk)
     return hash_function.hexdigest()
 
+def insert_pdf_record(pdf_directory, current_stage=None, current_employee=None,
+                      calibrated_by=None, checked_by=None, scientist_in_charge=None,
+                      version=1):
+    session = Session()
+    pdf_record = DccPdf(pdf_directory=pdf_directory,
+                        current_stage=current_stage,
+                        current_employee=current_employee,
+                        calibrated_by=calibrated_by,
+                        checked_by=checked_by,
+                        scientist_in_charge=scientist_in_charge,
+                        version=version)
+    session.add(pdf_record)
+    session.commit()
+    session.close()
 
-# pdf_file = "./pdfs/N23070405_D3.03_C-037.pdf"  #filename
-# checksum_file = "./checksums/N23070405_D3.03_C-037.txt"
-# actual_checksum = read_file(checksum_file)
-# current_checksum=generate_checksum(pdf_file)
-# # Verify the checksum
-# print(actual_checksum==current_checksum)
+def update_pdf_stage(pdf_serial_id, new_stage):
+    session = Session()
+    stmt = update(DccPdf).where(DccPdf.pdf_serial_id == pdf_serial_id).values(
+        current_stage=new_stage,
+        version=DccPdf.version + 1
+    )
+    session.execute(stmt)
+    session.commit()
+    session.close()
+
+def get_current_stage(pdf_serial_id):
+    session = Session()
+    current_stage = session.query(DccPdf.current_stage).filter_by(pdf_serial_id=pdf_serial_id).scalar()
+    session.close()
+    return current_stage
+
+def get_version(pdf_serial_id):
+    session = Session()
+    version = session.query(DccPdf.version).filter_by(pdf_serial_id=pdf_serial_id).scalar()
+    session.close()
+    return version

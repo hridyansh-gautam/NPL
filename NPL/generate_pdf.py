@@ -239,7 +239,7 @@ class Generator:
                 else:
                     cv2.imwrite(f'signatures/{name}.jpg', blank_img)
 
-    def create_pdf(self, data, embed_file, certificate_name, attach_data, attach_graph,doc_type, graph_img):
+    def create_pdf(self, data, embed_file, certificate_name, attach_data, attach_graph,doc_type, graph_img, version):
         """
         Create a PDF using the provided data and LaTeX template, and optionally embed a file.
 
@@ -611,7 +611,13 @@ class Generator:
         # Save the LaTeX code to a file
         aux_file = f"{certificate_name}.tex"
         tex_file = f"./{aux_file}"
-        pdf_file = f"./static/pdfs/{certificate_name}.pdf"
+        pdf_dir = f"./static/pdfs/{certificate_name}"
+        pdf_file = f"{pdf_dir}/{version}.pdf"
+
+        # Create the directory
+        if not os.path.exists(pdf_dir):
+            os.makedirs(pdf_dir)
+            print('success')
         
         # write latex file
         with open(tex_file, "w", encoding="utf-8") as file:
@@ -648,7 +654,7 @@ class Generator:
             if os.path.exists(aux_file.replace(".tex", ext)):
                 os.remove(aux_file.replace(".tex", ext))
 
-    def execute_pdf_generator(self, excel_file, doc_type, graph_img, attach_data=True, attach_graph=False):
+    def execute_pdf_generator(self, excel_file, doc_type, graph_img, version = 1, attach_data=True, attach_graph=False):
         dict_template = {
             "report_name": "",
             "device_name":"",
@@ -684,5 +690,6 @@ class Generator:
             for key in dict_template
         }
         file_name = self.sanitize_filename(data_to_send['certificate_no'] if doc_type=='calibration' else (data_to_send['report_no']))
-        self.create_pdf(dict_template, excel_file, file_name, attach_data, attach_graph, doc_type, graph_img)
+        self.create_pdf(dict_template, excel_file, file_name, attach_data, attach_graph, doc_type, graph_img, version)
+        return file_name, dict_template
 

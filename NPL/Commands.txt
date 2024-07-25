@@ -215,3 +215,15 @@ ALTER TABLE "meteorological_services_charges"
 ADD CONSTRAINT fk_si_no_service_code
 FOREIGN KEY ("si_no", "service_code") 
 REFERENCES "meteorological_services"("si_no", "service_code");
+
+
+CREATE TABLE dcc_pdf (
+    pdf_serial_id SERIAL PRIMARY KEY,
+    pdf_directory VARCHAR 255,
+    current_stage INT,
+    current_employee VARCHAR 255,
+    calibrated_by VARCHAR 255,
+    checked_by VARCHAR 255,
+    scientist_in_charge VARCHAR 255,
+    version INT
+);

@@ -432,17 +432,19 @@ def upload_excel():
     os.makedirs(user_folder, exist_ok=True)
 
     excel_file.save(os.path.join(user_folder, excel_file.filename))
-    graph_img.save(os.path.join(user_folder , graph_img.filename))
+    if graph_img.filename:
+        graph_img.save(os.path.join(user_folder , graph_img.filename))
     data = request.form
     attach_data = True if data.get('embed') == 'True' else False
     attach_graph = True if data.get('graph') == 'True' else False
-    pdf_generator.execute_pdf_generator(
-        excel_file=f'./uploads/{user_id}/{excel_file.filename}', 
-        doc_type=data.get('certificateType'), 
-        attach_data=attach_data, 
-        attach_graph=attach_graph,
-        graph_img=f'./uploads/{user_id}/{graph_img.filename}'
-    )
+    pdf_name =  pdf_generator.execute_pdf_generator(
+                    excel_file=f'./uploads/{user_id}/{excel_file.filename}', 
+                    doc_type=data.get('certificateType'), 
+                    attach_data=attach_data, 
+                    attach_graph=attach_graph,
+                    graph_img=f'./uploads/{user_id}/{graph_img.filename}' if attach_graph else ''
+                )
+    
     return jsonify(success=True)
 
 @app.route('/about')
