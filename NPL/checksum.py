@@ -37,10 +37,10 @@ class DccPdf(Base):
     pdf_serial_id = Column(Integer, primary_key=True, autoincrement=True)
     pdf_directory = Column(String(255))
     current_stage = Column(Integer)
-    current_employee = Column(String(255))
     calibrated_by = Column(String(255))
     checked_by = Column(String(255))
     scientist_in_charge = Column(String(255))
+    issued_by = Column(String(255))
     version = Column(Integer)
 
 Base.metadata.create_all(engine)
@@ -107,16 +107,14 @@ def generate_checksum(file_path, algorithm='sha256'):
             hash_function.update(chunk)
     return hash_function.hexdigest()
 
-def insert_pdf_record(pdf_directory, current_stage=None, current_employee=None,
-                      calibrated_by=None, checked_by=None, scientist_in_charge=None,
-                      version=1):
+def insert_pdf_record(pdf_directory, current_stage=None,  calibrated_by=None, checked_by=None, scientist_in_charge=None, issued_by=None, version=1):
     session = Session()
     pdf_record = DccPdf(pdf_directory=pdf_directory,
                         current_stage=current_stage,
-                        current_employee=current_employee,
                         calibrated_by=calibrated_by,
                         checked_by=checked_by,
                         scientist_in_charge=scientist_in_charge,
+                        issued_by=issued_by,
                         version=version)
     session.add(pdf_record)
     session.commit()
@@ -143,3 +141,9 @@ def get_version(pdf_serial_id):
     version = session.query(DccPdf.version).filter_by(pdf_serial_id=pdf_serial_id).scalar()
     session.close()
     return version
+
+def pdf_exists(pdf_directory):
+    session = Session()
+    exists = session.query(DccPdf).filter_by(pdf_directory=pdf_directory).first() is not None
+    session.close()
+    return exists

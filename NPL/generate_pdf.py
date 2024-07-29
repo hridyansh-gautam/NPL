@@ -9,6 +9,34 @@ import numpy as np
 import cv2
 
 class Generator:
+    def __init__(self):
+        self.dict_template = {
+            "report_name": "",
+            "device_name":"",
+            "certificate_no":"",
+            "end_date": "",
+            "report_no": "",
+            "next_date":"",
+            "tested_for": "",
+            "calibrated_for": "",
+            "description": "",
+            "env_conditions": "",
+            "stds_used": "",
+            "tracability": "",
+            "procedure": "",
+            "tested_by": "",
+            "calibrated_by": "",
+            "checked_by": "",
+            "incharge": "",
+            "issued_by": "",
+            "result_table": "",
+            "result_desc": "",
+            "testing_date": "",
+            "calibration_date": "",
+            "remarks": "",
+            "doi_no": "",
+        }
+
     def sanitize_filename(self, filename):
         """
         Sanitize the filename by replacing disallowed characters with an underscore.
@@ -239,7 +267,7 @@ class Generator:
                 else:
                     cv2.imwrite(f'signatures/{name}.jpg', blank_img)
 
-    def create_pdf(self, data, embed_file, certificate_name, attach_data, attach_graph,doc_type, graph_img, version):
+    def create_pdf(self, data, embed_file, certificate_name, doc_type, graph_img, attach_data=True, attach_graph=False, version=1):
         """
         Create a PDF using the provided data and LaTeX template, and optionally embed a file.
 
@@ -654,42 +682,16 @@ class Generator:
             if os.path.exists(aux_file.replace(".tex", ext)):
                 os.remove(aux_file.replace(".tex", ext))
 
-    def execute_pdf_generator(self, excel_file, doc_type, graph_img, version = 1, attach_data=True, attach_graph=False):
-        dict_template = {
-            "report_name": "",
-            "device_name":"",
-            "certificate_no":"",
-            "end_date": "",
-            "report_no": "",
-            "next_date":"",
-            "tested_for": "",
-            "calibrated_for": "",
-            "description": "",
-            "env_conditions": "",
-            "stds_used": "",
-            "tracability": "",
-            "procedure": "",
-            "tested_by": "",
-            "calibrated_by": "",
-            "checked_by": "",
-            "incharge": "",
-            "issued_by": "",
-            "result_table": "",
-            "result_desc": "",
-            "testing_date": "",
-            "calibration_date": "",
-            "remarks": "",
-            "doi_no": "",
-        }
+    def execute_pdf_generator(self, excel_file, doc_type):
         json_data = self.excel_to_json(excel_file)
         latex_data = self.handle_special_chars(json.loads(json_data))
         data_to_send = json.loads(latex_data)
         self.store_signatures(data_to_send)
         dict_template = {
             key: data_to_send[key] if key in data_to_send else ""
-            for key in dict_template
+            for key in self.dict_template
         }
         file_name = self.sanitize_filename(data_to_send['certificate_no'] if doc_type=='calibration' else (data_to_send['report_no']))
-        self.create_pdf(dict_template, excel_file, file_name, attach_data, attach_graph, doc_type, graph_img, version)
+        # self.create_pdf(dict_template, excel_file, file_name, attach_data, attach_graph, doc_type, graph_img, version)
         return file_name, dict_template
 

@@ -437,13 +437,25 @@ def upload_excel():
     data = request.form
     attach_data = True if data.get('embed') == 'True' else False
     attach_graph = True if data.get('graph') == 'True' else False
-    pdf_name =  pdf_generator.execute_pdf_generator(
-                    excel_file=f'./uploads/{user_id}/{excel_file.filename}', 
-                    doc_type=data.get('certificateType'), 
-                    attach_data=attach_data, 
-                    attach_graph=attach_graph,
-                    graph_img=f'./uploads/{user_id}/{graph_img.filename}' if attach_graph else ''
-                )
+    doc_type=data.get('certificateType')
+    excel_path = f'./uploads/{user_id}/{excel_file.filename}'
+    graph_path = f'./uploads/{user_id}/{graph_img.filename}' if attach_graph else ''
+    
+    pdf_name, pdf_data =  pdf_generator.execute_pdf_generator( excel_path, doc_type)
+
+    if checksum.pdf_exists(pdf_name):
+        print('true')
+    else:
+        pdf_generator.create_pdf(pdf_data, excel_path, pdf_name, doc_type, graph_path, attach_data, attach_graph)
+        checksum.insert_pdf_record(
+            pdf_directory=f'./static/pdfs/{pdf_name}',
+            current_stage=2,
+            calibrated_by=pdf_data['calibrated_by'] if pdf_data['calibrated_by'] else pdf_data['tested_by'],
+            checked_by=pdf_data['checked_by'],
+            scientist_in_charge=pdf_data['incharge'],
+            issued_by=pdf_data['issued_by'],
+        )
+        
     
     return jsonify(success=True)
 

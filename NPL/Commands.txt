@@ -219,11 +219,12 @@ REFERENCES "meteorological_services"("si_no", "service_code");
 
 CREATE TABLE dcc_pdf (
     pdf_serial_id SERIAL PRIMARY KEY,
-    pdf_directory VARCHAR 255,
+    pdf_directory VARCHAR(255),
     current_stage INT,
-    current_employee VARCHAR 255,
-    calibrated_by VARCHAR 255,
-    checked_by VARCHAR 255,
-    scientist_in_charge VARCHAR 255,
-    version INT
+    calibrated_by VARCHAR(255),
+    checked_by VARCHAR(255),
+    scientist_in_charge VARCHAR(255),
+    issued_by VARCHAR(255),
+    version INT,
+    remarks TEXT
 );
