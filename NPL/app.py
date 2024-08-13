@@ -12,6 +12,11 @@ import pandas as pd
 import checksum
 from dotenv import load_dotenv
 from generate_pdf import Generator
+import cv2
+
+# If no error is raised, the module is successfully imported
+print(cv2.__version__)  # Optional: Print OpenCV version to verify
+
 
 
 app = Flask(__name__)
@@ -461,3 +466,5 @@ if __name__ == '__main__':
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
     app.run(debug=True)
+
+
