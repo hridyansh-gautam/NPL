@@ -10,7 +10,7 @@ import cv2
 
 class Generator:
     def __init__(self):
-        self.dict_template = {
+        self.data_template = {
             "report_name": "",
             "device_name":"",
             "certificate_no":"",
@@ -245,8 +245,6 @@ class Generator:
 
     def store_signatures(self, data):
         """
-        Store signatures as images in the 'signatures' directory.
-
         This method retrieves signatures based on the names provided in the 'data' dictionary
         and stores them as images. If a signature is not found, a blank image is saved instead.
 
@@ -687,11 +685,10 @@ class Generator:
         latex_data = self.handle_special_chars(json.loads(json_data))
         data_to_send = json.loads(latex_data)
         self.store_signatures(data_to_send)
-        dict_template = {
+        data_template = {
             key: data_to_send[key] if key in data_to_send else ""
-            for key in self.dict_template
+            for key in self.data_template
         }
         file_name = self.sanitize_filename(data_to_send['certificate_no'] if doc_type=='calibration' else (data_to_send['report_no']))
-        # self.create_pdf(dict_template, excel_file, file_name, attach_data, attach_graph, doc_type, graph_img, version)
-        return file_name, dict_template
+        return file_name, data_template
 

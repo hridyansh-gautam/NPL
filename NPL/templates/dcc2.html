@@ -39,7 +39,7 @@
     </header>
     <!-- Navigation -->
     <nav class="p-2">
-      <a href="/">Home</a>
+      <a href="/empwelcome">Home</a>
     </nav>
 
     <!-- Container -->
@@ -117,13 +117,16 @@
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => {
+                if (response.status == 201) {
+                        alert('PDF already exists.');
+                }
+                return response.json();
+            })
             .then(data => {
                 theButton.classList.remove("button--loading");
-                if (data.success) {
-                    alert('PDF Generated successfully!');                    
-                } else {
-                    alert('File upload failed!');
+                if (data.status == 200) {
+                    alert('PDF Generated successfully!');
                 }
             })
             .catch(error => console.error('Error:', error));

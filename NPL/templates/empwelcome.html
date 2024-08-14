@@ -62,7 +62,7 @@
       <h1>Welcome! You are logged in.</h1>
       <hr>
       <h2>View Current DCC</h2>
-      <object data="{{ url_for('static', filename='{{  }}')}}" type="application/pdf"></object>
+      <object data="{{ url_for('static', filename=path) }}" type="application/pdf"></object>
       <div class="textarea">
         <textarea id="remarks" name="remarks" rows="4" placeholder="Type Remarks Here..."></textarea>
       </div>

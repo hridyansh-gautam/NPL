@@ -271,7 +271,9 @@ def add_service():
             
 @app.route('/empwelcome')
 def empwelcome():
-    return render_template('empwelcome.html')
+    pdf = checksum.get_recent_pdf()
+    print(f'{pdf[8:]}.pdf')
+    return render_template('empwelcome.html', path=f'{pdf[8:]}.pdf')
 
 
 @app.route('/custwelcome')
@@ -443,8 +445,8 @@ def upload_excel():
     
     pdf_name, pdf_data =  pdf_generator.execute_pdf_generator( excel_path, doc_type)
 
-    if checksum.pdf_exists(pdf_name):
-        print('true')
+    if checksum.pdf_exists(f'./static/pdfs/{pdf_name}'):
+        return jsonify(success=True), 201
     else:
         pdf_generator.create_pdf(pdf_data, excel_path, pdf_name, doc_type, graph_path, attach_data, attach_graph)
         checksum.insert_pdf_record(
@@ -457,7 +459,7 @@ def upload_excel():
         )
         
     
-    return jsonify(success=True)
+    return jsonify(success=True), 200
 
 @app.route('/about')
 def about():

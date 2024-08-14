@@ -142,6 +142,13 @@ def get_version(pdf_serial_id):
     session.close()
     return version
 
+def get_recent_pdf():
+    session = Session()
+    result = session.query(DccPdf).order_by(DccPdf.pdf_serial_id.desc()).first()
+    path = result.pdf_directory + '/' + str(result.version)
+    session.close()
+    return path
+
 def pdf_exists(pdf_directory):
     session = Session()
     exists = session.query(DccPdf).filter_by(pdf_directory=pdf_directory).first() is not None
