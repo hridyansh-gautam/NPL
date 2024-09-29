@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee Welcome page</title>
@@ -11,8 +11,40 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-  </head>
-  <body>
+      <style>
+      /* Initially hide the document view section */
+      .document-view {
+        display: none;
+        /* Hidden by default */
+        
+      }
+      /* When visible, change opacity and transform */
+      .document-view.visible {
+        display: block; /* Ensure it is shown */
+        opacity: 1;
+        transform: translateY(0);
+        height: 70vh;
+        box-sizing: border-box;
+        width: 80%;
+        margin: 2% 10%;
+      }
+      .document-view object {
+        width: 100%;
+        height: 60vh; /* Adjust height as needed */
+        border: none;
+      }
+      /* Style for buttons and textarea */
+      .textarea textarea {
+        width: 20em;
+        box-sizing: border-box;
+      }
+      .remark-btn {
+        margin: 10px 5px;
+      }
+   </style>
+  
+</head>
+<body>
     <header>
       <img
         src="{{ url_for('static', filename='images/logo1.png') }}"
@@ -55,7 +87,7 @@
           </li>
         </ul>
       </div>
-      <a href="#">Calibration Records</a>
+      <a href="#" id="viewDccLink">View Current DCC</a>
     </nav>
 
     <main>
@@ -87,6 +119,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <!-- <script src="{{ url_for('static', filename='empwelcome.js') }}"></script> -->
-  </body>
+    <script>
+      // JavaScript to toggle document view
+      document.getElementById('viewDccLink').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        var docView = document.getElementById('documentView');
+        // Toggle visibility
+        if (docView.style.display === 'none') {
+          docView.style.display='Block';
+        } else {
+          docView.style.display = 'none';
+        }
+      });
+    </script>
+</body>
 </html>
